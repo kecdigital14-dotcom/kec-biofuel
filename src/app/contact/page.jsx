@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactScreen from '../screens/ContactScreen'
+import ContactScreen from '../../screens/ContactScreen'
 
 const page = () => {
   return (

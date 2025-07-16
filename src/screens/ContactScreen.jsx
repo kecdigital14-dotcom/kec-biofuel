@@ -1,11 +1,11 @@
 "use client";
 
 import React from 'react'
-import HeroBanner from '../Components/HeroBanner'
-import BannerContent from '../Components/BannerContent'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer';
-import ContactSection from '../Components/ContactSection';
+import HeroBanner from '../app/Components/HeroBanner'
+import BannerContent from '../app/Components/BannerContent'
+import Navbar from '../app/Components/Navbar'
+import Footer from '../app/Components/Footer';
+import ContactSection from '../app/Components/ContactSection';
 
 const ContactScreen = () => {
   return (

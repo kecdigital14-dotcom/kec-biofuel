@@ -1,5 +1,5 @@
 import React from 'react'
-import Project from '../screens/Project'
+import Project from '../../screens/Project'
 
 const page = () => {
   return (

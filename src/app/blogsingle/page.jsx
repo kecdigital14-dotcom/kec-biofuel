@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogSingelScreen from '../screens/BlogSingelScreen'
+import BlogSingelScreen from '../../screens/BlogSingelScreen'
 
 const page = () => {
   return (

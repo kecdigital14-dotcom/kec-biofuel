@@ -1,5 +1,5 @@
 import React from 'react'
-import Service from '../screens/Service'
+import Service from '../../screens/Service'
 
 const page = () => {
   return (

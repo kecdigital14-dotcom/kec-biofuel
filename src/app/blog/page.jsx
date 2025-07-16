@@ -1,5 +1,5 @@
 import React from 'react'
-import Blog from '../screens/Blog'
+import Blog from '../../screens/Blog'
 
 const page = () => {
   return (

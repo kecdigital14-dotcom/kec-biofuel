@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from './screens/Home'
+import Home from '../screens/Home'
 
 const page = () => {
   return (
     <div>
-      <Home/>
+      <Home />
     </div>
   )
 }
