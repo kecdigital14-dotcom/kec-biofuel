@@ -7,7 +7,7 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer';
 import ContactSection from '../Components/ContactSection';
 
-const Home = () => {
+const Contact = () => {
   return (
     <div className="min-h-screen">
       <Navbar/>
@@ -43,4 +43,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Contact
