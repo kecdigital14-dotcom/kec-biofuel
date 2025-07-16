@@ -1,10 +1,10 @@
 import React from 'react'
-import Contact from '../Screens/Contact'
+import Contact from '../screens/Contact'
 
 const page = () => {
   return (
     <div>
-       <Contact/>
+      <Contact />
     </div>
   )
 }

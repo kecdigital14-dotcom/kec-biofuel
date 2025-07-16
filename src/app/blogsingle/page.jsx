@@ -1,10 +1,10 @@
 import React from 'react'
-import BlogSingelScreen from '../Screens/BlogSingelScreen'
+import BlogSingelScreen from '../screens/BlogSingelScreen'
 
 const page = () => {
   return (
     <div>
-       <BlogSingelScreen/>
+      <BlogSingelScreen />
     </div>
   )
 }

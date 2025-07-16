@@ -1,10 +1,10 @@
 import React from 'react'
-import Service from '../Screens/Service'
+import Service from '../screens/Service'
 
 const page = () => {
   return (
     <div>
-       <Service/>
+      <Service />
     </div>
   )
 }
