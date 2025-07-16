@@ -130,13 +130,13 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
-              <a href="#" className="text-white hover:text-green-400 transition-colors">Home</a>
-              <a href="#" className="text-white hover:text-green-400 transition-colors">About Us</a>
-              <a href="#" className="text-white hover:text-green-400 transition-colors">Services</a>
-              <a href="#" className="text-white hover:text-green-400 transition-colors">Pages</a>
-              <a href="#" className="text-white hover:text-green-400 transition-colors">Blog</a>
-              <a href="#" className="text-white hover:text-green-400 transition-colors">Contact Us</a>
-              <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors w-fit">
+              <a href="#" className="text-green hover:text-green-400 transition-colors">Home</a>
+              <a href="#" className="text-green hover:text-green-400 transition-colors">About Us</a>
+              <a href="#" className="text-green hover:text-green-400 transition-colors">Services</a>
+              <a href="#" className="text-green hover:text-green-400 transition-colors">Pages</a>
+              <a href="#" className="text-green hover:text-green-400 transition-colors">Blog</a>
+              <a href="#" className="text-green hover:text-green-400 transition-colors">Contact Us</a>
+              <button className="bg-green-500 hover:bg-green-600 text-green px-6 py-2 rounded-lg transition-colors w-fit">
                 Get a Quote →
               </button>
             </div>
