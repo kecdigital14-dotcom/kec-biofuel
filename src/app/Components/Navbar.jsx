@@ -11,15 +11,15 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="container mx-auto px-4 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-100">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img
               src="/images/kec-logo.png" // or your actual image path
               alt="Energox Logo"
-              className="h-14 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
 
           </div>
@@ -36,7 +36,7 @@ const Navbar = () => {
           </button>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 md:ml-36">
             <a href="/" className="text-green-700 text-lg hover:text-green-400 transition-colors font-bold">
               Home
             </a>
@@ -51,7 +51,7 @@ const Navbar = () => {
             </a>
 
             {/* Services Dropdown */}
-            <div className="relative">
+            {/* <div className="relative">
               <button
                 className="flex items-center text-green-700 text-lg font-bold space-x-1  hover:text-green-400 transition-colors"
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -68,7 +68,7 @@ const Navbar = () => {
                   <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Energy Consulting</a>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Pages Dropdown */}
             {/* <div className="relative">
@@ -108,19 +108,19 @@ const Navbar = () => {
 
             <a
               href="/contact"
-              className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors"
+              className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors font-sans"
             >
               Contact Us →
             </a>
 
             {/* Phone Number */}
-            <div className="hidden xl:flex items-center space-x-2 text-white">
+            <div className="hidden xl:flex items-center space-x-2 text-green-500">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <div>
                 <div className="text-xs">Call us now</div>
-                <div className="font-bold">+012 (345) 6789</div>
+                <div className="font-bold">+91 8527-626-868</div>
               </div>
             </div>
           </div>

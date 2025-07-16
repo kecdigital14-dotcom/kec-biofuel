@@ -57,13 +57,13 @@ const PMCServicesSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-6">
-            <div className="inline-block mb-6">
+            <div className="inline-block mb-1">
               <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl shadow-lg shadow-blue-500/25 mx-auto mb-4">
                 <Building2 className="w-8 h-8 text-white" />
               </div>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent mb-2">
               KEC Services
             </h2>
             

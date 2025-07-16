@@ -390,7 +390,7 @@ const BlogsPage = () => {
                     <a 
                       // href={`/blogsingle/${post.id}`}
                       href={`/blogsingle`}
-                      className="flex items-center text-white font-medium hover:translate-x-1 transition-transform duration-200 bg-green-700 hover:bg-green-100 px-3 py-1 rounded-lg"
+                      className="flex items-center text-white font-medium hover:translate-x-1 transition-transform duration-200 bg-green-700 hover:bg-green-500 px-3 py-1 rounded-lg"
                     >
                       <span className="mr-1">Read More</span>
                       <ArrowRight className="w-4 h-4" />
@@ -455,8 +455,10 @@ const BlogsPage = () => {
                           </div>
                           <div className="flex items-center space-x-2">
                             <a 
-                              href={`/blogsingle/${post.id}`}
-                              className="flex items-center text-white font-medium font-sans hover:translate-x-1 transition-transform duration-200 bg-green-700 hover:bg-green-100 px-3 py-1 rounded-lg"
+                              // href={`/blogsingle/${post.id}`}
+                              href={`/blogsingle`}
+
+                              className="flex items-center text-white font-medium font-sans hover:translate-x-1 transition-transform duration-200 bg-green-700 hover:bg-green-500 px-3 py-1 rounded-lg"
                             >
                               <span className="mr-1">Read More</span>
                               <ArrowRight className="w-4 h-4" />

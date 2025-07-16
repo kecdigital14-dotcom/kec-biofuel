@@ -7,7 +7,7 @@ const BlogSection = () => {
       id: 1,
       title: "Algae-Based Biofuels: The Next Generation of Clean Energy",
       excerpt: "Exploring how microalgae cultivation is revolutionizing sustainable fuel production with higher yields and lower environmental impact than traditional crops.",
-      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "images/blog7.jpg",
       author: "Dr. Sarah Mitchell",
       date: "March 15, 2025",
       readTime: "6 min read",
@@ -17,7 +17,7 @@ const BlogSection = () => {
       id: 2,
       title: "From Waste to Energy: Converting Agricultural Residues into Biofuel",
       excerpt: "Learn how agricultural waste like corn stalks, wheat straw, and rice husks are being transformed into sustainable biofuels through advanced processing technologies.",
-      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "images/blog10.jpg",
       author: "Dr. Marcus Chen",
       date: "March 12, 2025",
       readTime: "8 min read",
@@ -27,7 +27,7 @@ const BlogSection = () => {
       id: 3,
       title: "Biodiesel Production: Scaling Up for Commercial Success",
       excerpt: "Discover the latest developments in biodiesel manufacturing, from feedstock optimization to advanced refining processes that make biofuels commercially viable.",
-      image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "images/blog8.jpg",
       author: "Dr. Elena Rodriguez",
       date: "March 10, 2025",
       readTime: "7 min read",
@@ -107,8 +107,16 @@ const BlogSection = () => {
                   </div>
                   
                   <div className="flex items-center text-green-600 font-medium group-hover:translate-x-1 transition-transform duration-200">
-                    <span className="mr-1">Read More</span>
-                    <ArrowRight className="w-4 h-4" />
+                    {/* <span className="mr-1">Read More</span> */}
+                      <a 
+                                                  // href={`/blogsingle/${post.id}`}
+                                                  href={`/blog`}
+                    
+                                                  className="flex items-center text-white font-medium font-sans hover:translate-x-1 transition-transform duration-200 bg-green-700 hover:bg-green-400 px-3 py-1 rounded-lg"
+                                                >
+                                                  <span className="mr-1">Read More</span>
+                                                  <ArrowRight className="w-4 h-4" />
+                                                </a>
                   </div>
                 </div>
               </div>

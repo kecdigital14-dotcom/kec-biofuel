@@ -18,7 +18,7 @@ const BlogSingle = () => {
     comments: 34,
     category: "Bio-fuel",
     tags: ["Renewable Energy", "Bio-diesel", "Sustainability", "Green Technology"],
-    image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=800&h=400&fit=crop",
+    image: "images/blog9.jpg",
     content: [
       {
         type: "paragraph",

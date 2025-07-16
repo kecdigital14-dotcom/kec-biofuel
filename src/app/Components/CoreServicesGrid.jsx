@@ -11,7 +11,7 @@ const CoreServicesGrid = () => {
       description: "Bio-CNG, H2O, Ethanol 1G & 2G, LNG & H2O, Bio-Diesel solutions",
       features: ["Bio-CNG Plants", "Ethanol Production", "Bio-Diesel Manufacturing", "Solar Energy Systems"],
       gradient: "from-green-500 to-emerald-500",
-      bgGradient: "from-green-50 to-emerald-50",
+      bgGradient: "from-green-50 to-teal-50",
       shadowColor: "shadow-green-200",
       cardBg: "bg-gradient-to-br from-green-50 to-emerald-100"
     },
@@ -106,7 +106,7 @@ const CoreServicesGrid = () => {
             {services.map((service, index) => (
               <div 
                 key={index} 
-                className={`group relative ${service.cardBg} backdrop-blur-sm p-8 rounded-3xl border border-white/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer ${
+                className={`group relative bg-gray-100 shadow-6xl border-xl border-white/500 backdrop-blur-sm p-8 rounded-3xl border border-white/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer ${
                   hoveredCard === index ? 'scale-105 shadow-2xl' : ''
                 } ${service.shadowColor} hover:shadow-xl`}
                 onMouseEnter={() => setHoveredCard(index)}
@@ -126,7 +126,7 @@ const CoreServicesGrid = () => {
                 <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-slate-900 transition-colors">
                   {service.title}
                 </h3>
-                
+                1
                 {/* <p className="text-slate-600 font-semibold leading-relaxed mb-6 group-hover:text-slate-700 transition-colors text-sm w-[70%] ">
                   {service.description}
                 </p> */}

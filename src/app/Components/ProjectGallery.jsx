@@ -99,7 +99,7 @@ const ProjectGallery = () => {
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-green-900 text-white px-3 py-1 rounded-full text-sm font-medium">
                     {project.category}
                   </span>
                 </div>
@@ -133,7 +133,7 @@ const ProjectGallery = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg text-center font-medium transition-colors duration-200"
+                    className="flex-1 bg-green-900 hover:bg-blue-600 text-white py-2 px-4 rounded-lg text-center font-medium transition-colors duration-200"
                   >
                     Live Demo
                   </a>
@@ -153,7 +153,7 @@ const ProjectGallery = () => {
 
         {/* View More Button */}
         <div className="text-center mt-12">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 inline-flex items-center gap-2">
+          <button className="bg-green-900 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 inline-flex items-center gap-2">
             View More Projects
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
