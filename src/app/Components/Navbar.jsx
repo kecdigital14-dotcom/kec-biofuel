@@ -27,7 +27,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-green-700"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,14 +128,14 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4">
-              <a href="#" className="text-green hover:text-green-400 transition-colors">Home</a>
-              <a href="#" className="text-green hover:text-green-400 transition-colors">About Us</a>
-              <a href="#" className="text-green hover:text-green-400 transition-colors">Services</a>
-              <a href="#" className="text-green hover:text-green-400 transition-colors">Pages</a>
-              <a href="#" className="text-green hover:text-green-400 transition-colors">Blog</a>
-              <a href="#" className="text-green hover:text-green-400 transition-colors">Contact Us</a>
+          <div className="md:hidden mt-4 pb-4 bg-gray-200">
+            <div className="mt-4 flex flex-col space-y-3 bg-gray-100 rounded-xl px-6 py-4 shadow font-bold text-green-700 text-base">
+              <a href="/" className=" hover:text-green-400 transition-colors">Home</a>
+              <a href="about" className="text-green hover:text-green-400 transition-colors">About Us</a>
+              <a href="service" className="text-green hover:text-green-400 transition-colors">Services</a>
+              <a href="project" className="text-green hover:text-green-400 transition-colors">Projects</a>
+              <a href="blog" className="text-green hover:text-green-400 transition-colors">Blog</a>
+              <a href="contact" className="text-green hover:text-green-400 transition-colors">Contact Us</a>
               <button className="bg-green-500 hover:bg-green-600 text-green px-6 py-2 rounded-lg transition-colors w-fit">
                 Get a Quote →
               </button>
