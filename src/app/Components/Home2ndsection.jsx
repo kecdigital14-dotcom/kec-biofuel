@@ -28,9 +28,9 @@ const Home2ndsection = () => {
               </div>
 
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                Environmental <br />
-                Sustainable <br />
-                <span className="text-green-600">Forever Green Future</span>
+                Sustainable Future  <br />
+                {/* with Bio  CBG <br /> */}
+                <span className="text-green-600">with Bio  CBG</span>
               </h2>
             </div>
 

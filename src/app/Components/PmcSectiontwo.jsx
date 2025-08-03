@@ -5,34 +5,34 @@ const PmcSectionTwo = () => {
     {
       id: 1,
       src: "/images/pmc5.jpg",
-      alt: "Wind Power Generation",
-      category: "Wind Energy"
+      alt: "CBG Gas Production Plant",
+      category: "CBG Production"
     },
     {
       id: 2,
       src: "/images/pmc6.jpg",
-      alt: "Clean Energy Innovation",
-      category: "Innovation"
+      alt: "Biofuel Processing Facility",
+      category: "Biofuel Processing"
     },
     {
       id: 3,
       src: "/images/pmc7.jpg",
-      alt: "Solar Panel Installation",
-      category: "Solar Power"
+      alt: "Agricultural Waste to Energy",
+      category: "Waste to Energy"
     },
     {
       id: 4,
       src: "/images/pmc8.jpg",
-      alt: "Sustainable Energy Landscape",
+      alt: "Sustainable Bioenergy Solutions",
       category: "Sustainability"
     }
   ];
 
   const benefits = [
-    { icon: "♻️", title: "Sustainable", desc: "Clean & Renewable" },
-    { icon: "💚", title: "Eco-Friendly", desc: "Zero Emissions" },
-    { icon: "⚡", title: "Efficient", desc: "High Performance" },
-    { icon: "🌱", title: "Future-Ready", desc: "Next Generation" }
+    { icon: "🔥", title: "Clean Energy", desc: "Reduced Carbon Footprint" },
+    { icon: "🌾", title: "Agricultural Support", desc: "Utilizes Crop Residue" },
+    { icon: "💰", title: "Economic Growth", desc: "Boosts Rural Economy" },
+    { icon: "🌍", title: "Eco-Friendly", desc: "Sustainable Alternative" }
   ];
 
   return (
@@ -45,7 +45,7 @@ const PmcSectionTwo = () => {
         
         {/* Floating Icons */}
         <div className="absolute top-20 right-20 text-4xl animate-bounce delay-300">🌿</div>
-        <div className="absolute bottom-32 left-16 text-3xl animate-bounce delay-700">⚡</div>
+        <div className="absolute bottom-32 left-16 text-3xl animate-bounce delay-700">🔥</div>
         <div className="absolute top-1/2 right-8 text-2xl animate-bounce delay-1000">🌍</div>
       </div>
 
@@ -54,7 +54,6 @@ const PmcSectionTwo = () => {
           
           {/* Left Section - Image Gallery */}
           <div className="relative">
-            {/* Main Grid Container */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {images.map((image, index) => (
                 <div
@@ -73,49 +72,49 @@ const PmcSectionTwo = () => {
                       alt={image.alt}
                       className="w-full h-44 sm:h-52 lg:h-56 object-cover group-hover:scale-125 transition-transform duration-1000"
                     />
-                    
-                    {/* Gradient Overlay */}
+
+                    {/* Gradient Overlays */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    {/* Green Accent Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-emerald-500/0 group-hover:from-green-500/30 group-hover:to-emerald-500/20 transition-all duration-500"></div>
-                  </div>
-                  
-                  {/* Category Label */}
-                  <div className="absolute bottom-4 left-4 right-4 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-center">
-                      <p className="text-sm font-semibold text-gray-800">{image.category}</p>
+
+                    {/* Category Label (Always Visible and Positioned Inside Image) */}
+                    <div className="absolute bottom-2 left-2 right-2">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1 text-center shadow-md">
+                        <p className="text-sm font-semibold text-gray-800">{image.category}</p>
+                      </div>
                     </div>
                   </div>
-                  
+
                   {/* Shine Effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </div>
               ))}
             </div>
 
-            {/* Floating Stats */}
-            <div className="absolute -bottom-6 -right-6 bg-white/80 backdrop-blur-lg rounded-2xl p-4 shadow-2xl border border-white/50">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">100%</div>
-                <div className="text-xs text-gray-600">Clean Energy</div>
+            {/* Floating Stats - Moved Below Grid to Avoid Overlap */}
+            <div className="mt-6 flex justify-end">
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-4 shadow-2xl border border-white/50">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-600">100%</div>
+                  <div className="text-xs text-gray-600">Sustainable Energy</div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right Section - Content */}
-          <div className="space-y-8 lg:pl-8">
+          <div className=" lg:pl-8">
             
             {/* Header Section */}
             <div className="space-y-6">
               <div className="inline-flex items-center space-x-2 bg-green-100/50 backdrop-blur-sm rounded-full px-4 py-2 border border-green-200/50">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-green-700 text-sm font-medium tracking-wide">SUSTAINABLE SOLUTIONS</span>
+                <span className="text-green-700 text-sm font-medium tracking-wide">BIOFUEL & CBG SOLUTIONS</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                  Renewable Energy
+                  Clean Energy. Rural Growth. Sustainable Future
                 </span>
               </h1>
             </div>
@@ -125,11 +124,11 @@ const PmcSectionTwo = () => {
               <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-green-400 to-emerald-500 rounded-full"></div>
               
               <p className="text-gray-700 text-lg leading-relaxed font-medium">
-                Renewable energy refers to energy sources that can be replenished naturally and are not depleted after use. 
-                These sources include <span className="text-green-600 font-semibold">solar energy</span>, <span className="text-green-600 font-semibold">wind power</span>, 
-                <span className="text-green-600 font-semibold"> hydroelectric power</span>, <span className="text-green-600 font-semibold">geothermal energy</span>, and <span className="text-green-600 font-semibold">biomass</span>. 
-                Renewable energy is considered to be a sustainable and clean alternative to traditional fossil fuels, as it 
-                produces fewer greenhouse gas emissions and helps mitigate climate change.
+                Biofuels and <span className="text-green-600 font-semibold">Compressed Biogas (CBG)</span> are renewable energy sources derived from 
+                organic waste, crop residues, and other biomass. These fuels not only reduce dependence on fossil fuels but also 
+                help in <span className="text-green-600 font-semibold">managing agricultural waste</span>, cutting <span className="text-green-600 font-semibold">greenhouse gas emissions</span>, 
+                and fostering <span className="text-green-600 font-semibold">rural economic growth</span>. CBG serves as a clean and efficient alternative to 
+                conventional fuels, promoting a sustainable and self-reliant energy ecosystem.
               </p>
             </div>
 
@@ -146,7 +145,7 @@ const PmcSectionTwo = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-800 text-sm">{benefit.title}</h3>
-                      <p className="text-xs text-gray-600">{benefit.desc}</p>
+                      <p className="text-xs text-gray-600 font-sans">{benefit.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -156,7 +155,7 @@ const PmcSectionTwo = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button className="group relative inline-flex items-center justify-center px-8 py-4 text-white font-semibold bg-gradient-to-r from-green-500 to-emerald-600 rounded-full hover:from-green-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <span>Explore Solutions</span>
+                <span>Explore Bioenergy</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

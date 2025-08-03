@@ -72,10 +72,10 @@ const RandDSectionOne = () => {
       {/* Introduction Section */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent mb-2">
             Research & Development Facility
           </h2>
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base font-sans text-gray-500 max-w-4xl mx-auto leading-relaxed">
             KEC Agritech proudly operates its state-of-the-art R&D facility in Bulandshahar, Uttar Pradesh, 
             dedicated to advancing sustainable and innovative solutions in renewable energy through 
             Compressed Biogas (CBG) production.
@@ -89,7 +89,7 @@ const RandDSectionOne = () => {
               <Beaker className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Advanced Research</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-500 font-sans">
               Modern bioreactors, gas upgrading systems, and analytical labs for thorough 
               evaluation of gas quality and process efficiencies.
             </p>
@@ -100,7 +100,7 @@ const RandDSectionOne = () => {
               <Leaf className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Circular Economy</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-500 font-sans">
               Converting organic waste into renewable energy and biofertilizers, 
               promoting waste-to-wealth conversion technologies.
             </p>
@@ -111,7 +111,7 @@ const RandDSectionOne = () => {
               <Zap className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Energy Self-Reliance</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-500 font-sans">
               Establishing scalable models for clean energy generation and contributing 
               to India's mission of sustainable energy and waste management.
             </p>
@@ -146,7 +146,7 @@ const RandDSectionOne = () => {
                 </div>
                 {expandedCard === index && (
                   <div className="mt-4 pt-4 border-t border-gray-200 border-opacity-50">
-                    <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium font-sans">
                       {feedstock.description}
                     </p>
                   </div>

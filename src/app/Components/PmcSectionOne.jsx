@@ -90,7 +90,7 @@ const PmcSectionOne = () => {
             </div>
 
             {/* Features */}
-            <div className="grid sm:grid-cols-3 gap-4 pt-4">
+            <div className="grid sm:grid-cols-3 gap-4 pt-4 font-sans">
               {[
                 { icon: "🏗️", text: "Project Planning" },
                 { icon: "⚡", text: "Quality Control" },

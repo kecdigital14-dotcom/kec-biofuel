@@ -164,15 +164,15 @@ const PmcSectionFour = () => {
                 <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent block">
                   IMPROVE / REVAMPING / UPGRADING
                 </span>
-                <span className="text-white/90 text-xl sm:text-2xl lg:text-3xl font-light block mt-2">
+                <span className="text-white/90 text-xl sm:text-2xl lg:text-xl font-light block mt-2">
                   EXISTING BIOGAS PLANTS, ETP & STP
                 </span>
               </h1>
               
               {/* Animated Progress Bar */}
-              <div className="w-32 h-1 bg-gray-700 rounded-full overflow-hidden">
+              {/* <div className="w-32 h-1 bg-gray-700 rounded-full overflow-hidden">
                 <div className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
-              </div>
+              </div> */}
             </div>
 
             {/* Description Card */}
@@ -206,7 +206,7 @@ const PmcSectionFour = () => {
                       {service.icon}
                     </div>
                     <h3 className="text-white font-bold text-sm mb-1">{service.title}</h3>
-                    <p className="text-gray-400 text-xs">{service.desc}</p>
+                    <p className="text-gray-400 text-xs font-sans">{service.desc}</p>
                   </div>
                   
                   {/* Background Glow */}

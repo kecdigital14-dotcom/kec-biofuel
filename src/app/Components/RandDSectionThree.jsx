@@ -106,10 +106,10 @@ const RandDSectionThree = () => {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-purple-600 rounded-full mb-6 shadow-lg">
             <BarChart3 className="w-10 h-10 text-white" />
           </div>
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-800 via-green-800 to-green-800 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 via-green-800 to-green-800 bg-clip-text text-transparent mb-2">
             Raw Material Analysis & Results
           </h2>
-          <p className="text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Comprehensive analysis of multi-feedstock biogas production with detailed 
             performance metrics and efficiency measurements across various organic materials.
           </p>
@@ -138,7 +138,7 @@ const RandDSectionThree = () => {
                   <div className="text-3xl">{data.icon}</div>
                   <div className="text-center">
                     <div className="font-semibold text-sm">{data.title}</div>
-                    <div className={`text-xs mt-1 ${selectedFeedstock === key ? 'text-white/80' : 'text-gray-500'}`}>
+                    <div className={`text-xs font-sans mt-1 ${selectedFeedstock === key ? 'text-white/80' : 'text-gray-500'}`}>
                       {data.duration.split(' ')[0]} {data.duration.split(' ')[1]}
                     </div>
                   </div>
@@ -206,7 +206,7 @@ const RandDSectionThree = () => {
                     <h4 className="font-semibold text-gray-800 flex-1">{metric.title}</h4>
                   </div>
                   
-                  <div className={`${metric.highlight ? 'text-3xl font-bold text-blue-600' : 'text-gray-600 text-sm'} transition-colors duration-200 group-hover:text-gray-800`}>
+                  <div className={`${metric.highlight ? 'text-3xl font-bold text-blue-600' : 'text-gray-600 text-sm font-sans'} transition-colors duration-200 group-hover:text-gray-800`}>
                     {metric.value}
                   </div>
                   
@@ -231,12 +231,12 @@ const RandDSectionThree = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Performance Summary</h4>
-                    <p className="text-sm text-gray-600">Optimized for maximum biogas production efficiency</p>
+                    <p className="text-sm text-gray-600 font-sans">Optimized for maximum biogas production efficiency</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <div className="text-2xl font-bold text-blue-600">{currentData.totalYield}</div>
-                  <div className="text-sm text-gray-500">Total Yield</div>
+                  <div className="text-sm text-gray-500 font-sans">Total Yield</div>
                 </div>
               </div>
             </div>

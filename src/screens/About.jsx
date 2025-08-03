@@ -7,6 +7,7 @@ import About1stsection from '../app/Components/About1stsection';
 import About2ndsection from '../app/Components/About2ndsection';
 import Footer from '../app/Components/Footer';
 import About3rdsection from '../app/Components/About3rdsection';
+import AboutUsCEO from '@/app/Components/AboutUsCEO';
 
 const About = () => {
   return (
@@ -35,6 +36,7 @@ const About = () => {
 
         </div>
       </HeroBanner>
+      <AboutUsCEO/>
 
       {/* About Content Section */}
       <About1stsection />
