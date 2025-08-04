@@ -37,7 +37,7 @@ const Home = () => {
             </HeroBanner>
 
             <SuperTeam />
-            <div className='mt-[800px] '>
+            <div className='mt-[1100px] md:mt-[1000px]'>
                 <Footer />
             </div>
 

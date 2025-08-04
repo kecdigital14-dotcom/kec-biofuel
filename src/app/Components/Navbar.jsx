@@ -33,22 +33,22 @@ const Navbar = () => {
           </button>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-10 md:ml-16">
+          <div className="hidden md:flex items-center space-x-4 md:ml-16">
             <a href="/" className="text-green-700 text-lg hover:text-green-400 transition-colors font-bold">
               Home
             </a>
             <a href="about" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
               About Us
             </a>
-            {/* <a href="superteam" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+            <a href="superteam" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
               Our Super Team
-            </a> */}
-            {/* <a href="cbg" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+            </a>
+            <a href="cbg" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
               CBG Park
-            </a> */}
-            {/* <a href="r&d" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+            </a>
+            <a href="r&d" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
               R&D
-            </a> */}
+            </a>
 
             {/* Services Dropdown */}
             <div className="relative">
@@ -57,14 +57,14 @@ const Navbar = () => {
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
               >
                 <span>Services</span>
-                {/* <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg> */}
+                </svg>
               </button>
               {isServicesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-full bg-white rounded-lg shadow-lg py-2 font-bold">
-                  {/* <a href="pmc" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-100">PMC</a>
-                  <a href="epc" className="block px-4 py-2 text-green-700 hover:bg-gray-100  text-lg font-bold hover:text-green-400 transition-colors">EPC</a> */}
+                  <a href="pmc" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-100">PMC</a>
+                  <a href="epc" className="block px-4 py-2 text-green-700 hover:bg-gray-100  text-lg font-bold hover:text-green-400 transition-colors">EPC</a>
                 </div>
               )}
             </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
             </a>
 
             {/* Gallery Dropdown with Download */}
-            {/* <div className="relative">
+            <div className="relative">
               <button
                 className="flex items-center text-green-700 text-lg font-bold space-x-1 hover:text-green-400 transition-colors"
                 onClick={() => setIsGalleryOpen(!isGalleryOpen)}
@@ -90,7 +90,7 @@ const Navbar = () => {
                   <a href="cbgdownload" className="block px-2 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-100">Download</a>
                 </div>
               )}
-            </div> */}
+            </div>
 
             <a href="blog" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
               Blog
@@ -116,8 +116,8 @@ const Navbar = () => {
               <a href="/" className="hover:text-green-400 transition-colors">Home</a>
               <a href="about" className="hover:text-green-400 transition-colors">About Us</a>
               <a href="super-team" className="hover:text-green-400 transition-colors">Our Super Team</a>
-              <a href="cbg-park" className="hover:text-green-400 transition-colors">CBG Park</a>
-              <a href="rd" className="hover:text-green-400 transition-colors">R&D</a>
+              <a href="cbg" className="hover:text-green-400 transition-colors">CBG Park</a>
+              <a href="r&d" className="hover:text-green-400 transition-colors">R&D</a>
 
               {/* Mobile Services Submenu */}
               <div>

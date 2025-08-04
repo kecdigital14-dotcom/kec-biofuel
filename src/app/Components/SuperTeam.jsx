@@ -299,40 +299,42 @@ const OrgChartComponent = () => {
             </div>
 
             {/* CEO Info Section */}
-    <div className="flex justify-center mb-8 ">
-  <div className="bg-white rounded-xl shadow-xl max-w-4xl mx-4 flex overflow-hidden py-2 max-h-[480px]">
- 
-    <div className="flex-1 p-8">
-      <div className="bg-orange-500 text-white font-bold text-xl p-4 inline-block rounded mb-4">
-        JITENDER NARAYAN
-        <br />
-        <span className="text-base font-semibold">The CEO Behind Our Mission....</span>
-      </div>
-      <p className="text-gray-700 leading-relaxed mb-6 font-bold text-justify pr-6">
-        Jitendra is Management professional and a technocrat with 14 Yr plus years of experience in
-        Business Development through Multi channel as Franchisee & Branch network across North India,
-        Operations, Man Management and Profit Centre Management. Worked with Nirmal Bang, Reliance
-        Capital & Kassa Finvest in various management level positions. Have set up Commodities and
-        Currency & Equity Broking.
-      </p>
-      <a
-        href="https://in.linkedin.com/company/kecbiofuel?trk=public_post_feed-actor-name"
-        className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold uppercase text-sm hover:bg-green-600 transition-colors inline-block shadow-md"
-      >
-        Know More
-      </a>
-    </div>
+            <div className="flex justify-center mb-8 px-4">
+                <div className="bg-white rounded-xl shadow-xl w-full max-w-4xl flex flex-col md:flex-row overflow-hidden py-4">
 
+                    {/* Text Section */}
+                    <div className="flex-1 p-6 md:p-8">
+                        <div className="bg-orange-500 text-white font-bold text-lg md:text-xl p-3 md:p-4 inline-block rounded mb-4">
+                            JITENDER NARAYAN
+                            <br />
+                            <span className="text-sm md:text-base font-semibold">The CEO Behind Our Mission....</span>
+                        </div>
+                        <p className="text-gray-700 leading-relaxed mb-6 font-bold text-justify pr-0 md:pr-6">
+                            Jitendra is Management professional and a technocrat with 14+ years of experience in
+                            Business Development through multi-channel as Franchisee & Branch network across North India,
+                            Operations, Man Management, and Profit Centre Management. Worked with Nirmal Bang, Reliance
+                            Capital & Kassa Finvest in various management level positions. Have set up Commodities,
+                            Currency & Equity Broking.
+                        </p>
+                        <a
+                            href="https://in.linkedin.com/company/kecbiofuel?trk=public_post_feed-actor-name"
+                            className="bg-green-500 text-white px-5 md:px-6 py-2 md:py-3 rounded-lg font-semibold uppercase text-sm hover:bg-green-600 transition-colors inline-block shadow-md"
+                        >
+                            Know More
+                        </a>
+                    </div>
 
-    <div className="flex-1 min-w-80 flex items-center justify-center">
-      <img
-        src="images/ceo.jpg"
-        alt="CEO"
-        className="w-full h-auto object-cover"
-      />
-    </div>
-  </div>
-</div>
+                    {/* Image Section */}
+                    <div className="flex-1 flex items-center justify-center ">
+                        <img
+                            src="images/ceo.jpg"
+                            alt="CEO"
+                            className="px-2 rounded rounded-md md:h-auto object-contain"
+                        />
+                    </div>
+                </div>
+            </div>
+
 
 
 
