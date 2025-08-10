@@ -16,7 +16,7 @@ const Home = () => {
                 <div className=" backdrop-blur-md rounded-xl px-8 py-4 max-w-sm mx-auto text-center shadow-sm space-y-2">
 
                     {/* Title */}
-                    <h1 className="text-5xl md:text-5xl font-extrabold text-green-800 tracking-tight leading-tight">
+                    <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight leading-tight text-white/80">
                         Our <span className="text-green-600">Super Team</span> <span className="text-cyan-400"></span>
                     </h1>
 

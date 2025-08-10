@@ -11,7 +11,7 @@ const Home2ndsection = () => {
           <div className="relative flex items-center justify-center min-h-[600px]">
             <div className="relative w-full max-w-lg">
               <img
-                src="/images/home2ndsection.png"
+                src="/images/home-bannersectionone.jpeg"
                 alt="Environmental Sustainability"
                 className="w-full h-[450px] object-cover rounded-3xl shadow-2xl"
               />
@@ -28,7 +28,7 @@ const Home2ndsection = () => {
               </div>
 
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                Sustainable Future  <br />
+                Eco-Smart Future <br />
                 {/* with Bio  CBG <br /> */}
                 <span className="text-green-600">with Bio  CBG</span>
               </h2>

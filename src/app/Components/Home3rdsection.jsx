@@ -50,7 +50,7 @@ const Home3rdsection = () => {
             <span className="text-green-700 font-semibold text-sm tracking-wider uppercase">Our Features</span>
             <div className="w-8 h-px bg-green-300"></div>
           </div>
-          
+
           <h2 className="text-5xl lg:text-5xl font-bold text-gray-900 leading-tight mb-1">
             Key Features of KEC Bio-Fuel
             <br />
@@ -62,36 +62,32 @@ const Home3rdsection = () => {
 
         {/* Main Content Area */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
-            
+          <div className="grid lg:grid-cols-3 gap-18 items-center">
+
             {/* Left Features */}
             <div className="space-y-8">
               {features.slice(0, 2).map((feature, index) => (
-                <div 
+                <div
                   key={feature.id}
-                  className={`group cursor-pointer transition-all duration-500 ${
-                    activeFeature === feature.id ? 'scale-105' : 'hover:scale-102'
-                  }`}
+                  className={`group cursor-pointer transition-all duration-500 ${activeFeature === feature.id ? 'scale-105' : 'hover:scale-102'
+                    }`}
                   onMouseEnter={() => setActiveFeature(feature.id)}
                 >
-                  <div className={`relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border transition-all duration-300 ${
-                    activeFeature === feature.id 
-                      ? 'border-green-300 shadow-xl bg-white/90' 
+                  <div className={`relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border transition-all duration-300 ${activeFeature === feature.id
+                      ? 'border-green-300 shadow-xl bg-white/90'
                       : 'border-gray-100 hover:border-green-200'
-                  }`}>
+                    }`}>
                     <div className="flex items-start space-x-4">
-                      <div className={`relative w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg transform transition-transform duration-300 ${
-                        activeFeature === feature.id ? 'scale-110 rotate-3' : 'group-hover:scale-105'
-                      }`}>
+                      <div className={`relative w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg transform transition-transform duration-300 ${activeFeature === feature.id ? 'scale-110 rotate-3' : 'group-hover:scale-105'
+                        }`}>
                         <span className="text-2xl">{feature.icon}</span>
                         {activeFeature === feature.id && (
                           <div className="absolute -inset-2 bg-gradient-to-br from-green-400/30 to-emerald-500/30 rounded-2xl blur-lg animate-pulse"></div>
                         )}
                       </div>
                       <div className="flex-1">
-                        <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${
-                          activeFeature === feature.id ? 'text-green-700' : 'text-gray-900 group-hover:text-green-600'
-                        }`}>
+                        <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${activeFeature === feature.id ? 'text-green-700' : 'text-gray-900 group-hover:text-green-600'
+                          }`}>
                           {feature.title}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
@@ -99,7 +95,7 @@ const Home3rdsection = () => {
                         </p>
                       </div>
                     </div>
-                    
+
                     {activeFeature === feature.id && (
                       <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5 rounded-2xl"></div>
                     )}
@@ -113,15 +109,26 @@ const Home3rdsection = () => {
               <div className="relative group">
                 {/* Glow effect */}
                 <div className="absolute -inset-8 bg-gradient-to-r from-green-400/20 via-emerald-400/20 to-teal-400/20 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
-                
+
                 {/* Main image container */}
-                <div className="relative bg-white/60 backdrop-blur-sm p-6 rounded-3xl shadow-xl border border-green-100/50">
-                  <img 
+                <div className="relative bg-white/60 backdrop-blur-sm px-2 rounded-3xl shadow-xl border border-green-100/50">
+                  {/* <img 
                     src="/images/home3ndsection.png"  
                     alt="Bio-Fuel Illustration" 
                     className="w-full max-w-md h-[270px] object-contain transform transition-transform duration-700 group-hover:scale-105"
+                  /> */}
+                  <video
+                    src="/images/home-section-two.mp4"
+                    alt="Bio-Fuel Illustration" // not valid for <video>, so use aria-label instead
+                    aria-label="Bio-Fuel Illustration"
+                    className="max-w-md h-[350px] object-contain transform transition-transform duration-700 group-hover:scale-105"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                   />
-                  
+
+
                   {/* Floating indicators */}
                   <div className="absolute top-4 right-4 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
                   <div className="absolute bottom-4 left-4 w-2 h-2 bg-emerald-500 rounded-full animate-pulse delay-500"></div>
@@ -139,31 +146,27 @@ const Home3rdsection = () => {
             {/* Right Features */}
             <div className="space-y-8">
               {features.slice(2, 4).map((feature, index) => (
-                <div 
+                <div
                   key={feature.id}
-                  className={`group cursor-pointer transition-all duration-500 ${
-                    activeFeature === feature.id ? 'scale-105' : 'hover:scale-102'
-                  }`}
+                  className={`group cursor-pointer transition-all duration-500 ${activeFeature === feature.id ? 'scale-105' : 'hover:scale-102'
+                    }`}
                   onMouseEnter={() => setActiveFeature(feature.id)}
                 >
-                  <div className={`relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border transition-all duration-300 ${
-                    activeFeature === feature.id 
-                      ? 'border-green-300 shadow-xl bg-white/90' 
+                  <div className={`relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border transition-all duration-300 ${activeFeature === feature.id
+                      ? 'border-green-300 shadow-xl bg-white/90'
                       : 'border-gray-100 hover:border-green-200'
-                  }`}>
+                    }`}>
                     <div className="flex items-start space-x-4">
-                      <div className={`relative w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg transform transition-transform duration-300 ${
-                        activeFeature === feature.id ? 'scale-110 rotate-3' : 'group-hover:scale-105'
-                      }`}>
+                      <div className={`relative w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg transform transition-transform duration-300 ${activeFeature === feature.id ? 'scale-110 rotate-3' : 'group-hover:scale-105'
+                        }`}>
                         <span className="text-2xl">{feature.icon}</span>
                         {activeFeature === feature.id && (
                           <div className="absolute -inset-2 bg-gradient-to-br from-green-400/30 to-emerald-500/30 rounded-2xl blur-lg animate-pulse"></div>
                         )}
                       </div>
                       <div className="flex-1">
-                        <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${
-                          activeFeature === feature.id ? 'text-green-700' : 'text-gray-900 group-hover:text-green-600'
-                        }`}>
+                        <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${activeFeature === feature.id ? 'text-green-700' : 'text-gray-900 group-hover:text-green-600'
+                          }`}>
                           {feature.title}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed font-sans">
@@ -171,7 +174,7 @@ const Home3rdsection = () => {
                         </p>
                       </div>
                     </div>
-                    
+
                     {activeFeature === feature.id && (
                       <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5 rounded-2xl"></div>
                     )}

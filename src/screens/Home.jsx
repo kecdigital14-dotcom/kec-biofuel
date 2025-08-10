@@ -14,12 +14,13 @@ import Homeservices from '../app/Components/Homeservices';
 import Home6thsection from '../app/Components/Home6thsection';
 import Footer from '../app/Components/Footer';
 import BlogSection from '../app/Components/BlogSectionhome';
+import HomeBannerSlider from '@/app/Components/HomeBannerSlider';
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <HeroBanner backgroundImage="/images/biofuelbanner1.jpg">
+      {/* <HeroBanner backgroundImage="/images/biofuelbanner1.jpg">
         <BannerContent
           subtitle="Energizing a Sustainable Tomorrow"
           title="Unleashing Sustainable Energy Solutions"
@@ -28,7 +29,8 @@ const Home = () => {
           ctaText="Learn More →"
           onCtaClick={() => console.log('CTA clicked!')}
         />
-      </HeroBanner>
+      </HeroBanner> */}
+        <HomeBannerSlider />
       <Home2ndsection />
       <Home3rdsection />
       <Home4thsection />
