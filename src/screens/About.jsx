@@ -8,6 +8,10 @@ import About2ndsection from '../app/Components/About2ndsection';
 import Footer from '../app/Components/Footer';
 import About3rdsection from '../app/Components/About3rdsection';
 import AboutUsCEO from '@/app/Components/AboutUsCEO';
+import OurBackground from '@/app/Components/OurBackground';
+import PMCServices from '@/app/Components/PMCServices';
+import Technologies from '@/app/Components/Technologies';
+import TurkeySolutions from '@/app/Components/TurkeySolutions';
 
 const About = () => {
   return (
@@ -37,14 +41,18 @@ const About = () => {
         </div>
       </HeroBanner>
       <AboutUsCEO/>
+      <OurBackground/>
 
       {/* About Content Section */}
       <About1stsection />
 
       {/* Values Section */}
       <About2ndsection />
+      <PMCServices/>
+      <Technologies/>
 
       <About3rdsection />
+      <TurkeySolutions/>
 
       <Footer />
     </div>

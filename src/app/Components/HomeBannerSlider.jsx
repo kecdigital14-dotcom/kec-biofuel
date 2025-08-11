@@ -1,5 +1,6 @@
 // HomeBannerSlider.jsx
 import React, { useState } from "react";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HomeBannerSlider = () => {
   const slides = [
@@ -21,7 +22,7 @@ const HomeBannerSlider = () => {
       title: "Clean Energy, Bright Future",
       description: "Reducing carbon footprint with innovative technology."
     },
-      {
+    {
       id: 4,
       image: "/images/biofuelbanner2.png",
       title: "Clean Energy, Bright Future",
@@ -61,7 +62,7 @@ const HomeBannerSlider = () => {
               alt={slide.title}
               className=" w-full object-cover"
             />
-         
+
           </div>
         ))}
       </div>
@@ -69,17 +70,38 @@ const HomeBannerSlider = () => {
       {/* Prev Button */}
       <button
         onClick={prevSlide}
-        className="absolute left-5 top-1/2 -translate-y-1/2 bg-opacity-40 text-white p-3 rounded-full hover:bg-opacity-60 transition"
+        className="absolute left-5 top-1/2 -translate-y-1/2 z-20 group"
       >
-        ❮
-      </button>
+        <div className="relative">
+          {/* Main Button */}
+          <div className="relative w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center backdrop-blur-sm border border-white/20">
+            <ChevronLeft className="w-6 h-6 text-white transition-transform duration-300 group-hover:-translate-x-0.5" />
+          </div>
 
-      {/* Next Button */}
+          {/* Animated Ring */}
+          <div className="absolute inset-0 rounded-full border-2 border-green-300 opacity-0 group-hover:opacity-100 animate-ping" />
+
+          {/* Glow Effect */}
+          <div className="absolute inset-0 rounded-full bg-green-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
+        </div>
+      </button>
+      {/* next */}
       <button
         onClick={nextSlide}
-        className="absolute right-5 top-1/2 -translate-y-1/2 bg-opacity-40 text-white p-3 rounded-full hover:bg-opacity-60 transition"
+        className="absolute right-5 top-1/2 -translate-y-1/2 z-20 group"
       >
-        ❯
+        <div className="relative">
+          {/* Main Button */}
+          <div className="relative w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center backdrop-blur-sm border border-white/20">
+            <ChevronRight className="w-6 h-6 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
+          </div>
+
+          {/* Animated Ring */}
+          <div className="absolute inset-0 rounded-full border-2 border-green-300 opacity-0 group-hover:opacity-100 animate-ping" />
+
+          {/* Glow Effect */}
+          <div className="absolute inset-0 rounded-full bg-green-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
+        </div>
       </button>
 
       {/* Dots */}
@@ -88,9 +110,8 @@ const HomeBannerSlider = () => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === index ? "bg-white" : "bg-gray-400"
-            }`}
+            className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-400"
+              }`}
           />
         ))}
       </div>

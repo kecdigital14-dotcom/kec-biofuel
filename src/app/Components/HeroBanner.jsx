@@ -30,7 +30,7 @@ const HeroBanner = ({ backgroundImage, children, height = 'min-h-screen' }) => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/80 via-teal-00/70 to-green-10/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/40 via-teal-00/70 to-green-10/80" />
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0">

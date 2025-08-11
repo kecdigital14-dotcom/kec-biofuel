@@ -4,25 +4,25 @@ const PmcSectionTwo = () => {
   const images = [
     {
       id: 1,
-      src: "/images/pmc5.jpg",
+      src: "/images/pmc5.jpeg",
       alt: "CBG Gas Production Plant",
       category: "CBG Production"
     },
     {
       id: 2,
-      src: "/images/pmc6.jpg",
+      src: "/images/pmc6.jpeg",
       alt: "Biofuel Processing Facility",
       category: "Biofuel Processing"
     },
     {
       id: 3,
-      src: "/images/pmc7.jpg",
+      src: "/images/pmc11.jpg",
       alt: "Agricultural Waste to Energy",
       category: "Waste to Energy"
     },
     {
       id: 4,
-      src: "/images/pmc8.jpg",
+      src: "/images/pmc14.jpeg",
       alt: "Sustainable Bioenergy Solutions",
       category: "Sustainability"
     }

@@ -20,16 +20,6 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      {/* <HeroBanner backgroundImage="/images/biofuelbanner1.jpg">
-        <BannerContent
-          subtitle="Energizing a Sustainable Tomorrow"
-          title="Unleashing Sustainable Energy Solutions"
-          showVideo={true}
-          showSocialLinks={true}
-          ctaText="Learn More →"
-          onCtaClick={() => console.log('CTA clicked!')}
-        />
-      </HeroBanner> */}
         <HomeBannerSlider />
       <Home2ndsection />
       <Home3rdsection />

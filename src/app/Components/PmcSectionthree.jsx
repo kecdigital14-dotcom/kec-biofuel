@@ -4,25 +4,25 @@ const PmcSectionThree = () => {
   const images = [
     {
       id: 1,
-      src: "/images/pmc9.jpg",
+      src: "/images/pmc3.jpeg",
       alt: "Industrial Worker with Safety Equipment",
       category: "Safety Operations"
     },
     {
       id: 2,
-      src: "/images/pmc10.jpg",
+      src: "/images/pmc4.jpeg",
       alt: "Construction Safety Management",
       category: "Project Management"
     },
     {
       id: 3,
-      src: "/images/pmc11.jpg",
+      src: "/images/pmc14.jpeg",
       alt: "Technical Maintenance Work",
       category: "Technical Services"
     },
     {
       id: 4,
-      src: "/images/pmc12.jpg",
+      src: "/images/pmc10.jpeg",
       alt: "Construction Site Operations",
       category: "Site Operations"
     }

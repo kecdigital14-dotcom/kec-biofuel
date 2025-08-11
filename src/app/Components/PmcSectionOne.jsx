@@ -4,22 +4,22 @@ const PmcSectionOne = () => {
   const images = [
     {
       id: 1,
-      src: "/images/pmc1.jpg",
+      src: "/images/pmc1.jpeg",
       alt: "Construction Equipment"
     },
     {
       id: 2,
-      src: "/images/pmc2.jpg",
+      src: "/images/pmc2.jpeg",
       alt: "Industrial Infrastructure"
     },
     {
       id: 3,
-      src: "/images/pmc3.jpg",
+      src: "/images/pmc15.jpeg",
       alt: "Digital Technology"
     },
     {
       id: 4,
-      src: "/images/pmc4.jpg",
+      src: "/images/pmc12.jpeg",
       alt: "Modern Construction"
     }
   ];
