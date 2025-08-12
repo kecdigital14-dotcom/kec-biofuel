@@ -3,17 +3,14 @@
 import React from 'react';
 import Navbar from '../app/Components/Navbar';
 import HeroBanner from '../app/Components/HeroBanner';
-import About1stsection from '../app/Components/About1stsection';
+import CbgSection from '../app/Components/CbgSection';
 import About2ndsection from '../app/Components/About2ndsection';
 import Footer from '../app/Components/Footer';
 import About3rdsection from '../app/Components/About3rdsection';
+import BlogsPage from '../app/Components/BlogsPage';
 import AboutUsCEO from '@/app/Components/AboutUsCEO';
-import OurBackground from '@/app/Components/OurBackground';
-import PMCServices from '@/app/Components/PMCServices';
-import Technologies from '@/app/Components/Technologies';
-import TurkeySolutions from '@/app/Components/TurkeySolutions';
 
-const About = () => {
+const CbgScreen = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       <Navbar />
@@ -22,7 +19,7 @@ const About = () => {
 
           {/* Title */}
           <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight leading-tight text-white/80">
-            About <span className="text-green-600">Us</span> <span className="text-cyan-400"></span>
+            Our <span className="text-green-600">CEO</span> <span className="text-cyan-400"></span>
           </h1>
 
           {/* Decorative Line */}
@@ -40,22 +37,12 @@ const About = () => {
 
         </div>
       </HeroBanner>
-      <OurBackground/>
 
-      {/* About Content Section */}
-      <About1stsection />
-
-      {/* Values Section */}
-      <About2ndsection />
-      <PMCServices/>
-      <Technologies/>
-
-      <About3rdsection />
-      <TurkeySolutions/>
-
+    
+<AboutUsCEO/>
       <Footer />
     </div>
   );
 };
 
-export default About;
+export default CbgScreen;
