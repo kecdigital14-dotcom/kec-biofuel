@@ -13,101 +13,115 @@ import {
   Heart,
   ChevronRight,
   Star,
-  Building
+  Building,
+  Leaf,
+  Zap
 } from 'lucide-react';
 
 const AboutUsCEO = () => {
   const [activeTab, setActiveTab] = useState('journey');
 
-  // Sample data - Replace with actual data from Jitender Narayan's LinkedIn
+  // Updated data based on Jitendra Narayan's actual LinkedIn profile
   const ceoData = {
-    name: "Jitender Narayan",
-    title: "Founder & CEO",
-    company: "KEC Industries",
-    location: "Delhi, India",
-    experience: "15+ Years",
-    bio: "Visionary leader with over 15 years of experience in driving business transformation and innovation. Passionate about building sustainable solutions that create lasting impact in the industry.",
+    name: "Jitendra Narayan",
+    title: "Business Coach & Specialist at Bio-CNG, LLC | Decarbonisation, Energy, Agriculture, BFSI Expert",
+    company: "Kec Agritech",
+    location: "West Delhi, Delhi, India",
+    experience: "25+ Years",
+    bio: "Business Coach & Specialist with over a decade of leadership in business coaching, specifically within the energy and agriculture sectors. At Kec Agritech, my focus is on revolutionizing biofuel production through innovative technologies while managing a dedicated team. My mission is to empower businesses to grow sustainably, contributing to the global energy transition.",
     profileImage: "/images/ceo.jpg", // Replace with actual image
     
     achievements: [
-      { icon: TrendingUp, label: "Revenue Growth", value: "300%" },
-      { icon: Users, label: "Team Members", value: "150+" },
-      { icon: Globe, label: "Global Clients", value: "50+" },
-      { icon: Award, label: "Industry Awards", value: "12" }
+      { icon: Leaf, label: "Biofuel Innovation", value: "CTS Tech" },
+      { icon: Users, label: "LinkedIn Network", value: "500+" },
+      { icon: Globe, label: "Industry Focus", value: "Energy" },
+      { icon: Award, label: "Experience", value: "25+ Yrs" }
     ],
     
     journey: [
       {
-        year: "2024",
-        title: "Expansion & Innovation",
-        company: "CBG Industries",
-        description: "Leading digital transformation initiatives and expanding into new international markets.",
-        icon: Globe
-      },
-      {
-        year: "2020",
-        title: "Founder & CEO",
-        company: "CBG Industries",
-        description: "Founded CBG Industries with a vision to revolutionize the industry through innovative solutions and sustainable practices.",
+        year: "Apr 2022 - Present",
+        title: "Chief Executive Officer",
+        company: "Kec Agritech",
+        description: "Leading biofuel production revolution through innovative CTS technology. Managing decarbonisation initiatives using Bio-CNG, Ethanol, Hydrogen Ammonia, E-fuels, and Biofuels. Creating cost-effective ethanol production from cellulose plants and carbon-friendly processes.",
         icon: Building
       },
       {
-        year: "2018",
-        title: "Senior Director",
-        company: "Tech Solutions Ltd",
-        description: "Spearheaded strategic initiatives that resulted in 200% revenue growth and market expansion.",
-        icon: TrendingUp
+        year: "Jan 2014 - Present",
+        title: "Business Coach & Specialist",
+        company: "Bio-CNG LLC (Energy, Agriculture & BFSI)",
+        description: "Helping businesses grow in energy, agriculture and BFSI sectors. Full-time business coaching practice focused on sustainable growth and transformational visions.",
+        icon: Users
       },
       {
-        year: "2015",
-        title: "Business Development Manager",
-        company: "Innovation Corp",
-        description: "Built strategic partnerships and developed new market opportunities in emerging sectors.",
+        year: "Dec 2013 - Sep 2019",
+        title: "Co-Chief Executive Officer",
+        company: "Renewable Energy Group Inc.",
+        description: "Led business coaching practice for Small Business Owners. Specialized in Energy Service Companies, helping regional business owners grow through wealth and freedom strategies.",
+        icon: Zap
+      },
+      {
+        year: "Feb 2011 - Dec 2013",
+        title: "Business Management Consultant",
+        company: "Solar Group",
+        description: "Independent director in solar company, helping with business acquisition and distribution. Focused on solar energy solutions and sustainable technology implementation.",
+        icon: Target
+      },
+      {
+        year: "May 2008 - Apr 2010",
+        title: "Regional Manager- Delhi NCR",
+        company: "A Reliance Capital Co. -ILL",
+        description: "Managed franchisee business in Delhi NCR region. Responsible for channel efficiency, team management, and successful implementation of insurance products.",
         icon: Briefcase
       },
       {
-        year: "2010",
-        title: "Project Manager",
-        company: "StartUp Ventures",
-        description: "Led cross-functional teams to deliver complex projects and establish operational excellence.",
-        icon: Target
+        year: "Apr 2007 - May 2008",
+        title: "Business Development Manager",
+        company: "BAG Group - Motilal Oswal Securities Ltd",
+        description: "Acquisition and development of new franchises/business associates. Territory management and revenue performance optimization across market segments.",
+        icon: TrendingUp
       }
     ],
     
     values: [
       {
-        icon: Lightbulb,
-        title: "Innovation",
-        description: "Constantly pushing boundaries to find creative solutions that drive progress and efficiency."
+        icon: Leaf,
+        title: "Sustainable Innovation",
+        description: "Championing decarbonisation through advanced biofuel technologies and renewable energy solutions that create environmental impact."
       },
       {
         icon: Users,
-        title: "Team Excellence",
-        description: "Building high-performing teams and fostering a culture of collaboration and growth."
+        title: "Business Empowerment",
+        description: "Coaching and empowering businesses to achieve sustainable growth, particularly in energy and agriculture sectors."
       },
       {
-        icon: Heart,
-        title: "Customer Focus",
-        description: "Putting customers at the center of everything we do, ensuring exceptional value delivery."
+        icon: Zap,
+        title: "Energy Transition",
+        description: "Leading the transformation towards renewable energy solutions and innovative bio-fuel production technologies."
       },
       {
-        icon: Globe,
-        title: "Global Impact",
-        description: "Creating solutions that make a positive difference on a global scale and drive sustainability."
+        icon: Target,
+        title: "Strategic Excellence",
+        description: "Delivering strategic development and transformational visions that contribute to global energy transition goals."
       }
     ],
     
     education: [
       {
-        degree: "MBA in Business Administration",
-        institution: "Indian Institute of Management",
-        year: "2008"
+        degree: "MBA/MS Marketing, Marketing",
+        institution: "IBS Hyderabad",
+        year: "2005 - 2007"
       },
       {
-        degree: "B.Tech in Engineering",
-        institution: "Delhi Technological University",
-        year: "2006"
+        degree: "B Tech (Mechanical), Mechanical Engineering",
+        institution: "Kurukshetra University",
+        year: "2001 - 2005"
       }
+    ],
+    
+    certifications: [
+      "MSME, SSI, NSIC, MNRE, ISO 9001:2008, 14001:2004",
+      "United Latino Students Association"
     ]
   };
 
@@ -121,7 +135,7 @@ const AboutUsCEO = () => {
             Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-green-600">Visionary Leader</span>
           </h2>
           <p className="text-lg font-sans text-gray-600 max-w-3xl mx-auto">
-            Driving innovation and excellence with passion, dedication, and a commitment to transforming industries
+            Driving sustainable innovation and business excellence with expertise in biofuel production and renewable energy solutions
           </p>
         </div>
 
@@ -136,9 +150,9 @@ const AboutUsCEO = () => {
               }}></div>
             </div>
             
-            <div className="relative grid md:grid-cols-3 gap- items-center">
+            <div className="relative grid md:grid-cols-3 gap-8 items-center">
               {/* Profile Image */}
-              <div className="flex justify-center ">
+              <div className="flex justify-center">
                 <div className="relative">
                   <img
                     src={ceoData.profileImage}
@@ -146,7 +160,7 @@ const AboutUsCEO = () => {
                     className="w-48 h-64 rounded-2xl object-cover shadow-2xl border-4 border-white/20"
                   />
                   <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg">
-                    <Award className="w-6 h-6 text-yellow-500" />
+                    <Leaf className="w-6 h-6 text-green-500" />
                   </div>
                 </div>
               </div>
@@ -154,7 +168,8 @@ const AboutUsCEO = () => {
               {/* Profile Info */}
               <div className="md:col-span-2 text-center md:text-left text-white">
                 <h3 className="text-3xl md:text-4xl font-bold mb-2">{ceoData.name}</h3>
-                <p className="text-xl text-teal-100 mb-4">{ceoData.title}, {ceoData.company}</p>
+                <p className="text-xl text-teal-100 mb-4">CEO, {ceoData.company}</p>
+                <p className="text-sm text-teal-200 mb-4">{ceoData.title}</p>
                 <p className="text-teal-100 mb-6 leading-relaxed max-w-2xl font-sans">{ceoData.bio}</p>
                 
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
@@ -190,7 +205,7 @@ const AboutUsCEO = () => {
         {/* Navigation Tabs */}
         <div className="flex justify-center mb-12 font-sans">
           <div className="bg-white rounded-2xl p-2 shadow-lg">
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap justify-center">
               {[
                 { id: 'journey', label: 'Professional Journey', icon: TrendingUp },
                 { id: 'values', label: 'Leadership Values', icon: Heart },
@@ -234,9 +249,9 @@ const AboutUsCEO = () => {
                     <div className="flex-1">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                         <h4 className="text-xl font-bold text-gray-900">{item.title}</h4>
-                        <span className="text-teal-600 font-semibold text-lg">{item.year}</span>
+                        <span className="text-teal-600 font-semibold text-sm">{item.year}</span>
                       </div>
-                      <p className="text-green-600 font-medium mb-3">{item.company}</p>
+                      <p className="text-green-600 font-medium mb-3 font-sans">{item.company}</p>
                       <p className="text-gray-500 leading-relaxed font-sans">{item.description}</p>
                     </div>
                   </div>
@@ -256,7 +271,7 @@ const AboutUsCEO = () => {
                       <value.icon className="w-7 h-7 text-white" />
                     </div>
                     <h4 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h4>
-                    <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                    <p className="text-gray-600 leading-relaxed font-sans text-[15.2px]">{value.description}</p>
                   </div>
                 ))}
               </div>
@@ -276,12 +291,13 @@ const AboutUsCEO = () => {
                       </div>
                       <div className="flex-1">
                         <h4 className="text-xl font-bold text-gray-900 mb-2">{edu.degree}</h4>
-                        <p className="text-green-600 font-medium mb-1">{edu.institution}</p>
-                        <p className="text-gray-600">{edu.year}</p>
+                        <p className="text-green-600 font-medium mb-1 font-sans">{edu.institution}</p>
+                        <p className="text-gray-600 font-sans">{edu.year}</p>
                       </div>
                     </div>
                   </div>
                 ))}
+               
               </div>
             </div>
           )}
