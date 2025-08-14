@@ -9,6 +9,7 @@ import Footer from '../app/Components/Footer';
 // import { galleryData } from '../app/data/GalleryContent'
 import GalleryScrollContent from '../app/Components/GalleryScrollContent';
 import { galleryData, achievementsData, projectsData } from '../app/data/galleryData';
+import GalleryGlimpse from '@/app/Components/Galleryglimpse';
 
 
 const Home = () => {
@@ -59,6 +60,8 @@ const Home = () => {
         sectionSubtitle="TRAININGS"
         sectionIcon="🚀"
       />
+
+      <GalleryGlimpse/>
 
       <Footer />
     </div>

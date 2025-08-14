@@ -9,6 +9,7 @@ import RandDSectionOne from '@/app/Components/RandDSectionOne ';
 import RandDSectionTwo from '@/app/Components/RandDSectionTwo';
 import RandDSectionThree from '@/app/Components/RandDSectionThree';
 import RandDSectionFour from '@/app/Components/RandDSectionFour';
+import RandDGlimpse from '@/app/Components/RandDGlipse';
 
 const RandDScreen = () => {
     return (
@@ -41,6 +42,7 @@ const RandDScreen = () => {
             <RandDSectionTwo />
             <RandDSectionThree />
             <RandDSectionFour />
+            <RandDGlimpse/>
             <Footer />
         </div>
     )

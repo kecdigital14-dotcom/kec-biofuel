@@ -8,6 +8,7 @@ import About2ndsection from '../app/Components/About2ndsection';
 import Footer from '../app/Components/Footer';
 import About3rdsection from '../app/Components/About3rdsection';
 import BlogsPage from '../app/Components/BlogsPage';
+import CbgGlimpse from '@/app/Components/CbgGlimpse';
 
 const CbgScreen = () => {
   return (
@@ -38,7 +39,7 @@ const CbgScreen = () => {
       </HeroBanner>
 
       <CbgSection />
-
+<CbgGlimpse/>
       <Footer />
     </div>
   );

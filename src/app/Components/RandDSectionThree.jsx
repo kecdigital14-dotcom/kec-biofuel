@@ -14,7 +14,7 @@ const RandDSectionThree = () => {
       avgTemp: "38.1°C (Mesophilic Range)",
       totalYield: "3.2 M³",
       efficiency: "1 M³ from 1.56 KG Napier Powder",
-      color: "bg-gradient-to-br from-green-400 to-green-600",
+      color: "bg-gradient-to-br from-green-800 via-green-300 to-green-50",
       hoverColor: "hover:from-green-500 hover:to-green-700",
       shadowColor: "shadow-green-200",
       icon: "🌱"
@@ -128,10 +128,10 @@ const RandDSectionThree = () => {
               <button
                 key={key}
                 onClick={() => setSelectedFeedstock(key)}
-                className={`group relative overflow-hidden rounded-xl p-6 font-medium transition-all duration-300 transform ${
+                className={`group relative overflow-hidden  rounded-xl p-6 font-medium transition-all duration-300 transform ${
                   selectedFeedstock === key
                     ? `${data.color} text-white shadow-2xl ${data.shadowColor} scale-105`
-                    : `bg-white text-gray-700 hover:bg-gray-50 hover:shadow-lg hover:scale-102 border border-gray-200 ${data.hoverColor}`
+                    : `bg-white text-gray-700 hover:bg-gray-50  hover:shadow-lg hover:scale-102 border border-gray-200 ${data.hoverColor}`
                 }`}
               >
                 <div className="flex flex-col items-center space-y-3">
