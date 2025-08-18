@@ -123,7 +123,7 @@ const PmcSectionTwo = () => {
             <div className="relative bg-white/40 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-lg">
               <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-green-400 to-emerald-500 rounded-full"></div>
               
-              <p className="text-gray-700 text-lg leading-relaxed font-medium">
+              <p className="text-gray-700 text-lg leading-relaxed font-medium text-justify w-[95%]">
                 Biofuels and <span className="text-green-600 font-semibold">Compressed Biogas (CBG)</span> are renewable energy sources derived from 
                 organic waste, crop residues, and other biomass. These fuels not only reduce dependence on fossil fuels but also 
                 help in <span className="text-green-600 font-semibold">managing agricultural waste</span>, cutting <span className="text-green-600 font-semibold">greenhouse gas emissions</span>, 

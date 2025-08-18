@@ -271,7 +271,7 @@ const AboutUsCEO = () => {
                       <value.icon className="w-7 h-7 text-white" />
                     </div>
                     <h4 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h4>
-                    <p className="text-gray-600 leading-relaxed font-sans text-[15.2px]">{value.description}</p>
+                    <p className="text-gray-600 leading-relaxed font-sans text-[15.2px] text-justify w-[90%]">{value.description}</p>
                   </div>
                 ))}
               </div>

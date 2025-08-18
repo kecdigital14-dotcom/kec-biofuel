@@ -84,7 +84,7 @@ const BlogSection = () => {
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-500 mb-4 line-clamp-3 text-justify font-sans text-[15px]">
                   {post.excerpt}
                 </p>
 

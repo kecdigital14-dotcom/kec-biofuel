@@ -94,7 +94,7 @@ const CbgSection = () => {
                   <h3 className="text-xl font-bold text-gray-800">Platform Overview</h3>
                 </div>
                 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed text-justify font-sans">
                   A platform for <span className="text-green-600 font-bold">CBG unit entrepreneur</span>. 
                   It's unique business model for Cluster of CBG unit, is a purified form of biogas. 
                   It can be produced from waste including <span className="text-emerald-600 font-semibold">municipal solid waste, sludge 
@@ -113,7 +113,7 @@ const CbgSection = () => {
                   className="group flex items-center space-x-3 bg-white/50 backdrop-blur-sm border border-green-200/50 rounded-xl p-4 hover:bg-white/80 hover:border-green-300 transition-all duration-300 hover:translate-x-2"
                 >
                   <div className="w-2 h-2 bg-green-500 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                  <span className="text-gray-700 font-medium">{benefit}</span>
+                  <span className="text-gray-700 font-medium font-sans">{benefit}</span>
                 </div>
               ))}
             </div>

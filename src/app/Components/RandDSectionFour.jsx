@@ -113,7 +113,7 @@ const RandDSectionFour = () => {
                 {/* Always show details */}
                 <ul className="space-y-2">
                   {process.details.map((detail, i) => (
-                    <li key={i} className="flex items-start text-xs text-gray-500 font-sans">
+                    <li key={i} className="flex items-start text-sm text-gray-500 font-sans">
                       <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
                       {detail}
                     </li>

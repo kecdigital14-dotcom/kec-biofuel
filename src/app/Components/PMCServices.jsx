@@ -63,7 +63,7 @@ const PMCServices = () => {
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-500 text-[15px] leading-relaxed font-sans">
+              <p className="text-gray-500 text-[15px] leading-relaxed font-sans text-justify">
                 {service.description}
               </p>
             </div>

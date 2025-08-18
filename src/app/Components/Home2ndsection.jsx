@@ -43,7 +43,7 @@ const Home2ndsection = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
                   Economic Impact
                 </h3>
-                <p className="text-gray-600 text-sm text-base leading-relaxed font-sans">
+                <p className="text-gray-600 text-sm text-base leading-relaxed font-sans text-justify">
                   Core expertise in PMC, EPC, and renewable energy projects in Bio-CNG, Bio-Diesel, and Ethanol. Signed MoU with Uttarakhand Government for ₹500 Cr under PPP in FY 2023–24. Over 34+ EPC contracts across India.
                 </p>
               </div>
@@ -58,7 +58,7 @@ const Home2ndsection = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
                   Green Expansion
                 </h3>
-                <p className="text-gray-600 text-sm text-base leading-relaxed font-sans ">
+                <p className="text-gray-600 text-sm text-base leading-relaxed font-sans text-justify">
                   Establishing CBG Parks in UP, Uttarakhand, Assam, and planning expansion into MP, Gujarat, and North East. Aims to build 100+ CBG plants by FY 2025–26 under a unified national platform.
                 </p>
               </div>

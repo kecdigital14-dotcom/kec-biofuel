@@ -90,7 +90,7 @@ const Home3rdsection = () => {
                           }`}>
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 text-sm leading-relaxed text-justify">
                           {feature.description}
                         </p>
                       </div>
@@ -169,7 +169,7 @@ const Home3rdsection = () => {
                           }`}>
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed font-sans">
+                        <p className="text-gray-600 text-sm leading-relaxed font-sans text-justify">
                           {feature.description}
                         </p>
                       </div>

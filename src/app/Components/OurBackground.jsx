@@ -20,7 +20,7 @@ const OurBackground = () => {
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                 Leading PMC Company in India
               </h3>
-              <p className="text-gray-600 leading-relaxed font-sans text-sm">
+              <p className="text-gray-600 leading-relaxed font-sans text-sm text-justify">
                 KEC is one of India's leading PMC company specializing in Project Assessment, 
                 project development, Project Execution, Project Management, Commercialization 
                 & market establishment for final products.
@@ -31,7 +31,7 @@ const OurBackground = () => {
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                 Multi-Million Dollar Projects
               </h3>
-              <p className="text-gray-600 leading-relaxed font-sans text-sm">
+              <p className="text-gray-600 leading-relaxed font-sans text-sm text-justify">
                 Managing projects worth more than million dollars across India. We provide 
                 End-to-End solutions on various business models such as Turnkey, BOOT, 
                 and RESCO in leading industries.

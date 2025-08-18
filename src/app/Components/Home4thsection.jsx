@@ -48,7 +48,7 @@ const Home4thsection = () => {
             </div>
 
             {/* Description */}
-            <div className="space-y-4 text-gray-600 font-sans">
+            <div className="space-y-4 text-gray-600 font-sans text-justify">
               <p>
                 From feedstock aggregation to last‑mile delivery, KEC Bio‑Fuel
                 provides turnkey PMC & EPC expertise for Bio‑CNG, Bio‑Diesel
@@ -97,7 +97,7 @@ const Home4thsection = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {cat.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-sans">
+                    <p className="text-gray-600 text-sm leading-relaxed font-sans text-justify">
                       {cat.description}
                     </p>
                   </div>

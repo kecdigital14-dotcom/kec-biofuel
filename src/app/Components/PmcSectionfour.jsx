@@ -180,7 +180,7 @@ const PmcSectionFour = () => {
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-2xl">
                 <div className="absolute -left-1 top-8 bottom-8 w-1 bg-gradient-to-b from-green-400 via-emerald-400 to-green-500 rounded-full"></div>
                 
-                <p className="text-gray-300 text-lg leading-relaxed pl-6">
+                <p className="text-gray-300 text-lg leading-relaxed pl-6 text-justify">
                   We specialise in improving, revamping, and upgrading existing biogas plants, 
                   <span className="text-green-400 font-bold"> Effluent Treatment Plants (ETP)</span>, and 
                   <span className="text-blue-400 font-bold"> Sewage Treatment Plants (STP)</span>. 

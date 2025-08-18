@@ -89,7 +89,7 @@ const RandDSectionOne = () => {
               <Beaker className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Advanced Research</h3>
-            <p className="text-gray-500 font-sans">
+            <p className="text-gray-500 font-sans text-justify">
               Modern bioreactors, gas upgrading systems, and analytical labs for thorough 
               evaluation of gas quality and process efficiencies.
             </p>
@@ -100,7 +100,7 @@ const RandDSectionOne = () => {
               <Leaf className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Circular Economy</h3>
-            <p className="text-gray-500 font-sans">
+            <p className="text-gray-500 font-sans text-justify">
               Converting organic waste into renewable energy and biofertilizers, 
               promoting waste-to-wealth conversion technologies.
             </p>
@@ -111,7 +111,7 @@ const RandDSectionOne = () => {
               <Zap className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Energy Self-Reliance</h3>
-            <p className="text-gray-500 font-sans">
+            <p className="text-gray-500 font-sans text-justify">
               Establishing scalable models for clean energy generation and contributing 
               to India's mission of sustainable energy and waste management.
             </p>

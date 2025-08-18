@@ -77,7 +77,7 @@ export default function ProjectSection() {
                 Revolution
               </h1>
               
-              <p className="text-sm font-bold text-gray-300 leading-relaxed max-w-2xl">
+              <p className="text-sm font-bold text-gray-300 leading-relaxed max-w-2xl text-justify">
                 Converting organic waste into clean, renewable energy with 85% efficiency. 
                 A breakthrough in sustainable fuel production that reduces carbon footprint by 75%.
               </p>
@@ -234,7 +234,7 @@ export default function ProjectSection() {
               
               <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold mb-6 text-purple-400">Environmental Impact</h3>
-                <p className="text-gray-300 leading-relaxed font-sans">
+                <p className="text-gray-300 leading-relaxed font-sans text-justify">
                   This bio fuel project successfully demonstrates how organic waste can be transformed into clean energy, 
                   contributing to a circular economy and reducing environmental pollution while providing sustainable fuel alternatives.
                 </p>

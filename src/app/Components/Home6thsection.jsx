@@ -17,12 +17,12 @@ const Home6thsection = () => {
           </span>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4 ">
             Advancing Self-Sustainable Global Goals Through Biofuels
           </h2>
 
           {/* Description */}
-          <p className="text-gray-700 mb-6 font-sans">
+          <p className="text-gray-700 mb-6 font-sans text-justify">
             Biofuels play a crucial role in achieving a more self-sustainable and eco-friendly future.
             Derived from organic waste and renewable sources, they reduce our dependence on fossil fuels
             and help cut down gas emissions.

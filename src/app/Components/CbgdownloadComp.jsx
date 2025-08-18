@@ -89,7 +89,7 @@ const CbgDownloadComp = ({
 
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">{moreInfoTitle}</h3>
-                <p className="text-gray-500 mb-4 font-sans">{moreInfoDesc}</p>
+                <p className="text-gray-500 mb-4 font-sans text-justify">{moreInfoDesc}</p>
                 <a href={moreInfoButtonLink}>
                   <button className="bg-white text-green-600 border-2 border-purple-200 hover:bg-purple-50 px-4 py-2 rounded-lg font-medium transition-colors">
                     {moreInfoButtonText}

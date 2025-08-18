@@ -77,7 +77,7 @@ const Faq = () => {
               </button>
 
               {openIndex === index && (
-                <div className="px-6 pb-4 text-gray-600 text-sm">
+                <div className="px-6 pb-4 text-gray-600 text-sm text-justify">
                   {item.answer}
                 </div>
               )}

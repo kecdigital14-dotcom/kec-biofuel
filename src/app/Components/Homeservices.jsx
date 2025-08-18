@@ -113,7 +113,7 @@ const Homeservices = () => {
               <div>
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-white font-semibold text-lg mb-2">{service.title}</h3>
-                <p className="text-gray-400 text-sm mb-6">{service.description}</p>
+                <p className="text-gray-400 text-sm mb-6 text-justify">{service.description}</p>
               </div>
               <a
                 href={service.link}

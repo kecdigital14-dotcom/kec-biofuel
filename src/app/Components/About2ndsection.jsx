@@ -33,7 +33,7 @@ const About2ndsection = () => {
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="text-4xl mb-4 text-center">{value.icon}</div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">{value.title}</h3>
-                <p className="text-gray-600 text-center leading-relaxed font-sans font-base">{value.description}</p>
+                <p className="text-gray-600 text-center leading-relaxed font-sans font-base text-justify">{value.description}</p>
               </div>
             ))}
           </div>

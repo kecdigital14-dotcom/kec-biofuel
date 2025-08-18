@@ -156,7 +156,7 @@ const GalleryScrollContent = ({
                     </h4>
                   </div>
                   
-                  <p className="text-slate-600 leading-relaxed text-lg">
+                  <p className="text-slate-600 leading-relaxed text-lg text-justify">
                     {currentItem.description}
                   </p>
                   

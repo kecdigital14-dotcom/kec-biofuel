@@ -142,7 +142,7 @@ const RandDSectionTwo = () => {
                       {req.quantity}
                     </span>
                   </div>
-                  <p className="text-green-700">{req.purpose}</p>
+                  <p className="text-green-700 font-sans">{req.purpose}</p>
                 </div>
               ))}
             </div>

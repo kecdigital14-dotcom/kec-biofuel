@@ -40,7 +40,7 @@ const About1stsection = () => {
               <div className="w-16 h-1 bg-white bg-opacity-50 rounded-full mb-6"></div>
             </div>
             
-            <p className="leading-relaxed mb-6 text-green-50 font-sans font-semibold">
+            <p className="leading-relaxed mb-6 text-green-50 font-sans font-semibold text-justify">
               To be the leading catalyst in India's renewable energy transformation, creating sustainable urban environments that harmonize technological advancement with ecological responsibility.
             </p>
             

@@ -80,7 +80,7 @@ const PmcSectionOne = () => {
             {/* Description */}
             <div className="relative">
               <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600 rounded-full"></div>
-              <p className="text-gray-700 text-lg leading-relaxed pl-8">
+              <p className="text-gray-700 text-lg leading-relaxed pl-8 text-justify w-[96%]">
                 PMC is crucial to the construction sector. This provides a strong 
                 foundation for the expertise provided by independent companies 
                 or such individuals who gain the knowledge and experience 

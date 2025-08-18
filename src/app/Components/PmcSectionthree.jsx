@@ -87,7 +87,7 @@ const PmcSectionThree = () => {
               <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-2xl">
                 <div className="absolute -left-1 top-8 bottom-8 w-1 bg-gradient-to-b from-green-400 to-emerald-500 rounded-full"></div>
                 
-                <p className="text-gray-300 text-lg leading-relaxed pl-6">
+                <p className="text-gray-300 text-lg leading-relaxed pl-6 text-justify">
                   The operation and maintenance of projects play a crucial role in ensuring their 
                   <span className="text-green-400 font-semibold"> long-term success and functionality</span>. 
                   It involves the continuous monitoring, management, and upkeep of various aspects such as 
