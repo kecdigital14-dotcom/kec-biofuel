@@ -9,6 +9,7 @@ import Footer from '../app/Components/Footer';
 import About3rdsection from '../app/Components/About3rdsection';
 import BlogsPage from '../app/Components/BlogsPage';
 import CbgGlimpse from '@/app/Components/CbgGlimpse';
+import Cbgplantsize from '@/app/Components/Cbgplantsize';
 
 const CbgScreen = () => {
   return (
@@ -39,6 +40,7 @@ const CbgScreen = () => {
       </HeroBanner>
 
       <CbgSection />
+      <Cbgplantsize/>
 <CbgGlimpse/>
       <Footer />
     </div>

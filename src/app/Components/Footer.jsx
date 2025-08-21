@@ -52,14 +52,8 @@ const Footer = () => {
                 { name: "Purification Technology", path: "/technology" },
                 { name: "Compression Technology", path: "/technology" }
             ]
-        },
-        {
-            title: "Learning Modules",
-            icon: <BookOpen />,
-            items: [
-                { name: "Learn More", path: "/cbgdownload" }
-            ]
         }
+ 
     ];
 
     const processSections = [
@@ -75,7 +69,7 @@ const Footer = () => {
         },
         { title: "Complete Process at a Glance", items: [{ name: "Explore", path: "/about" }] },
         { title: "FAQs", items: [{ name: "Read FAQs", path: "/contact" }] },
-        { title: "Participation in KEC Scheme", items: [{ name: "Join Now", path: "/contact" }] }
+        // { title: "Participation in KEC Scheme", items: [{ name: "Join Now", path: "/contact" }] }
     ];
 
     const developmentItems = [
@@ -83,9 +77,7 @@ const Footer = () => {
         { name: "Fertilizer Control Order & Environmental Clearances", path: "/latestdevlopment" },
         { name: "Priority Sector Lending for CBG Projects", path: "/latestdevlopment" },
         { name: "Loan Facilitation by Banks", path: "/latestdevlopment" },
-        { name: "Commercial Agreement (Version 1 and 2)", path: "/latestdevlopment" },
-        { name: "Central Financial Assistance by MNRE", path: "/latestdevlopment" },
-        { name: "Commissioned Plants", path: "/latestdevlopment" }
+     
     ];
 
     return (

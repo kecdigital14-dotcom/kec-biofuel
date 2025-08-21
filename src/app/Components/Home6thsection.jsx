@@ -23,16 +23,14 @@ const Home6thsection = () => {
 
           {/* Description */}
           <p className="text-gray-700 mb-6 font-sans text-justify">
-            Biofuels play a crucial role in achieving a more self-sustainable and eco-friendly future.
-            Derived from organic waste and renewable sources, they reduce our dependence on fossil fuels
-            and help cut down gas emissions.
+            Biofuels, especially Bio-CBG, are a key enabler of a sustainable energy ecosystem. Produced from agricultural residue, organic waste, and renewable biomass, they significantly lower greenhouse gas emissions while reducing dependency on fossil fuels.
           </p>
 
           {/* Features */}
           <ul className="space-y-3 text-gray-700 mb-8 font-sans">
             <li className="flex items-start">
               <FiCheckCircle className="text-green-600 mt-1 mr-2 font-sans" />
-              Promotes clean energy and supports SDG goals like Climate Action and Affordable Energy.
+             Accelerates the transition to clean energy and supports UN SDGs like Affordable & Clean Energy and Climate Action.
             </li>
             <li className="flex items-start">
               <FiCheckCircle className="text-green-600 mt-1 mr-2 font-sans" />
@@ -76,9 +74,9 @@ const Home6thsection = () => {
           </div>
 
           {/* Bottom Right Image */}
-          <div className="w-72 h-42 rounded-lg overflow-hidden shadow-md absolute bottom-0 right-0 top-55 bg-gray-200 border-2 border-white">
+          <div className="w-72 h-56 rounded-lg overflow-hidden shadow-md absolute bottom-0 right-0 top-55 bg-gray-200 border-2 border-white">
             <Image
-              src="/images/biofuel3.jpg"
+              src="/images/homeglobal2nd.jpg"
               alt="Charging Car"
               fill
               className="object-cover"

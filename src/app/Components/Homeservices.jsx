@@ -74,26 +74,26 @@ const Homeservices = () => {
   };
 
   return (
-    <section className="bg-[#0d0d0d] text-white py-16 px-4 sm:px-6 md:px-8">
+    <section className="bg-gradient-to-br from-orange-100 via-yellow-50 to-green-100 text-white py-16 px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <p className="text-purple-400 text-sm font-semibold mb-2">BUILD WITH EASE</p>
-          <h2 className="text-3xl md:text-4xl font-bold">Powerful Features</h2>
+        <div className="text-center mb-2">
+          <p className="text-gray-800 text-sm font-semibold mb-2">BUILD WITH EASE</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-black">Powerful Features</h2>
         </div>
 
         {/* Scroll Buttons */}
         <div className="flex justify-end mb-4 gap-2">
           <button
             onClick={scrollLeft}
-            className="text-white border border-white px-3 py-1 rounded hover:bg-white hover:text-black transition"
+            className="text-gray-900 border border-black px-3 py-1 font-bold rounded hover:bg-white hover:text-black transition"
             aria-label="Scroll left"
           >
             &#8592;
           </button>
           <button
             onClick={scrollRight}
-            className="text-white border border-white px-3 py-1 rounded hover:bg-white hover:text-black transition"
+            className="text-gray-900 border border-black px-3 py-1 font-bold rounded hover:bg-white hover:text-black transition"
             aria-label="Scroll right"
           >
             &#8594;
@@ -108,16 +108,16 @@ const Homeservices = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="min-w-[250px] sm:min-w-[280px] lg:min-w-[300px] bg-[#161416] text-left rounded-xl p-6 flex flex-col justify-between shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="min-w-[250px] sm:min-w-[280px] lg:min-w-[300px] bg-white text-left text-black rounded-xl p-6 flex flex-col justify-between shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <div>
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-white font-semibold text-lg mb-2">{service.title}</h3>
-                <p className="text-gray-400 text-sm mb-6 text-justify">{service.description}</p>
+                <h3 className="font-semibold text-lg mb-2 text-gray-600">{service.title}</h3>
+                <p className="font-sans text-sm mb-6 text-justify text-gray-700">{service.description}</p>
               </div>
               <a
                 href={service.link}
-                className="inline-flex items-center text-purple-400 hover:underline text-sm font-medium"
+                className="inline-flex items-center text-gray-900 font-sans hover:underline text-sm font-medium"
               >
                 Learn More <FiArrowRight className="ml-1" />
               </a>

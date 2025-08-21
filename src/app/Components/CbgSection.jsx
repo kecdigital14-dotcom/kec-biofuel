@@ -47,7 +47,7 @@ const CbgSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-r from-green-200 via-yellow-50 to-green-200 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -174,7 +174,7 @@ const CbgSection = () => {
             </div>
 
             {/* Process Flow Section */}
-            <div className="bg-white/60 backdrop-blur-lg border border-white/50 rounded-3xl p-8 shadow-xl">
+            <div className="bg-gradient-to-br from-orange-200 via-yellow-50 to-green-200 backdrop-blur-lg border border-white/50 rounded-3xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">CBG Production Process</h3>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -229,7 +229,7 @@ const CbgSection = () => {
           <div className="group bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-lg border border-blue-200/50 rounded-3xl p-8 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
             <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🏭</div>
             <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-            <div className="text-gray-700 font-semibold">CBG Units Planned</div>
+            <div className="text-gray-700 font-semibold">Raw Material Cultivation</div>
             <div className="mt-4 w-full h-2 bg-gray-200 rounded-full overflow-hidden">
               <div className="h-full bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full group-hover:animate-pulse"></div>
             </div>

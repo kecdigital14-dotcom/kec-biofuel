@@ -74,8 +74,8 @@ const Home3rdsection = () => {
                   onMouseEnter={() => setActiveFeature(feature.id)}
                 >
                   <div className={`relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border transition-all duration-300 ${activeFeature === feature.id
-                      ? 'border-green-300 shadow-xl bg-white/90'
-                      : 'border-gray-100 hover:border-green-200'
+                    ? 'border-green-300 shadow-xl bg-white/90'
+                    : 'border-gray-100 hover:border-green-200'
                     }`}>
                     <div className="flex items-start space-x-4">
                       <div className={`relative w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg transform transition-transform duration-300 ${activeFeature === feature.id ? 'scale-110 rotate-3' : 'group-hover:scale-105'
@@ -153,8 +153,8 @@ const Home3rdsection = () => {
                   onMouseEnter={() => setActiveFeature(feature.id)}
                 >
                   <div className={`relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border transition-all duration-300 ${activeFeature === feature.id
-                      ? 'border-green-300 shadow-xl bg-white/90'
-                      : 'border-gray-100 hover:border-green-200'
+                    ? 'border-green-300 shadow-xl bg-white/90'
+                    : 'border-gray-100 hover:border-green-200'
                     }`}>
                     <div className="flex items-start space-x-4">
                       <div className={`relative w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg transform transition-transform duration-300 ${activeFeature === feature.id ? 'scale-110 rotate-3' : 'group-hover:scale-105'
@@ -185,19 +185,29 @@ const Home3rdsection = () => {
           </div>
         </div>
 
+        <div className="mt-8 bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-green-100">
+          <div className=" gap-8">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-600 mb-1">🚀 Technology</div>
+              <div className="text-[15px] text-gray-600 font-sans">Advanced fermentation, gasification, and purification systems ensure efficient conversion of biomass into high-quality Bio-CBG, Bio-Diesel, and Ethanol with optimized yield and lower operating costs.
+Continuous R&D integration drives innovation, efficiency, and scalability in sustainable energy production.</div>
+            </div>
+
+          </div>
+        </div>
         {/* Bottom Stats Section */}
-        <div className="mt-20 bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-green-100">
+        <div className="mt-12 bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-green-100">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-1">34+</div>
+              <div className="text-3xl font-bold text-green-600 mb-1">100+</div>
               <div className="text-sm text-gray-600 font-sans">EPC Contracts</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-emerald-600 mb-1">100+</div>
+              <div className="text-3xl font-bold text-emerald-600 mb-1">10000+</div>
               <div className="text-sm text-gray-600 font-sans">CBG Plants Target</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-teal-600 mb-1">6+</div>
+              <div className="text-3xl font-bold text-teal-600 mb-1">30+</div>
               <div className="text-sm text-gray-600 font-sans">States Coverage</div>
             </div>
             <div className="text-center">

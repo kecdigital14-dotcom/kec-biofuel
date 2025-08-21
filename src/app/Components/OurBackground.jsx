@@ -18,10 +18,10 @@ const OurBackground = () => {
           <div className="space-y-6">
             <div className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-green-600">
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                Leading PMC Company in India
+                Leading PMC & EPC Company in India
               </h3>
               <p className="text-gray-600 leading-relaxed font-sans text-sm text-justify">
-                KEC is one of India's leading PMC company specializing in Project Assessment, 
+                KEC is one of India's leading PMC & EPC company specializing in Project Assessment, 
                 project development, Project Execution, Project Management, Commercialization 
                 & market establishment for final products.
               </p>
@@ -81,15 +81,15 @@ const OurBackground = () => {
             <div className="text-gray-500 font-sans ">Founded</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">34+</div>
+            <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
             <div className="text-gray-500 font-sans">EPC Contracts</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">100+</div>
+            <div className="text-3xl font-bold text-purple-600 mb-2">10000+</div>
             <div className="text-gray-500 font-sans">Planned CBG Plants</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-orange-600 mb-2">₹500Cr</div>
+            <div className="text-3xl font-bold text-orange-600 mb-2">500Cr</div>
             <div className="text-gray-500 font-sans">MOU Value</div>
           </div>
         </div>

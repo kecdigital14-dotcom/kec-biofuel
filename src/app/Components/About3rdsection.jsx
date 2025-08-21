@@ -58,7 +58,7 @@ const About3rdsection = () => {
                 </svg>
               ),
               count: '500+',
-              label: 'Projects Completed',
+              label: 'Projects Comissioned',
               note: 'Across 25+ countries worldwide',
               barColor: 'from-green-400 to-green-600',
               width: '85%',

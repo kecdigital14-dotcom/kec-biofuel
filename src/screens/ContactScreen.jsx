@@ -6,6 +6,7 @@ import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
 import Footer from '../app/Components/Footer';
 import ContactSection from '../app/Components/ContactSection';
+import Faq from '@/app/Components/Faq';
 
 const ContactScreen = () => {
   return (
@@ -35,6 +36,7 @@ const ContactScreen = () => {
         </div>
       </HeroBanner>
       <ContactSection />
+       <Faq />
       <Footer />
     </div>
   )

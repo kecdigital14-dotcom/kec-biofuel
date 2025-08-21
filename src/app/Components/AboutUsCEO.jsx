@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { 
-  Award, 
-  Users, 
-  TrendingUp, 
-  Globe, 
-  Calendar, 
-  MapPin, 
-  Briefcase, 
+import {
+  Award,
+  Users,
+  TrendingUp,
+  Globe,
+  Calendar,
+  MapPin,
+  Briefcase,
   GraduationCap,
   Target,
   Lightbulb,
@@ -30,14 +30,14 @@ const AboutUsCEO = () => {
     experience: "25+ Years",
     bio: "Business Coach & Specialist with over a decade of leadership in business coaching, specifically within the energy and agriculture sectors. At Kec Agritech, my focus is on revolutionizing biofuel production through innovative technologies while managing a dedicated team. My mission is to empower businesses to grow sustainably, contributing to the global energy transition.",
     profileImage: "/images/ceo.jpg", // Replace with actual image
-    
+
     achievements: [
       { icon: Leaf, label: "Biofuel Innovation", value: "CTS Tech" },
       { icon: Users, label: "LinkedIn Network", value: "500+" },
       { icon: Globe, label: "Industry Focus", value: "Energy" },
       { icon: Award, label: "Experience", value: "25+ Yrs" }
     ],
-    
+
     journey: [
       {
         year: "Apr 2022 - Present",
@@ -60,29 +60,17 @@ const AboutUsCEO = () => {
         description: "Led business coaching practice for Small Business Owners. Specialized in Energy Service Companies, helping regional business owners grow through wealth and freedom strategies.",
         icon: Zap
       },
+
       {
-        year: "Feb 2011 - Dec 2013",
-        title: "Business Management Consultant",
-        company: "Solar Group",
-        description: "Independent director in solar company, helping with business acquisition and distribution. Focused on solar energy solutions and sustainable technology implementation.",
-        icon: Target
-      },
-      {
-        year: "May 2008 - Apr 2010",
+        year: "May 2008 - Apr 2013",
         title: "Regional Manager- Delhi NCR",
         company: "A Reliance Capital Co. -ILL",
         description: "Managed franchisee business in Delhi NCR region. Responsible for channel efficiency, team management, and successful implementation of insurance products.",
         icon: Briefcase
       },
-      {
-        year: "Apr 2007 - May 2008",
-        title: "Business Development Manager",
-        company: "BAG Group - Motilal Oswal Securities Ltd",
-        description: "Acquisition and development of new franchises/business associates. Territory management and revenue performance optimization across market segments.",
-        icon: TrendingUp
-      }
+
     ],
-    
+
     values: [
       {
         icon: Leaf,
@@ -103,32 +91,70 @@ const AboutUsCEO = () => {
         icon: Target,
         title: "Strategic Excellence",
         description: "Delivering strategic development and transformational visions that contribute to global energy transition goals."
-      }
-    ],
-    
-    education: [
-      {
-        degree: "MBA/MS Marketing, Marketing",
-        institution: "IBS Hyderabad",
-        year: "2005 - 2007"
       },
       {
-        degree: "B Tech (Mechanical), Mechanical Engineering",
-        institution: "Kurukshetra University",
-        year: "2001 - 2005"
+        icon: Award,
+        title: "CEO Experience on Bio-CBG",
+        description: "Harnessing years of experience in the bio-CBG sector, driving innovation and large-scale deployment of compressed bio-gas projects to support clean energy and sustainable mobility. Leading initiatives that convert agricultural residue and waste into clean fuel, reducing carbon emissions and fostering circular economy practices. Contributing to India’s bio-CBG roadmap by enabling scalable solutions that empower rural economies and strengthen national energy security."
       }
     ],
-    
-    certifications: [
-      "MSME, SSI, NSIC, MNRE, ISO 9001:2008, 14001:2004",
-      "United Latino Students Association"
+
+    exposures: [
+      {
+        id: 1,
+        title: "",
+        title: "Strategic Biogas Talks:- KEC AGRITECH Meets MP CM",
+        year: "2023",
+        image: "/images/jitu1.png",
+        category: "Innovation"
+      },
+      {
+        id: 2,
+        title: "New Paper Publication Indian Express",
+        // organization: "Energy Sector Leadership",
+        year: "2022",
+        image: "/images/jitu2.png",
+        category: "Leadership"
+      },
+      {
+        id: 3,
+        title: "Catalogue Launched by CM Sh. Vishnu Deo Sai",
+        // organization: "Green Tech Alliance",
+        year: "2023",
+        image: "/images/jitu3.png",
+        category: "Sustainability"
+      },
+      {
+        id: 4,
+        title: "MOU Signed With Tripura By KEC",
+        // organization: "Bio-CNG Development Council",
+        year: "2021",
+        image: "/images/jitu4.png",
+        category: "Pioneer"
+      },
+      {
+        id: 5,
+        title: "Strategic Biogas Talks:- KEC AGRITECH Meets MP CM",
+        // organization: "National Energy Board",
+        year: "2022",
+        image: "/images/jitu5.png",
+        category: "Excellence"
+      },
+      {
+        id: 6,
+        title: "New Paper Publication Indian Express",
+        // organization: "Business Development Institute",
+        year: "2023",
+        image: "/images/jitu6.png",
+        category: "Coaching"
+      }
     ]
   };
 
   return (
     <div className="bg-gradient-to-br from-slate-50 to-green-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -141,7 +167,7 @@ const AboutUsCEO = () => {
 
         {/* CEO Profile Card */}
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mb-16">
-          <div className="relative bg-gradient-to-r from-teal-600 via-cyan-600 to-emerald-700 p-8 md:p-12">
+          <div className="relative bg-gradient-to-r from-green-200 via-yellow-50 to-green-200 p-8 md:p-12">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0" style={{
@@ -149,7 +175,7 @@ const AboutUsCEO = () => {
                                  radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)`
               }}></div>
             </div>
-            
+
             <div className="relative grid md:grid-cols-3 gap-8 items-center">
               {/* Profile Image */}
               <div className="flex justify-center">
@@ -164,14 +190,14 @@ const AboutUsCEO = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Profile Info */}
-              <div className="md:col-span-2 text-center md:text-left text-white">
+              <div className="md:col-span-2 text-center md:text-left text-black">
                 <h3 className="text-3xl md:text-4xl font-bold mb-2">{ceoData.name}</h3>
-                <p className="text-xl text-teal-100 mb-4">CEO, {ceoData.company}</p>
-                <p className="text-sm text-teal-200 mb-4">{ceoData.title}</p>
-                <p className="text-teal-100 mb-6 leading-relaxed max-w-2xl font-sans">{ceoData.bio}</p>
-                
+                <p className="text-xl  mb-4">CEO, {ceoData.company}</p>
+                <p className="text-sm  mb-4 font-sans text-black">{ceoData.title}</p>
+                <p className=" mb-6 leading-relaxed max-w-2xl font-sans text-justify">{ceoData.bio}</p>
+
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
                   <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
                     <MapPin size={16} />
@@ -185,7 +211,7 @@ const AboutUsCEO = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Achievements */}
           <div className="p-8 bg-gray-50">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -209,16 +235,15 @@ const AboutUsCEO = () => {
               {[
                 { id: 'journey', label: 'Professional Journey', icon: TrendingUp },
                 { id: 'values', label: 'Leadership Values', icon: Heart },
-                { id: 'education', label: 'Education', icon: GraduationCap }
+                { id: 'exposure', label: 'Exposure & Achievements', icon: Award }
               ].map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                    activeTab === tab.id
-                      ? 'bg-gradient-to-r from-teal-600 to-green-600 text-white shadow-lg'
-                      : 'text-gray-600 hover:bg-gray-50'
-                  }`}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === tab.id
+                    ? 'bg-gradient-to-r from-teal-600 to-green-600 text-white shadow-lg'
+                    : 'text-gray-600 hover:bg-gray-50'
+                    }`}
                 >
                   <tab.icon size={18} />
                   <span className="hidden sm:block">{tab.label}</span>
@@ -230,7 +255,7 @@ const AboutUsCEO = () => {
 
         {/* Content Sections */}
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-          
+
           {/* Professional Journey */}
           {activeTab === 'journey' && (
             <div className="p-8 md:p-12">
@@ -264,41 +289,143 @@ const AboutUsCEO = () => {
           {activeTab === 'values' && (
             <div className="p-8 md:p-12">
               <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Leadership Philosophy</h3>
-              <div className="grid md:grid-cols-2 gap-8">
-                {ceoData.values.map((value, index) => (
-                  <div key={index} className="bg-gradient-to-br from-teal-50 to-green-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <div className="bg-gradient-to-br from-teal-500 to-green-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
-                      <value.icon className="w-7 h-7 text-white" />
+              <div className="space-y-8">
+                {/* First row - 2 columns */}
+                <div className="grid md:grid-cols-2 gap-8">
+                  {ceoData.values.slice(0, 2).map((value, index) => (
+                    <div key={index} className="bg-gradient-to-br from-teal-50 to-green-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                      <div className="bg-gradient-to-br from-teal-500 to-green-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                        <value.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h4>
+                      <p className="text-gray-600 leading-relaxed font-sans text-[15.2px] text-justify w-[90%]">{value.description}</p>
                     </div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h4>
-                    <p className="text-gray-600 leading-relaxed font-sans text-[15.2px] text-justify w-[90%]">{value.description}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
+
+                {/* Second row - 2 columns */}
+                <div className="grid md:grid-cols-2 gap-8">
+                  {ceoData.values.slice(2, 4).map((value, index) => (
+                    <div key={index + 2} className="bg-gradient-to-br from-teal-50 to-green-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                      <div className="bg-gradient-to-br from-teal-500 to-green-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                        <value.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h4>
+                      <p className="text-gray-600 leading-relaxed font-sans text-[15.2px] text-justify w-[90%]">{value.description}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Third row - 1 column (full width for 5th section) */}
+                <div className="grid grid-cols-1 max-w-6xl mx-auto">
+                  {ceoData.values.slice(4, 5).map((value, index) => (
+                    <div key={index + 4} className="bg-gradient-to-br from-teal-50 to-green-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 border-gradient-to-r from-orange-200 to-green-200">
+                      <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                        <div className="bg-gradient-to-br from-orange-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0">
+                          <value.icon className="w-8 h-8 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h4>
+                          <p className="text-gray-600 leading-relaxed font-sans text-base text-justify">{value.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
 
-          {/* Education */}
-          {activeTab === 'education' && (
+          {/* Exposure & Achievements */}
+          {activeTab === 'exposure' && (
             <div className="p-8 md:p-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Educational Background</h3>
-              <div className="space-y-6 max-w-3xl mx-auto">
-                {ceoData.education.map((edu, index) => (
-                  <div key={index} className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-gradient-to-br from-teal-500 to-green-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <GraduationCap className="w-6 h-6 text-white" />
+              <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">Exposure & Achievements</h3>
+              <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto font-sans">
+                Visual showcase of recognitions and achievements in leadership, innovation, and sustainable business practices
+              </p>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {ceoData.exposures.map((exposure) => (
+                  <div key={exposure.id} className="group bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    {/* Achievement Image */}
+                    <div className="relative h-96 overflow-hidden">
+                      <img
+                        src={exposure.image}
+                        alt={exposure.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          // Fallback to gradient background if image fails to load
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      {/* Fallback gradient background */}
+                      <div
+                        className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-500 to-green-500 flex items-center justify-center"
+                        style={{ display: 'none' }}
+                      >
+                        <div className="text-white text-center">
+                          <Award className="w-20 h-20 mx-auto mb-4 opacity-80" />
+                          <h4 className="text-lg font-bold mb-2">{exposure.title}</h4>
+                          {/* <span className="text-sm font-medium opacity-90">{exposure.category}</span> */}
+                        </div>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-xl font-bold text-gray-900 mb-2">{edu.degree}</h4>
-                        <p className="text-green-600 font-medium mb-1 font-sans">{edu.institution}</p>
-                        <p className="text-gray-600 font-sans">{edu.year}</p>
+
+                      {/* Category Badge */}
+
+
+                      {/* Year Badge */}
+                      <div className="absolute top-4 right-4">
+                        <span className="bg-gradient-to-r from-teal-600 to-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                          {exposure.year}
+                        </span>
+                      </div>
+
+                      {/* Title Overlay on Hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div className="p-6 text-white w-full">
+                          <h4 className="text-xl font-bold mb-2">{exposure.title}</h4>
+                          <p className="text-sm opacity-90">{exposure.organization}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 ))}
-               
               </div>
+
+              {/* Bottom Stats Section */}
+              {/* <div className="mt-16 bg-gradient-to-r from-teal-50 via-cyan-50 to-green-50 rounded-2xl p-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                  <div className="group">
+                    <div className="bg-gradient-to-br from-teal-500 to-green-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Award className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-2xl font-bold text-gray-900 mb-1">6+</div>
+                    <div className="text-sm text-gray-600 font-sans">Major Awards</div>
+                  </div>
+                  <div className="group">
+                    <div className="bg-gradient-to-br from-purple-500 to-pink-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Star className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-2xl font-bold text-gray-900 mb-1">25+</div>
+                    <div className="text-sm text-gray-600 font-sans">Years Excellence</div>
+                  </div>
+                  <div className="group">
+                    <div className="bg-gradient-to-br from-orange-500 to-red-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Target className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-2xl font-bold text-gray-900 mb-1">100%</div>
+                    <div className="text-sm text-gray-600 font-sans">Innovation Focus</div>
+                  </div>
+                  <div className="group">
+                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Lightbulb className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-2xl font-bold text-gray-900 mb-1">∞</div>
+                    <div className="text-sm text-gray-600 font-sans">Future Vision</div>
+                  </div>
+                </div>
+              </div> */}
             </div>
           )}
         </div>

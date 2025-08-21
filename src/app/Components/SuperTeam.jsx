@@ -92,8 +92,8 @@ const OrgChartComponent = () => {
             { id: 35, pid: 31, name: "Mr. S. Kumar", title: "Admin & Coordinator", img: "/images/skumar.png" },
 
             // CFO branch
-            { id: 40, pid: 4, name: "Mr. Pawan Kumar", title: "Finance & Accountant", img: "/images/pawan.png" },
-            { id: 41, pid: 4, name: "Mr. Taanishq Aggarwal", title: "Business Analyst", img: "/images/tanishq.png" },
+            // { id: 40, pid: 4, name: "Mr. Pawan Kumar", title: "Finance & Accountant", img: "/images/pawan.png" },
+            { id: 41, pid: 4, name: "Mr. Taanishq Aggarwal", title: "Business Intelligence Manager", img: "/images/tanishq.png" },
 
             // Technology branch
             { id: 50, pid: 5, name: "Mr. Sunandan Taneja", title: "VP Operation Head", img: "/images/sumandan.png" },
@@ -141,9 +141,9 @@ const OrgChartComponent = () => {
 
             // Agro-Inputs branch
             { id: 90, pid: 7, name: "Mr. Amarnath Singh", title: "Sr. VP. Lucknow", img: "/images/amarnath.png" },
-            { id: 91, pid: 7, name: "Lalit Mohan Pandey", title: "BD Manager", img: "/images/lalit.png" },
-            { id: 92, pid: 7, name: "Sandeep Kumar Pandey", title: "BD Manager", img: "/images/sandeep.png" },
-            { id: 93, pid: 7, name: "Shivam Verma", title: "BD Manager", img: "/images/kec_shivam.jpeg" },
+            // { id: 91, pid: 7, name: "Lalit Mohan Pandey", title: "BD Manager", img: "/images/lalit.png" },
+            // { id: 92, pid: 7, name: "Sandeep Kumar Pandey", title: "BD Manager", img: "/images/sandeep.png" },
+            // { id: 93, pid: 7, name: "Shivam Verma", title: "BD Manager", img: "/images/kec_shivam.jpeg" },
             { id: 94, pid: 7, name: "GOVERNMENT INSTITUTION PPP", tags: ["section"] },
 
             // Government Institution PPP

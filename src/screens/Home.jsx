@@ -9,12 +9,12 @@ import Home2ndsection from '../app/Components/Home2ndsection';
 import Home3rdsection from '../app/Components/Home3rdsection';
 import Home4thsection from '../app/Components/Home4thsection';
 import Home5thsection from '../app/Components/Home5thsection';
-import Faq from '../app/Components/Faq';
 import Homeservices from '../app/Components/Homeservices';
 import Home6thsection from '../app/Components/Home6thsection';
 import Footer from '../app/Components/Footer';
 import BlogSection from '../app/Components/BlogSectionhome';
 import HomeBannerSlider from '@/app/Components/HomeBannerSlider';
+import CbgGlimpse from '@/app/Components/CbgGlimpse';
 
 const Home = () => {
   return (
@@ -27,7 +27,7 @@ const Home = () => {
       <Homeservices />
       <Home6thsection />
       <Home5thsection />
-      <Faq />
+     <CbgGlimpse/>
       <BlogSection />
       <Footer />
     </div>

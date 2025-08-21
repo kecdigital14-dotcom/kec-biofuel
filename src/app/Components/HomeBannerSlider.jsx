@@ -6,7 +6,7 @@ const HomeBannerSlider = () => {
   const slides = [
     {
       id: 1,
-      image: "/images/biofuelbanner1.png",
+      image: "/images/homebannernew1.png",
       title: "Sustainable Future with Bio CBG",
       description: "Innovating green energy solutions for a cleaner tomorrow."
     },

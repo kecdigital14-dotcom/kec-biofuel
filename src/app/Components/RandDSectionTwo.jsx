@@ -89,7 +89,7 @@ const RandDSectionTwo = () => {
         {activeTab === 'equipment' && (
           <div className="grid md:grid-cols-2 gap-8">
             {equipment.map((item, index) => (
-              <div key={index} className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-8 hover:shadow-2xl hover:bg-white transition-all duration-300 border border-green-100 hover:border-green-200">
+              <div key={index} className="bg-white backdrop-blur-sm rounded-xl shadow-xl p-8 hover:shadow-2xl hover:bg-white transition-all duration-300 border border-green-100 hover:border-green-200">
                 <div className="flex items-start mb-6">
                   <div className="bg-gradient-to-br from-green-100 to-emerald-100 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
                     <Settings className="w-6 h-6 text-green-600" />
@@ -110,8 +110,8 @@ const RandDSectionTwo = () => {
                   <h4 className="font-semibold text-green-800 mb-3">Key Features:</h4>
                   <ul className="space-y-2">
                     {item.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-gray-500 font-sans">
-                        <div className="w-2 h-2 bg-gradient-to-r from-gray-500 to-black-500  rounded-full mr-3 shadow-sm"></div>
+                      <li key={i} className="flex items-center text-gray-700 font-sans">
+                        <div className="w-2 h-2 bg-gradient-to-r from-gray-900 to-black-500 rounded-full mr-3 shadow-sm"></div>
                         {feature}
                       </li>
                     ))}
