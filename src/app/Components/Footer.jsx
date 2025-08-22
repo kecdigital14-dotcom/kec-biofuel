@@ -7,6 +7,7 @@ const Footer = () => {
     const footerSections = [
         {
             title: "Why KEC-BIOFUEL",
+            path: "/about",
             icon: <Lightbulb />,
             items: [
                 { name: "About KEC-BIOFUEL", path: "/about" },
@@ -14,70 +15,72 @@ const Footer = () => {
             ]
         },
         {
-            title: "Lets Know CBG",
+            title: "Demustifying CBG",
+            path: "/biogas",
             icon: <Factory />,
             items: [
                 { name: "Biogas", path: "/biogas" },
                 { name: "Purification", path: "/biogas" },
                 { name: "Compression", path: "/biogas" },
-                { name: "Compressed Biogas (CBG)", path: "/biogas" },
-                { name: "Cascade Storage", path: "/biogas" },
-                { name: "Transportation", path: "/biogas" }
+            
             ]
         },
         {
             title: "Organic Fertilizers",
+            path: "https://kisanexperience.com/",
             icon: <Leaf />,
             items: [
                 { name: "About Organic Fertilizers", path: "https://kisanexperience.com/" },
                 { name: "Support for Organic Fertilizers", path: "https://kisanexperience.com/support" }
-
             ]
         },
         {
-            title: "Enablers Of Scheme",
+            title: "Foundation Of Scheme",
+            path: "/enablesschemes",
             icon: <ChevronRight />,
             items: [
                 { name: "Assured Long-Term Pricing", path: "/enablesschemes" },
                 { name: "Facilitation by OMCs through LOI", path: "/enablesschemes" },
-                { name: "Priority Sector Lending", path: "/enablesschemes" },
-                { name: "Central Financial Assistance by MNRE", path: "/enablesschemes" }
+      
             ]
         },
         {
-            title: "Technology",
+            title: "Technological Framework",
+            path: "/technology",
             icon: <Factory />,
             items: [
                 { name: "Biogas Production Technology", path: "/technology" },
                 { name: "Purification Technology", path: "/technology" },
-                { name: "Compression Technology", path: "/technology" }
+
             ]
         }
- 
     ];
 
     const processSections = [
         {
-            title: "Major Process Involved",
+            title: "Key Process Undertaken",
+            path: "/majorprocess",
             items: [
                 { name: "Expression of Interest", path: "/majorprocess" },
                 { name: "Letter of Intent", path: "/majorprocess" },
-                { name: "Retail Outlet selection and readiness", path: "/majorprocess" },
-                { name: "Signing of Commercial Agreement", path: "/majorprocess" },
-                { name: "Sale of CBG through RO", path: "/majorprocess" }
+           
             ]
         },
-        { title: "Complete Process at a Glance", items: [{ name: "Explore", path: "/about" }] },
-        { title: "FAQs", items: [{ name: "Read FAQs", path: "/contact" }] },
-        // { title: "Participation in KEC Scheme", items: [{ name: "Join Now", path: "/contact" }] }
+        {
+            title: "End to End Process Flow",
+            path: "/about",
+            items: [{ name: "Explore", path: "/about" }]
+        },
+        {
+            title: "FAQs",
+            path: "/contact",
+            items: [{ name: "Read FAQs", path: "/contact" }]
+        }
     ];
 
     const developmentItems = [
         { name: "Synchronization of CBG in CGD network", path: "/latestdevlopment" },
         { name: "Fertilizer Control Order & Environmental Clearances", path: "/latestdevlopment" },
-        { name: "Priority Sector Lending for CBG Projects", path: "/latestdevlopment" },
-        { name: "Loan Facilitation by Banks", path: "/latestdevlopment" },
-     
     ];
 
     return (
@@ -88,11 +91,11 @@ const Footer = () => {
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10">
                     <div className="inline-flex items-center space-x-3 mb-4">
                         <Leaf className="w-8 h-8 text-green-600" />
                         <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-green-700 bg-clip-text text-transparent">
-                            A Step Towards A Sustainable Future
+                           CBG - A Path to a Cleaner Future
                         </h2>
                         <Leaf className="w-8 h-8 text-green-600" />
                     </div>
@@ -108,12 +111,14 @@ const Footer = () => {
                                     <div className="p-2 bg-green-600/10 rounded-lg group-hover:bg-green-600/20 transition-colors duration-300 border border-green-600/20">
                                         {React.cloneElement(section.icon, { className: "w-5 h-5 text-green-700" })}
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-green-800 transition-colors duration-300">
-                                        {section.title}
-                                    </h3>
+                                    <Link href={section.path}>
+                                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-green-800 transition-colors duration-300 cursor-pointer">
+                                            {section.title}
+                                        </h3>
+                                    </Link>
                                 </div>
 
-                                <ul className="space-y-3">
+                                <ul className="space-y-2">
                                     {section.items.map((item, itemIndex) => (
                                         <li key={itemIndex}>
                                             <Link href={item.path} className="group/link flex items-center text-gray-600 hover:text-green-800 transition-all duration-300 hover:translate-x-2">
@@ -135,9 +140,11 @@ const Footer = () => {
                                     <div className="p-2 bg-green-600/10 rounded-lg group-hover:bg-green-600/20 transition-colors duration-300 border border-green-600/20">
                                         <HelpCircle className="w-5 h-5 text-green-700" />
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-green-800 transition-colors duration-300">
-                                        {section.title}
-                                    </h3>
+                                    <Link href={section.path}>
+                                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-green-800 transition-colors duration-300 cursor-pointer">
+                                            {section.title}
+                                        </h3>
+                                    </Link>
                                 </div>
 
                                 <ul className="space-y-3">
@@ -161,9 +168,11 @@ const Footer = () => {
                                 <div className="p-2 bg-green-600/10 rounded-lg group-hover:bg-green-600/20 transition-colors duration-300 border border-green-600/20">
                                     <Lightbulb className="w-5 h-5 text-green-700" />
                                 </div>
-                                <h3 className="text-lg font-semibold text-gray-800 group-hover:text-green-800 transition-colors duration-300">
-                                    Latest Developments
-                                </h3>
+                                <Link href="/latestdevlopment">
+                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-green-800 transition-colors duration-300 cursor-pointer">
+                                        Ongoing Developments
+                                    </h3>
+                                </Link>
                             </div>
 
                             <ul className="space-y-3">
@@ -184,9 +193,11 @@ const Footer = () => {
                                 <div className="p-2 bg-green-600/10 rounded-lg group-hover:bg-green-600/20 transition-colors duration-300 border border-green-600/20">
                                     <HelpCircle className="w-5 h-5 text-green-700" />
                                 </div>
-                                <h3 className="text-lg font-semibold text-gray-800 group-hover:text-green-800 transition-colors duration-300">
-                                    How can we help
-                                </h3>
+                                <Link href="/contact">
+                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-green-800 transition-colors duration-300 cursor-pointer">
+                                        Commitment to help
+                                    </h3>
+                                </Link>
                             </div>
 
                             <div className="bg-white/30 rounded-xl p-6 backdrop-blur-sm border border-green-600/20 hover:bg-white/40 transition-all duration-300 shadow-lg">

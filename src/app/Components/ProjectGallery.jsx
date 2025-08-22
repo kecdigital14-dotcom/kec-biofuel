@@ -138,7 +138,7 @@ const ProjectGallery = () => {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             My Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-sans">
             A collection of my completed projects showcasing various technologies and solutions
           </p>
         </div>

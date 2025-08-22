@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, Leaf, Zap, Recycle, Award, Github, ExternalLink, Play, Pause, BarChart3, Users, Calendar, Target } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Leaf, Zap, Recycle, Award, Github, ExternalLink, Play, Pause, BarChart3, Users, Calendar, Target } from 'lucide-react';
 
 export default function ProjectSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -12,10 +12,23 @@ export default function ProjectSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Image slider data
   const projectImages = [
-    '/api/placeholder/800/500',
-    '/api/placeholder/800/500',
-    '/api/placeholder/800/500'
+    {
+      src: '/images/pmc6.jpeg',
+      title: 'Bio Fuel Production Facility',
+      description: 'State-of-the-art facility for converting organic waste'
+    },
+    {
+      src: '/images/homeonesection2.jpg',
+      title: 'Conversion Process',
+      description: 'Advanced biomass to fuel conversion technology'
+    },
+    {
+      src: '/images/pmc1.jpeg',
+      title: 'Quality Testing Lab',
+      description: 'Comprehensive testing and quality assurance'
+    }
   ];
 
   const features = [
@@ -50,15 +63,29 @@ export default function ProjectSection() {
     { phase: "Documentation", duration: "1 month", status: "completed" }
   ];
 
-  return (
-    <div className="min-h-screen text-white overflow-hidden">
-      {/* Animated background elements */}
-      <div className="fixed inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-green-500 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-500 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-      </div>
+  // Slider functions
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % projectImages.length);
+  };
 
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + projectImages.length) % projectImages.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  // Auto-advance slider
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="min-h-screen text-white overflow-hidden bg-gradient-to-r from-green-200 via-yellow-50/100 to-green-200">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -66,10 +93,10 @@ export default function ProjectSection() {
             <div className="space-y-2">
               <div className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 text-green-400">
                 <Award className="w-4 h-4" />
-                <span className="text-sm">Award Winning Project</span>
+                <span className="text-sm text-gray-900 font-sans font-bold">Award Winning Project</span>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl font-bold leading-none">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-none text-gray-700">
                 Sustainable
                 <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                   Bio Fuel
@@ -77,7 +104,7 @@ export default function ProjectSection() {
                 Revolution
               </h1>
               
-              <p className="text-sm font-bold text-gray-300 leading-relaxed max-w-2xl text-justify">
+              <p className="text-sm font-bold text-gray-600 leading-relaxed max-w-2xl text-justify">
                 Converting organic waste into clean, renewable energy with 85% efficiency. 
                 A breakthrough in sustainable fuel production that reduces carbon footprint by 75%.
               </p>
@@ -89,13 +116,6 @@ export default function ProjectSection() {
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </button>
-{/*                 
-                <button className="border border-white/20 hover:border-white/40 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-white/5">
-                  <span className="flex items-center space-x-2">
-                    <Github className="w-5 h-5" />
-                    <span>Source Code</span>
-                  </span>
-                </button> */}
               </div>
             </div>
             
@@ -171,7 +191,7 @@ export default function ProjectSection() {
       <section id="timeline" className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-5xl font-bold mb-6 text-gray-700">
               Project <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Timeline</span>
             </h2>
           </div>
@@ -182,12 +202,12 @@ export default function ProjectSection() {
             {timeline.map((phase, index) => (
               <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-12`}>
                 <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                  <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300">
-                    <h3 className="text-xl font-bold mb-2 text-green-400">{phase.phase}</h3>
-                    <p className="text-gray-300 mb-2">{phase.duration}</p>
+                  <div className="bg-white backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300">
+                    <h3 className="text-xl font-bold mb-2 text-green-800">{phase.phase}</h3>
+                    <p className="text-gray-700 font-sans mb-2">{phase.duration}</p>
                     <div className="inline-flex items-center space-x-2 text-sm text-green-400">
-                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span>Completed</span>
+                      <div className="w-2 h-2 bg-green-700 rounded-full"></div>
+                      <span className='text-gray-900 font-sans'>Completed</span>
                     </div>
                   </div>
                 </div>
@@ -199,11 +219,11 @@ export default function ProjectSection() {
         </div>
       </section>
 
-      {/* Results Section */}
+      {/* Results Section with Image Slider */}
       <section id="results" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-5xl font-bold mb-6 text-gray-700">
               Project <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Results</span>
             </h2>
           </div>
@@ -211,41 +231,100 @@ export default function ProjectSection() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold mb-6 text-green-400">Technical Achievements</h3>
+                <h3 className="text-2xl font-bold mb-6 text-green-900">Technical Achievements</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                    <span className="text-gray-300 font-sans">Developed efficient biomass conversion process</span>
+                    <span className="text-gray-800 font-sans">Developed efficient biomass conversion process</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                    <span className="text-gray-300 font-sans">Achieved 85% energy conversion efficiency</span>
+                    <span className="text-gray-800 font-sans">Achieved 85% energy conversion efficiency</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                    <span className="text-gray-300 font-sans">Reduced production costs by 40%</span>
+                    <span className="text-gray-800 font-sans">Reduced production costs by 40%</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
-                    <span className="text-gray-300 font-sans">Minimized carbon footprint by 75%</span>
+                    <span className="text-gray-800 font-sans">Minimized carbon footprint by 75%</span>
                   </li>
                 </ul>
               </div>
               
               <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold mb-6 text-purple-400">Environmental Impact</h3>
-                <p className="text-gray-300 leading-relaxed font-sans text-justify">
+                <h3 className="text-2xl font-bold mb-6 text-green-900">Environmental Impact</h3>
+                <p className="text-gray-800 leading-relaxed font-sans text-justify">
                   This bio fuel project successfully demonstrates how organic waste can be transformed into clean energy, 
                   contributing to a circular economy and reducing environmental pollution while providing sustainable fuel alternatives.
                 </p>
               </div>
             </div>
             
+            {/* Image Slider */}
             <div className="relative">
               <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <div className="aspect-square bg-black/40 rounded-2xl flex items-center justify-center">
-                  <BarChart3 className="w-24 h-24 text-green-400" />
+                
+                <div className='h-[450px] w-full relative overflow-hidden rounded-lg'>
+                  {/* Main Image Display */}
+                  <div 
+                    className="flex transition-transform duration-500 ease-in-out h-full"
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                  >
+                    {projectImages.map((image, index) => (
+                      <div key={index} className="w-full h-full flex-shrink-0 relative">
+                        <img 
+                          src={image.src} 
+                          alt={image.title}
+                          className='h-full w-full object-cover rounded-lg'
+                        />
+                        {/* Image overlay with info */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                          <h4 className="text-white font-bold text-lg mb-1">{image.title}</h4>
+                          <p className="text-gray-300 text-sm">{image.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={prevSlide}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  
+                  <button
+                    onClick={nextSlide}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+
+                  {/* Slide Indicators */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {projectImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => goToSlide(index)}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                          index === currentSlide 
+                            ? 'bg-green-400 scale-125' 
+                            : 'bg-white/50 hover:bg-white/80'
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Slide Counter */}
+                  <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1">
+                    <span className="text-white text-sm font-medium">
+                      {currentSlide + 1} / {projectImages.length}
+                    </span>
+                  </div>
                 </div>
+                
               </div>
               
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full animate-bounce opacity-20"></div>
