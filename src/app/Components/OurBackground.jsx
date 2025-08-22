@@ -82,7 +82,7 @@ const OurBackground = () => {
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
             <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-            <div className="text-gray-500 font-sans">EPC Contracts</div>
+            <div className="text-gray-500 font-sans">EPC & PMC Contracts</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
             <div className="text-3xl font-bold text-purple-600 mb-2">10000+</div>

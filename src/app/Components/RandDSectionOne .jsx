@@ -72,7 +72,7 @@ const RandDSectionOne = () => {
               R&D BULANDSHAHR / KEC TECHNICAL
             </p>
             <p className="text-lg text-emerald-200 mb-8">
-              July 22, 2025 - Biogas Research & Development Report
+              July 22, 2021 - Biogas Research & Development Report
             </p>
             <div className="inline-flex items-center bg-gradient-to-r from-green-400 to-emerald-500 backdrop-blur-sm rounded-full px-8 py-4 text-white shadow-lg hover:shadow-xl transition-all duration-300">
               <Zap className="w-5 h-5 mr-2" />

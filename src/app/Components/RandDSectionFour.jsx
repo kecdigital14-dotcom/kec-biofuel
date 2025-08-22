@@ -79,7 +79,7 @@ const RandDSectionFour = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-r from-green-200 via-yellow-50 to-green-200">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Method Section */}
         <div className="text-center mb-8">

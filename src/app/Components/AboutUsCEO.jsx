@@ -28,7 +28,7 @@ const AboutUsCEO = () => {
     company: "Kec Agritech",
     location: "West Delhi, Delhi, India",
     experience: "25+ Years",
-    bio: "Business Coach & Specialist with over a decade of leadership in business coaching, specifically within the energy and agriculture sectors. At Kec Agritech, my focus is on revolutionizing biofuel production through innovative technologies while managing a dedicated team. My mission is to empower businesses to grow sustainably, contributing to the global energy transition.",
+    bio: "Business Coach & Specialist with over a decade of leadership in business coaching, specifically within the energy and agriculture sectors. At Kec Agritech, my focus is on revolutionizing biofuel production through innovative technologies while managing a dedicated team. My mission is to empower businesses to grow sustainably, contributing to the global energy transition. As global mobility demand rises, so does the consumption of fossil fuels, leading to geopolitical tensions, shrinking oil reserves, and severe environmental impacts from vehicular emissions.This highlights the urgent need for alternative, sustainable fuels in the transport sector.",
     profileImage: "/images/ceo.jpg", // Replace with actual image
 
     achievements: [
@@ -104,48 +104,47 @@ const AboutUsCEO = () => {
         id: 1,
         title: "",
         title: "Strategic Biogas Talks:- KEC AGRITECH Meets MP CM",
-        year: "2023",
-        image: "/images/jitu1.png",
+        year: "2024",
+        image: "/images/jitu1.jpg",
         category: "Innovation"
       },
       {
         id: 2,
-        title: "New Paper Publication Indian Express",
+        title: "MOU Signed With KEC",
         // organization: "Energy Sector Leadership",
-        year: "2022",
-        image: "/images/jitu2.png",
+        year: "2024",
+        image: "/images/jitu2.jpg",
         category: "Leadership"
       },
       {
         id: 3,
-        title: "Catalogue Launched by CM Sh. Vishnu Deo Sai",
+        title: "MOU Signed With KEC",
         // organization: "Green Tech Alliance",
-        year: "2023",
-        image: "/images/jitu3.png",
+        year: "2024",
+        image: "/images/jitu3.jpg",
         category: "Sustainability"
       },
       {
         id: 4,
         title: "MOU Signed With Tripura By KEC",
         // organization: "Bio-CNG Development Council",
-        year: "2021",
-        image: "/images/jitu4.png",
+        year: "2025",
+        image: "/images/jitu4.jpg",
         category: "Pioneer"
       },
       {
         id: 5,
         title: "Strategic Biogas Talks:- KEC AGRITECH Meets MP CM",
         // organization: "National Energy Board",
-        year: "2022",
-        image: "/images/jitu5.png",
+        year: "2025",
+        image: "/images/jitu5.jpg",
         category: "Excellence"
       },
       {
         id: 6,
-        title: "New Paper Publication Indian Express",
-        // organization: "Business Development Institute",
-        year: "2023",
-        image: "/images/jitu6.png",
+        title: "Catalogue Launched by CM Sh. Vishnu Deo Sai",
+        year: "2025",
+        image: "/images/jitu6.jpg",
         category: "Coaching"
       }
     ]
@@ -183,7 +182,7 @@ const AboutUsCEO = () => {
                   <img
                     src={ceoData.profileImage}
                     alt={ceoData.name}
-                    className="w-48 h-64 rounded-2xl object-cover shadow-2xl border-4 border-white/20"
+                    className="w-72 h-96 rounded-2xl object-cover shadow-2xl border-4 border-white/20"
                   />
                   <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg">
                     <Leaf className="w-6 h-6 text-green-500" />
@@ -339,7 +338,7 @@ const AboutUsCEO = () => {
           {/* Exposure & Achievements */}
           {activeTab === 'exposure' && (
             <div className="p-8 md:p-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">Exposure & Achievements</h3>
+              <h3 className="text-4xl font-bold text-green-900 mb-4 text-center">Exposure & Achievements</h3>
               <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto font-sans">
                 Visual showcase of recognitions and achievements in leadership, innovation, and sustainable business practices
               </p>

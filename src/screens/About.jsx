@@ -22,7 +22,7 @@ const About = () => {
 
           {/* Title */}
           <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight leading-tight text-white/80">
-            About <span className="text-green-600">Us</span> <span className="text-cyan-400"></span>
+            KEC <span className="text-green-600">Bio-fuel</span> <span className="text-cyan-400"></span>
           </h1>
 
           {/* Decorative Line */}

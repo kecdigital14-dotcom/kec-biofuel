@@ -14,8 +14,9 @@ const RandDSectionThree = () => {
       avgTemp: "38.1°C (Mesophilic Range)",
       totalYield: "3.2 M³",
       efficiency: "1 M³ from 1.56 KG Napier Powder",
-      color: "bg-gradient-to-br from-green-800 via-green-300 to-green-50",
-      hoverColor: "hover:from-green-500 hover:to-green-700",
+    
+       color: "bg-gradient-to-br from-emerald-400 to-teal-600",
+      hoverColor: "hover:from-emerald-500 hover:to-teal-700",
       shadowColor: "shadow-green-200",
       icon: "🌱"
     },
@@ -42,8 +43,8 @@ const RandDSectionThree = () => {
       avgTemp: "28.8°C",
       totalYield: "18.55 M³",
       efficiency: "1 M³ from 20.64 KG Feedstock",
-      color: "bg-gradient-to-br from-emerald-400 to-teal-600",
-      hoverColor: "hover:from-emerald-500 hover:to-teal-700",
+       color: "bg-gradient-to-br from-green-800 via-green-300 to-green-50",
+      hoverColor: "hover:from-green-500 hover:to-green-700",
       shadowColor: "shadow-emerald-200",
       icon: "🐄"
     },
@@ -116,7 +117,7 @@ const RandDSectionThree = () => {
         </div>
 
         {/* Feedstock Selector */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 mb-12">
+        <div className="bg-white backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 mb-12">
           <div className="flex items-center justify-center gap-3 mb-8">
             <Clock className="w-6 h-6 text-blue-600" />
             <h3 className="text-2xl font-bold text-gray-800">
@@ -131,7 +132,7 @@ const RandDSectionThree = () => {
                 className={`group relative overflow-hidden  rounded-xl p-6 font-medium transition-all duration-300 transform ${
                   selectedFeedstock === key
                     ? `${data.color} text-white shadow-2xl ${data.shadowColor} scale-105`
-                    : `bg-white text-gray-700 hover:bg-gray-50  hover:shadow-lg hover:scale-102 border border-gray-200 ${data.hoverColor}`
+                    : ` text-gray-700 hover:bg-gray-50  hover:shadow-lg hover:scale-102 border border-gray-200 ${data.hoverColor}`
                 }`}
               >
                 <div className="flex flex-col items-center space-y-3">

@@ -62,7 +62,7 @@ const CbgSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header Section */}
-        <div className="text-center mb-16 space-y-6">
+        <div className="text-center mb-16 space-y-2">
           <div className="inline-flex items-center space-x-3 bg-green-100/80 backdrop-blur-sm rounded-full px-6 py-3 border border-green-200/50">
             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-green-700 text-sm font-bold tracking-wider uppercase">

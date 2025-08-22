@@ -200,7 +200,7 @@ Continuous R&D integration drives innovation, efficiency, and scalability in sus
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-green-600 mb-1">100+</div>
-              <div className="text-sm text-gray-600 font-sans">EPC Contracts</div>
+              <div className="text-sm text-gray-600 font-sans">EPC & PMC Contracts</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-emerald-600 mb-1">10000+</div>
