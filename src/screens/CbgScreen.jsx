@@ -13,10 +13,10 @@ import Cbgplantsize from '@/app/Components/Cbgplantsize';
 
 const CbgScreen = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+    <div className="min-h-screen ">
       <Navbar />
-      <HeroBanner backgroundImage="/images/aboutbanner2.png">
-        <div className="bg-black/5 backdrop-blur-md rounded-xl px-8 py-4 max-w-sm mx-auto text-center shadow-sm space-y-2">
+      <HeroBanner backgroundImage="/images/bannernew7.jpeg">
+        <div className="bg-black/1 backdrop-blur-xl rounded-xl px-8 py-4 max-w-sm mx-auto text-center shadow-sm space-y-2">
 
           {/* Title */}
           <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight leading-tight text-white/80">
@@ -24,7 +24,7 @@ const CbgScreen = () => {
           </h1>
 
           {/* Decorative Line */}
-          <div className="mx-auto w-20 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full"></div>
+          {/* <div className="mx-auto w-20 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full"></div> */}
 
           {/* Subtitle */}
           <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed">

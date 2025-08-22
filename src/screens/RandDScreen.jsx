@@ -15,7 +15,7 @@ const RandDScreen = () => {
     return (
         <div className="min-h-screen">
             <Navbar />
-            <HeroBanner backgroundImage="/images/aboutbanner2.png">
+            <HeroBanner backgroundImage="/images/bannernew11.jpg">
                 <div className="bg-black/5 backdrop-blur-md rounded-xl px-8 py-4 max-w-sm mx-auto text-center shadow-sm space-y-2">
 
                     {/* Title */}
@@ -42,7 +42,7 @@ const RandDScreen = () => {
             <RandDSectionTwo />
             <RandDSectionThree />
             <RandDSectionFour />
-            <RandDGlimpse/>
+            <RandDGlimpse />
             <Footer />
         </div>
     )

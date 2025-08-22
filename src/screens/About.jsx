@@ -17,7 +17,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       <Navbar />
-      <HeroBanner backgroundImage="/images/aboutbanner2.png">
+      <HeroBanner backgroundImage="/images/bannernew14.jpg">
         <div className="bg-black/5 backdrop-blur-md rounded-xl px-8 py-4 max-w-sm mx-auto text-center shadow-sm space-y-2">
 
           {/* Title */}
@@ -40,18 +40,18 @@ const About = () => {
 
         </div>
       </HeroBanner>
-      <OurBackground/>
+      <OurBackground />
 
       {/* About Content Section */}
       <About1stsection />
 
       {/* Values Section */}
       <About2ndsection />
-      <PMCServices/>
-      <Technologies/>
+      <PMCServices />
+      <Technologies />
 
       <About3rdsection />
-      <TurkeySolutions/>
+      <TurkeySolutions />
 
       <Footer />
     </div>

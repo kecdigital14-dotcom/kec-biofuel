@@ -17,12 +17,12 @@ const TermsandConditionsectionScreeen = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <HeroBanner backgroundImage="/images/aboutbanner2.png">
+      <HeroBanner backgroundImage="/images/bannernew2.png">
         <div className="bg-black/5 backdrop-blur-md rounded-xl px-8 py-4 max-w-sm mx-auto text-center shadow-sm space-y-2">
 
           {/* Title */}
           <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight leading-tight text-white/80">
-            Terms&nbsp;Of<span className="text-green-600"><br/>Service</span> <span className="text-cyan-400"></span>
+            Terms&nbsp;Of<span className="text-green-600"><br />Service</span> <span className="text-cyan-400"></span>
           </h1>
 
           {/* Decorative Line */}
@@ -40,7 +40,7 @@ const TermsandConditionsectionScreeen = () => {
 
         </div>
       </HeroBanner>
-  <TermsandConditionsection/>
+      <TermsandConditionsection />
       <Footer />
     </div>
   )

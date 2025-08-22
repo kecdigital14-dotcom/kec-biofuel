@@ -15,7 +15,7 @@ const CbgScreen = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       <Navbar />
-      <HeroBanner backgroundImage="/images/aboutbanner2.png">
+      <HeroBanner backgroundImage="/images/bannernew2.png">
         <div className="bg-black/5 backdrop-blur-md rounded-xl px-3 py-4 max-w-sm mx-auto text-center shadow-sm space-y-2">
 
           {/* Title */}
@@ -39,7 +39,7 @@ const CbgScreen = () => {
         </div>
       </HeroBanner>
 
-<MajorProcess/>
+      <MajorProcess />
 
       <Footer />
     </div>

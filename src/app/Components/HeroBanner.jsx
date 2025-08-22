@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Leaf, Wind, Sun, Zap } from 'lucide-react';
 
-const HeroBanner = ({ backgroundImage, children, height = 'min-h-screen' }) => {
+const HeroBanner = ({ backgroundImage, children, height = 'min-h-[590px]' }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const HeroBanner = ({ backgroundImage, children, height = 'min-h-screen' }) => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/40 via-teal-00/70 to-green-10/80" />
+      <div className="absolute inset-0 " />
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -59,9 +59,7 @@ const HeroBanner = ({ backgroundImage, children, height = 'min-h-screen' }) => {
         />
 
         {/* Geometric shapes */}
-        <div className="absolute top-20 right-20 left-100 w-64 h-64 border border-green-300 rounded-full opacity-10 animate-spin" style={{ animationDuration: '20s' }} />
-        <div className="absolute bottom-40 left-10 w-32 h-32 bg-emerald-400 opacity-5 rounded-2xl rotate-45 animate-pulse" />
-        <div className="absolute top-1/3 left-1/4 w-48 h-48 border-2 border-teal-300 opacity-10 rounded-3xl animate-bounce" style={{ animationDuration: '4s' }} />
+       
       </div>
 
       {/* Main Content */}
@@ -89,26 +87,26 @@ const ExampleUsage = () => {
   return (
     <div className="space-y-8">
       {/* Your Blog Page Example */}
-      <HeroBanner backgroundImage="/images/aboutbanner2.png">
+      <HeroBanner backgroundImage="/images/bannernew2.png">
         <div className="text-center">
-          <div className="bg-black/20 backdrop-blur-md rounded-xl px-8 py-6 max-w-lg mx-auto text-center shadow-2xl space-y-4">
+          <div className="bg-black/20 rounded-xl px-8 py-6 max-w-lg mx-auto text-center shadow-2xl space-y-4">
             {/* Title */}
             <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Our <span className="text-green-400">Blog</span>
             </h1>
-            
+
             {/* Decorative Line */}
             <div className="mx-auto w-20 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full"></div>
-            
+
             {/* Subtitle */}
             <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed">
               Shaping the future with sustainable energy innovations.
             </p>
-            
+
             {/* CTA Button */}
             <button className="px-8 py-3 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full text-white font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 group">
               <span className="flex items-center justify-center gap-2">
-                Explore Our Vision 
+                Explore Our Vision
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </span>
             </button>
@@ -133,7 +131,7 @@ const ExampleUsage = () => {
               <span className="block text-white">Energy</span>
               <span className="block text-green-300">Solutions</span>
             </h1>
-            
+
             <p className="text-xl text-green-100 font-light leading-relaxed">
               Leading the renewable energy revolution with innovative technologies that power a cleaner future.
             </p>
