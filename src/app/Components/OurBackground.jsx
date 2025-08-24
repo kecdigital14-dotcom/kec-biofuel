@@ -21,9 +21,7 @@ const OurBackground = () => {
                 Leading PMC & EPC Company in India
               </h3>
               <p className="text-gray-600 leading-relaxed font-sans text-sm text-justify">
-                KEC is one of India's leading PMC & EPC company specializing in Project Assessment, 
-                project development, Project Execution, Project Management, Commercialization 
-                & market establishment for final products.
+              KEC is one of India's leading PMC & EPC company specializing in Project Assessment, project development, Project Execution, Project Management, Commercialization & market establishment for final products. Building upon the initial description, here are more details and specific points about KEC Agritech, derived from available information. 
               </p>
             </div>
 
@@ -81,15 +79,15 @@ const OurBackground = () => {
             <div className="text-gray-500 font-sans ">Founded</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-            <div className="text-gray-500 font-sans">EPC & PMC Contracts</div>
+            <div className="text-3xl font-bold text-blue-600 mb-2">225+ Contracts</div>
+            <div className="text-gray-500 font-sans">EPC, PMC, O & M</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">10000+</div>
-            <div className="text-gray-500 font-sans">Planned CBG Plants</div>
+            <div className="text-3xl font-bold text-purple-600 mb-2">5000 Cr+</div>
+            <div className="text-gray-500 font-sans">CBG Plant Order Value</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-orange-600 mb-2">500Cr</div>
+            <div className="text-3xl font-bold text-orange-600 mb-2">10000Cr+</div>
             <div className="text-gray-500 font-sans">MOU Value</div>
           </div>
         </div>

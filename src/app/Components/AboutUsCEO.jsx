@@ -33,9 +33,9 @@ const AboutUsCEO = () => {
 
     achievements: [
       { icon: Leaf, label: "Biofuel Innovation", value: "CTS Tech" },
-      { icon: Users, label: "LinkedIn Network", value: "500+" },
+      { icon: Users, label: "LinkedIn Network", value: "21000+" },
       { icon: Globe, label: "Industry Focus", value: "Energy" },
-      { icon: Award, label: "Experience", value: "25+ Yrs" }
+      { icon: Award, label: "Biofuel & Renewable Energy", value: "17+ Yrs" }
     ],
 
     journey: [
@@ -95,7 +95,7 @@ const AboutUsCEO = () => {
       {
         icon: Award,
         title: "CEO Experience on Bio-CBG",
-        description: "Harnessing years of experience in the bio-CBG sector, driving innovation and large-scale deployment of compressed bio-gas projects to support clean energy and sustainable mobility. Leading initiatives that convert agricultural residue and waste into clean fuel, reducing carbon emissions and fostering circular economy practices. Contributing to India’s bio-CBG roadmap by enabling scalable solutions that empower rural economies and strengthen national energy security."
+        description: "Harnessing years of experience in the bio-CBG sector, driving innovation and large-scale deployment of compressed bio-gas projects to support clean energy and sustainable mobility. Leading initiatives that convert agricultural residue and waste into clean fuel, reducing carbon emissions and fostering circular economy practices. Contributing to India's bio-CBG roadmap by enabling scalable solutions that empower rural economies and strengthen national energy security."
       }
     ],
 
@@ -195,7 +195,7 @@ const AboutUsCEO = () => {
                 <h3 className="text-3xl md:text-4xl font-bold mb-2">{ceoData.name}</h3>
                 <p className="text-xl  mb-4">CEO, {ceoData.company}</p>
                 <p className="text-sm  mb-4 font-sans text-black">{ceoData.title}</p>
-                <p className=" mb-6 leading-relaxed max-w-2xl font-sans text-justify">{ceoData.bio}</p>
+                <p className=" mb-6 leading-relaxed max-w-2xl font-sans text-justify text-gray-700">{ceoData.bio}</p>
 
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
                   <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
@@ -223,6 +223,145 @@ const AboutUsCEO = () => {
                   <div className="text-sm text-gray-500 font-sans">{achievement.label}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Professional Experience Section */}
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden mb-16">
+          <div className="p-8 md:p-12">
+            <div className="text-center mb-12">
+              <h3 className="text-4xl font-bold text-gray-900 mb-4">
+                Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-green-600">Experience</span>
+              </h3>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto font-sans">
+                Comprehensive expertise spanning decarbonisation, renewable energy, and sustainable business development
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Left Column */}
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-teal-50 to-green-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="bg-gradient-to-br from-teal-500 to-green-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                    <Leaf className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Decarbonisation & Renewable Energy</h4>
+                  <p className="text-gray-600 leading-relaxed font-sans text-justify">
+                    Mr. Narayan's primary focus is on advancing decarbonisation through solutions like Bio-Compressed Natural Gas (Bio-CNG), ethanol, hydrogen, ammonia, and e-fuels, driving the transition towards sustainable energy solutions.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="bg-gradient-to-br from-blue-500 to-cyan-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                    <Users className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Business Coaching & Consulting</h4>
+                  <p className="text-gray-600 leading-relaxed font-sans text-justify">
+                    Over a decade of providing business coaching and specialization in energy, agriculture, and BFSI sectors, helping businesses with growth, strategy, and sustainable development initiatives.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-orange-50 to-yellow-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="bg-gradient-to-br from-orange-500 to-yellow-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                    <Zap className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Second-Generation Biofuels</h4>
+                  <p className="text-gray-600 leading-relaxed font-sans text-justify">
+                    Leading development of advanced biofuels, including KEC Agritech's patented CTS technology, reducing ethanol production time and cost by utilizing inexpensive, non-traditional feedstocks like cellulose instead of corn.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                    <Building className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Previous Leadership Roles</h4>
+                  <p className="text-gray-600 leading-relaxed font-sans text-justify">
+                    Prior leadership experience includes Co-Chief Executive Officer at Renewable Energy Group, Inc., Business Management Consultant in solar industry, and roles in financial services at Nirmal Bang and Reliance Capital Company.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Key Initiatives & Achievements Section */}
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden mb-16">
+          <div className="p-8 md:p-12">
+            <div className="text-center mb-12">
+              <h3 className="text-4xl font-bold text-gray-900 mb-4">
+                Key Initiatives & <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-green-600">Achievements</span>
+              </h3>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto font-sans">
+                Transformative initiatives in KEC Agritech driving innovation and sustainable solutions in energy and agriculture sectors
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {/* First Row - 2 Columns */}
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105 border-l-4 border-green-500">
+                  <div className="bg-gradient-to-br from-green-500 to-emerald-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                    <Target className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Kisan Experience Centre (KEC) Ecosystem</h4>
+                  <p className="text-gray-600 leading-relaxed font-sans text-justify">
+                    Spearheaded the creation of the KEC model, empowering rural entrepreneurs and promoting sustainable agricultural practices through a decentralized, franchise-driven approach that transforms rural economies.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105 border-l-4 border-indigo-500">
+                  <div className="bg-gradient-to-br from-indigo-500 to-blue-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                    <Globe className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Expansion & Partnerships</h4>
+                  <p className="text-gray-600 leading-relaxed font-sans text-justify">
+                    Under his leadership, KEC Agritech launched a franchise model for sustainable farming and signed MoUs to propel development in North East India, targeting expansion into over 200 districts in the coming years.
+                  </p>
+                </div>
+              </div>
+
+              {/* Second Row - 2 Columns */}
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105 border-l-4 border-amber-500">
+                  <div className="bg-gradient-to-br from-amber-500 to-orange-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                    <Lightbulb className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Product Innovation</h4>
+                  <p className="text-gray-600 leading-relaxed font-sans text-justify">
+                    KEC Agritech produces FCO (2016) approved, organic potash fertilizers from sugarcane waste, contributing to reducing import dependency and promoting eco-friendly farming practices across India.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-rose-50 to-pink-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105 border-l-4 border-rose-500">
+                  <div className="bg-gradient-to-br from-rose-500 to-pink-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6">
+                    <Award className="w-7 h-7 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">Industry Recognition</h4>
+                  <p className="text-gray-600 leading-relaxed font-sans text-justify">
+                    KEC Agritech's contributions have been recognized, including honors for the DevaTri initiative, aligning with company values of excellence and nation-building in sustainable energy and agriculture sectors.
+                  </p>
+                </div>
+              </div>
+
+              {/* Third Row - Full Width Summary */}
+              <div className="bg-gradient-to-r from-teal-50 via-green-50 to-emerald-50 p-8 rounded-2xl border-2 border-gradient-to-r from-teal-200 to-green-200">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                  <div className="bg-gradient-to-br from-teal-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <Star className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-2xl font-bold text-gray-900 mb-4">Leadership Recognition</h4>
+                    <p className="text-gray-600 leading-relaxed font-sans text-base text-justify">
+                      Mr. Jitendra Narayan is recognized as a leader and founder focused on driving innovation and sustainable solutions within the energy and agriculture sectors, particularly through the development and adoption of biofuels in India. His visionary approach continues to shape the future of sustainable energy and agricultural practices.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

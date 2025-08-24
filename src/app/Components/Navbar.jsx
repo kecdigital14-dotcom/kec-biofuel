@@ -107,7 +107,7 @@ const Navbar = () => {
                 <div className="absolute top-full left-0 mt-2 w-full bg-white rounded-lg shadow-lg py-2">
                   <a href="pmc" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">PMC</a>
                   <a href="epc" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">EPC</a>
-                     <a href="latestdevlopment" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">Advisory</a>
+                     <a href="latestdevlopment" className="block px-2 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">Advisory</a>
                 </div>
               )}
             </div>

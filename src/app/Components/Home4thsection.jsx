@@ -33,7 +33,7 @@ const Home4thsection = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 w-[80%]">
+      <div className="container mx-auto px-4 w-[90%] lg:w-[80%]">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* ─────────── Left Side ─────────── */}
           <div className="space-y-8">
@@ -48,17 +48,14 @@ const Home4thsection = () => {
             </div>
 
             {/* Description */}
-            <div className="space-y-4 text-gray-600 font-sans text-justify">
+            <div className="space-y-4 text-gray-600 text-[15px] font-sans text-justify">
               <p>
-                From feedstock aggregation to last‑mile delivery, KEC Bio‑Fuel
-                provides turnkey PMC & EPC expertise for Bio‑CNG, Bio‑Diesel
-                and Ethanol assets. Our mission is to convert waste streams
-                into clean energy creating rural prosperity.
+                From feedstock aggregation to last‑mile delivery, KEC Bio‑Fuel provides turnkey PMC , EPC , Technology Transfer , O & M  expertise for Bio‑CNG, Bio‑Diesel ,Ethanol ,Hydrogen, and Green Ammonia  assets through advanced fermentation, gasification, and purification systems, ensuring high yields and lower costs. Our mission is to convert waste streams into clean energy creating rural prosperity.
+
+
               </p>
               <p>
-                Backed by 34 + EPC contracts and a ₹500 Cr PPP MoU with the
-                Uttarakhand Government, we are scaling toward 100 + CBG plants
-                nationwide by FY 2026.
+                Backed by 74 + EPC contracts and a ₹5000 Cr+ PPP MoU with the various State Government , we are scaling toward 225 + CBG plants nationwide by FY 2026 - 2027.                                                                                                               KEC Robust structure integrating backward (from suppliers) and forward (to customers) is achieved by combining control over raw material feedstock and production processes with control over the distribution, sales, and end-user
               </p>
             </div>
 

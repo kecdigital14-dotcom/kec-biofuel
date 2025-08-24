@@ -80,7 +80,7 @@ const LatestDevelopments = () => {
               <div className="p-3 bg-green-500 rounded-2xl">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <h1 className="text-5xl font-bold text-gray-800">Latest Developments</h1>
+              <h1 className="sm:text-5xl text-4xl font-bold text-gray-800">Latest Developments</h1>
             </div>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Pioneering advancements in biofuel technology and compressed bio gas infrastructure 

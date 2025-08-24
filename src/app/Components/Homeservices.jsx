@@ -63,13 +63,15 @@ const services = [
 ];
 
 const Homeservices = () => {
-  const scrollRef = useRef();
+  const scrollRef = useRef(null);
 
   const scrollLeft = () => {
+    if (!scrollRef.current) return;
     scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
   };
 
   const scrollRight = () => {
+    if (!scrollRef.current) return;
     scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
   };
 
@@ -82,12 +84,13 @@ const Homeservices = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-black">Powerful Features</h2>
         </div>
 
-        {/* Scroll Buttons */}
+        {/* Scroll Buttons (visible on all screens) */}
         <div className="flex justify-end mb-4 gap-2">
           <button
             onClick={scrollLeft}
             className="text-gray-900 border border-black px-3 py-1 font-bold rounded hover:bg-white hover:text-black transition"
             aria-label="Scroll left"
+            type="button"
           >
             &#8592;
           </button>
@@ -95,25 +98,39 @@ const Homeservices = () => {
             onClick={scrollRight}
             className="text-gray-900 border border-black px-3 py-1 font-bold rounded hover:bg-white hover:text-black transition"
             aria-label="Scroll right"
+            type="button"
           >
             &#8594;
           </button>
         </div>
 
-        {/* Scrollable Cards */}
+        {/* Horizontal scroll on ALL screens */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar scroll-smooth"
+          className="
+            flex flex-nowrap gap-6 overflow-x-auto overflow-y-hidden pb-4
+            hide-scrollbar scroll-smooth touch-pan-x snap-x snap-mandatory
+            overscroll-x-contain
+          "
+          role="region"
+          aria-label="Services carousel"
         >
           {services.map((service, index) => (
             <div
               key={index}
-              className="min-w-[250px] sm:min-w-[280px] lg:min-w-[300px] bg-white text-left text-black rounded-xl p-6 flex flex-col justify-between shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="
+                min-w-[250px] sm:min-w-[280px] lg:min-w-[300px]
+                bg-white text-left text-black rounded-xl p-6 
+                flex flex-col justify-between shadow-md hover:shadow-xl 
+                transition-shadow duration-300 snap-start
+              "
             >
               <div>
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="font-semibold text-lg mb-2 text-gray-600">{service.title}</h3>
-                <p className="font-sans text-sm mb-6 text-justify text-gray-700">{service.description}</p>
+                <h3 className="font-semibold text-lg mb-2 text-gray-700">{service.title}</h3>
+                <p className="font-sans text-sm mb-6 text-justify text-gray-600">
+                  {service.description}
+                </p>
               </div>
               <a
                 href={service.link}

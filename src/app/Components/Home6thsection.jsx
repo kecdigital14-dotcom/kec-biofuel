@@ -6,8 +6,8 @@ import { FiPlay, FiCheckCircle, FiDollarSign } from 'react-icons/fi';
 
 const Home6thsection = () => {
   return (
-    <section className="bg-[#f6fcf6] py-16 px-4 ">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center w-[80%] mx-auto">
+    <section className="bg-[#f6fcf6] py-16 px-4 lg:mb-1 mb-24">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center lg:w-[80%] w-[90%] mx-auto">
 
         {/* LEFT CONTENT */}
         <div>

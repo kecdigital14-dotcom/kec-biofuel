@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Eye, X, Play, Pause } from 'lucide-react';
 
 const CbgGlimpse = () => {
@@ -53,11 +54,11 @@ const CbgGlimpse = () => {
   // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlay) return;
-    
+
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % photos.length);
     }, 4000);
-    
+
     return () => clearInterval(interval);
   }, [isAutoPlay, photos.length]);
 
@@ -105,13 +106,13 @@ const CbgGlimpse = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           {getVisibleSlides().map((photo, idx) => {
             const { position } = photo;
-            
+
             // Calculate transform and styling based on position
             let transform = '';
             let zIndex = 0;
             let opacity = 0;
             let scale = 0.8;
-            
+
             if (position === 0) {
               // Main slide
               transform = 'translateX(0)';
@@ -137,7 +138,7 @@ const CbgGlimpse = () => {
               opacity = 0.4;
               scale = 0.7;
             }
-            
+
             return (
               <div
                 key={`${photo.id}-${idx}`}
@@ -156,7 +157,7 @@ const CbgGlimpse = () => {
                     alt={photo.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  
+
                   {/* Overlay only on main slide */}
                   {position === 0 && (
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -185,7 +186,7 @@ const CbgGlimpse = () => {
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
-        
+
         <button
           onClick={nextSlide}
           className="absolute right-8 top-1/2 transform -translate-y-1/2 z-40 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-4 text-white transition-all duration-200 hover:scale-110"
@@ -202,11 +203,10 @@ const CbgGlimpse = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? 'bg-white scale-125'
-                  : 'bg-white/30 hover:bg-white/50'
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                ? 'bg-white scale-125'
+                : 'bg-white/30 hover:bg-white/50'
+                }`}
             />
           ))}
         </div>
@@ -229,11 +229,10 @@ const CbgGlimpse = () => {
               <button
                 key={photo.id}
                 onClick={() => goToSlide(index)}
-                className={`flex-shrink-0 relative w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden transition-all duration-300 ${
-                  index === currentSlide
-                    ? 'ring-2 ring-white scale-110'
-                    : 'opacity-50 hover:opacity-80'
-                }`}
+                className={`flex-shrink-0 relative w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden transition-all duration-300 ${index === currentSlide
+                  ? 'ring-2 ring-white scale-110'
+                  : 'opacity-50 hover:opacity-80'
+                  }`}
               >
                 <img
                   src={photo.src}
@@ -255,7 +254,7 @@ const CbgGlimpse = () => {
           >
             <X className="w-8 h-8" />
           </button>
-          
+
           <div className="relative max-w-5xl max-h-[90vh]">
             <img
               src={selectedImage.src}
@@ -270,42 +269,57 @@ const CbgGlimpse = () => {
           </div>
         </div>
       )}
-          {/* Call-to-Action Section */}
-        <div className="mt-1 text-center ">
-          <div className="bg-gradient-to-br from-green-50 via-green-100 to-green-400 backdrop-blur-xl border border-green-400/30 p-12 shadow-2xl relative overflow-hidden">
-            
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(34,197,94,0.05)_1px,transparent_1px),linear-gradient(-45deg,rgba(34,197,94,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-            
-            <div className="relative z-10 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
-                Ready to Build Your 
-                <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent"> CBG Empire?</span>
-              </h2>
-              
-              <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-                Join the renewable energy revolution with our comprehensive CBG park solutions. 
-                From concept to commissioning, we'll guide you every step of the way.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                <button className="group relative inline-flex items-center justify-center px-10 py-5 text-black font-bold text-lg bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 rounded-2xl hover:from-green-300 hover:via-emerald-300 hover:to-green-400 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-green-500/50">
-                  <span>Start Your CBG Project</span>
-                  <svg className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-                
+      {/* Call-to-Action Section */}
+      <div className="mt-1 text-center ">
+        <div className="bg-gradient-to-br from-green-50 via-green-100 to-green-400 backdrop-blur-xl border border-green-400/30 p-12 shadow-2xl relative overflow-hidden">
+
+          {/* Background Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(34,197,94,0.05)_1px,transparent_1px),linear-gradient(-45deg,rgba(34,197,94,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+          <div className="relative z-10 space-y-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+              Ready to Build Your
+              <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent"> CBG Empire?</span>
+            </h2>
+
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+              Join the renewable energy revolution with our comprehensive CBG park solutions.
+              From concept to commissioning, we'll guide you every step of the way.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+              <button className="group relative inline-flex items-center justify-center px-10 py-5 text-black font-bold text-lg bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 rounded-2xl hover:from-green-300 hover:via-emerald-300 hover:to-green-400 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-green-500/50">
+                <span>Start Your CBG Project</span>
+                <svg className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+
+
+              <Link href="/cbgdownload">
                 <button className="group inline-flex items-center justify-center px-8 py-5 text-green-600 font-bold bg-transparent border-2 border-green-400/50 rounded-2xl hover:bg-green-400/10 hover:border-green-400 transition-all duration-300">
-                  <svg className="mr-3 w-6 h-6 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  <svg
+                    className="mr-3 w-6 h-6 group-hover:rotate-12 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    />
                   </svg>
                   <span>Download Guide</span>
                 </button>
-              </div>
+              </Link>
+
+
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };

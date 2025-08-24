@@ -64,7 +64,7 @@ const HeroBanner = ({ backgroundImage, children, height = 'min-h-[590px]' }) => 
 
       {/* Main Content */}
       <div className="absolute z-10 flex items-center min-h-screen px-6 lg:px-12 top-10 left-2">
-        <div className="max-w-7xl mx-auto w-full">
+        <div className="max-w-7xl mx-auto w-full sm:mt-36 pb-36 sm:pb-0">
           {children}
         </div>
       </div>
@@ -85,7 +85,7 @@ const HeroBanner = ({ backgroundImage, children, height = 'min-h-[590px]' }) => 
 // Example Usage Component showing how to use it with your content
 const ExampleUsage = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 ">
       {/* Your Blog Page Example */}
       <HeroBanner backgroundImage="/images/bannernew2.png">
         <div className="text-center">

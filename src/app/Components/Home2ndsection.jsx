@@ -100,8 +100,8 @@ const Home2ndsection = () => {
                     key={index}
                     onClick={() => goToSlide(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-200 ${currentSlide === index
-                        ? 'bg-green-500 scale-125'
-                        : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-green-500 scale-125'
+                      : 'bg-gray-300 hover:bg-gray-400'
                       }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
@@ -134,8 +134,9 @@ const Home2ndsection = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
                   Economic Impact
                 </h3>
-                <p className="text-gray-600 text-base leading-relaxed font-sans text-justify">
-                  Core expertise in PMC, EPC, and renewable energy projects in Bio-CNG, Bio-Diesel, and Ethanol. Signed MoU with Uttarakhand Government for ₹500 Cr under PPP in FY 2024–25. Over 34+ EPC contracts across India.
+                <p className="text-gray-600 text-[14px] leading-relaxed font-sans text-justify font-semibold">
+                  Core expertise in PMC, EPC, Technology Transfer and renewable energy projects in Bio-CNG, Bio-Diesel, and Ethanol. Signed MoU with Uttarakhand , UP , Tripura , Assam , MP Government for ₹5000 Cr +  under PPP in FY 2024–25. Over CBG  Project of 74+ @1154 Cr + PMC , EPC & Technology Transfer  contracts across India.
+                  Established JV Company with Uttrakhand Govt . HEMU - Harit Energy Mission Uttrakhand under ( PPP Model )
                 </p>
               </div>
             </div>
@@ -149,8 +150,11 @@ const Home2ndsection = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
                   Green Expansion
                 </h3>
-                <p className="text-gray-600 text-base leading-relaxed font-sans text-justify">
-                  Establishing CBG Parks in UP, Uttarakhand, Assam, and planning expansion into MP, Gujarat, and North East. Aims to build 100+ CBG plants by FY 2025–26 under a unified national platform.
+                <p className="text-gray-600 text-[14px] leading-relaxed font-sans text-justify font-semibold">
+                  A Unique Platform for CBG Project - Asia's First CBG Park
+                  # Launched First CBG Park , Bulandshahr , UP. 
+                  <br />Establishing 15 CBG Parks in UP, Uttarakhand, Assam, Karnataka , Madhya Pradesh , Rajasthan , Gujarat , Chattisgarh and planning expansion into MP, Gujarat, and North East.
+                  Under CBG Park , Aims to build 150+ CBG plants by FY 2026–27 under a unified national platform.
                 </p>
               </div>
             </div>
