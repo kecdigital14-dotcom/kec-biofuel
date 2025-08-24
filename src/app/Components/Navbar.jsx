@@ -154,7 +154,7 @@ const Navbar = () => {
               href="/contact"
               className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors font-sans text-sm font-semibold"
             >
-              Contact Us<br />+91-8287933634
+              Contact Us<br />+91-8527626868
             </a>
           </div>
         </div>

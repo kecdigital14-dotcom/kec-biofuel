@@ -93,7 +93,7 @@ const OrgChartComponent = () => {
 
             // CFO branch
             // { id: 40, pid: 4, name: "Mr. Pawan Kumar", title: "Finance & Accountant", img: "/images/pawan.png" },
-            { id: 41, pid: 4, name: "Mr. Taanishq Aggarwal", title: "Business Intelligence Manager", img: "/images/tanishq.png" },
+            { id: 41, pid: 4, name: "Mr. Taanishq Aggarwal", title: "B.I Manager", img: "/images/tanishq.png" },
 
             // Technology branch
             { id: 50, pid: 5, name: "Mr. Sunandan Taneja", title: "VP Operation Head", img: "/images/sumandan.png" },
