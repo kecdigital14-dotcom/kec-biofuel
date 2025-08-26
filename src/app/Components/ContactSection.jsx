@@ -39,7 +39,7 @@ const ContactSection = () => {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Corporate Address - Branch 1 (Delhi)</h3>
                     <p className="text-gray-400 font-semibold text-sm">
-                      429, 4th Floor, Amsal Chamber 2,<br />
+                      429, 4th Floor, Ansal Chamber 2,<br />
                       Metro Station - Gate No. 3,<br />
                       Bikaji Cama Place, New Delhi - 110066
                     </p>
