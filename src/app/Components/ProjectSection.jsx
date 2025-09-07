@@ -188,7 +188,7 @@ export default function ProjectSection() {
       </section>
 
       {/* Timeline Section */}
-      <section id="timeline" className="py-20 px-6">
+      <section id="timeline" className="py-2 pt-14 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 text-gray-700">
