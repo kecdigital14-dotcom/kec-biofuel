@@ -8,7 +8,7 @@ import GalleryScroll from '../app/Components/GalleryScroll'
 import Footer from '../app/Components/Footer';
 // import { galleryData } from '../app/data/GalleryContent'
 import GalleryScrollContent from '../app/Components/GalleryScrollContent';
-import { galleryData, achievementsData, projectsData } from '../app/data/galleryData';
+import { galleryData, achievementsData, projectsData, reaData } from '../app/data/galleryData';
 import GalleryGlimpse from '@/app/Components/GalleryGlimpse';
 
 
@@ -39,6 +39,13 @@ const Home = () => {
 
         </div>
       </HeroBanner>
+
+       <GalleryScrollContent
+        data={reaData}
+        sectionTitle="OUTREACH"
+        sectionSubtitle="PROGRAMS"
+        sectionIcon="🌱"
+      />
 
       <GalleryScrollContent
         data={galleryData}

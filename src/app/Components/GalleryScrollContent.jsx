@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from 'react';
+import Link from "next/link";
 import { ChevronLeft, ChevronRight, Award, Trophy, Star } from 'lucide-react';
 
-const GalleryScrollContent = ({ 
+const GalleryScrollContent = ({
   data = [
     {
       id: 1,
@@ -29,7 +30,7 @@ const GalleryScrollContent = ({
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop"
     }
   ],
-  sectionTitle = "ACHIEVEMENTS", 
+  sectionTitle = "ACHIEVEMENTS",
   sectionSubtitle = "AWARDS",
   sectionIcon = <Trophy className="w-8 h-8" />
 }) => {
@@ -38,13 +39,13 @@ const GalleryScrollContent = ({
   const currentItem = data[currentIndex];
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => 
+    setCurrentIndex((prev) =>
       prev === 0 ? data.length - 1 : prev - 1
     );
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => 
+    setCurrentIndex((prev) =>
       prev === data.length - 1 ? 0 : prev + 1
     );
   };
@@ -59,7 +60,7 @@ const GalleryScrollContent = ({
       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-green-50/20"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.03),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(5,150,105,0.03),transparent_50%)]"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Modern Section Header */}
         <div className="text-center mb-16">
@@ -71,14 +72,14 @@ const GalleryScrollContent = ({
               Recognition
             </span>
           </div>
-          
+
           <h2 className="text-5xl lg:text-5xl font-black mb-4 bg-gradient-to-r from-slate-800 via-green-700 to-emerald-700 bg-clip-text text-transparent leading-tight">
             {sectionTitle}
             <span className="block text-4xl lg:text-4xl font-light mt-2">
               & {sectionSubtitle}
             </span>
           </h2>
-          
+
           <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
             Celebrating milestones and recognitions that define our journey of excellence
           </p>
@@ -91,15 +92,27 @@ const GalleryScrollContent = ({
               {/* Left Side - Enhanced Image Section */}
               <div className="xl:w-3/5 relative group">
                 <div className="relative h-96 xl:h-[500px] overflow-hidden">
-                  <img
-                    src={currentItem.image}
-                    alt={currentItem.title}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                  />
-                  
+                  {currentItem.image?.endsWith(".mp4") ? (
+                    <video
+                      src={currentItem.image}
+                      controls
+                      autoPlay
+                      loop
+
+                      className="w-[750px] h-full object-cover transition-all duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <img
+                      src={currentItem.image}
+                      alt={currentItem.title}
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                    />
+                  )}
+
+
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                  
+
                   {/* Navigation Arrows */}
                   <button
                     onClick={handlePrev}
@@ -107,7 +120,7 @@ const GalleryScrollContent = ({
                   >
                     <ChevronLeft className="w-5 h-5 text-slate-700" />
                   </button>
-                  
+
                   <button
                     onClick={handleNext}
                     className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl border border-white/20"
@@ -121,11 +134,10 @@ const GalleryScrollContent = ({
                       <button
                         key={index}
                         onClick={() => setCurrentIndex(index)}
-                        className={`transition-all duration-300 rounded-full ${
-                          index === currentIndex 
-                            ? 'w-8 h-3 bg-white shadow-lg' 
-                            : 'w-3 h-3 bg-white/60 hover:bg-white/90 hover:scale-110'
-                        }`}
+                        className={`transition-all duration-300 rounded-full ${index === currentIndex
+                          ? 'w-8 h-3 bg-white shadow-lg'
+                          : 'w-3 h-3 bg-white/60 hover:bg-white/90 hover:scale-110'
+                          }`}
                       />
                     ))}
                   </div>
@@ -141,29 +153,31 @@ const GalleryScrollContent = ({
               <div className="xl:w-2/5 p-8 xl:p-12 flex flex-col justify-center">
                 <div className="space-y-6">
                   {/* Date Badge */}
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-full px-4 py-2 text-sm font-medium text-green-700 w-fit">
+                  <div className="inline-flex items-center font-sans font-semibold gap-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-full px-4 py-2 text-sm font-medium text-green-500 w-fit">
                     <Star className="w-4 h-4" />
                     {currentItem.date}
                   </div>
-                  
+
                   <div>
                     <h3 className="text-3xl xl:text-4xl font-bold text-slate-800 mb-3 leading-tight">
                       {currentItem.title}
                     </h3>
-                    
-                    <h4 className="text-xl font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-6">
+
+                    <h4 className="text-xl font-semibold text-[#F58220] bg-clip-text mb-6">
                       {currentItem.subtitle}
                     </h4>
                   </div>
-                  
+
                   <p className="text-slate-600 leading-relaxed text-lg text-justify">
                     {currentItem.description}
                   </p>
-                  
-                  <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25 hover:-translate-y-0.5">
-                    <span>Learn More</span>
-                    <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
+
+                  <Link href="https://www.linkedin.com/company/kisanexperiencecentre/">
+                    <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25 hover:-translate-y-0.5">
+                      <span>Learn More</span>
+                      <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -178,11 +192,10 @@ const GalleryScrollContent = ({
                     <button
                       key={item.id}
                       onClick={() => handleItemChange(index)}
-                      className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 relative overflow-hidden ${
-                        index === currentIndex
-                          ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg shadow-green-500/30 scale-105'
-                          : 'text-slate-600 hover:text-slate-800 hover:bg-white/70 border border-transparent hover:border-white/40'
-                      }`}
+                      className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 relative overflow-hidden ${index === currentIndex
+                        ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg shadow-green-500/30 scale-105'
+                        : 'text-slate-600 hover:text-slate-800 hover:bg-white/70 border border-transparent hover:border-white/40'
+                        }`}
                     >
                       <span className="relative z-10 truncate max-w-48 block">
                         {item.title}
