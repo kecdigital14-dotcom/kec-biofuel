@@ -1,5 +1,5 @@
+import WhatsAppWidget from "./Components/WhatsAppWidget";
 import "./globals.css";
-import WhatsAppWidget from './components/WhatsAppWidget'; // Add this import
 
 export const metadata = {
   title: "KEC Biofuel- Farm to Fuel",
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {children}
-        <WhatsAppWidget /> {/* Add this line */}
+        <WhatsAppWidget/>
       </body>
     </html>
   );
