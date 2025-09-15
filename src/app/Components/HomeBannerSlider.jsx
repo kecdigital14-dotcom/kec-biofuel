@@ -50,7 +50,7 @@ const HomeBannerSlider = () => {
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="w-full flex-shrink-0 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[590px]"
+            className="w-full flex-shrink-0 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px]"
           >
             <img
               src={slide.image}
