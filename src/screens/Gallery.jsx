@@ -42,8 +42,8 @@ const Home = () => {
 
        <GalleryScrollContent
         data={reaData}
-        sectionTitle="OUTREACH"
-        sectionSubtitle="PROGRAMS"
+        sectionTitle="AWARDS"
+        sectionSubtitle="RECOGNITION"
         sectionIcon="🌱"
       />
 
