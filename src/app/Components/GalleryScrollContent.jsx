@@ -55,7 +55,7 @@ const GalleryScrollContent = ({
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-12 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-green-50/20"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.03),transparent_50%)]"></div>
@@ -64,7 +64,7 @@ const GalleryScrollContent = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Modern Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-white/20 shadow-lg">
+          <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 mb-3 border border-white/20 shadow-lg">
             <div className="text-green-600">
               {sectionIcon}
             </div>
@@ -73,9 +73,9 @@ const GalleryScrollContent = ({
             </span>
           </div>
 
-          <h2 className="text-5xl lg:text-5xl font-black mb-4 bg-gradient-to-r from-slate-800 via-green-700 to-emerald-700 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-5xl lg:text-5xl font-black mb-2 bg-gradient-to-r from-slate-800 via-green-700 to-emerald-700 bg-clip-text text-transparent leading-tight">
             {sectionTitle}
-            <span className="block text-4xl lg:text-4xl font-light mt-2">
+            <span className="block text-4xl lg:text-4xl font-light mt-1">
               & {sectionSubtitle}
             </span>
           </h2>
