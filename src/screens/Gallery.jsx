@@ -8,7 +8,7 @@ import GalleryScroll from '../app/Components/GalleryScroll'
 import Footer from '../app/Components/Footer';
 // import { galleryData } from '../app/data/GalleryContent'
 import GalleryScrollContent from '../app/Components/GalleryScrollContent';
-import { galleryData, achievementsData, projectsData, reaData } from '../app/data/galleryData';
+import { galleryData, achievementsData, projectsData, reaData, bioCngData } from '../app/data/galleryData';
 import GalleryGlimpse from '@/app/Components/GalleryGlimpse';
 
 
@@ -40,7 +40,7 @@ const Home = () => {
         </div>
       </HeroBanner>
 
-       <GalleryScrollContent
+      <GalleryScrollContent
         data={reaData}
         sectionTitle="AWARDS"
         sectionSubtitle="RECOGNITION"
@@ -67,6 +67,14 @@ const Home = () => {
         sectionSubtitle="TRAININGS"
         sectionIcon="🚀"
       />
+
+      <GalleryScrollContent
+        data={bioCngData}
+        sectionTitle="Bio-CNG Launch"
+        sectionSubtitle="Pioneering Sustainable Future"
+        sectionIcon="🌍"
+      />
+
 
       <GalleryGlimpse />
 

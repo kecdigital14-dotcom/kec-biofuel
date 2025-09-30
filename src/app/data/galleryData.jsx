@@ -122,3 +122,30 @@ export const projectsData = [
     description: "Revolutionary AI-powered system for precise crop monitoring and management. Using satellite imagery and machine learning, farmers can optimize their crop yield while minimizing resource usage."
   }
 ];
+
+export const bioCngData = [
+  {
+    id: 1,
+    image: "/images/gallery43.jpeg", // first image
+    title: "🌱✨ BIO-CNG Plant",
+    subtitle: "Groundbreaking Ceremony of Bio-CNG Plant at Palwal, Haryana",
+    date: "September 29, 2025",
+    description: "On 29th September 2025, the Bio-CNG Plant groundbreaking ceremony was held at Palwal, Haryana, in collaboration with M/s Acheja KSK Filling Station & KEC Agritech. The event was graced by Shri Puran Yadav Lohchab Ji and guided by the Founder & CEO. The plant aims to empower farmers, support gaushalas, reduce waste, and promote a cleaner, greener future."
+  },
+  {
+    id: 2,
+    image: "/images/gallery46.jpeg", // second image
+    title: "🌱✨ BIO-CNG Plant",
+    subtitle: "Groundbreaking Ceremony of Bio-CNG Plant at Palwal, Haryana",
+    date: "September 29, 2025",
+    description: "On 29th September 2025, the Bio-CNG Plant groundbreaking ceremony was held at Palwal, Haryana, in collaboration with M/s Acheja KSK Filling Station & KEC Agritech. The event was graced by Shri Puran Yadav Lohchab Ji and guided by the Founder & CEO. The plant aims to empower farmers, support gaushalas, reduce waste, and promote a cleaner, greener future."
+  },
+  {
+    id: 3,
+    image: "/images/gallery45.jpeg", // third image
+    title: "🌱✨ BIO-CNG Plant",
+    subtitle: "Groundbreaking Ceremony of Bio-CNG Plant at Palwal, Haryana",
+    date: "September 29, 2025",
+    description: "On 29th September 2025, the Bio-CNG Plant groundbreaking ceremony was held at Palwal, Haryana, in collaboration with M/s Acheja KSK Filling Station & KEC Agritech. The event was graced by Shri Puran Yadav Lohchab Ji and guided by the Founder & CEO. The plant aims to empower farmers, support gaushalas, reduce waste, and promote a cleaner, greener future."
+  }
+];
