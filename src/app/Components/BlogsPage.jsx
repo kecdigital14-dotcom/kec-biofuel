@@ -14,16 +14,16 @@ const BlogsPage = () => {
     // INNOVATION
     {
       id: 1,
-      title: "Algae-Based Biofuels: Revolutionizing Renewable Energy",
-      excerpt: "Discover how algae cultivation is reshaping the biofuel sector by offering higher yields and eco-friendly production methods.",
-      content: "Algae, as a next-gen feedstock, enables efficient biofuel production with minimal environmental impact...",
+      title: "CBG Plants: A Sustainable Solution to India’s Farm Waste Crisis",
+      excerpt: "Learn how Compressed Biogas (CBG) plants are turning farm waste into renewable energy, organic fertilizer, and income opportunities for farmers.",
+      content: "Every year, millions of tonnes of agricultural residue are burned in fields across India. This practice, commonly known as stubble burning, not only creates severe air pollution but also destroys valuable organic matter that could have enriched the soil. Along with stubble, other farm wastes like animal dung and crop residues often remain underutilized, leading to waste management challenges and stagnant farmer incomes.\n\nThis is where Compressed Biogas (CBG) plants come in as a game-changing solution. CBG technology converts agricultural waste into three highly valuable products:\n• Compressed Biogas (CBG): A clean, renewable fuel that can replace CNG in vehicles and be used for power generation.\n• Organic Fertilizer: A nutrient-rich byproduct that improves soil health and reduces dependency on chemical fertilizers.\n• Carbon Credits: Additional income streams generated through greenhouse gas reduction, which can be traded in carbon markets.\n\nBy contributing to CBG, farmers not only reduce environmental damage but also create new income opportunities for themselves. Instead of burning residue, they can supply it to CBG plants, turning waste into wealth. This directly supports sustainable farming, reduces pollution, and contributes to India’s renewable energy goals.\n\nOrganizations like us “KEC Agritech” are spearheading this movement with the innovative idea of CBG Parks—cluster-based projects where multiple units operate with shared infrastructure for feedstock collection, storage, and distribution. This plug-and-play model makes it easier for investors and farmers to participate, ensuring both profitability and scalability.\n\nCBG is not just a green alternative; it is a complete ecosystem that empowers farmers, strengthens rural economies, and provides India with a cleaner energy future. 🌱💰",
       image: "images/blog20.jpg",
-      author: "Dr. Sarah Mitchell",
-      date: "2025-03-15",
-      readTime: "6 min read",
-      category: "Innovation",
-      views: 2340,
-      likes: 89,
+      author: "KEC Agritech",
+      date: "2025-10-03",
+      readTime: "7 min read",
+      category: "Sustainability",
+      views: 0,
+      likes: 0,
       featured: true
     },
     {
@@ -336,7 +336,7 @@ const BlogsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      
+
       {/* Featured Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -387,7 +387,7 @@ const BlogsPage = () => {
                         <span>{post.likes}</span>
                       </div>
                     </div>
-                    <a 
+                    <a
                       // href={`/blogsingle/${post.id}`}
                       href={`/blogsingle`}
                       className="flex items-center text-white font-medium hover:translate-x-1 transition-transform duration-200 bg-green-700 hover:bg-green-500 px-3 py-1 rounded-lg"
@@ -438,8 +438,8 @@ const BlogsPage = () => {
                           </div>
                           <div className="flex items-center space-x-1">
                             <Clock className="w-4 h-4" />
-                              <Calendar className="w-4 h-4" />
-                              <span>{formatDate(post.date)}</span>
+                            <Calendar className="w-4 h-4" />
+                            <span>{formatDate(post.date)}</span>
                           </div>
                         </div>
                         <div className="flex items-center justify-between mt-auto">
@@ -454,7 +454,7 @@ const BlogsPage = () => {
                             </div> */}
                           </div>
                           <div className="flex items-center space-x-2">
-                            <a 
+                            <a
                               // href={`/blogsingle/${post.id}`}
                               href={`/blogsingle`}
 
@@ -463,8 +463,8 @@ const BlogsPage = () => {
                               <span className="mr-1">Read More</span>
                               <ArrowRight className="w-4 h-4" />
                             </a>
-                            <button 
-                              onClick={() => handleLike(post.id)} 
+                            <button
+                              onClick={() => handleLike(post.id)}
                               className={`p-2 rounded-full transition-colors duration-200 ${likedPosts.has(post.id)
                                 ? 'bg-red-100 text-red-600'
                                 : 'bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-600'}`}
@@ -489,18 +489,18 @@ const BlogsPage = () => {
           {/* Pagination */}
           {totalPages > 1 && selectedCategory !== 'All' && (
             <div className="flex items-center justify-center space-x-2 mt-8">
-              <button 
-                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
-                disabled={currentPage === 1} 
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
                 className="p-2 rounded-lg bg-white shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
-              
+
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                <button 
-                  key={page} 
-                  onClick={() => setCurrentPage(page)} 
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
                   className={`px-4 py-2 rounded-lg transition-all duration-200 ${currentPage === page
                     ? 'bg-green-600 text-white shadow-lg'
                     : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md hover:shadow-lg'}`}
@@ -508,10 +508,10 @@ const BlogsPage = () => {
                   {page}
                 </button>
               ))}
-              
-              <button 
-                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-                disabled={currentPage === totalPages} 
+
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
                 className="p-2 rounded-lg bg-white shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
               >
                 <ChevronRight className="w-5 h-5" />
