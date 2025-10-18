@@ -140,7 +140,7 @@ const OrgChartComponent = () => {
             { id: 82, pid: 62, name: "Mr. Dipanshu", title: "Civil Engineer", img: "/images/dipansh.png" },
 
             // Agro-Inputs branch
-            { id: 90, pid: 7, name: "Mr. Amarnath Singh", title: "Sr. VP. Lucknow", img: "/images/amarnath.png" },
+            // { id: 90, pid: 7, name: "Mr. Amarnath Singh", title: "Sr. VP. Lucknow", img: "/images/amarnath.png" },
             // { id: 91, pid: 7, name: "Lalit Mohan Pandey", title: "BD Manager", img: "/images/lalit.png" },
             // { id: 92, pid: 7, name: "Sandeep Kumar Pandey", title: "BD Manager", img: "/images/sandeep.png" },
             // { id: 93, pid: 7, name: "Shivam Verma", title: "BD Manager", img: "/images/kec_shivam.jpeg" },
