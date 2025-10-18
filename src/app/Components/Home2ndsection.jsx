@@ -119,7 +119,7 @@ const Home2ndsection = () => {
                 <span>About KEC Bio-Fuel,</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight block text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text ">
                 Eco-Smart Future <br />
                 <span className="text-green-600">with Bio CBG</span>
               </h2>

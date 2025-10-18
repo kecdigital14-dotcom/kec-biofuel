@@ -79,9 +79,18 @@ const Homeservices = () => {
     <section className="bg-gradient-to-br from-orange-100 via-yellow-50 to-green-100 text-white py-16 px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-2">
-          <p className="text-gray-800 text-sm font-semibold mb-2">BUILD WITH EASE</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-black">Powerful Features</h2>
+        <div className="text-center">
+         
+           <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm border border-green-100 mb-4 sm:mb-4">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-green-700 font-semibold text-xs sm:text-sm tracking-wider uppercase">BUILD WITH EASE</span>
+            <div className="w-6 sm:w-8 h-px bg-green-300"></div>
+          </div>
+          {/* <h2 className="text-3xl md:text-4xl font-bold text-black">Powerful Features</h2> */}
+          <h2 className="text-3xl lg:text-[45px] font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                Powerful <span className="text-green-600">Features
+                  </span>
+              </h2>
         </div>
 
         {/* Scroll Buttons (visible on all screens) */}

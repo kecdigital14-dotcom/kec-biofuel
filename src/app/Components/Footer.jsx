@@ -94,9 +94,13 @@ const Footer = () => {
                 <div className="text-center mb-10">
                     <div className="inline-flex items-center space-x-3 mb-4">
                         <Leaf className="w-8 h-8 text-green-600" />
-                        <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-green-700 bg-clip-text text-transparent">
+                        {/* <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-green-700 bg-clip-text text-transparent">
                            CBG - A Path to a Cleaner Future
-                        </h2>
+                        </h2> */}
+                          <h2 className="text-3xl lg:text-[42px] font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                CBG - A Path to a<span className="text-green-600"> Cleaner Future
+                  </span>
+              </h2>
                         <Leaf className="w-8 h-8 text-green-600" />
                     </div>
                     <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto rounded-full"></div>

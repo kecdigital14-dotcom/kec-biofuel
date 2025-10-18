@@ -48,11 +48,12 @@ const BlogSection = () => {
     <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Latest <span className="text-green-600">Biofuel</span> Insights
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-12 space-y-3">
+           <h2 className="text-3xl lg:text-[42px] font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                Latest <span className="text-green-600">Biofuel Insights
+                  </span>
+              </h2>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
             Stay updated with cutting-edge research, innovations, and industry developments in sustainable biofuel technology
           </p>
         </div>

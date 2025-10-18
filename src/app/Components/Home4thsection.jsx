@@ -36,19 +36,22 @@ const Home4thsection = () => {
       <div className="container mx-auto px-4 w-[90%] lg:w-[80%]">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* ─────────── Left Side ─────────── */}
-          <div className="space-y-8">
+          <div className="space-y-4">
             {/* Header */}
             <div className="space-y-4">
-              <div className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
-                Project Pillars
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-green-800 leading-tight">
-                Bio‑Fuel Solutions <br /> that Power a Greener India
+               <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm border border-green-100 mb-4 sm:mb-6">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-green-700 font-semibold text-xs sm:text-sm tracking-wider uppercase">Project Pillers</span>
+            <div className="w-6 sm:w-8 h-px bg-green-300"></div>
+          </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                Bio‑Fuel Solutions <br /> <span className="text-green-600">that Power a Greener India
+                  </span>
               </h2>
             </div>
 
             {/* Description */}
-            <div className="space-y-4 text-gray-600 text-[15px] font-sans text-justify">
+            <div className="space-y-4 text-gray-600 text-[14.5px] font-inter  text-justify">
               <p>
                 From feedstock aggregation to last‑mile delivery, KEC Bio‑Fuel provides turnkey PMC , EPC , Technology Transfer , O & M  expertise for Bio‑CNG, Bio‑Diesel ,Ethanol ,Hydrogen, and Green Ammonia  assets through advanced fermentation, gasification, and purification systems, ensuring high yields and lower costs. Our mission is to convert waste streams into clean energy creating rural prosperity.
 
@@ -94,7 +97,7 @@ const Home4thsection = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {cat.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-sans text-justify">
+                    <p className="text-gray-600 text-[14px] leading-relaxed font-sans text-justify">
                       {cat.description}
                     </p>
                   </div>

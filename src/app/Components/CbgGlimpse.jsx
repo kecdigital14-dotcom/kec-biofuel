@@ -277,10 +277,15 @@ const CbgGlimpse = () => {
           <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(34,197,94,0.05)_1px,transparent_1px),linear-gradient(-45deg,rgba(34,197,94,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
           <div className="relative z-10 space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+            {/* <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
               Ready to Build Your
               <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent"> CBG Empire?</span>
-            </h2>
+            </h2> */}
+
+              <h2 className="text-3xl lg:text-[42px] font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                Ready to Build Your <span className="text-green-600">CBG Empire?
+                  </span>
+              </h2>
 
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Join the renewable energy revolution with our comprehensive CBG park solutions.

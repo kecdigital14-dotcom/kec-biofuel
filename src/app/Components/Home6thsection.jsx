@@ -12,22 +12,31 @@ const Home6thsection = () => {
         {/* LEFT CONTENT */}
         <div>
           {/* Tag */}
-          <span className="inline-block bg-white text-green-700 border border-green-600 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+          {/* <span className="inline-block bg-white text-green-700 border border-green-600 px-4 py-1 rounded-full text-sm font-semibold mb-4">
             GLOBAL SUSTAINABILITY
-          </span>
+          </span> */}
+          <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm border border-green-100 mb-4 sm:mb-4">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-green-700 font-semibold text-xs sm:text-sm tracking-wider uppercase">GLOBAL SUSTAINABILITY</span>
+            <div className="w-6 sm:w-8 h-px bg-green-300"></div>
+          </div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4 ">
+          {/* <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4 ">
             Advancing Self-Sustainable Global Goals Through Biofuels
-          </h2>
+          </h2> */}
+          <h2 className="text-3xl lg:text-[37px] font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                Advancing Self-Sustainable <br /> <span className="text-green-600">Global Goals Through Biofuels
+                  </span>
+              </h2>
 
           {/* Description */}
-          <p className="text-gray-700 mb-6 font-sans text-justify">
+          <p className="text-gray-700 mb-6  text-justify">
             Biofuels, especially Bio-CBG, are a key enabler of a sustainable energy ecosystem. Produced from agricultural residue, organic waste, and renewable biomass, they significantly lower greenhouse gas emissions while reducing dependency on fossil fuels.
           </p>
 
           {/* Features */}
-          <ul className="space-y-3 text-gray-700 mb-8 font-sans">
+          <ul className="space-y-3 text-gray-700 mb-8 text-[14.4px]">
             <li className="flex items-start">
               <FiCheckCircle className="text-green-600 mt-1 mr-2 font-sans" />
              Accelerates the transition to clean energy and supports UN SDGs like Affordable & Clean Energy and Climate Action.

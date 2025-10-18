@@ -23,7 +23,7 @@ const Home3rdsection = () => {
       id: 2,
       icon: "🌍",
       title: "Nationwide Scalability",
-      description: "74+ PMC, EPC, Technology Transfer, Operation & Maintenance. Launch First CBG Park, Bulandhshar in 2025 & Plant to Establishing 15 CBG Park till 2026-27. 150+ CBG Plant Under CBG Park till 2026-27.",
+      description: "74+ PMC, EPC, Technology Transfer, Operation & Maintenance. Launch First CBG Park, Bulandhshar in 2025 & Plant to Establishing 15 CBG Park till 2026-27.",
       color: "from-teal-400 to-green-500"
     },
     {
@@ -52,18 +52,18 @@ const Home3rdsection = () => {
             <div className="w-6 sm:w-8 h-px bg-green-300"></div>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-2">
-            Key Features of KEC Bio-Fuel
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+            Key Features of <span className='text-green-600'>KEC Bio-Fuel</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 max-w-lg mx-auto">
+          <p className="text-sm sm:text-base text-gray-500 max-w-lg mx-auto font-semibold">
             Powering a Green Revolution through innovative sustainable energy solutions
           </p>
         </div>
 
         {/* Main Features */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto ">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 lg:gap-6 items-center">
-            
+
             {/* Left Features */}
             <div className="space-y-6 sm:space-y-8">
               {features.slice(0, 2).map((feature) => (
@@ -87,7 +87,7 @@ const Home3rdsection = () => {
                           }`}>
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed text-justify">
+                        <p className="text-gray-600 text-sm sm:text-[14px] leading-relaxed text-justify font-inter">
                           {feature.description}
                         </p>
                       </div>
@@ -140,7 +140,7 @@ const Home3rdsection = () => {
                           }`}>
                           {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed text-justify">
+                        <p className="text-gray-600 text-sm sm:text-[14px] leading-relaxed text-justify font-inter">
                           {feature.description}
                         </p>
                       </div>
@@ -153,10 +153,10 @@ const Home3rdsection = () => {
         </div>
 
         {/* Technology Section */}
-        <div className="mt-8 bg-white/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border border-green-100">
+        <div className="mt-16 bg-white/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border border-green-100">
           <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-2">🚀 Technology</div>
-            <div className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+            <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-4">🚀 Technology</div>
+            <div className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed font-dm">
               Our technology efficiently transforms biomass into valuable biofuels and sustainable energy sources like Bio-CBG, Bio-Diesel, Ethanol, Hydrogen, and Green Ammonia through advanced fermentation, gasification, and purification systems...
             </div>
           </div>
