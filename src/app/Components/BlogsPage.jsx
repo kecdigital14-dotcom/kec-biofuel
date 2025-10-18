@@ -174,7 +174,7 @@ const BlogsPage = () => {
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-200 line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-3 flex-grow font-sans">{post.excerpt}</p>
+                      <p className="text-gray-600 mb-4 line-clamp-3 flex-grow font-sans font-semibold">{post.excerpt}</p>
                       <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                         <div className="flex items-center space-x-1">
                           <User className="w-4 h-4" />
