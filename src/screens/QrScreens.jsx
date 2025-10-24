@@ -18,25 +18,26 @@ const QrScreens = () => {
       <div className="h-[450px] md:h-[450px] overflow-hidden">
 
 
-        <HeroBanner backgroundImage="/images/bannernew2.png" >
-          <div className="bg-black/5 backdrop-blur-md rounded-xl px-8 py-4 max-w-sm mx-auto text-center shadow-sm space-y-2 lg:mt-[-250px]">
-            <img src="/images/logo.png" alt="" srcset="" className='w-[80%] h-[80%] mx-auto my-8' />
-            {/* Title */}
-
+        <HeroBanner backgroundImage="/images/bannernew2.png">
+          <div className="bg-black/5 backdrop-blur-md rounded-xl  sm:px-8 py-4 sm:py-6 max-w-[90%] sm:max-w-sm mx-auto text-center shadow-sm space-y-2 mt-4 sm:mt-0 lg:mt-[-250px]">
+            <img
+              src="/images/logo.png"
+              alt="Company Logo"
+              className='w-[70%] sm:w-[80%] h-auto mx-auto my-4 sm:my-8'
+            />
 
             {/* Decorative Line */}
-            <div className="mx-auto w-20 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full"></div>
+            <div className="mx-auto w-16 sm:w-20 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full"></div>
 
             {/* Subtitle */}
-            <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed">
+            <p className="text-white/80 text-base sm:text-lg md:text-xl font-light leading-relaxed px-2">
               Shaping the future with sustainable energy innovations.
             </p>
 
             {/* CTA Button */}
-            <button className="mt-2 mb-3 px-6 py-3 bg-emerald-500 rounded-full text-white font-semibold shadow hover:scale-105 transition-transform">
+            <button className="mt-2 mb-3 px-5 sm:px-6 py-2.5 sm:py-3 bg-emerald-500 rounded-full text-white text-sm sm:text-base font-semibold shadow hover:scale-105 transition-transform active:scale-95">
               Explore Our Vision →
             </button>
-
           </div>
         </HeroBanner>
       </div>
