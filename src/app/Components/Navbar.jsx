@@ -8,7 +8,7 @@ const ScrollingTopBanner = ({ isVisible }) => {
   const scrollText = "🏆Jitendra Narayan, CEO & Founder of KEC Agritech, Honoured with R.E.A.L Excellence Award 2025. Recognition celebrates KEC's leadership in agri-innovation, Bio-CNG and the Kisan Experience Centre model that empowers farmers and agri-entrepreneurs.🥇";
   
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 bg-green-600 text-white py-2 overflow-hidden transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <div className={`bg-green-600 text-white py-2 overflow-hidden relative transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="animate-scroll-with-gap whitespace-nowrap">
         <span className="text-sm font-semibold inline-block px-4">
           "{scrollText}"
@@ -66,8 +66,8 @@ const Navbar = () => {
       {/* Scrolling Top Banner */}
       <ScrollingTopBanner isVisible={showTopBanner} />
 
-      {/* Your Original Navbar with fixed positioning */}
-      <nav className={`fixed left-0 right-0 z-40 bg-gray-100 transition-all duration-300 ${showTopBanner ? 'top-10' : 'top-0'}`}>
+      {/* Your Original Navbar with dynamic positioning */}
+      <nav className={`fixed left-0 right-0 z-50 bg-gray-100 transition-all duration-300 ${showTopBanner ? 'top-10' : 'top-0'}`}>
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -288,9 +288,6 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-
-      {/* Spacer to prevent content from hiding under fixed navbar */}
-      <div className={`transition-all duration-300 ${showTopBanner ? 'h-[104px]' : 'h-[64px]'}`}></div>
     </>
   );
 };

@@ -15,7 +15,7 @@ const QrScreens = () => {
   return (
     <div>
       <Navbar />
-      <div className="h-[450px] md:h-[450px] overflow-hidden">
+      <div className="h-[450px] md:h-[490px] overflow-hidden">
 
 
         <HeroBanner backgroundImage="/images/bannernew2.png">
