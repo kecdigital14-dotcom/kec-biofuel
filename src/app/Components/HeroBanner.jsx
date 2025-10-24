@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import { Leaf, Wind, Sun, Zap } from 'lucide-react';
 
@@ -20,7 +22,7 @@ const HeroBanner = ({ backgroundImage, children, height = 'min-h-[590px]' }) => 
     <div className={`relative ${height} w-full overflow-hidden`}>
       {/* Background Image */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 "
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
