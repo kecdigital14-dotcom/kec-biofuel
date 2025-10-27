@@ -29,13 +29,13 @@ const QrVisCards = () => {
     {
       id: 4,
       name: 'Dr. Khushbu Chaudhary',
-      position: 'Sr. Vice President-Commerce',
+      position: 'Sr. Vice President-Commercial',
       image: '/images/vis1.jpeg',
       gradient: 'from-cyan-400 to-teal-500'
     },
     {
       id: 5,
-      name: 'Jatinderkosh Mandal',
+      name: 'Jaiprakash Mandal',
       position: 'Sr. Marketing Manager',
       image: '/images/vis3.jpeg',
       gradient: 'from-emerald-500 to-teal-600'
