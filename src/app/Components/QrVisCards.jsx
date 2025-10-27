@@ -16,7 +16,7 @@ const QrVisCards = () => {
       id: 2,
       name: 'Ashok Kumar Jaswal',
       position: 'Product & Promotion Manager',
-      image: '/images/vis3.jpeg', 
+      image: '/images/vis5.jpeg', 
       gradient: 'from-teal-400 to-cyan-500'
     },
     {
