@@ -169,7 +169,7 @@ export default function PopupFormModal({
                                         <div className='flex  mx-auto gap-1 mb-2'>
                                             <img src="/images/logo.png" alt="" srcset="" className='w-24 h-10' />
                                             <h2 className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text">
-                                                REL EXPO 2025
+                                                REI EXPO 2025
                                             </h2>
                                         </div>
 
