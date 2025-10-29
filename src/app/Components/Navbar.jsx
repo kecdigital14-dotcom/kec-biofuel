@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 // Scrolling Top Banner Component with Gap Between Scrolls
 const ScrollingTopBanner = ({ isVisible }) => {
   const scrollText = "🏆Jitendra Narayan, CEO & Founder of KEC Agritech, Honoured with R.E.A.L Excellence Award 2025. Recognition celebrates KEC's leadership in agri-innovation, Bio-CNG and the Kisan Experience Centre model that empowers farmers and agri-entrepreneurs.🥇";
   
   return (
-    <div className={`bg-green-600 text-white py-2 overflow-hidden relative transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <div className={`fixed top-0 left-0 right-0 z-50 bg-green-600 text-white py-2 overflow-hidden transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="animate-scroll-with-gap whitespace-nowrap">
         <span className="text-sm font-semibold inline-block px-4">
           "{scrollText}"
@@ -54,7 +53,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setShowTopBanner(scrollY < 50); // Hide banner after scrolling 50px
+      setShowTopBanner(scrollY < 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -67,8 +66,8 @@ const Navbar = () => {
       <ScrollingTopBanner isVisible={showTopBanner} />
 
       {/* Your Original Navbar with dynamic positioning */}
-      <nav className={`fixed left-0 right-0 z-50 bg-gray-100 transition-all duration-300 ${showTopBanner ? 'top-10' : 'top-0'}`}>
-        <div className="container mx-auto px-4 py-3">
+      <nav className={`fixed left-0 z-40 right-0 bg-gray-100 shadow-md transition-all duration-300 ${showTopBanner ? 'top-10' : 'top-0'}`}>
+        <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
@@ -110,7 +109,7 @@ const Navbar = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
                 </button>
                 {isAboutOpen && (
-                  <div className="absolute top-full left-[-5px] mt-2 bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                  <div className="absolute top-full left-[-5px] mt-2 bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
                     <a href="ceo" className="block px-3 py-2 text-lg font-bold text-green-700 hover:text-green-400 hover:bg-gray-50 transition-colors duration-200">
                       Our CEO
                     </a>
@@ -155,10 +154,10 @@ const Navbar = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
                 </button>
                 {isServicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-full bg-white rounded-lg shadow-lg py-2">
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
                     <a href="pmc" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">PMC</a>
                     <a href="epc" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">EPC</a>
-                    <a href="latestdevlopment" className="block px-2 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">Advisory</a>
+                    <a href="latestdevlopment" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">Advisory</a>
                   </div>
                 )}
               </div>
@@ -183,7 +182,7 @@ const Navbar = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
                 </button>
                 {isGalleryOpen && (
-                  <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg py-2 ">
+                  <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg py-2 min-w-[180px]">
                     <a href="gallery" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Gallery</a>
                     <a href="cbgdownload" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Download</a>
                   </div>
@@ -203,7 +202,7 @@ const Navbar = () => {
               <div className="hidden lg:flex items-center space-x-2"></div>
               <a
                 href="/contact"
-                className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors font-sans text-sm font-semibold"
+                className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors font-sans text-sm font-semibold whitespace-nowrap"
               >
                 Contact Us<br />+91-8527626868
               </a>
