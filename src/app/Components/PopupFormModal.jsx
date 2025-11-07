@@ -166,12 +166,26 @@ export default function PopupFormModal({
                             ) : (
                                 <>
                                     <div className="text-ce mb-4 ">
-                                        <div className='flex  mx-auto gap-1 mb-2'>
-                                            <img src="/images/logo.png" alt="" srcset="" className='w-24 h-10' />
-                                            <h2 className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text">
-                                                REI EXPO 2025
+                                        <div className="flex flex-col items-center gap-2 mx-auto mb-2">
+                                            {/* First Row: Logo and BIOFUEL */}
+                                            <div className="flex items-center gap-3">
+                                                <img
+                                                    src="/images/logo.png"
+                                                    alt="KEC Logo"
+                                                    className="w-28 h-auto flex-shrink-0"
+                                                />
+                                                <h2 className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight whitespace-nowrap">
+                                                    BIOFUEL &
+                                                </h2>
+                                            </div>
+
+                                            {/* Second Row: ENERGY EXPO 2025 */}
+                                            <h2 className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight">
+                                                ENERGY EXPO 2025
                                             </h2>
                                         </div>
+
+
 
                                         <p className="text-slate-400 text-sm">Fill in your details to continue your journey with KEC</p>
                                     </div>
@@ -243,7 +257,7 @@ export default function PopupFormModal({
                                                 Would you consider investing in a CBG plant or a CBG park With KEC?
                                             </label>
                                             <div className="relative">
-                                                <div 
+                                                <div
                                                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                                                     className="w-full px-4 py-3.5 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border-2 border-slate-700/50 rounded-2xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500/50 outline-none transition-all text-white hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20 cursor-pointer flex items-center justify-between"
                                                 >
@@ -259,18 +273,18 @@ export default function PopupFormModal({
                                                 </div>
                                                 {isDropdownOpen && (
                                                     <div className="absolute z-10 w-full mt-2 bg-slate-800/95 backdrop-blur-sm border-2 border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl">
-                                                        <div 
+                                                        <div
                                                             onClick={() => {
-                                                                setFormData({...formData, investor: 'Yes'});
+                                                                setFormData({ ...formData, investor: 'Yes' });
                                                                 setIsDropdownOpen(false);
                                                             }}
                                                             className="px-4 py-3 text-white hover:bg-emerald-500 cursor-pointer transition-colors border-b border-slate-700/50"
                                                         >
                                                             👍 Yes
                                                         </div>
-                                                        <div 
+                                                        <div
                                                             onClick={() => {
-                                                                setFormData({...formData, investor: 'No'});
+                                                                setFormData({ ...formData, investor: 'No' });
                                                                 setIsDropdownOpen(false);
                                                             }}
                                                             className="px-4 py-3 text-white hover:bg-emerald-500 cursor-pointer transition-colors"
