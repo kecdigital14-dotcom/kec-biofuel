@@ -83,9 +83,9 @@ const RandDSectionFour = () => {
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Method Section */}
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Research Methodology & Results
-          </h2>
+          <h2 className="text-3xl sm:text-4xl text-center lg:text-[45px] font-bold text-gray-900 leading-tight mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+              Research Methodology  <span className='text-green-600'>& Results</span>
+            </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             Our systematic approach to multi-feedstock biogas production with comprehensive 
             process optimization and performance analysis.
@@ -126,9 +126,9 @@ const RandDSectionFour = () => {
 
         {/* Key Findings */}
         <div className="bg-white rounded-xl shadow-lg p-8">
-          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-            Key Research Findings & Discussion
-          </h3>
+           <h2 className="text-3xl sm:text-4xl text-center lg:text-[40px] font-bold text-gray-900 leading-tight mb-2 py-4 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+              Key Research  <span className='text-green-600'>Findings & Discussion</span>
+            </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {keyFindings.map((finding, index) => (

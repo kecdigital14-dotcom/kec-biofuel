@@ -14,8 +14,8 @@ const RandDSectionThree = () => {
       avgTemp: "38.1°C (Mesophilic Range)",
       totalYield: "3.2 M³",
       efficiency: "1 M³ from 1.56 KG Napier Powder",
-    
-       color: "bg-gradient-to-br from-emerald-400 to-teal-600",
+
+      color: "bg-gradient-to-br from-emerald-400 to-teal-600",
       hoverColor: "hover:from-emerald-500 hover:to-teal-700",
       shadowColor: "shadow-green-200",
       icon: "🌱"
@@ -43,7 +43,7 @@ const RandDSectionThree = () => {
       avgTemp: "28.8°C",
       totalYield: "18.55 M³",
       efficiency: "1 M³ from 20.64 KG Feedstock",
-       color: "bg-gradient-to-br from-green-800 via-green-300 to-green-50",
+      color: "bg-gradient-to-br from-green-800 via-green-300 to-green-50",
       hoverColor: "hover:from-green-500 hover:to-green-700",
       shadowColor: "shadow-emerald-200",
       icon: "🐄"
@@ -81,7 +81,7 @@ const RandDSectionThree = () => {
   const currentData = feedstockData[selectedFeedstock];
 
   const getMetricIcon = (type) => {
-    switch(type) {
+    switch (type) {
       case 'feedstock': return <Beaker className="w-5 h-5" />;
       case 'culture': return <BarChart3 className="w-5 h-5" />;
       case 'ph': return <Droplets className="w-5 h-5" />;
@@ -97,21 +97,29 @@ const RandDSectionThree = () => {
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Floating particles background effect */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-300 rounded-full opacity-20 animate-bounce" style={{animationDelay: '0s'}}></div>
-          <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-green-300 rounded-full opacity-30 animate-bounce" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-purple-300 rounded-full opacity-15 animate-bounce" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-300 rounded-full opacity-20 animate-bounce" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-green-300 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-purple-300 rounded-full opacity-15 animate-bounce" style={{ animationDelay: '2s' }}></div>
         </div>
 
         {/* Section Header */}
         <div className="text-center mb-12 relative">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-purple-600 rounded-full mb-6 shadow-lg">
-            <BarChart3 className="w-10 h-10 text-white" />
+
+          <div className='flex justify-center items-center gap-4'>
+            <div className="flex justify-center mb-4">
+              <div className="bg-gradient-to-r from-green-600 to-emerald-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                <BarChart3 className="w-10 h-10 text-white" />
+              </div>
+            </div>
+            <h2 className="text-3xl sm:text-4xl text-center lg:text-[40px] font-bold text-gray-900 leading-tight py-6 mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+              Raw Material  <span className='text-green-600'>Analysis & Results</span>
+            </h2>
           </div>
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 via-green-800 to-green-800 bg-clip-text text-transparent mb-2">
-            Raw Material Analysis & Results
-          </h2>
+
+
+
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive analysis of multi-feedstock biogas production with detailed 
+            Comprehensive analysis of multi-feedstock biogas production with detailed
             performance metrics and efficiency measurements across various organic materials.
           </p>
         </div>
@@ -129,11 +137,10 @@ const RandDSectionThree = () => {
               <button
                 key={key}
                 onClick={() => setSelectedFeedstock(key)}
-                className={`group relative overflow-hidden  rounded-xl p-6 font-medium transition-all duration-300 transform ${
-                  selectedFeedstock === key
+                className={`group relative overflow-hidden  rounded-xl p-6 font-medium transition-all duration-300 transform ${selectedFeedstock === key
                     ? `${data.color} text-white shadow-2xl ${data.shadowColor} scale-105`
                     : ` text-gray-700 hover:bg-gray-50  hover:shadow-lg hover:scale-102 border border-gray-200 ${data.hoverColor}`
-                }`}
+                  }`}
               >
                 <div className="flex flex-col items-center space-y-3">
                   <div className="text-3xl">{data.icon}</div>
@@ -144,11 +151,10 @@ const RandDSectionThree = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Animated border effect */}
-                <div className={`absolute inset-0 rounded-xl transition-opacity duration-300 ${
-                  selectedFeedstock === key ? 'opacity-100' : 'opacity-0'
-                }`}>
+                <div className={`absolute inset-0 rounded-xl transition-opacity duration-300 ${selectedFeedstock === key ? 'opacity-100' : 'opacity-0'
+                  }`}>
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white/20 to-transparent"></div>
                 </div>
               </button>
@@ -174,7 +180,7 @@ const RandDSectionThree = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Animated wave effect */}
             <div className="absolute bottom-0 left-0 right-0">
               <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-8">
@@ -182,7 +188,7 @@ const RandDSectionThree = () => {
               </svg>
             </div>
           </div>
-          
+
           <div className="p-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
@@ -193,11 +199,10 @@ const RandDSectionThree = () => {
                 { key: 'yield', title: 'Total Biogas Yield', value: currentData.totalYield, type: 'yield', highlight: true },
                 { key: 'efficiency', title: 'Gas Efficiency', value: currentData.efficiency, type: 'efficiency' }
               ].map((metric, index) => (
-                <div 
+                <div
                   key={metric.key}
-                  className={`group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 ${
-                    metric.highlight ? 'ring-2 ring-blue-400 ring-opacity-50' : ''
-                  }`}
+                  className={`group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 ${metric.highlight ? 'ring-2 ring-blue-400 ring-opacity-50' : ''
+                    }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-start gap-3 mb-3">
@@ -206,23 +211,23 @@ const RandDSectionThree = () => {
                     </div>
                     <h4 className="font-semibold text-gray-800 flex-1">{metric.title}</h4>
                   </div>
-                  
+
                   <div className={`${metric.highlight ? 'text-3xl font-bold text-blue-600' : 'text-gray-600 text-sm font-sans'} transition-colors duration-200 group-hover:text-gray-800`}>
                     {metric.value}
                   </div>
-                  
+
                   {metric.highlight && (
                     <div className="absolute top-2 right-2">
                       <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
                     </div>
                   )}
-                  
+
                   {/* Hover effect overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               ))}
             </div>
-            
+
             {/* Performance Indicator */}
             <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-200">
               <div className="flex items-center justify-between">

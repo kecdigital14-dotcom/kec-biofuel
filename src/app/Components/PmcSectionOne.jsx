@@ -28,7 +28,7 @@ const PmcSectionOne = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Section - Image Grid */}
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-green-400 to-blue-500 rounded-3xl opacity-20 blur-lg"></div>
@@ -36,9 +36,8 @@ const PmcSectionOne = () => {
               {images.map((image, index) => (
                 <div
                   key={image.id}
-                  className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-                    index % 2 === 0 ? 'mt-0' : 'mt-8'
-                  }`}
+                  className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${index % 2 === 0 ? 'mt-0' : 'mt-8'
+                    }`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
                   <img
@@ -50,7 +49,7 @@ const PmcSectionOne = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Floating Elements */}
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-15 animate-pulse delay-1000"></div>
@@ -65,13 +64,16 @@ const PmcSectionOne = () => {
                   Professional Services
                 </span>
               </div>
-              
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 bg-clip-text text-transparent">
-                  PMC SERVICES
+              {/*                
+           <h2 className="text-3xl sm:text-4xl text-center lg:text-[40px] font-bold text-gray-900 leading-tight py-6 mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                   Multi-Feedstock <span className='text-green-600'>Approach</span>
+              </h2> */}
+              <h1 className="text-3xl sm:text-4xl lg:text-[50px] font-bold leading-tight max-w-2xl">
+                <span className="text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                  PMC <span className='text-green-600'>SERVICES</span>
                 </span>
                 <br />
-                <span className="text-gray-800 text-2xl sm:text-3xl lg:text-4xl">
+                <span className="text-gray-800 text-2xl sm:text-3xl lg:text-2xl">
                   (PROJECT MANAGEMENT CONSULTANCY)
                 </span>
               </h1>
@@ -81,11 +83,9 @@ const PmcSectionOne = () => {
             <div className="relative">
               <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600 rounded-full"></div>
               <p className="text-gray-700 text-lg leading-relaxed pl-8 text-justify w-[96%]">
-                PMC is crucial to the construction sector. This provides a strong 
-                foundation for the expertise provided by independent companies 
-                or such individuals who gain the knowledge and experience 
-                necessary to supervise, manage and direct a PA construction 
-                project from inception to completion.
+                Project Management Consultancy (PMC) is essential in the construction sector, as it provides the technical expertise needed to guide and manage a project effectively.
+                It supports independent companies or professionals in overseeing the entire construction process — from planning and design to execution and completion.
+                PMC ensures that timelines, budgets, and quality standards are maintained, helping projects run smoothly and efficiently.
               </p>
             </div>
 
@@ -113,10 +113,10 @@ const PmcSectionOne = () => {
               <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-green-500 to-green-600 rounded-full hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <span className="relative z-10">Learn More About Our Services</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <svg 
-                  className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

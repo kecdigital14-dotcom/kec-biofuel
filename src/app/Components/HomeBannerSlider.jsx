@@ -1,5 +1,4 @@
-// HomeBannerSlider.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const HomeBannerSlider = () => {
@@ -32,6 +31,14 @@ const HomeBannerSlider = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Auto-play functionality
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentIndex]);
+
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
@@ -44,10 +51,10 @@ const HomeBannerSlider = () => {
     <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[510px] overflow-hidden mt-16">
       {/* Slides */}
       <div
-        className="flex transition-transform duration-700"
+        className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <div
             key={slide.id}
             className="w-full flex-shrink-0 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px]"
@@ -55,8 +62,14 @@ const HomeBannerSlider = () => {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
+                index === currentIndex ? 'scale-110' : 'scale-100'
+              }`}
             />
+            {/* Shimmer effect on active slide */}
+            {index === currentIndex && (
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
+            )}
           </div>
         ))}
       </div>
@@ -95,12 +108,33 @@ const HomeBannerSlider = () => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
-              currentIndex === index ? "bg-white" : "bg-gray-400"
+            className={`transition-all duration-300 ${
+              currentIndex === index 
+                ? "w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full scale-125" 
+                : "w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full hover:bg-gray-300 hover:scale-110"
             }`}
-          />
+          >
+            {currentIndex === index && (
+              <span className="absolute inset-0 rounded-full border-2 border-white animate-pulse" />
+            )}
+          </button>
         ))}
       </div>
+
+      <style jsx>{`
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        .animate-shimmer {
+          animation: shimmer 3s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 };

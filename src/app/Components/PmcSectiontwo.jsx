@@ -112,9 +112,13 @@ const PmcSectionTwo = () => {
                 <span className="text-green-700 text-sm font-medium tracking-wide">BIOFUEL & CBG SOLUTIONS</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold leading-tight">
+              {/* <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                  Clean Energy. Rural Growth. Sustainable Future
+                  Clean Energy. Rural Growth. Sustainable Future */}
+                  <h1 className="text-3xl sm:text-4xl lg:text-[50px] font-bold leading-tight max-w-2xl">
+                <span className="text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                  Clean Energy. Rural <span className='text-green-600'>Growth. Sustainable Future</span>
+
                 </span>
               </h1>
             </div>

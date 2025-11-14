@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Zap, Leaf, Droplets, Sun, Battery, Recycle } from 'lucide-react';
 
 const Technologies = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVisible, setIsVisible] = useState({});
+  const sectionRef = useRef(null);
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible((prev) => ({ ...prev, [entry.target.dataset.id]: true }));
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current.querySelectorAll('[data-id]');
+    elements.forEach((el) => observerRef.current.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
   
   const technologies = [
     {
@@ -70,25 +95,56 @@ const Technologies = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-green-50 py-12 px-4 sm:px-6">
+    <div className="bg-gradient-to-br from-gray-50 to-green-50 py-12 px-4 sm:px-6 overflow-hidden" ref={sectionRef}>
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-3">
-            Our <span className="text-green-600">Technologies</span>
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-3 transition-all duration-800 ease-out"
+            data-id="header"
+            style={{
+              opacity: isVisible.header ? 1 : 0,
+              transform: isVisible.header ? 'translateY(0)' : 'translateY(-30px)'
+            }}
+          >
+              <h2 className="text-3xl sm:text-4xl lg:text-[45px] font-bold text-gray-900 leading-tight mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                Our <span className='text-green-600'>Technologies</span>
+              </h2>
           </h2>
-          <div className="w-16 sm:w-24 h-1 bg-green-600 mx-auto mb-2"></div>
-          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+          <div 
+            className="h-1 bg-green-600 mx-auto mb-2 transition-all duration-1000 ease-out"
+            data-id="underline"
+            style={{
+              width: isVisible.underline ? '96px' : '0px',
+              transitionDelay: '200ms'
+            }}
+          ></div>
+          <p 
+            className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto transition-all duration-700"
+            data-id="subtitle"
+            style={{
+              opacity: isVisible.subtitle ? 1 : 0,
+              transform: isVisible.subtitle ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '400ms'
+            }}
+          >
             Cutting-edge technologies and innovative solutions driving the future of renewable energy and sustainable development
           </p>
         </div>
 
         {/* Technology Slider */}
-        <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden mb-10 mx-2 sm:mx-4">
+        <div 
+          className="relative bg-white rounded-2xl shadow-xl overflow-hidden mb-10 mx-2 sm:mx-4 transition-all duration-800 ease-out"
+          data-id="slider"
+          style={{
+            opacity: isVisible.slider ? 1 : 0,
+            transform: isVisible.slider ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.98)'
+          }}
+        >
           <div className="p-6 sm:p-8 md:p-12">
             <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-6 sm:gap-0 mb-6 sm:mb-8">
               
-              {/* Left Button (Mobile: top, Desktop: side) */}
+              {/* Left Button */}
               <button 
                 onClick={prevSlide}
                 className="self-center sm:self-auto p-2 sm:p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
@@ -102,7 +158,7 @@ const Technologies = () => {
                   {technologies[currentSlide].icon}
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3">
+                <h3 className="text-2xl sm:text-3xl font-bold text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text mb-3">
                   {technologies[currentSlide].title}
                 </h3>
                 
@@ -114,7 +170,7 @@ const Technologies = () => {
                   {technologies[currentSlide].features.map((feature, index) => (
                     <div key={index} className="flex items-center justify-center sm:justify-start space-x-3">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-gray-500 font-sans text-sm sm:text-base">{feature}</span>
+                      <span className="text-gray-500 font-sans text-sm sm:text-base font-semibold">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -153,6 +209,15 @@ const Technologies = () => {
                 index === currentSlide ? 'ring-2 ring-green-600 transform scale-102 sm:scale-105' : 'hover:transform hover:-translate-y-1'
               }`}
               onClick={() => setCurrentSlide(index)}
+              data-id={`tech-${index}`}
+              style={{
+                opacity: isVisible[`tech-${index}`] ? 1 : 0,
+                transform: isVisible[`tech-${index}`] 
+                  ? 'translateY(0) scale(1)' 
+                  : 'translateY(30px) scale(0.95)',
+                transition: 'all 0.6s ease-out',
+                transitionDelay: `${index * 100}ms`
+              }}
             >
               <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg ${getColorClasses(tech.color)} mb-3 sm:mb-4`}>
                 {React.cloneElement(tech.icon, { className: "w-5 h-5 sm:w-6 sm:h-6" })}
@@ -168,27 +233,54 @@ const Technologies = () => {
         </div>
 
         {/* Innovation Section */}
-        <div className="mt-12 sm:mt-16 bg-gradient-to-br from-green-200 via-green-200 to-green-400 rounded-2xl p-6 sm:p-8 md:p-12 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-600">
+        <div 
+          className="mt-12 sm:mt-16 bg-gradient-to-br from-green-200 via-green-200 to-green-400 rounded-2xl p-6 sm:p-8 md:p-12 text-center transition-all duration-800 ease-out"
+          data-id="innovation"
+          style={{
+            opacity: isVisible.innovation ? 1 : 0,
+            transform: isVisible.innovation ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.98)'
+          }}
+        >
+          <h3 
+            className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text transition-all duration-700"
+            style={{
+              opacity: isVisible.innovation ? 1 : 0,
+              transform: isVisible.innovation ? 'translateY(0)' : 'translateY(-20px)',
+              transitionDelay: '200ms'
+            }}
+          >
             Innovation Meets Sustainability
           </h3>
-          <p className="text-green-600 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p 
+            className="text-green-600 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto transition-all duration-700"
+            style={{
+              opacity: isVisible.innovation ? 1 : 0,
+              transform: isVisible.innovation ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '300ms'
+            }}
+          >
             Our advanced technologies are designed to maximize efficiency, minimize environmental impact, 
             and deliver sustainable solutions for a cleaner future.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2 text-green-700">98%</div>
-              <div className="text-green-700 font-sans text-sm sm:text-base">Efficiency Rate</div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2 text-green-700">50+</div>
-              <div className="text-green-700 font-sans text-sm sm:text-base">Technology Patents</div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2 text-green-700">24/7</div>
-              <div className="text-green-700 font-sans text-sm sm:text-base">Technical Support</div>
-            </div>
+            {[
+              { value: "98%", label: "Efficiency Rate" },
+              { value: "50+", label: "Technology Patents" },
+              { value: "24/7", label: "Technical Support" }
+            ].map((stat, index) => (
+              <div 
+                key={index}
+                className="transition-all duration-700"
+                style={{
+                  opacity: isVisible.innovation ? 1 : 0,
+                  transform: isVisible.innovation ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
+                  transitionDelay: `${500 + index * 150}ms`
+                }}
+              >
+                <div className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2 text-green-700">{stat.value}</div>
+                <div className="text-green-700 font-sans text-sm sm:text-base">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

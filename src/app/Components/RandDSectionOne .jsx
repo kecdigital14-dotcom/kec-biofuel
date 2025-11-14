@@ -70,11 +70,11 @@ const RandDSectionOne = () => {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         ></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">
-              KEC AGRITECH PVT. LTD.
-            </h1>
+             <h2 className="text-3xl sm:text-4xl lg:text-[55px] font-bold text-gray-900 leading-tight mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                   KEC AGRITECH <span className='text-green-600'>PVT. LTD.</span>
+              </h2>
             <p className="text-base sm:text-xl text-green-100 mb-2 sm:mb-4 font-semibold">
               R&D BULANDSHAHR / KEC TECHNICAL
             </p>
@@ -103,12 +103,12 @@ const RandDSectionOne = () => {
         </div>
 
         {/* Key Features Grid */}
-        <div className="min-h-screen bg-gradient-to-br from-orange-100 via-yellow-50 to-green-300 p-4 sm:p-8 rounded-2xl">
+        <div className="min-h-screen bg-gradient-to-br from-green-200 via-yellow-50 to-orange-200 p-4 sm:p-8 rounded-2xl shadow-3xl">
           <div className="max-w-7xl mx-auto">
             {/* Header Section */}
             <div className="text-center mb-8 sm:mb-10">
-              <h2 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent mb-2">
-                Our Core Solutions
+                <h2 className="text-3xl sm:text-4xl lg:text-[55px] font-bold text-gray-900 leading-tight mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                   Our Core <span className='text-green-600'>Solutions</span>
               </h2>
               <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Transforming waste into wealth through cutting-edge biotechnology and sustainable innovation
@@ -178,9 +178,10 @@ const RandDSectionOne = () => {
 
         {/* Multi-Feedstock Section */}
         <div className="bg-gradient-to-br from-white to-green-50 rounded-2xl shadow-xl p-4 sm:p-8 border border-green-100 mt-10">
-          <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent mb-6 sm:mb-8 text-center">
-            Multi-Feedstock Approach
-          </h3>
+          
+           <h2 className="text-3xl sm:text-4xl text-center lg:text-[40px] font-bold text-gray-900 leading-tight py-6 mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                   Multi-Feedstock <span className='text-green-600'>Approach</span>
+              </h2>
 
           {/* First Row */}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6">

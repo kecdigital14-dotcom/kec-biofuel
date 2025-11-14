@@ -56,16 +56,25 @@ const EpcSectionOne = () => {
                     </div>
 
                     {/* Right Section - Content */}
-                    <div className="space-y-8">
+                    <div className="space-y-">
                         {/* Header */}
-                        <div className="space-y-4">
+                        <div className="">
                             <div className="inline-block">
                                 <span className="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
                                     Professional Services
                                 </span>
                             </div>
 
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+   <h1 className="text-3xl sm:text-4xl lg:text-[50px] font-bold leading-tight ">
+                <h2 className="text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                  EPC <span className='text-green-600'>SERVICES</span>
+                </h2>
+                <span className="text-gray-800 text-2xl sm:text-3xl lg:text-2xl">
+                (ENGINEERING, PROCUREMENT  & CONSTRUCTION)
+                </span>
+              </h1>
+
+                            {/* <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                                 <span className="bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 bg-clip-text text-transparent">
                                     EPC SERVICES
                                 </span>
@@ -73,14 +82,14 @@ const EpcSectionOne = () => {
                                 <span className="text-gray-800 text-2xl sm:text-3xl lg:text-4xl">
                                     (ENGINEERING, PROCUREMENT <br /> & CONSTRUCTION)
                                 </span>
-                            </h1>
+                            </h1> */}
                         </div>
 
                         {/* Description */}
                         <div className="relative">
                             <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600 rounded-full"></div>
                             <p className="text-gray-700 text-lg leading-relaxed pl-8 text-justify">
-                                In this type of project the customer looks for a specific company to be responsible for the development of the design and the various engineering aspects involved in their project. These include architectural design, structural engineering, electrical and hydraulic engineering such as air conditioning.
+                                In this type of project the customer looks for a specific company to be responsible for the development of the design and the various engineering aspects involved in their project. These include architectural design, structural engineering, electrical and hydraulic engineering such as air conditioning. The PMC ensures that all these disciplines work in coordination, delivering a design that is efficient, compliant, and aligned with the client’s vision.
                             </p>
                         </div>
 

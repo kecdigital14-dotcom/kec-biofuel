@@ -5,8 +5,10 @@ export default function ProjectSection() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scrollY, setScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setIsVisible(true);
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -86,19 +88,167 @@ export default function ProjectSection() {
 
   return (
     <div className="min-h-screen text-white overflow-hidden bg-gradient-to-r from-green-200 via-yellow-50/100 to-green-200">
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fadeInRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.8;
+            transform: scale(1.05);
+          }
+        }
+
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        .animate-fadeInUp {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fadeInLeft {
+          animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-fadeInRight {
+          animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .animate-scaleIn {
+          animation: scaleIn 0.6s ease-out forwards;
+        }
+
+        .animate-slideDown {
+          animation: slideDown 0.8s ease-out forwards;
+        }
+
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-custom {
+          animation: pulse 2s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+
+        .stagger-1 {
+          animation-delay: 0.1s;
+          opacity: 0;
+        }
+
+        .stagger-2 {
+          animation-delay: 0.2s;
+          opacity: 0;
+        }
+
+        .stagger-3 {
+          animation-delay: 0.3s;
+          opacity: 0;
+        }
+
+        .stagger-4 {
+          animation-delay: 0.4s;
+          opacity: 0;
+        }
+
+        .stagger-5 {
+          animation-delay: 0.5s;
+          opacity: 0;
+        }
+
+        .stagger-6 {
+          animation-delay: 0.6s;
+          opacity: 0;
+        }
+      `}</style>
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-2">
-              <div className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 text-green-400">
-                <Award className="w-4 h-4" />
+            <div className={`space-y-2 ${isVisible ? 'animate-fadeInLeft' : 'opacity-0'}`}>
+              <div className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 text-green-400 animate-float">
+                <Award className="w-4 h-4 animate-pulse-custom" />
                 <span className="text-sm text-gray-900 font-sans font-bold">Award Winning Project</span>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl font-bold leading-none text-gray-700">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-none text-green-900">
                 Sustainable
-                <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                <span className="block text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
                   Bio Fuel
                 </span>
                 Revolution
@@ -110,7 +260,7 @@ export default function ProjectSection() {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <button className="group bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                <button className="group bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
                   <span className="flex items-center space-x-2">
                     <span>View Demo</span>
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -119,7 +269,7 @@ export default function ProjectSection() {
               </div>
             </div>
             
-            <div className="relative">
+            <div className={`relative ${isVisible ? 'animate-fadeInRight' : 'opacity-0'} stagger-1`}>
               <div className="relative bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-3xl p-8 backdrop-blur-sm border border-white/10">
                 <div className="aspect-video bg-black/40 rounded-2xl relative overflow-hidden">
                   {!isPlaying ? (
@@ -127,7 +277,7 @@ export default function ProjectSection() {
                     <div className="absolute inset-0 bg-gradient-to-br from-green-900/50 to-blue-900/50 flex items-center justify-center">
                       <div className="absolute inset-0 bg-black/40"></div>
                       <div 
-                        className="absolute inset-0 bg-cover bg-center opacity-60"
+                        className="absolute inset-0 bg-cover bg-center opacity-60 transition-transform duration-500 hover:scale-105"
                         style={{ 
                           backgroundImage: `url('images/biofuelproject1.jpg')` 
                         }}
@@ -136,13 +286,13 @@ export default function ProjectSection() {
                       {/* Play Button */}
                       <button 
                         onClick={() => setIsPlaying(true)}
-                        className="relative z-10 w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-green-500/50"
+                        className="relative z-10 w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 animate-pulse-custom"
                       >
                         <Play className="w-8 h-8 ml-1 text-white" />
                       </button>
                       
                       {/* Thumbnail Info */}
-                      <div className="absolute bottom-4 left-4 right-4 z-10">
+                      <div className="absolute bottom-4 left-4 right-4 z-10 transform transition-all duration-300 hover:translate-y-0 translate-y-2">
                         <div className="bg-black/60 backdrop-blur-sm rounded-lg p-3">
                           <h3 className="text-white font-semibold text-sm mb-1">Bio Fuel Production Process</h3>
                           <p className="text-gray-300 text-xs">Watch how we convert organic waste into clean energy</p>
@@ -169,7 +319,7 @@ export default function ProjectSection() {
                       {/* Close button */}
                       <button
                         onClick={() => setIsPlaying(false)}
-                        className="absolute top-4 right-4 w-8 h-8 bg-black/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/90 transition-colors z-10"
+                        className="absolute top-4 right-4 w-8 h-8 bg-black/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/90 hover:scale-110 transition-all duration-300 z-10"
                       >
                         ×
                       </button>
@@ -190,8 +340,8 @@ export default function ProjectSection() {
       {/* Timeline Section */}
       <section id="timeline" className="py-2 pt-14 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-gray-700">
+          <div className={`text-center mb-16 ${isVisible ? 'animate-slideDown' : 'opacity-0'} stagger-2`}>
+            <h2 className="text-5xl font-bold mb-6 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
               Project <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Timeline</span>
             </h2>
           </div>
@@ -200,19 +350,19 @@ export default function ProjectSection() {
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-500 to-blue-500 rounded-full"></div>
             
             {timeline.map((phase, index) => (
-              <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-12`}>
+              <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-12 ${isVisible ? (index % 2 === 0 ? 'animate-fadeInLeft' : 'animate-fadeInRight') : 'opacity-0'} stagger-${index + 3}`}>
                 <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                  <div className="bg-white backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300">
+                  <div className="bg-white backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <h3 className="text-xl font-bold mb-2 text-green-800">{phase.phase}</h3>
                     <p className="text-gray-700 font-sans mb-2">{phase.duration}</p>
                     <div className="inline-flex items-center space-x-2 text-sm text-green-400">
-                      <div className="w-2 h-2 bg-green-700 rounded-full"></div>
+                      <div className="w-2 h-2 bg-green-700 rounded-full animate-pulse-custom"></div>
                       <span className='text-gray-900 font-sans'>Completed</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-green-500 to-blue-500 rounded-full border-4 border-slate-900"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-green-500 to-blue-500 rounded-full border-4 border-slate-900 animate-pulse-custom"></div>
               </div>
             ))}
           </div>
@@ -222,37 +372,37 @@ export default function ProjectSection() {
       {/* Results Section with Image Slider */}
       <section id="results" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-gray-700">
+          <div className={`text-center mb-16 ${isVisible ? 'animate-slideDown' : 'opacity-0'} stagger-4`}>
+            <h2 className="text-5xl font-bold mb-6 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
               Project <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Results</span>
             </h2>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+            <div className={`space-y-8 ${isVisible ? 'animate-fadeInLeft' : 'opacity-0'} stagger-5`}>
+              <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <h3 className="text-2xl font-bold mb-6 text-green-900">Technical Achievements</h3>
                 <ul className="space-y-4">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                  <li className="flex items-start space-x-3 transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 animate-pulse-custom"></div>
                     <span className="text-gray-800 font-sans">Developed efficient biomass conversion process</span>
                   </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                  <li className="flex items-start space-x-3 transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 animate-pulse-custom"></div>
                     <span className="text-gray-800 font-sans">Achieved 85% energy conversion efficiency</span>
                   </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                  <li className="flex items-start space-x-3 transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 animate-pulse-custom"></div>
                     <span className="text-gray-800 font-sans">Reduced production costs by 40%</span>
                   </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                  <li className="flex items-start space-x-3 transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 animate-pulse-custom"></div>
                     <span className="text-gray-800 font-sans">Minimized carbon footprint by 75%</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+              <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <h3 className="text-2xl font-bold mb-6 text-green-900">Environmental Impact</h3>
                 <p className="text-gray-800 leading-relaxed font-sans text-justify">
                   This bio fuel project successfully demonstrates how organic waste can be transformed into clean energy, 
@@ -262,7 +412,7 @@ export default function ProjectSection() {
             </div>
             
             {/* Image Slider */}
-            <div className="relative">
+            <div className={`relative ${isVisible ? 'animate-fadeInRight' : 'opacity-0'} stagger-5`}>
               <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
                 
                 <div className='h-[450px] w-full relative overflow-hidden rounded-lg'>
@@ -276,10 +426,10 @@ export default function ProjectSection() {
                         <img 
                           src={image.src} 
                           alt={image.title}
-                          className='h-full w-full object-cover rounded-lg'
+                          className='h-full w-full object-cover rounded-lg transition-transform duration-500 hover:scale-105'
                         />
                         {/* Image overlay with info */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 transform transition-all duration-300">
                           <h4 className="text-white font-bold text-lg mb-1">{image.title}</h4>
                           <p className="text-gray-300 text-sm">{image.description}</p>
                         </div>
@@ -290,14 +440,14 @@ export default function ProjectSection() {
                   {/* Navigation Arrows */}
                   <button
                     onClick={prevSlide}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:-translate-x-1"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   
                   <button
                     onClick={nextSlide}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:translate-x-1"
                   >
                     <ChevronRight className="w-6 h-6" />
                   </button>
@@ -310,8 +460,8 @@ export default function ProjectSection() {
                         onClick={() => goToSlide(index)}
                         className={`w-3 h-3 rounded-full transition-all duration-300 ${
                           index === currentSlide 
-                            ? 'bg-green-400 scale-125' 
-                            : 'bg-white/50 hover:bg-white/80'
+                            ? 'bg-green-400 scale-125 animate-pulse-custom' 
+                            : 'bg-white/50 hover:bg-white/80 hover:scale-110'
                         }`}
                       />
                     ))}

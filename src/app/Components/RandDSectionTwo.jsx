@@ -43,16 +43,19 @@ const RandDSectionTwo = () => {
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Section Header */}
         <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
-            <div className="bg-gradient-to-r from-green-600 to-emerald-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
-              <Leaf className="w-8 h-8 text-white" />
+          <div className='flex justify-center items-center gap-4'>
+            <div className="flex justify-center mb-4">
+              <div className="bg-gradient-to-r from-green-600 to-emerald-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                <Leaf className="w-8 h-8 text-white" />
+              </div>
             </div>
+            <h2 className="text-3xl sm:text-4xl text-center lg:text-[40px] font-bold text-gray-900 leading-tight py-6 mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+              Equipment & <span className='text-green-600'>Infrastructure</span>
+            </h2>
           </div>
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-green-700 to-emerald-700 bg-clip-text text-transparent mb-2">
-            Equipment & Infrastructure
-          </h2>
+
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            State-of-the-art equipment inventory for our Bulandshahr biogas R&D unit, 
+            State-of-the-art equipment inventory for our Bulandshahr biogas R&D unit,
             designed for optimal research and development outcomes.
           </p>
         </div>
@@ -62,22 +65,20 @@ const RandDSectionTwo = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-lg p-1 shadow-xl border border-green-100">
             <button
               onClick={() => setActiveTab('equipment')}
-              className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
-                activeTab === 'equipment' 
-                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg transform scale-105' 
+              className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${activeTab === 'equipment'
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg transform scale-105'
                   : 'text-green-700 hover:text-green-600 hover:bg-green-50'
-              }`}
+                }`}
             >
               <Settings className="w-5 h-5 inline mr-2" />
               Equipment Inventory
             </button>
             <button
               onClick={() => setActiveTab('utilities')}
-              className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
-                activeTab === 'utilities' 
-                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg transform scale-105' 
+              className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${activeTab === 'utilities'
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg transform scale-105'
                   : 'text-green-700 hover:text-green-600 hover:bg-green-50'
-              }`}
+                }`}
             >
               <Factory className="w-5 h-5 inline mr-2" />
               Utility Requirements

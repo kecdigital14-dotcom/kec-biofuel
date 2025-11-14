@@ -1,5 +1,24 @@
 import React from "react";
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 40 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+};
+
+const stagger = {
+  show: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
 
 const ContactSection = () => {
   return (
@@ -7,18 +26,24 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            
-            {/* Left Side - Addresses */}
-            <div>
+
+            {/* LEFT SIDE */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               <h2 className="text-5xl font-bold mb-4">Get In Touch</h2>
               <p className="text-gray-300 mb-8 text-sm">
-                Ready to start your renewable energy project? Our expert team is here to help you
-                navigate every step of the process.
+                Ready to start your renewable energy project? Our expert team is here 
+                to help you navigate every step of the process.
               </p>
 
-              <div className="space-y-6">
+              <motion.div variants={stagger} initial="hidden" whileInView="show">
+
                 {/* Registered Address */}
-                <div className="flex items-start space-x-4">
+                <motion.div variants={fadeUp} className="flex items-start space-x-4">
                   <div className="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
                     <span className="text-white text-xs font-bold">R</span>
                   </div>
@@ -29,10 +54,10 @@ const ContactSection = () => {
                       New Delhi - 110015
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Corporate Address - Branch 1 Delhi */}
-                <div className="flex items-start space-x-4">
+                {/* Branch 1 Delhi */}
+                <motion.div variants={fadeUp} className="flex items-start space-x-4 mt-6">
                   <div className="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
                     <span className="text-white text-xs font-bold">C</span>
                   </div>
@@ -44,10 +69,10 @@ const ContactSection = () => {
                       Bikaji Cama Place, New Delhi - 110066
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Branch 2 Lucknow */}
-                <div className="flex items-start space-x-4">
+                {/* Branch 2 */}
+                <motion.div variants={fadeUp} className="flex items-start space-x-4 mt-6">
                   <div className="w-6 h-6 bg-purple-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
                     <span className="text-white text-xs font-bold">2</span>
                   </div>
@@ -58,10 +83,10 @@ const ContactSection = () => {
                       Bijnor road, Lucknow - 226025
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Branch 3 Surat */}
-                <div className="flex items-start space-x-4">
+                {/* Branch 3 */}
+                <motion.div variants={fadeUp} className="flex items-start space-x-4 mt-6">
                   <div className="w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
                     <span className="text-white text-xs font-bold">3</span>
                   </div>
@@ -73,18 +98,26 @@ const ContactSection = () => {
                       Surat - 395007
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
+                </motion.div>
 
-            {/* Right Side - Contact Information */}
-            <div>
+              </motion.div>
+            </motion.div>
+
+            {/* RIGHT SIDE */}
+            <motion.div
+              variants={fadeRight}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               <div className="bg-gray-800 rounded-lg p-10">
                 <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
 
                 <div className="space-y-6">
+
                   {/* Phone */}
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.03 }}
                     href="tel:+918527626868"
                     className="flex items-center space-x-4 p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
                   >
@@ -95,10 +128,11 @@ const ContactSection = () => {
                       <p className="text-gray-400 font-semibold text-base">+91-9319719115</p>
                       <p className="text-gray-400 font-semibold text-base">+91-8287933634</p>
                     </div>
-                  </a>
+                  </motion.a>
 
                   {/* Email */}
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.03 }}
                     href="mailto:info@kecbiofuel.com"
                     className="flex items-center space-x-4 p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
                   >
@@ -106,16 +140,14 @@ const ContactSection = () => {
                     <div>
                       <p className="font-semibold">Email Us</p>
                       <p className="text-gray-400 font-semibold text-base">info@kecbiofuel.com</p>
-                       
                       <p className="text-gray-400 font-semibold text-base">info@kisanexpereince.com</p>
-
                       <p className="text-gray-400 font-semibold text-base">Franchise@kisanexperience.com</p>
                     </div>
-                  </a>
+                  </motion.a>
                 </div>
 
-                {/* WhatsApp Button */}
-                <div className="mt-8">
+                {/* WhatsApp */}
+                <motion.div whileHover={{ scale: 1.03 }} className="mt-8">
                   <a
                     href="https://wa.me/918287933634?text=Hello%20KEC%20Team,%20I%20would%20like%20to%20schedule%20a%20consultation."
                     target="_blank"
@@ -124,9 +156,10 @@ const ContactSection = () => {
                   >
                     Schedule Consultation
                   </a>
-                </div>
+                </motion.div>
+
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

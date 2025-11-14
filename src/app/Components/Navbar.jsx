@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 // Scrolling Top Banner Component with Gap Between Scrolls
 const ScrollingTopBanner = ({ isVisible }) => {
@@ -91,9 +92,9 @@ const Navbar = () => {
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-4 md:ml-16">
               <div className="relative group">
-                <a href="/" className="text-green-700 text-lg hover:text-green-400 transition-colors font-bold">
+                <Link href="/" className="text-green-700 text-lg hover:text-green-400 transition-colors font-bold">
                   Home
-                </a>
+                </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
               </div>
 
@@ -110,34 +111,34 @@ const Navbar = () => {
                 </button>
                 {isAboutOpen && (
                   <div className="absolute top-full left-[-5px] mt-2 bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
-                    <a href="ceo" className="block px-3 py-2 text-lg font-bold text-green-700 hover:text-green-400 hover:bg-gray-50 transition-colors duration-200">
+                    <Link href="/ceo" className="block px-3 py-2 text-lg font-bold text-green-700 hover:text-green-400 hover:bg-gray-50 transition-colors duration-200">
                       Our CEO
-                    </a>
-                    <a href="about" className="block leading-tight px-3 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors duration-200">
+                    </Link>
+                    <Link href="/about" className="block leading-tight px-3 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors duration-200">
                       KEC-BioFuel
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
 
               <div className="relative group">
-                <a href="superteam" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/superteam" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
                   Our Super Team
-                </a>
+                </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
               </div>
 
               <div className="relative group">
-                <a href="cbg" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/cbg" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
                   CBG Park
-                </a>
+                </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
               </div>
 
               <div className="relative group">
-                <a href="r&d" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/r&d" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
                   R&D
-                </a>
+                </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
               </div>
 
@@ -155,17 +156,17 @@ const Navbar = () => {
                 </button>
                 {isServicesOpen && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
-                    <a href="pmc" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">PMC</a>
-                    <a href="epc" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">EPC</a>
-                    <a href="latestdevlopment" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">Advisory</a>
+                    <Link href="/pmc" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">PMC</Link>
+                    <Link href="/epc" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">EPC</Link>
+                    <Link href="/latestdevlopment" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">Advisory</Link>
                   </div>
                 )}
               </div>
 
               <div className="relative group">
-                <a href="project" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/project" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
                   Projects
-                </a>
+                </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
               </div>
 
@@ -183,16 +184,16 @@ const Navbar = () => {
                 </button>
                 {isGalleryOpen && (
                   <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg py-2 min-w-[180px]">
-                    <a href="gallery" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Gallery</a>
-                    <a href="cbgdownload" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Download</a>
+                    <Link href="/gallery" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Gallery</Link>
+                    <Link href="/cbgdownload" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Download</Link>
                   </div>
                 )}
               </div>
 
               <div className="relative group">
-                <a href="blog" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/blog" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
                   Blog
-                </a>
+                </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
               </div>
             </div>
@@ -200,12 +201,12 @@ const Navbar = () => {
             {/* Right Side - Social Icons and CTA */}
             <div className="hidden md:flex items-center space-x-4">
               <div className="hidden lg:flex items-center space-x-2"></div>
-              <a
+              <Link
                 href="/contact"
                 className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors font-sans text-sm font-semibold whitespace-nowrap"
               >
                 Contact Us<br />+91-8527626868
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -213,7 +214,7 @@ const Navbar = () => {
           {isMobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 bg-gray-200">
               <div className="mt-4 flex flex-col space-y-3 bg-gray-100 rounded-xl px-6 py-4 shadow font-bold text-green-700 text-base">
-                <a href="/" className="hover:text-green-400 transition-colors">Home</a>
+                <Link href="/" className="hover:text-green-400 transition-colors">Home</Link>
 
                 {/* Mobile About Us Submenu */}
                 <div>
@@ -228,15 +229,15 @@ const Navbar = () => {
                   </button>
                   {mobileAboutOpen && (
                     <div className="ml-4 mt-2 space-y-2">
-                      <a href="ceo" className="block hover:text-green-400 transition-colors">Our CEO</a>
-                      <a href="about" className="block hover:text-green-400 transition-colors">About the Organization</a>
+                      <Link href="/ceo" className="block hover:text-green-400 transition-colors">Our CEO</Link>
+                      <Link href="/about" className="block hover:text-green-400 transition-colors">About the Organization</Link>
                     </div>
                   )}
                 </div>
 
-                <a href="superteam" className="hover:text-green-400 transition-colors">Our Super Team</a>
-                <a href="cbg" className="hover:text-green-400 transition-colors">CBG Park</a>
-                <a href="r&d" className="hover:text-green-400 transition-colors">R&D</a>
+                <Link href="/superteam" className="hover:text-green-400 transition-colors">Our Super Team</Link>
+                <Link href="/cbg" className="hover:text-green-400 transition-colors">CBG Park</Link>
+                <Link href="/r&d" className="hover:text-green-400 transition-colors">R&D</Link>
 
                 {/* Mobile Services Submenu */}
                 <div>
@@ -251,13 +252,13 @@ const Navbar = () => {
                   </button>
                   {mobileServicesOpen && (
                     <div className="ml-4 mt-2 space-y-2">
-                      <a href="pmc" className="block hover:text-green-400 transition-colors">PMC</a>
-                      <a href="epc" className="block hover:text-green-400 transition-colors">EPC</a>
+                      <Link href="/pmc" className="block hover:text-green-400 transition-colors">PMC</Link>
+                      <Link href="/epc" className="block hover:text-green-400 transition-colors">EPC</Link>
                     </div>
                   )}
                 </div>
 
-                <a href="project" className="hover:text-green-400 transition-colors">Projects</a>
+                <Link href="/project" className="hover:text-green-400 transition-colors">Projects</Link>
 
                 {/* Mobile Library Submenu */}
                 <div>
@@ -272,16 +273,16 @@ const Navbar = () => {
                   </button>
                   {mobileGalleryOpen && (
                     <div className="ml-4 mt-2 space-y-2">
-                      <a href="gallery" className="block hover:text-green-400 transition-colors">Gallery</a>
-                      <a href="cbgdownload" className="block hover:text-green-400 transition-colors">Download</a>
+                      <Link href="/gallery" className="block hover:text-green-400 transition-colors">Gallery</Link>
+                      <Link href="/cbgdownload" className="block hover:text-green-400 transition-colors">Download</Link>
                     </div>
                   )}
                 </div>
 
-                <a href="blog" className="hover:text-green-400 transition-colors">Blog</a>
-                <a href="contact" className="block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors w-fit mt-3">
+                <Link href="/blog" className="hover:text-green-400 transition-colors">Blog</Link>
+                <Link href="/contact" className="block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors w-fit mt-3">
                   Contact Us<br />+91-8287933634
-                </a>
+                </Link>
               </div>
             </div>
           )}
