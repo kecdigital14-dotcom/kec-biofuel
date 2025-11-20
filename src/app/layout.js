@@ -1,3 +1,4 @@
+import Analytics from "./Components/Analytics";
 import WhatsAppWidget from "./Components/WhatsAppWidget";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${dmSans.variable} ${inter.variable}`}>
       <body className={dmSans.className}>
         {children}
+        <Analytics/>
         <WhatsAppWidget/>
       </body>
     </html>
