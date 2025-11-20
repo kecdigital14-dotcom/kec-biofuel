@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const services = [
   {
@@ -234,13 +235,12 @@ const Homeservices = () => {
                   {service.description}
                 </p>
               </div>
-              <a
-                href={service.link}
-                className="inline-flex items-center text-gray-900 font-sans hover:text-green-600 text-sm font-medium group transition-all duration-300"
-              >
-                Learn More 
-                <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-              </a>
+               <Link href="/about">
+
+              <button className=" bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold cta-button animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
+                LEARN MORE
+              </button>
+            </Link>
 
               {/* Hover gradient border effect */}
               <div className={`absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300 ${

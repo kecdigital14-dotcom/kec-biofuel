@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
+import Link from 'next/link';
 
 const BlogSection = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -137,9 +138,11 @@ const BlogSection = () => {
 
         {/* View All Button */}
         <div className={`text-center mt-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <Link href="/blog">
           <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-2xl hover:rotate-1 active:scale-95">
             View All Posts
           </button>
+          </Link>
         </div>
       </div>
     </section>

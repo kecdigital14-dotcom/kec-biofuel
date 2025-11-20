@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { FiPlay, FiCheckCircle, FiDollarSign } from 'react-icons/fi';
 
@@ -221,9 +222,9 @@ const Home6thsection = () => {
             Advancing Self-Sustainable Global Goals Through Biofuels
           </h2> */}
           <h2 className="text-3xl lg:text-[37px] font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text animate-heading">
-                Advancing Self-Sustainable <br /> <span className="text-green-600">Global Goals Through Biofuels
-                  </span>
-              </h2>
+            Advancing Self-Sustainable <br /> <span className="text-green-600">Global Goals Through Biofuels
+            </span>
+          </h2>
 
           {/* Description */}
           <p className="text-gray-700 mb-6  text-justify animate-description">
@@ -234,7 +235,7 @@ const Home6thsection = () => {
           <ul className="space-y-3 text-gray-700 mb-8 text-[14.4px]">
             <li className="flex items-start animate-feature-1">
               <FiCheckCircle className="text-green-600 mt-1 mr-2 font-sans check-icon-animate" />
-             Accelerates the transition to clean energy and supports UN SDGs like Affordable & Clean Energy and Climate Action.
+              Accelerates the transition to clean energy and supports UN SDGs like Affordable & Clean Energy and Climate Action.
             </li>
             <li className="flex items-start animate-feature-2">
               <FiCheckCircle className="text-green-600 mt-1 mr-2 font-sans check-icon-animate" />
@@ -248,47 +249,50 @@ const Home6thsection = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4 animate-buttons">
-            <a
-              href="/support"
+            <Link
+              href="/whyinvestincbgwithkecagritech"
               className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md shadow-md btn-support"
             >
               <FiDollarSign className="text-xl" />
               <span className="text-sm font-semibold">SUPPORT THE MISSION</span>
-            </a>
+            </Link>
 
+            <Link
+              href="https://www.youtube.com/@KisanExperienceCentre" target="_blank">
             <button className="flex items-center gap-2 text-green-800 font-semibold hover:underline play-btn-parent">
               <div className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center play-btn">
                 <FiPlay />
               </div>
               <span className="text-sm play-text">WATCH IMPACT VIDEO</span>
             </button>
-          </div>
-        </div>
-
-        {/* RIGHT SIDE IMAGES PLACEHOLDER */}
-        <div className="relative">
-          {/* Top Image */}
-          <div className="w-full h-[280px] rounded-lg overflow-hidden shadow-lg mb-4 bg-gray-300 image-hover animate-top-image">
-            <Image
-              src="/images/biofuel2.png"
-              alt="Charging Car"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* Bottom Right Image */}
-          <div className="w-72 h-56 rounded-lg overflow-hidden shadow-md absolute bottom-0 right-0 top-55 bg-gray-200 border-2 border-white image-hover animate-bottom-image">
-            <Image
-              src="/images/homeglobal2nd.jpg"
-              alt="Charging Car"
-              fill
-              className="object-cover"
-            />
-          </div>
+            </Link>
         </div>
       </div>
-    </section>
+
+      {/* RIGHT SIDE IMAGES PLACEHOLDER */}
+      <div className="relative">
+        {/* Top Image */}
+        <div className="w-full h-[280px] rounded-lg overflow-hidden shadow-lg mb-4 bg-gray-300 image-hover animate-top-image">
+          <Image
+            src="/images/biofuel2.png"
+            alt="Charging Car"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Bottom Right Image */}
+        <div className="w-72 h-56 rounded-lg overflow-hidden shadow-md absolute bottom-0 right-0 top-55 bg-gray-200 border-2 border-white image-hover animate-bottom-image">
+          <Image
+            src="/images/homeglobal2nd.jpg"
+            alt="Charging Car"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+    </div>
+    </section >
   );
 };
 

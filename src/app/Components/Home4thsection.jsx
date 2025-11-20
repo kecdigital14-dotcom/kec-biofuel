@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Home4thsection = () => {
@@ -214,19 +215,19 @@ const Home4thsection = () => {
           <div className="space-y-4">
             {/* Header */}
             <div className="space-y-4">
-               <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm border border-green-100 mb-4 sm:mb-6 animate-fadeInLeft">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-green-700 font-semibold text-xs sm:text-sm tracking-wider uppercase">Project Pillers</span>
-            <div className="w-6 sm:w-8 h-px bg-green-300"></div>
-          </div>
+              <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm border border-green-100 mb-4 sm:mb-6 animate-fadeInLeft">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-green-700 font-semibold text-xs sm:text-sm tracking-wider uppercase">Project Pillers</span>
+                <div className="w-6 sm:w-8 h-px bg-green-300"></div>
+              </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text gradient-text animate-fadeInUp">
                 Bio‑Fuel Solutions <br /> <span className="text-green-600">that Power a Greener India
-                  </span>
+                </span>
               </h2>
             </div>
 
             {/* Description */}
-            <div className="space-y-4 text-gray-600 text-[14.5px] font-inter text-justify animate-fadeInLeft" style={{animationDelay: '0.2s', opacity: 0}}>
+            <div className="space-y-4 text-gray-600 text-[14.5px] font-inter text-justify animate-fadeInLeft" style={{ animationDelay: '0.2s', opacity: 0 }}>
               <p>
                 From feedstock aggregation to last‑mile delivery, KEC Bio‑Fuel provides turnkey PMC , EPC , Technology Transfer , O & M  expertise for Bio‑CNG, Bio‑Diesel ,Ethanol ,Hydrogen, and Green Ammonia  assets through advanced fermentation, gasification, and purification systems, ensuring high yields and lower costs. Our mission is to convert waste streams into clean energy creating rural prosperity.
               </p>
@@ -236,7 +237,7 @@ const Home4thsection = () => {
             </div>
 
             {/* Quote */}
-            <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500 quote-box animate-scaleIn" style={{animationDelay: '0.4s', opacity: 0}}>
+            <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500 quote-box animate-scaleIn" style={{ animationDelay: '0.4s', opacity: 0 }}>
               <p className="text-gray-700 italic text-lg mb-4 leading-relaxed">
                 "Every tonne of agri‑waste we upcycle replaces fossil fuel,
                 cuts methane emissions, and puts money back in farmers' hands."
@@ -245,9 +246,12 @@ const Home4thsection = () => {
             </div>
 
             {/* CTA */}
-            <button className="mt-4 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold cta-button animate-fadeInUp" style={{animationDelay: '0.6s', opacity: 0}}>
-              READ MORE
-            </button>
+            <Link href="/about">
+
+              <button className="mt-4 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold cta-button animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
+                READ MORE
+              </button>
+            </Link>
           </div>
 
           {/* ─────────── Right Side ─────────── */}

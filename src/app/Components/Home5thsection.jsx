@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Play } from 'lucide-react';
+import Link from 'next/link';
 
 const Home5thsection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -146,9 +147,11 @@ const Home5thsection = () => {
               <div className="absolute inset-0 rounded-full animate-pulse-ring"></div>
               
               {/* Play button */}
+              <Link   href="https://www.youtube.com/@KisanExperienceCentre" target="_blank">
               <button className="relative w-16 h-16 flex items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-110 active:scale-95 animate-glow group">
                 <Play className="w-6 h-6 ml-1 group-hover:scale-110 transition-transform duration-300" fill="white" />
               </button>
+              </Link>
             </div>
           </div>
 

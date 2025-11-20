@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const Home2ndsection = () => {
@@ -184,10 +185,12 @@ const Home2ndsection = () => {
 
             {/* CTA Button */}
             <div className={`transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <Link href="/about" passHref>
               <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-sm font-medium font-sans flex items-center space-x-2 transition-all duration-300 hover:scale-105 hover:shadow-lg group">
                 <span>More About</span>
                 <span className="text-lg transition-transform duration-300 group-hover:translate-x-2">→</span>
               </button>
+              </Link>
             </div>
           </div>
         </div>

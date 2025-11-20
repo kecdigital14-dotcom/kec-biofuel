@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useState, useRef } from 'react';
 
 const CbgSection = () => {
@@ -192,12 +193,14 @@ const CbgSection = () => {
             </div>
 
             {/* CTA Button */}
+            <Link href="/whyinvestincbgwithkecagritech">
             <button className={`group w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-4 px-8 rounded-2xl hover:from-green-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-xl flex items-center justify-center space-x-3 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
               <span>Explore CBG Solutions</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
+            </Link>
           </div>
 
           {/* Right Section - Image Gallery */}

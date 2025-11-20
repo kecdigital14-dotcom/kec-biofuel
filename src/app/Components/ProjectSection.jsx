@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Leaf, Zap, Recycle, Award, Github, ExternalLink, Play, Pause, BarChart3, Users, Calendar, Target } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ProjectSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -260,12 +261,14 @@ export default function ProjectSection() {
               </p>
               
               <div className="flex flex-wrap gap-4">
+                <Link href="/contact">
                 <button className="group bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
                   <span className="flex items-center space-x-2">
                     <span>View Demo</span>
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </button>
+                </Link>
               </div>
             </div>
             

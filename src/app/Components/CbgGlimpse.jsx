@@ -496,12 +496,14 @@ const CbgGlimpse = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+              <Link href="/whyinvestincbgwithkecagritech">
               <button className="group relative inline-flex items-center justify-center px-10 py-5 text-black font-bold text-lg bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 rounded-2xl hover:from-green-300 hover:via-emerald-300 hover:to-green-400 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 button-ripple">
                 <span>Start Your CBG Project</span>
                 <svg className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 arrow-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
+              </Link>
 
               <Link href="/cbgdownload">
                 <button className="group inline-flex items-center justify-center px-8 py-5 text-green-600 font-bold bg-transparent border-2 border-green-400/50 rounded-2xl hover:bg-green-400/10 hover:border-green-400 transition-all duration-300 hover:scale-105">

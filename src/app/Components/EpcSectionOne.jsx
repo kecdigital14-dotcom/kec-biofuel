@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const EpcSectionOne = () => {
@@ -114,6 +115,7 @@ const EpcSectionOne = () => {
 
                         {/* CTA Button */}
                         <div className="pt-4">
+                             <Link href="/whyinvestincbgwithkecagritech">
                             <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-green-500 to-green-600 rounded-full hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                                 <span className="relative z-10">Learn More About Our Services</span>
                                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -126,6 +128,7 @@ const EpcSectionOne = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

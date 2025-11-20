@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const PmcSectionTwo = () => {
@@ -158,19 +159,22 @@ const PmcSectionTwo = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href="/whyinvestincbgwithkecagritech">
               <button className="group relative inline-flex items-center justify-center px-8 py-4 text-white font-semibold bg-gradient-to-r from-green-500 to-emerald-600 rounded-full hover:from-green-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <span>Explore Bioenergy</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
-              
+              </Link>
+              <Link href="/contact">
               <button className="group inline-flex items-center justify-center px-8 py-4 text-green-700 font-semibold bg-white/60 backdrop-blur-sm border-2 border-green-200 rounded-full hover:bg-green-50 hover:border-green-300 transition-all duration-300">
                 <svg className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>Learn More</span>
               </button>
+              </Link>
             </div>
           </div>
         </div>
