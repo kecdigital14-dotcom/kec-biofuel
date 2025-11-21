@@ -22,7 +22,7 @@ const Footer = () => {
                 { name: "Biogas", path: "/biogas" },
                 { name: "Purification", path: "/biogas" },
                 { name: "Compression", path: "/biogas" },
-            
+
             ]
         },
         {
@@ -41,7 +41,7 @@ const Footer = () => {
             items: [
                 { name: "Assured Long-Term Pricing", path: "/enablesschemes" },
                 { name: "Facilitation by OMCs through LOI", path: "/enablesschemes" },
-      
+
             ]
         },
         {
@@ -63,7 +63,7 @@ const Footer = () => {
             items: [
                 { name: "Expression of Interest", path: "/majorprocess" },
                 { name: "Letter of Intent", path: "/majorprocess" },
-           
+
             ]
         },
         {
@@ -89,7 +89,7 @@ const Footer = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-800 to-transparent transform -skew-y-1"></div>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 pb-6 pt-16">
                 {/* Header */}
                 <div className="text-center mb-10">
                     <div className="inline-flex items-center space-x-3 mb-4">
@@ -97,10 +97,10 @@ const Footer = () => {
                         {/* <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-green-700 bg-clip-text text-transparent">
                            CBG - A Path to a Cleaner Future
                         </h2> */}
-                          <h2 className="text-3xl lg:text-[42px] font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
-                CBG - A Path to a<span className="text-green-600"> Cleaner Future
-                  </span>
-              </h2>
+                        <h2 className="text-3xl lg:text-[42px] font-bold text-green-800 leading-tight text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+                            CBG - A Path to a<span className="text-green-600"> Cleaner Future
+                            </span>
+                        </h2>
                         <Leaf className="w-8 h-8 text-green-600" />
                     </div>
                     <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto rounded-full"></div>
@@ -220,12 +220,20 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-16 pt-8 border-t border-green-600/30">
+                <div className="mt-16 pt-4 border-t border-green-600/30">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         <div className="flex items-center space-x-4">
                             <Leaf className="w-6 h-6 text-green-600" />
-                            <span className="text-gray-600 text-sm font-sans ">
-                                © 2025 by Developers Infotech Pvt Ltd. All Rights Reserved with KEC
+                            <span className="text-gray-600 text-sm font-sans">
+                                © 2025 by{" "}
+                                <Link
+                                    href="https://developersinfotech.in"
+                                    target="_blank"
+                                    className="text-green-600 hover:underline font-medium text-base"
+                                >
+                                    Developersinfotech.in
+                                </Link>
+                                . All Rights Reserved with KEC
                             </span>
                         </div>
                         <div className="flex items-center space-x-6">
