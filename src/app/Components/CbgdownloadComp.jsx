@@ -185,10 +185,10 @@ const CbgDownloadComp = ({
       `}</style>
 
       {/* Banner */}
-      <div className={`bg-gradient-to-r from-green-600 to-gray-600 text-white py-16 ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
+      <div className={`bg-gradient-to-r from-green-600 to-gray-600 text-white py-10  ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
-          <p className="text-lg md:text-lg text-indigo-100 max-w-3xl mx-auto">{description}</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 ">{title}</h1>
+          <p className="text-lg md:text-lg text-indigo-100 mx-auto">{description}</p>
         </div>
       </div>
 
@@ -204,8 +204,8 @@ const CbgDownloadComp = ({
                   <FileText className="h-6 w-6 text-indigo-600" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
-                  <p className="text-gray-500 font-sans">Interactive PDF Viewer</p>
+                  <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">{title}</h2>
+                  <p className="text-gray-500 font-sans font-semibold">Interactive PDF Viewer</p>
                 </div>
               </div>
 
@@ -213,7 +213,7 @@ const CbgDownloadComp = ({
               <button
                 onClick={handleDownload}
                 disabled={isDownloading}
-                className={`bg-gradient-to-r from-green-600 to-gray-500 hover:from-green-700 hover:to-gray-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl ${isVisible ? 'animate-slideInRight' : 'opacity-0'} stagger-2 ${isDownloading ? 'cursor-wait' : ''}`}
+                className={`bg-[#FF6B35] hover:from-green-700 hover:to-gray-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl ${isVisible ? 'animate-slideInRight' : 'opacity-0'} stagger-2 ${isDownloading ? 'cursor-wait' : ''}`}
               >
                 <Download size={20} className={isDownloading ? 'animate-bounce-slow' : ''} />
                 {isDownloading ? 'Downloading...' : 'Download PDF'}

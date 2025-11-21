@@ -88,7 +88,7 @@ export default function ProjectSection() {
   }, []);
 
   return (
-    <div className="min-h-screen text-white overflow-hidden bg-gradient-to-r from-green-200 via-yellow-50/100 to-green-200">
+    <div className="min-h-screen text-white overflow-hidden bg-gradient-to-r from-green-200 via-yellow-50 to-green-200">
       <style jsx>{`
         @keyframes fadeInUp {
           from {
@@ -353,11 +353,11 @@ export default function ProjectSection() {
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-500 to-blue-500 rounded-full"></div>
             
             {timeline.map((phase, index) => (
-              <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-12 ${isVisible ? (index % 2 === 0 ? 'animate-fadeInLeft' : 'animate-fadeInRight') : 'opacity-0'} stagger-${index + 3}`}>
+              <div key={index} className={`relative flex items-center  ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-10 ${isVisible ? (index % 2 === 0 ? 'animate-fadeInLeft' : 'animate-fadeInRight') : 'opacity-0'} stagger-${index + 3}`}>
                 <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                  <div className="bg-white backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                    <h3 className="text-xl font-bold mb-2 text-green-800">{phase.phase}</h3>
-                    <p className="text-gray-700 font-sans mb-2">{phase.duration}</p>
+                  <div className="bg-white backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl p-6 hover:border-green-500/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <h3 className="text-xl font-bold mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">{phase.phase}</h3>
+                    <p className="text-gray-700 font-sans mb-2 font-semibold">{phase.duration}</p>
                     <div className="inline-flex items-center space-x-2 text-sm text-green-400">
                       <div className="w-2 h-2 bg-green-700 rounded-full animate-pulse-custom"></div>
                       <span className='text-gray-900 font-sans'>Completed</span>
@@ -383,31 +383,31 @@ export default function ProjectSection() {
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className={`space-y-8 ${isVisible ? 'animate-fadeInLeft' : 'opacity-0'} stagger-5`}>
-              <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <h3 className="text-2xl font-bold mb-6 text-green-900">Technical Achievements</h3>
+              <div className="bg-white backdrop-blur-sm border shadow-3xl border-white/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <h3 className="text-2xl font-bold mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">Technical Achievements</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start space-x-3 transform transition-all duration-300 hover:translate-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2 animate-pulse-custom"></div>
-                    <span className="text-gray-800 font-sans">Developed efficient biomass conversion process</span>
+                    <span className="text-gray-600 font-sans font-semibold">Developed efficient biomass conversion process</span>
                   </li>
                   <li className="flex items-start space-x-3 transform transition-all duration-300 hover:translate-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2 animate-pulse-custom"></div>
-                    <span className="text-gray-800 font-sans">Achieved 85% energy conversion efficiency</span>
+                    <span className="text-gray-600 font-sans font-semibold">Achieved 85% energy conversion efficiency</span>
                   </li>
                   <li className="flex items-start space-x-3 transform transition-all duration-300 hover:translate-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2 animate-pulse-custom"></div>
-                    <span className="text-gray-800 font-sans">Reduced production costs by 40%</span>
+                    <span className="text-gray-600 font-sans font-semibold">Reduced production costs by 40%</span>
                   </li>
                   <li className="flex items-start space-x-3 transform transition-all duration-300 hover:translate-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2 animate-pulse-custom"></div>
-                    <span className="text-gray-800 font-sans">Minimized carbon footprint by 75%</span>
+                    <span className="text-gray-600 font-sans font-semibold">Minimized carbon footprint by 75%</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <h3 className="text-2xl font-bold mb-6 text-green-900">Environmental Impact</h3>
-                <p className="text-gray-800 leading-relaxed font-sans text-justify">
+              <div className="bg-white backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <h3 className="text-2xl font-bold mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">Environmental Impact</h3>
+                <p className="text-gray-600 font-semibold leading-relaxed font-sans text-justify">
                   This bio fuel project successfully demonstrates how organic waste can be transformed into clean energy, 
                   contributing to a circular economy and reducing environmental pollution while providing sustainable fuel alternatives.
                 </p>

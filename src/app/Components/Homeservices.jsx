@@ -176,7 +176,7 @@ const Homeservices = () => {
         <div className={`flex justify-end mb-4 gap-2 ${isVisible ? 'animate-slide-in-right delay-200' : 'opacity-0'}`}>
           <button
             onClick={scrollLeft}
-            className="text-gray-900 border-2 border-black px-4 py-2 font-bold rounded-lg hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 hover:shadow-lg active:scale-95"
+            className="text-white bg-orange-500 border-2 px-4 py-2 font-bold rounded-lg hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 hover:shadow-lg active:scale-95"
             aria-label="Scroll left"
             type="button"
           >
@@ -184,7 +184,7 @@ const Homeservices = () => {
           </button>
           <button
             onClick={scrollRight}
-            className="text-gray-900 border-2 border-black px-4 py-2 font-bold rounded-lg hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 hover:shadow-lg active:scale-95"
+            className="text-white text-transparent bg-orange-500  border-2 border- px-4 py-2 font-bold rounded-lg hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 hover:shadow-lg active:scale-95"
             aria-label="Scroll right"
             type="button"
           >
@@ -237,7 +237,7 @@ const Homeservices = () => {
               </div>
                <Link href="/about">
 
-              <button className=" bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold cta-button animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
+              <button className=" bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold cta-button animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
                 LEARN MORE
               </button>
             </Link>

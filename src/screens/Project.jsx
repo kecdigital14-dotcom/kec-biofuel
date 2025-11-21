@@ -4,7 +4,6 @@ import React from 'react'
 import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
-
 import Footer from '../app/Components/Footer';
 import ProjectSection from '../app/Components/ProjectSection';
 import ProjectGallery from '../app/Components/ProjectGallery';

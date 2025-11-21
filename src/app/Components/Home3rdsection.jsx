@@ -121,7 +121,7 @@ const Home3rdsection = () => {
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className={`text-center mb-10 sm:mb-12 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}>
+        <div className={`text-center mb-10 sm:mb-10 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}>
           <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm border border-green-100 mb-4 sm:mb-6 animate-glow">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-green-700 font-semibold text-xs sm:text-sm tracking-wider uppercase">Our Features</span>
@@ -131,7 +131,7 @@ const Home3rdsection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
             Key Features of <span className='text-green-600'>KEC Bio-Fuel</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 max-w-lg mx-auto font-semibold">
+          <p className="text-sm sm:text-base text-gray-500 max-w- mx-auto font-semibold">
             Powering a Green Revolution through innovative sustainable energy solutions
           </p>
         </div>

@@ -1,6 +1,7 @@
 "use client";
-
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import { Award } from 'lucide-react';
 
 const ProjectGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -121,26 +122,103 @@ const ProjectGallery = () => {
     }
   ];
 
-  // const categories = ['', ...new Set(projects.map(project => project.category))];
-  
   const filteredProjects = selectedCategory === 'All' 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
-      <style jsx>{`
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-700"></div>
+      </div>
 
+      {/* Header */}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+           <div className="inline-flex mb-4 items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 text-green-400 animate-float">
+                <Award className="w-4 h-4 animate-pulse-custom" />
+                <span className="text-sm text-gray-900 font-sans font-bold">Project Showcase</span>
+              </div>
+         <h2 className="text-5xl font-bold mb-3 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+              Featured <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Projects</span>
+            </h2>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            Innovative solutions in sustainable energy and industrial automation, transforming ideas into impactful realities
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 relative"
+              style={{
+                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+              }}
+            >
+              {/* Category Badge */}
+              <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                <span className="bg-[#FF6B35] text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-lg">
+                  {project.title.includes('MATHURA') ? 'MATHURA' : 'PALWAL'}
+                </span>
+               
+              </div>
+
+              {/* Project Image */}
+              <div className="relative h-64 overflow-hidden bg-gray-200">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  onError={(e) => {
+                    e.target.src = 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500';
+                  }}
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-gray-500 text-sm mb-4 leading-relaxed font-sans font-semibold ">
+                  {project.description}
+                </p>
+
+                {/* Technology Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 text-xs font-medium text-[#FF6B35] bg-white border border-[#FF6B35] rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <button className="flex-1 px-4 py-2.5 text-sm font-semibold shadow-2xl text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    Contact for Quote
+                  </button>
+                  <Link href="/whyinvestincbgwithkecagritech">
+                  <button className="px-6 py-2.5 text-md font-semibold shadow-2xl text-white bg-[#FF6B35] rounded-lg hover:bg-[#e55a28] transition-colors flex items-center gap-2">
+                    Details
+                    <span>→</span>
+                  </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -151,227 +229,7 @@ const ProjectGallery = () => {
             transform: translateY(0);
           }
         }
-
-        @keyframes zoomIn {
-          from {
-            opacity: 0;
-            transform: scale(0.8);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        @keyframes pulse {
-          0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.7;
-            transform: scale(1.1);
-          }
-        }
-
-        @keyframes shimmer {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
-        }
-
-        .animate-fadeInDown {
-          animation: fadeInDown 0.8s ease-out forwards;
-        }
-
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .animate-zoomIn {
-          animation: zoomIn 0.6s ease-out forwards;
-        }
-
-        .animate-slideInLeft {
-          animation: slideInLeft 0.8s ease-out forwards;
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-pulse-custom {
-          animation: pulse 2s ease-in-out infinite;
-        }
-
-        .animate-shimmer {
-          background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(255, 255, 255, 0.4) 50%,
-            transparent 100%
-          );
-          background-size: 1000px 100%;
-          animation: shimmer 2s infinite;
-        }
-
-        .stagger-item {
-          opacity: 0;
-        }
-
-        .stagger-1 { animation-delay: 0.05s; }
-        .stagger-2 { animation-delay: 0.1s; }
-        .stagger-3 { animation-delay: 0.15s; }
-        .stagger-4 { animation-delay: 0.2s; }
-        .stagger-5 { animation-delay: 0.25s; }
-        .stagger-6 { animation-delay: 0.3s; }
-        .stagger-7 { animation-delay: 0.35s; }
-        .stagger-8 { animation-delay: 0.4s; }
-        .stagger-9 { animation-delay: 0.45s; }
-        .stagger-10 { animation-delay: 0.5s; }
-        .stagger-11 { animation-delay: 0.55s; }
-        .stagger-12 { animation-delay: 0.6s; }
       `}</style>
-
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-200/30 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-green-200/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-      </div>
-
-      <section className="relative py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className={`text-center mb-10 ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
-            <div className="inline-flex items-center px-4 py-2 bg-emerald-100 border border-emerald-200 rounded-full text-emerald-700 text-sm font-medium mb-1 animate-float">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse-custom"></span>
-              Portfolio Showcase
-            </div>
-              <h2 className="text-6xl font-bold mb-6 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
-              Featured <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Projects</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Innovative solutions in sustainable energy and industrial automation, 
-              <br className="hidden md:block" />
-              transforming ideas into impactful realities
-            </p>
-          </div>
-
-
-
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProjects.map((project, index) => (
-              <div
-                key={project.id}
-                className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-emerald-100 hover:border-emerald-300 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 ${
-                  isVisible ? 'animate-zoomIn' : 'stagger-item'
-                } stagger-${(index % 12) + 1}`}
-              >
-                {/* Project Image */}
-                <div className="relative w-full h-48 overflow-hidden">
-                  <div 
-                    className="w-full h-full bg-gradient-to-br from-emerald-100 to-green-100 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
-                    style={{
-                      backgroundImage: `url(${project.image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 via-transparent to-transparent"></div>
-                  
-                  {/* Project Info Badge */}
-                  <div className="absolute top-4 left-4 transform transition-all duration-300 group-hover:scale-110">
-                    <span className="bg-emerald-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
-                      Project #{project.id}
-                    </span>
-                  </div>
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-emerald-900/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2 rounded-full font-medium transition-all duration-200 hover:scale-110 hover:shadow-lg"
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        View Project
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Shimmer effect on image */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                    <div className="absolute inset-0 animate-shimmer"></div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-emerald-600 transition-colors duration-300 line-clamp-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 2).map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-emerald-50 text-emerald-700 px-2 py-1 rounded-md text-xs font-medium border border-emerald-100 transition-all duration-300 hover:bg-emerald-100 hover:scale-105"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 2 && (
-                      <span className="text-gray-500 text-xs px-2 py-1 transition-all duration-300 hover:text-gray-700">
-                        +{project.technologies.length - 2} more
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 via-transparent to-green-500/5"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-
-        </div>
-      </section>
     </div>
   );
 };
