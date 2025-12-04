@@ -90,7 +90,7 @@ const Navbar = () => {
             </button>
 
             {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-4 md:ml-16">
+            <div className="hidden md:flex items-center space-x-[15px] md:ml-12">
               <div className="relative group">
                 <Link href="/" className="text-green-700 text-lg hover:text-green-400 transition-colors font-bold">
                   Home
@@ -200,12 +200,21 @@ const Navbar = () => {
 
             {/* Right Side - Social Icons and CTA */}
             <div className="hidden md:flex items-center space-x-4">
-              <div className="hidden lg:flex items-center space-x-2"></div>
+              <div className="hidden lg:flex items-center space-x-3"></div>
               <Link
                 href="/contact"
-                className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors font-sans text-sm font-semibold whitespace-nowrap"
+                className="inline-block bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-lg transition-colors font-sans text-[13px] font-bold whitespace-nowrap"
               >
                 Contact Us<br />+91-8527626868
+              </Link>
+            </div>
+             <div className="hidden md:flex items-center space-x-4">
+              <div className="hidden lg:flex items-center space-x-2"></div>
+              <Link
+                href="/cbgplantvisit"
+                className="inline-block bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-lg transition-colors font-sans text-sm font-semibold whitespace-nowrap"
+              >
+               ♻️CBG <br />Plant Visit
               </Link>
             </div>
           </div>
@@ -282,6 +291,9 @@ const Navbar = () => {
                 <Link href="/blog" className="hover:text-green-400 transition-colors">Blog</Link>
                 <Link href="/contact" className="block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors w-fit mt-3">
                   Contact Us<br />+91-8287933634
+                </Link>
+                <Link href="/cbgplantvisit" className="block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors w-fit">
+                  ♻️CBG Plant Visit
                 </Link>
               </div>
             </div>

@@ -19,7 +19,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "KEC Biofuel- Farm to Fuel",
-  description: "Your site description here",
+  description: "KEC Biofuel produces clean CBG from agricultural waste, empowering farmers and delivering sustainable, eco-friendly energy solutions.",
   icons: {
     icon: "/images/Kecicon.jpeg"
   },
