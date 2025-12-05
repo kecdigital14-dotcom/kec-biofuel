@@ -505,7 +505,7 @@ const Section = ({ title, icon, children }) => (
       </div>
       <h3 className="text-2xl font-bold text-green-400">{title}</h3>
     </div>
-    <div className="space-y-6 pl-14">{children}</div>
+    <div className="space-y-6 pl-1">{children}</div>
   </motion.div>
 );
 
