@@ -5,7 +5,7 @@ export const blogPosts = [
   id: 3,
   title: "This Dhanteras, Invest in the Future — Not Just in Gold!",
   excerpt: "How CBG and KEC Agritech are powering India's energy revolution while turning agricultural waste into wealth. Discover how this Dhanteras, investing in Compressed Biogas (CBG) — India’s new 'Green Gold' — can create sustainable income, empower farmers, and fuel the nation’s clean energy future.",
-
+  slug: "This-Dhanteras-Invest-in-the-Future — Not Just in Gold!",
   content: `Every year, Dhanteras marks prosperity and new beginnings across India. While traditionally it's a day to invest in gold and silver, India now stands at the crossroads of energy transformation with a new kind of "gold" rising from our farmlands — Compressed Biogas (CBG).
 
 CBG is produced through anaerobic digestion of agricultural residues like crop stalks, stubble, cattle dung, and organic waste. The purified gas becomes high-grade biomethane — a clean, renewable alternative to fossil fuels like CNG and LPG. The process creates bio-slurry as a by-product, serving as organic fertilizer that enriches soil fertility and reduces dependence on chemical inputs. This "Waste to Wealth" concept aligns perfectly with India's vision for a green economy, turning millions of tonnes of agricultural waste into valuable energy resources.`,

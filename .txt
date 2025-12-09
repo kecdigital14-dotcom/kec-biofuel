@@ -4,7 +4,6 @@ import {
   Eye, ChevronUp, Bookmark, ArrowRight
 } from 'lucide-react';
 import { blogPosts, getCategoryColor, formatDate } from '../data/blogData';
-import RelatedPosts from './RelatedPosts';
 
 const BlogDetailPage = ({ slug }) => {
   const [isLiked, setIsLiked] = useState(false);
@@ -178,12 +177,12 @@ const BlogDetailPage = ({ slug }) => {
               </div>
             </div>
 
-            <div className="block">
+            <div className="hidden lg:block">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={blogData.featuredImage}
                   alt={blogData.title}
-                  className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
+                  className="w-full h-[400px] object-cover"
                 />
               </div>
             </div>
@@ -227,7 +226,7 @@ const BlogDetailPage = ({ slug }) => {
       <article className="max-w-5xl mx-auto px-6 py-12">
 
         <div className="prose prose-lg max-w-none mb-16">
-          <p className="text-lg text-gray-700 text-justify leading-relaxed first-letter:text-7xl first-letter:font-bold first-letter:text-green-600 first-letter:mr-3 first-letter:float-left">
+          <p className="text-lg text-gray-700 leading-relaxed first-letter:text-7xl first-letter:font-bold first-letter:text-green-600 first-letter:mr-3 first-letter:float-left">
             {blogData.content}
           </p>
         </div>
@@ -329,7 +328,7 @@ const BlogDetailPage = ({ slug }) => {
 
       {/* RELATED POSTS */}
       <RelatedPosts
-        currentPostId={post.id}
+        currentPostId={blogId}
         blogPosts={blogPosts}
         formatDate={formatDate}
       />

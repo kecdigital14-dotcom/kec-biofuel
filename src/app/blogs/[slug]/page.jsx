@@ -1,9 +1,9 @@
 'use client';
 
-import React, { Suspense } from 'react';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
-import BlogDetailPage from '../Components/BlogDetailPage';
+import React, { Suspense, use } from 'react';
+import Navbar from '../../Components/Navbar';
+import Footer from '../../Components/Footer';
+import BlogDetailPage from '../../Components/BlogDetailPage';
 
 // Loading component
 const LoadingSpinner = () => (
@@ -15,12 +15,15 @@ const LoadingSpinner = () => (
   </div>
 );
 
-const BlogSingleScreen = () => {
+const BlogSingleScreen = ({ params }) => {
+  // Unwrap the params Promise using React.use()
+  const { slug } = use(params);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       <Navbar />
       <Suspense fallback={<LoadingSpinner />}>
-        <BlogDetailPage />
+        <BlogDetailPage slug={slug} />
       </Suspense>
       <Footer />
     </div>

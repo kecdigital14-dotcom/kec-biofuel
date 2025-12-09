@@ -32,7 +32,7 @@ const RelatedPosts = ({ currentPostId, blogPosts, formatDate }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="mt-16"
+      className="mt-16 max-w-6xl mx-auto mb-8 px-8"
     >
       <h2 className="text-3xl font-extrabold text-orange-600 mb-8 tracking-tight border-b-2 border-green-500 pb-2">
         More Articles You Might Like

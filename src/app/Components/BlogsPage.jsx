@@ -178,16 +178,15 @@ const BlogsPage = () => {
       {/* Featured Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
-             <h2 className={`text-[54px] mb-8 font-bold text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text text-center justify center ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
-              Featured <span className="bg-gradient-to-r text-green-600">Articles</span>
-            </h2>
+          <h2 className={`text-[54px] mb-8 font-bold text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text text-center justify center ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
+            Featured <span className="bg-gradient-to-r text-green-600">Articles</span>
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {featuredPosts.map((post, idx) => (
               <article
                 key={post.id}
-                className={`bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 flex flex-col h-full ${
-                  idx === 0 ? 'lg:col-span-2' : ''
-                } ${isVisible ? 'animate-scaleIn' : 'opacity-0'} stagger-${idx + 1}`}
+                className={`bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 flex flex-col h-full ${idx === 0 ? 'lg:col-span-2' : ''
+                  } ${isVisible ? 'animate-scaleIn' : 'opacity-0'} stagger-${idx + 1}`}
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -237,8 +236,11 @@ const BlogsPage = () => {
                       </div>
                     </div>
                     <Link
-                      href={`/blogsingle?id=${post.id}&category=${post.category}`}
-                      className="flex items-center text-white font-medium hover:translate-x-1 transition-all duration-300 bg-green-700 hover:bg-green-500 px-3 py-1 rounded-lg hover:shadow-lg"
+                      href={`/blogs/${post.title
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "")}`}
+                      className="flex items-center text-white font-medium font-sans hover:translate-x-1 transition-all duration-300 bg-green-700 hover:bg-green-500 px-3 py-1 rounded-lg hover:shadow-lg"
                     >
                       <span className="mr-1">Read More</span>
                       <ArrowRight className="w-4 h-4" />
@@ -306,7 +308,7 @@ const BlogsPage = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                           <Link
-                            href={`/blogsingle?id=${post.id}&category=${post.category}`}
+                            href={`/blogs?id=${post.id}&category=${post.category}`}
                             className="flex items-center text-white font-medium font-sans hover:translate-x-1 transition-all duration-300 bg-green-700 hover:bg-green-500 px-3 py-1 rounded-lg hover:shadow-lg"
                           >
                             <span className="mr-1">Read More</span>
@@ -314,11 +316,10 @@ const BlogsPage = () => {
                           </Link>
                           <button
                             onClick={(e) => handleLike(post.id, e)}
-                            className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
-                              likedPosts.has(post.id)
+                            className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${likedPosts.has(post.id)
                                 ? 'bg-red-100 text-red-600'
                                 : 'bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-600'
-                            }`}
+                              }`}
                           >
                             <Heart className={`w-4 h-4 transition-all duration-300 ${likedPosts.has(post.id) ? 'animate-pulse-slow' : ''}`} fill={likedPosts.has(post.id) ? 'currentColor' : 'none'} />
                           </button>
