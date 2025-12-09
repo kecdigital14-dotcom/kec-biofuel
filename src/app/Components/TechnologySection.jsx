@@ -7,9 +7,10 @@ import {
     Settings,
     Droplets,
     Wind,
-    Flask,
     Factory
 } from 'lucide-react';
+// Import Flask separately to avoid barrel optimization issues
+import { Beaker } from 'lucide-react';
 
 const TechnologySection = () => {
     const [expandedSections, setExpandedSections] = useState({
@@ -356,7 +357,7 @@ const TechnologySection = () => {
                             <PurificationTechCard
                                 title="Chemical Scrubbing (MEA)"
                                 description="CO₂ absorption and chemical reaction with monoethylamine for highly selective separation with strong chemical affinity."
-                                icon={Flask}
+                                icon={Beaker}
                                 color="bg-gradient-to-r from-orange-500 to-red-500"
                             />
 
