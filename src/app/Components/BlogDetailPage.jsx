@@ -194,37 +194,6 @@ const BlogDetailPage = ({ slug }) => {
         </div>
       </div>
 
-      {/* SOCIAL ACTION BAR */}
-      {/* <div className="sticky top-0 bg-white border-b border-gray-200 z-40 mt-8">
-        <div className="max-w-5xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => setIsLiked(!isLiked)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${isLiked ? 'bg-red-50 text-red-600' : 'hover:bg-gray-100 text-gray-700'}`}
-              >
-                <Heart className={`w-5 h-5 ${isLiked ? 'fill-current' : ''}`} />
-                <span className="font-medium">{isLiked ? blogData.likes + 1 : blogData.likes}</span>
-              </button>
-
-              <button className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-lg text-gray-700 transition-all">
-                <MessageCircle className="w-5 h-5" />
-                <span className="font-medium">{blogData.comments}</span>
-              </button>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button className="p-2 hover:bg-gray-100 rounded-lg text-gray-700 transition-all">
-                <Bookmark className="w-5 h-5" />
-              </button>
-              <button className="p-2 hover:bg-gray-100 rounded-lg text-gray-700 transition-all">
-                <Share2 className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* MAIN ARTICLE */}
       <article className="max-w-5xl mx-auto px-6 py-12">
 
