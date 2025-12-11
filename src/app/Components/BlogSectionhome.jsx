@@ -9,39 +9,6 @@ const BlogSection = () => {
     setIsVisible(true);
   }, []);
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Algae-Based Biofuels: The Next Generation of Clean Energy",
-      excerpt: "Exploring how microalgae cultivation is revolutionizing sustainable fuel production with higher yields and lower environmental impact than traditional crops.",
-      image: "images/blog7.jpg",
-      author: "Dr. Sarah Mitchell",
-      date: "March 15, 2025",
-      readTime: "6 min read",
-      category: "Innovation"
-    },
-    {
-      id: 2,
-      title: "From Waste to Energy: Converting Agricultural Residues into Biofuel",
-      excerpt: "Learn how agricultural waste like corn stalks, wheat straw, and rice husks are being transformed into sustainable biofuels through advanced processing technologies.",
-      image: "images/blog10.jpg",
-      author: "Dr. Marcus Chen",
-      date: "March 12, 2025",
-      readTime: "8 min read",
-      category: "Technology"
-    },
-    // {
-    //   id: 3,
-    //   title: "Biodiesel Production: Scaling Up for Commercial Success",
-    //   excerpt: "Discover the latest developments in biodiesel manufacturing, from feedstock optimization to advanced refining processes that make biofuels commercially viable.",
-    //   image: "images/blog8.jpg",
-    //   author: "Dr. Elena Rodriguez",
-    //   date: "March 10, 2025",
-    //   readTime: "7 min read",
-    //   category: "Industry"
-    // }
-  ];
-
   const getCategoryColor = (category) => {
     const colors = {
       Innovation: "bg-green-100 text-green-800",

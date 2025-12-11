@@ -2,7 +2,7 @@
 
 export const blogPosts = [
   {
-    id: 3,
+    id: 1,
     title: "This Dhanteras: Invest in the Future – Not Just in Gold!",
     excerpt: "How CBG and KEC Agritech are powering India's energy revolution while turning agricultural waste into wealth. Discover how this Dhanteras, investing in Compressed Biogas (CBG) — India’s new 'Green Gold' — can create sustainable income, empower farmers, and fuel the nation’s clean energy future.",
     slug: "this-dhanteras-invest-in-the-future-not-just-in-gold",
@@ -48,65 +48,6 @@ CBG’s potential goes beyond returns — it drives self-reliance in energy, sup
     featured: true
   },
 
-//   {
-//     id: 2,
-//     title: "AI Integration in Biofuel Processing",
-//     excerpt: "Artificial Intelligence is redefining efficiency in biofuel plants through data-driven production strategies.",
-//     content: `Machine learning algorithms help optimize fermentation and processing, minimizing waste and enhancing yields. AI-powered systems can predict equipment failures, optimize resource allocation, and improve overall production efficiency in biofuel plants.
-
-// The integration of AI in biofuel processing represents a significant leap forward in renewable energy production. By analyzing vast amounts of data from sensors and historical records, AI systems can identify patterns and optimize processes in real-time.
-
-// Key benefits include reduced operational costs, improved yield consistency, and enhanced safety protocols. As the technology continues to evolve, we can expect even greater improvements in biofuel production efficiency.`,
-//     image: "/images/blog2.jpg",
-//     author: "Dr. Marcus Chen",
-//     date: "2025-03-18",
-//     readTime: "5 min read",
-//     category: "Innovation",
-//     slug: "ai-integration-biofuel-processing",
-//     views: 1780,
-//     likes: 64,
-//     featured: false
-//   },
-
-//   {
-//     id: 4,  // Fixed duplicate id (was wrongly 3)
-//     title: "Innovative Feedstocks Driving Green Energy",
-//     excerpt: "Exploring seaweed, duckweed, and industrial oils as next-gen biofuel sources for a sustainable future.",
-//     content: `Alternative feedstocks diversify biofuel production, reducing dependency on traditional crops and enhancing sustainability. The exploration of unconventional biomass sources is opening new frontiers in renewable energy.
-
-// Seaweed cultivation offers particular promise as it doesn't require freshwater or arable land, making it an incredibly sustainable option. Duckweed grows rapidly and can be cultivated in wastewater, providing a dual benefit of water purification and biomass production.
-
-// Industrial oils and waste materials are also being successfully converted into high-quality biofuels, demonstrating the circular economy potential of these technologies.`,
-//     image: "/images/blog12.jpg",
-//     author: "Dr. Elena Rodriguez",
-//     date: "2025-03-20",
-//     readTime: "7 min read",
-//     category: "Innovation",
-//     slug: "innovative-feedstocks-green-energy",
-//     views: 2000,
-//     likes: 78,
-//     featured: false
-//   },
-
-  //   {
-  //     id: 7,
-  //     title: "Scaling Biodiesel: Commercial Strategies for Growth",
-  //     excerpt: "Understand how innovative refining processes make large-scale biodiesel production viable globally.",
-  //     content: `From microalgae-based biodiesel to waste oil conversion, learn strategies that help scale up operations for commercial markets. The biodiesel industry is experiencing rapid growth as technology advances and environmental concerns drive demand.
-
-  // Successful scaling requires careful consideration of feedstock availability, processing efficiency, and market access. Companies that have successfully scaled their operations have focused on optimizing their supply chains and investing in advanced processing technologies.
-
-  // The future of biodiesel looks promising, with emerging technologies like enzymatic conversion and supercritical processing offering even greater efficiency and sustainability.`,
-  //     image: "/images/blog7.jpg",
-  //     author: "Dr. Elena Rodriguez",
-  //     date: "2025-03-10",
-  //     readTime: "7 min read",
-  //     category: "Industry",
-  //     slug: "scaling-biodiesel-commercial-strategies",
-  //     views: 2150,
-  //     likes: 103,
-  //     featured: true
-  //   }
 ];
 
 export const getCategoryColor = (category) => {
