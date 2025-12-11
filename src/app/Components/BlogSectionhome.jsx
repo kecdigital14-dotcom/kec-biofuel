@@ -30,16 +30,16 @@ const BlogSection = () => {
       readTime: "8 min read",
       category: "Technology"
     },
-    {
-      id: 3,
-      title: "Biodiesel Production: Scaling Up for Commercial Success",
-      excerpt: "Discover the latest developments in biodiesel manufacturing, from feedstock optimization to advanced refining processes that make biofuels commercially viable.",
-      image: "images/blog8.jpg",
-      author: "Dr. Elena Rodriguez",
-      date: "March 10, 2025",
-      readTime: "7 min read",
-      category: "Industry"
-    }
+    // {
+    //   id: 3,
+    //   title: "Biodiesel Production: Scaling Up for Commercial Success",
+    //   excerpt: "Discover the latest developments in biodiesel manufacturing, from feedstock optimization to advanced refining processes that make biofuels commercially viable.",
+    //   image: "images/blog8.jpg",
+    //   author: "Dr. Elena Rodriguez",
+    //   date: "March 10, 2025",
+    //   readTime: "7 min read",
+    //   category: "Industry"
+    // }
   ];
 
   const getCategoryColor = (category) => {
