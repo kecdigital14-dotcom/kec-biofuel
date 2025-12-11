@@ -7,7 +7,7 @@ import CbgSection from '../app/Components/CbgSection';
 import About2ndsection from '../app/Components/About2ndsection';
 import Footer from '../app/Components/Footer';
 import About3rdsection from '../app/Components/About3rdsection';
-import BlogsPage from '../app/Components/BlogsPage';
+// import BlogsPage from '../app/Components/BlogsPage';
 import AboutUsCEO from '@/app/Components/AboutUsCEO';
 import MajorProcess from '@/app/Components/MajorProcess';
 
