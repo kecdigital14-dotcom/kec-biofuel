@@ -193,7 +193,7 @@ const BlogDetailPage = ({ slug }) => {
       </div>
 
       {/* SOCIAL ACTION BAR */}
-      <div className="sticky top-0 bg-white border-b border-gray-200 z-40 mt-8">
+      {/* <div className="sticky top-0 bg-white border-b border-gray-200 z-40 mt-8">
         <div className="max-w-5xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -221,7 +221,7 @@ const BlogDetailPage = ({ slug }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* MAIN ARTICLE */}
       <article className="max-w-5xl mx-auto px-6 py-12">
