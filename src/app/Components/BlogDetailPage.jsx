@@ -5,7 +5,7 @@ import {
   Heart, Share2, Clock, Calendar, User, MessageCircle,
   Eye, ChevronUp, Bookmark, ArrowRight
 } from 'lucide-react';
-import { blogPosts, getCategoryColor, formatDate } from '../data/blogData';
+import { blogPosts, getCategoryColor, formatDate } from "../data/blogData";
 import RelatedPosts from './RelatedPosts';
 
 const BlogDetailPage = ({ slug }) => {

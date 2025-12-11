@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
 import Link from 'next/link';
+import { blogData  } from "../data/blogData";
 
 const BlogSection = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -34,7 +35,7 @@ const BlogSection = () => {
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {blogData.map((post, index) => (
             <article 
               key={post.id} 
               className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group cursor-pointer transform hover:-translate-y-2 ${
