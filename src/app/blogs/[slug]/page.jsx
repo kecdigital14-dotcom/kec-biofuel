@@ -11,11 +11,15 @@ export async function generateMetadata({ params }) {
   // Because your BlogDetailPage takes from blogPosts, not API
   const { blogPosts } = await import("../../data/blogData");
 
-  const post = blogPosts.find(p =>
-    p.title.toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "") === slug
-  );
+  const post = blogPosts.find(p => {
+  const generatedSlug = p.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return generatedSlug === slug;
+});
+
 
   // If post not found → default metadata
   if (!post) {
