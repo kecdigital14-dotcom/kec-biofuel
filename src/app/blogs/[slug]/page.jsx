@@ -7,36 +7,26 @@ import BlogDetailPage from '../../Components/BlogDetailPage';
 export async function generateMetadata({ params }) {
   const { slug } = params;
 
-  // Fetch your blog from local blogPosts file
-  // Because your BlogDetailPage takes from blogPosts, not API
+  // import blog posts
   const { blogPosts } = await import("../../data/blogData");
 
+  // FIXED SLUG MATCHING
   const post = blogPosts.find(p => {
-  const generatedSlug = p.title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    const generatedSlug = p.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
 
-  return generatedSlug === slug;
-});
+    return generatedSlug === slug;
+  });
 
-
-  // If post not found → default metadata
   if (!post) {
     return {
-      title: "Blog Not Found | KEC Biofuel",
-      description: "Requested blog does not exist.",
-      openGraph: {
-        title: "Blog Not Found",
-        description: "Requested blog does not exist.",
-        images: [
-          "https://www.kecbiofuel.com/default-blog-image.jpg"
-        ],
-      }
+      title: "Blog Not Found",
+      description: "The blog you're looking for does not exist."
     };
   }
 
-  // ⭐ IMPORTANT → This is the correct OG metadata
   return {
     title: post.title,
     description: post.excerpt,
@@ -47,20 +37,19 @@ export async function generateMetadata({ params }) {
       type: "article",
       images: [
         {
-          url: post.image,   // must be a full URL like https://...
+          url: post.image,  // MUST be full URL now
           width: 1200,
-          height: 630,
+          height: 630
         }
       ]
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-      images: [post.image],
+      images: [post.image]
     }
   };
 }
+
 
 // ⭐ Your existing UI component starts here
 export default function BlogSingleScreen({ params }) {
