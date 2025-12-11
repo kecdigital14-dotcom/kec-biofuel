@@ -1,33 +1,72 @@
-'use client';
-
-import React, { Suspense, use } from 'react';
+// src/app/blogs/[slug]/page.jsx
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import BlogDetailPage from '../../Components/BlogDetailPage';
 
-// Loading component
-const LoadingSpinner = () => (
-  <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
-    <div className="text-center">
-      <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-green-600 mx-auto mb-4"></div>
-      <p className="text-gray-600">Loading blog...</p>
-    </div>
-  </div>
-);
+// ⭐ Add Metadata Function (Fix OG Thumbnail)
+export async function generateMetadata({ params }) {
+  const { slug } = params;
 
-const BlogSingleScreen = ({ params }) => {
-  // Unwrap the params Promise using React.use()
-  const { slug } = use(params);
+  // Fetch your blog from local blogPosts file
+  // Because your BlogDetailPage takes from blogPosts, not API
+  const { blogPosts } = await import("../../data/blogData");
+
+  const post = blogPosts.find(p =>
+    p.title.toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") === slug
+  );
+
+  // If post not found → default metadata
+  if (!post) {
+    return {
+      title: "Blog Not Found | KEC Biofuel",
+      description: "Requested blog does not exist.",
+      openGraph: {
+        title: "Blog Not Found",
+        description: "Requested blog does not exist.",
+        images: [
+          "https://www.kecbiofuel.com/default-blog-image.jpg"
+        ],
+      }
+    };
+  }
+
+  // ⭐ IMPORTANT → This is the correct OG metadata
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://www.kecbiofuel.com/blogs/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: post.image,   // must be a full URL like https://...
+          width: 1200,
+          height: 630,
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+    }
+  };
+}
+
+// ⭐ Your existing UI component starts here
+export default function BlogSingleScreen({ params }) {
+  const slug = params.slug;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       <Navbar />
-      <Suspense fallback={<LoadingSpinner />}>
-        <BlogDetailPage slug={slug} />
-      </Suspense>
+      <BlogDetailPage slug={slug} />
       <Footer />
     </div>
   );
-};
-
-export default BlogSingleScreen;
+}
