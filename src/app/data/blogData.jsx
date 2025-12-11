@@ -88,25 +88,25 @@ Industrial oils and waste materials are also being successfully converted into h
     featured: false
   },
 
-  {
-    id: 7,
-    title: "Scaling Biodiesel: Commercial Strategies for Growth",
-    excerpt: "Understand how innovative refining processes make large-scale biodiesel production viable globally.",
-    content: `From microalgae-based biodiesel to waste oil conversion, learn strategies that help scale up operations for commercial markets. The biodiesel industry is experiencing rapid growth as technology advances and environmental concerns drive demand.
+//   {
+//     id: 7,
+//     title: "Scaling Biodiesel: Commercial Strategies for Growth",
+//     excerpt: "Understand how innovative refining processes make large-scale biodiesel production viable globally.",
+//     content: `From microalgae-based biodiesel to waste oil conversion, learn strategies that help scale up operations for commercial markets. The biodiesel industry is experiencing rapid growth as technology advances and environmental concerns drive demand.
 
-Successful scaling requires careful consideration of feedstock availability, processing efficiency, and market access. Companies that have successfully scaled their operations have focused on optimizing their supply chains and investing in advanced processing technologies.
+// Successful scaling requires careful consideration of feedstock availability, processing efficiency, and market access. Companies that have successfully scaled their operations have focused on optimizing their supply chains and investing in advanced processing technologies.
 
-The future of biodiesel looks promising, with emerging technologies like enzymatic conversion and supercritical processing offering even greater efficiency and sustainability.`,
-    image: "/images/blog7.jpg",
-    author: "Dr. Elena Rodriguez",
-    date: "2025-03-10",
-    readTime: "7 min read",
-    category: "Industry",
-    slug: "scaling-biodiesel-commercial-strategies",
-    views: 2150,
-    likes: 103,
-    featured: true
-  }
+// The future of biodiesel looks promising, with emerging technologies like enzymatic conversion and supercritical processing offering even greater efficiency and sustainability.`,
+//     image: "/images/blog7.jpg",
+//     author: "Dr. Elena Rodriguez",
+//     date: "2025-03-10",
+//     readTime: "7 min read",
+//     category: "Industry",
+//     slug: "scaling-biodiesel-commercial-strategies",
+//     views: 2150,
+//     likes: 103,
+//     featured: true
+//   }
 ];
 
 export const getCategoryColor = (category) => {
