@@ -1,6 +1,54 @@
 export const blogData = [
   {
-    id: 1,
+  "id": 1,
+  "title": "In CBG, 'Sasta' Is Not Smart — 'Sabse Achha' Is Sustainable",
+  "excerpt": "Why quality matters more than initial cost in CBG plant investments. Discover why smart investors focus on 15-year performance over short-term savings, and why locking your project before December 31st, 2025 is a strategic advantage.",
+  "slug": "in-cbg-sasta-is-not-smart-sabse-achha-is-sustainable",
+  "content": "India is witnessing a decisive shift in its energy narrative. Clean fuels are no longer optional, and renewable energy is no longer experimental. Among all alternatives, Compressed Bio Gas (CBG) has emerged as one of the most practical, scalable, and policy-backed solutions for the next decade.\n\nYet, as interest in CBG grows, a dangerous misconception is also spreading in the market: 'CBG plant jitna sasta mile, utna achha.' This mindset may look attractive on Day 1, but it becomes the biggest risk over a 15-year project lifecycle.\n\nCBG plants are not commodities. They are long-term infrastructure assets. And infrastructure built on shortcuts rarely survives.",
+  "sections": [
+    {
+      "subheading": "CBG Is a 15-Year Business — Not a One-Time Purchase",
+      "content": "A CBG plant is designed to operate continuously for 15 years or more. During this period, it must deliver stable gas production, consistent digester performance, reliable feedstock handling, compliance with safety and regulatory norms, predictable operating costs, and assured offtake quality.\n\nThis is not similar to buying machinery that can be replaced every few years. Once installed, a CBG plant becomes permanent capital infrastructure. Any compromise made at the setup stage — in design, engineering, or technology — shows its consequences every single day of operation.\n\nThat is why initial pricing should never be the only decision factor.",
+      "image": "/images/blogdata2.jpeg"
+    },
+    {
+      "subheading": "The Myth of 'Low-Cost' CBG Plants",
+      "content": "In recent years, many companies have entered the market promising 'Lowest price CBG plant', 'Quick installation', and 'Same output at half the cost'. But the reality is different. In most low-cost plants, problems don't appear immediately. They surface after 6–18 months.\n\nGas yield starts dropping, digesters develop leakages, feedstock handling becomes inefficient, energy consumption rises, O&M costs shoot up, downtime increases, and regulatory and safety issues follow. What looked 'sasta' at the beginning becomes mehenga in stress, losses, and operational uncertainty.\n\nA plant that saves ₹50 lakh upfront can easily lose ₹3–5 crore over its lifetime.",
+      "image": "/images/blogdata3.webp"
+    },
+    {
+      "subheading": "Why Quality Matters More Than Initial Cost",
+      "content": "CBG technology is biological, mechanical, and operational — all at once. Every part of the system impacts the final output. Quality matters in digester design and construction, where wrong geometry, poor lining, or low-grade materials lead to gas loss and structural damage.\n\nFeedstock management is critical — inadequate preprocessing systems reduce gas yield and increase maintenance. Purification and upgrading systems must be high-quality, as low-quality purification affects methane concentration and offtake compliance. Automation and controls are essential, because without reliable monitoring, small inefficiencies become large failures.\n\nO&M planning is crucial — plants fail not because of concept, but because of poor long-term operations planning. A robust CBG plant is engineered not just to start — but to survive, perform, and scale.",
+      "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop&q=60"
+    },
+    {
+      "subheading": "CBG Economics: Where Real Profit Comes From",
+      "content": "Smart investors understand one simple truth: Profit in CBG is made in operations, not just installation. Key drivers of long-term profitability include consistent gas output, lower downtime, predictable maintenance costs, efficient feedstock conversion, stable digestate (FOM/LFOM) recovery, and compliance with offtake agreements.\n\nAll of these depend on technology quality and EPC capability, not on who quoted the lowest price. A well-designed plant can deliver 40–45% ROI year-on-year, but only when operational efficiency is protected.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60"
+    },
+    {
+      "subheading": "Why Timing Matters: Locking Your Plant Before 31st December",
+      "content": "Another critical factor investors must consider right now is pricing timelines. Across the industry, input costs have risen for steel and construction materials, specialized equipment, automation and safety systems, skilled manpower, and compliance and certification requirements.\n\nAs a result, CBG plant pricing is set to be revised from 1st January 2026. Projects locked before 31st December 2025 benefit from current pricing, while projects confirmed after that will face revised (higher) costs. Depending on plant capacity, early decision-making can save ₹50 lakh to ₹2 crore per project.\n\nThis is not a discount — it is a strategic cost advantage. Smart investors think ahead, not in hindsight.",
+      "image": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&auto=format&fit=crop&q=60"
+    },
+    {
+      "subheading": "CBG Is Not Just Energy — It's an Ecosystem",
+      "content": "A well-built CBG plant delivers more than gas. It provides clean fuel for transport, organic fertilizer for farms, income stability for farmers, waste management for regions, and carbon reduction for the nation. This ecosystem only works when the plant itself is future-ready.\n\nThat future cannot be built on compromises. The right question is not 'Kitna Sasta Hai?' The right questions are: Will this plant perform for 15 years? Is the technology proven at scale? Can the EPC partner support operations long-term? Are safety, compliance, and efficiency built-in? Will this plant protect my margins over time?\n\nWhen investors ask the right questions, the answer becomes clear: 'Sasta nahi — sabse achha hi sahi.' CBG is not a trend. It is infrastructure for India's clean energy future. Those who invest wisely today — in the right technology, the right partner, and the right time — will build assets that deliver returns, stability, and impact for decades.",
+      "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&auto=format&fit=crop&q=60"
+    }
+  ],
+  "image": "/images/bannernew14.jpg",
+  "thumbnail": "/images/bannernew14.jpg",
+  "author": "KEC Bio-Fuel Team",
+  "date": "2024-12-24",
+  "readTime": "7 min read",
+  "category": "Investment Insights",
+  "views": 1820,
+  "likes": 87,
+  "featured": true
+},
+  {
+    id: 2,
     title: "This Dhanteras: Invest in the Future – Not Just in Gold!",
     excerpt: "How CBG and KEC Agritech are powering India's energy revolution while turning agricultural waste into wealth. Discover how this Dhanteras, investing in Compressed Biogas (CBG) — India's new 'Green Gold' — can create sustainable income, empower farmers, and fuel the nation's clean energy future.",
     slug: "this-dhanteras-invest-in-the-future-not-just-in-gold",
@@ -46,7 +94,7 @@ CBG's potential goes beyond returns — it drives self-reliance in energy, suppo
       }
     ],
     image: "/images/blogdhanteras2.jpg",
-    thumbnail: "https://images.unsplash.com/photo-1621524213028-e296cfb0f5fd?w=600&auto=format&fit=crop",
+    thumbnail: "/images/blogdhanteras2.jpg",
     author: "KEC Bio-Fuel Team",
     date: "2024-10-18",
     readTime: "6 min read",
@@ -55,8 +103,9 @@ CBG's potential goes beyond returns — it drives self-reliance in energy, suppo
     likes: 103,
     featured: true
   },
+ 
   {
-    id: 2,
+    id: 3,
     title: "Scaling Biodiesel: Commercial Strategies for Growth",
     excerpt: "Understand how innovative refining processes make large-scale biodiesel production viable globally.",
     slug: "scaling-biodiesel-commercial-strategies-for-growth",
@@ -110,7 +159,7 @@ Strategic location near feedstock sources and fuel distribution networks reduces
     featured: true
   },
   {
-    id: 3,
+    id: 4,
     title: "Innovative Feedstocks Driving Green Energy",
     excerpt: "Exploring seaweed, duckweed, and industrial oils as next-gen biofuel sources for a sustainable future.",
     slug: "innovative-feedstocks-driving-green-energy",
@@ -164,7 +213,7 @@ The global biofuel market is projected to exceed $200 billion by 2030, with inno
     featured: false
   },
   {
-    id: 4,
+    id: 5,
     title: "AI Integration in Biofuel Processing",
     excerpt: "Artificial Intelligence is redefining efficiency in biofuel plants through data-driven production strategies.",
     slug: "ai-integration-in-biofuel-processing",

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-// import { blogData } from '@/data/BlogData';
 import { Eye, Heart, Clock, Calendar, User, ArrowRight } from 'lucide-react';
 import { blogData } from '@/app/data/blogData';
 import Navbar from '@/app/Components/Navbar';
@@ -21,25 +20,86 @@ export default function BlogScreen() {
   const regularBlogs = filteredBlogs.filter(blog => !blog.featured);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className=" bg-gradient-to-b from-gray-50 to-white">
       <Navbar />
-      {/* Hero Section */}
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-orange-100 to-green-100 text-white py-20 mt-24 overflow-hidden h-[350px] items-center">
+      
+      {/* Modern Hero Section - Alternative Design */}
+      <div className="relative mt-4 lg:h-[500px] h-screen overflow-hidden bg-white">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
             src="/images/blogbanner.jpg"
             alt="Blog Banner"
-            className="w-full h-[300px] object-cover opacity-90"
+            className="w-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/80 to-green-600/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <h1 className="text-5xl font-bold mb-4">Our Blog</h1>
-          <p className="text-xl text-white/90 max-w-lg">
-            Discover insights on renewable energy, sustainable agriculture, and India's clean energy revolution
-          </p>
+
+        {/* Animated Gradient Orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-orange-500/30 to-red-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-green-500/30 to-emerald-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
+
+        {/* Content Container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-24 md:py-32">
+            <div className="max-w-4xl">
+              {/* Tag Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/20 to-green-500/20 backdrop-blur-xl rounded-full border border-white/20 mb-6">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-white text-sm font-medium">Latest Insights</span>
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="text-5xl md:text-7xl gap-4 font-black mb-6 leading-none">
+                <span className=" text-white drop-shadow-2xl">Our</span>
+                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-green-400 bg-clip-text text-transparent ml-4">
+                  Blog
+                </span>
+              </h1>
+
+              {/* Description */}
+              <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-8 max-w-2xl drop-shadow-lg">
+                Discover insights on renewable energy, sustainable agriculture, and India's clean energy revolution
+              </p>
+
+              {/* Stats/Features */}
+              <div className="flex flex-wrap gap-6 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-orange-500/20 backdrop-blur-xl flex items-center justify-center border border-orange-500/30">
+                    <span className="text-2xl">☀️</span>
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">Bio CBG</div>
+                    <div className="text-gray-300 text-sm">Future of Power</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-green-500/20 backdrop-blur-xl flex items-center justify-center border border-green-500/30">
+                    <span className="text-2xl">🌾</span>
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">Agriculture</div>
+                    <div className="text-gray-300 text-sm">Sustainable Growth</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/20 backdrop-blur-xl flex items-center justify-center border border-blue-500/30">
+                    <span className="text-2xl">🇮🇳</span>
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">Clean India</div>
+                    <div className="text-gray-300 text-sm">Green Revolution</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Decorative Element */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
       </div>
 
       {/* Category Filter */}
