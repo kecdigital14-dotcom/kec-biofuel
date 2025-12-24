@@ -5,7 +5,7 @@ import {
   Heart, Share2, Clock, Calendar, User, MessageCircle,
   Eye, ChevronUp, Bookmark, ArrowRight
 } from 'lucide-react';
-import { blogPosts, getCategoryColor, formatDate } from "../data/blogData";
+import { blogData, getBlogBySlug } from "../data/blogData"; // Import the helper function
 import RelatedPosts from './RelatedPosts';
 
 const BlogDetailPage = ({ slug }) => {
@@ -13,10 +13,8 @@ const BlogDetailPage = ({ slug }) => {
   const [readingProgress, setReadingProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Find the blog post from blogData based on slug
-  const post = blogPosts.find(p =>
-    p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") === slug
-  );
+  // Use the helper function from blogData to find the post
+  const post = getBlogBySlug(slug);
 
   // If post not found, show 404
   if (!post) {
@@ -33,59 +31,14 @@ const BlogDetailPage = ({ slug }) => {
     );
   }
 
-  // Static blog data structure (keeping your original design)
-  const blogData = {
-    title: post.title,
-    author: "KEC Agritech",
-    authorBio: "Leading sustainable energy solutions across India",
-    date: formatDate(post.date),
-    readTime: post.readTime,
-    views: post.views.toLocaleString(),
-    likes: post.likes,
-    comments: 18,
-    category: post.category,
-    tags: ["CBG", "Renewable Energy", "Farm Waste", "Green Economy", "Sustainable Farming"],
-    featuredImage: post.image,
-
-    content: `Every year, India generates millions of tonnes of agricultural residue, including paddy straw, wheat stalks, and sugarcane trash. While some of it is used for cattle feed or composting, a significant portion is burnt by farmers, leading to massive air pollution, soil degradation, and greenhouse gas emissions. But what if this 'waste' could be transformed into clean energy and valuable resources?`,
-
-    sections: [
-      {
-        heading: "CBG Technology: Turning Waste into Wealth",
-        content:
-          "Compressed Biogas (CBG) technology is emerging as a breakthrough solution by converting agricultural waste into multiple revenue streams. Through anaerobic digestion, farm residue is broken down by microorganisms to produce biogas, which is then purified and compressed into CBG—a renewable fuel that can replace conventional natural gas and transportation fuels.",
-        points: [
-          "Compressed Biogas (CBG): A clean, renewable fuel",
-          "Organic Fertilizer: A nutrient-rich byproduct",
-          "Carbon Credits: Additional income opportunities"
-        ],
-        image: "images/blog4.jpg"
-      },
-      {
-        heading: "Why CBG Over Traditional Energy Sources?",
-        content:
-          "Unlike coal, petrol, or diesel that are depleting finite natural resources, CBG is produced from renewable biomass. It burns cleaner, emits significantly less CO2, and helps reduce India's dependence on costly LNG imports. For industries, transport fleets, and households, CBG offers a cost-effective and sustainable alternative.",
-        image: "images/blog9.jpg"
-      },
-      {
-        heading: "Empowering Farmers & Rural Economies",
-        content:
-          "Farmers stand at the heart of the CBG revolution. Instead of burning crop residue, they can now sell it to biogas plants, creating a new income stream. This not only improves farm economics but also contributes to cleaner air and healthier communities.",
-        highlight:
-          "Rural economies benefit through job creation, logistics, and self-help groups.",
-        image: "images/blog11.jpg"
-      },
-      {
-        heading: "The CBG Parks Model",
-        content:
-          "At KEC Agritech, we are driving the idea of 'CBG Parks'—cluster-based projects where multiple biogas plants work in synergy with local farms and industries. These parks ensure efficient feedstock collection, processing, and distribution while creating circular economies in rural India."
-      },
-      {
-        heading: "Environmental Benefits of CBG",
-        content:
-          "Every ton of biomass diverted to CBG plants prevents methane emissions from open burning or decomposition. This directly contributes to climate change mitigation. Additionally, the nutrient-rich digestate left after biogas production serves as organic manure, reducing the need for chemical fertilizers."
-      }
-    ]
+  // Format date helper
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
   };
 
   useEffect(() => {
@@ -105,27 +58,6 @@ const BlogDetailPage = ({ slug }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const relatedPosts = [
-    {
-      title: "Algae Bio-fuel: The Ocean's Green Gold",
-      image: "images/blog4.jpg",
-      readTime: "6 min read",
-      excerpt: "Exploring the potential of algae as a sustainable biofuel source"
-    },
-    {
-      title: "Agricultural Biomass Solutions",
-      image: "images/blog9.jpg",
-      readTime: "10 min read",
-      excerpt: "Converting farm waste into valuable energy resources"
-    },
-    {
-      title: "Bio-diesel Production at Scale",
-      image: "images/blog11.jpg",
-      readTime: "7 min read",
-      excerpt: "Commercial opportunities in bio-diesel manufacturing"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
 
@@ -144,12 +76,12 @@ const BlogDetailPage = ({ slug }) => {
 
             <div>
               <span className="inline-block px-4 py-1 bg-green-600 rounded-full text-sm font-medium text-white">
-                {blogData.category}
+                {post.category}
               </span>
 
-              <h2 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-4 mt-4">
-                {blogData.title}
-              </h2>
+              <h1 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-4 mt-4">
+                {post.title}
+              </h1>
 
               <div className="flex flex-wrap items-center gap-6 text-gray-700">
                 <div className="flex items-center gap-3">
@@ -157,24 +89,24 @@ const BlogDetailPage = ({ slug }) => {
                     <User className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="font-semibold">{blogData.author}</div>
-                    <div className="text-sm opacity-80">{blogData.authorBio}</div>
+                    <div className="font-semibold">{post.author}</div>
+                    <div className="text-sm opacity-80">Leading sustainable energy solutions</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span className="text-sm">{blogData.date}</span>
+                  <span className="text-sm">{formatDate(post.date)}</span>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm">{blogData.readTime}</span>
+                  <span className="text-sm">{post.readTime}</span>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Eye className="w-4 h-4" />
-                  <span className="text-sm">{blogData.views}</span>
+                  <span className="text-sm">{post.views.toLocaleString()}</span>
                 </div>
 
               </div>
@@ -183,8 +115,8 @@ const BlogDetailPage = ({ slug }) => {
             <div className="block">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src={blogData.featuredImage}
-                  alt={blogData.title}
+                  src={post.image}
+                  alt={post.title}
                   className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
                 />
               </div>
@@ -199,72 +131,62 @@ const BlogDetailPage = ({ slug }) => {
 
         <div className="prose prose-lg max-w-none mb-16">
           <p className="text-lg text-gray-700 text-justify leading-relaxed first-letter:text-7xl first-letter:font-bold first-letter:text-green-600 first-letter:mr-3 first-letter:float-left">
-            {blogData.content}
+            {post.excerpt}
           </p>
         </div>
 
-        {blogData.sections.map((section, index) => (
+        {/* Main Content */}
+        <div className="prose prose-lg max-w-none mb-12">
+          <p className="text-[17.5px] text-gray-700 leading-relaxed">
+            {post.content}
+          </p>
+        </div>
+
+        {/* Sections */}
+        {post.sections && post.sections.map((section, index) => (
           <div key={index} className="mb-20">
 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              {section.heading}
+              {section.subheading}
             </h2>
 
-            {/* {section.image && (
+            {section.image && (
               <div className="mb-8 rounded-xl overflow-hidden">
                 <img
                   src={section.image}
-                  alt={section.heading}
+                  alt={section.subheading}
                   className="w-full h-[400px] object-cover"
                 />
               </div>
-            )} */}
+            )}
 
-            <p className="text-[17.5px] text-gray-700 leading-relaxed mb-6">
+            <div className="text-[17.5px] text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
               {section.content}
-            </p>
+            </div>
 
-            {section.points && (
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 mb-6">
-                <ul className="space-y-4">
-                  {section.points.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <ArrowRight className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="text-gray-700 text-lg">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {section.highlight && (
-              <div className="border-l-4 border-green-600 bg-green-50 p-6 rounded-r-xl my-6">
-                <p className="text-lg text-gray-800 italic">
-                  {section.highlight}
-                </p>
-              </div>
-            )}
           </div>
         ))}
 
+        {/* CTA Section */}
         <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-2xl p-10 my-16">
           <p className="text-2xl font-medium text-center">
-            "CBG is not just a renewable fuel; it is a complete ecosystem that transforms waste into wealth..."
+            "Investing in CBG is investing in India's sustainable future..."
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3 pt-8 border-t border-gray-200">
-          {blogData.tags.map((tag, index) => (
-            <span
-              key={index}
-              className="px-4 py-2 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-700 rounded-full text-sm font-medium transition-colors cursor-pointer"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
+        {/* Tags - only show if featured post */}
+        {post.featured && (
+          <div className="flex flex-wrap gap-3 pt-8 border-t border-gray-200">
+            {["CBG", "Renewable Energy", "Green Investment", "Sustainable Farming", "Clean Energy"].map((tag, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-700 rounded-full text-sm font-medium transition-colors cursor-pointer"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
 
       </article>
 
@@ -272,7 +194,7 @@ const BlogDetailPage = ({ slug }) => {
       <section className="bg-gray-50 py-16">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Join the Discussion ({blogData.comments})
+            Join the Discussion
           </h2>
 
           <div className="bg-white rounded-xl p-6 shadow-sm">
@@ -282,7 +204,7 @@ const BlogDetailPage = ({ slug }) => {
               </div>
               <div className="flex-1">
                 <textarea
-                  placeholder="What are your thoughts on CBG technology?"
+                  placeholder="What are your thoughts?"
                   className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none"
                   rows="4"
                 />
@@ -299,11 +221,39 @@ const BlogDetailPage = ({ slug }) => {
       </section>
 
       {/* RELATED POSTS */}
-      <RelatedPosts
-        currentPostId={post.id}
-        blogPosts={blogPosts}
-        formatDate={formatDate}
-      />
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Related Articles</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {blogData
+              .filter(b => b.id !== post.id && b.category === post.category)
+              .slice(0, 3)
+              .map((relatedPost) => (
+                <a
+                  key={relatedPost.id}
+                  href={`/blogs/${relatedPost.slug}`}
+                  className="group block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+                >
+                  <img
+                    src={relatedPost.thumbnail}
+                    alt={relatedPost.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                      {relatedPost.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4">{relatedPost.excerpt}</p>
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <Clock className="w-4 h-4" />
+                      <span>{relatedPost.readTime}</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+          </div>
+        </div>
+      </section>
 
       {/* SCROLL TO TOP BUTTON */}
       {showScrollTop && (
@@ -320,4 +270,3 @@ const BlogDetailPage = ({ slug }) => {
 };
 
 export default BlogDetailPage;
-
