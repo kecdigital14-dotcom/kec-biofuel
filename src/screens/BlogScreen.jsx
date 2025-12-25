@@ -24,7 +24,7 @@ export default function BlogScreen() {
       <Navbar />
       
       {/* Modern Hero Section - Alternative Design */}
-      <div className="relative mt-4 lg:h-[500px] h-screen overflow-hidden bg-white">
+      <div className="relative lg:mt-4 mt-8 lg:h-[500px] h-[500px] overflow-hidden bg-white">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
