@@ -150,7 +150,7 @@ export default function BlogReviews({ blogSlug }) {
 
       {/* Review Form */}
       <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 mb-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">Leave a Review</h3>
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Leave a Comment</h3>
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -210,7 +210,7 @@ export default function BlogReviews({ blogSlug }) {
         ) : reviews.length === 0 ? (
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 text-center">
             <MessageCircle size={48} className="text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-600 text-lg font-medium">No reviews yet</p>
+            <p className="text-gray-600 text-lg font-medium">No comments yet</p>
             <p className="text-gray-500 text-sm mt-2">Be the first to share your thoughts!</p>
           </div>
         ) : (

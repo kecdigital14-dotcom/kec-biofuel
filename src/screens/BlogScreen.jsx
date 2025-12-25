@@ -132,6 +132,8 @@ export default function BlogScreen() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {featuredBlogs.map(blog => (
+              <Link
+                      href={`/blogs/${blog.slug}`}>
               <article
                 key={blog.id}
                 className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
@@ -197,6 +199,7 @@ export default function BlogScreen() {
                   </div>
                 </div>
               </article>
+              </Link>
             ))}
           </div>
         </div>

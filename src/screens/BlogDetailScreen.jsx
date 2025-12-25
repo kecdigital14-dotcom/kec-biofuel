@@ -18,7 +18,7 @@ import {
   Bookmark
 } from 'lucide-react';
 import Navbar from '@/app/Components/Navbar';
-import BlogReviews from '@/app/Components/BlogReviews';
+// import BlogReviews from '@/app/Components/BlogReviews';
 
 export default function BlogDetailScreen({ blog, relatedBlogs }) {
   const [liked, setLiked] = useState(false);
@@ -292,7 +292,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
 
                  
                 </div>
-                 <BlogReviews blogSlug={blog.slug} />
+                 {/* <BlogReviews blogSlug={blog.slug} /> */}
               </div>
             </div>
           </div>
