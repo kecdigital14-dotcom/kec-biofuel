@@ -267,7 +267,7 @@ export default function BlogScreen() {
                   </div>
 
                   <Link
-                    href={`/blog/${blog.slug}`}
+                    href={`/blogs/${blog.slug}`}
                     className="flex items-center gap-2 text-white px-2 py-1 rounded-lg bg-green-600 font-semibold text-md hover:gap-3 transition-all"
                   >
                     Read More <ArrowRight size={16} />
