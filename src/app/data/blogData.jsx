@@ -19,22 +19,22 @@ export const blogData = [
       {
         "subheading": "Why Quality Matters More Than Initial Cost",
         "content": "CBG technology is biological, mechanical, and operational — all at once. Every part of the system impacts the final output. Quality matters in digester design and construction, where wrong geometry, poor lining, or low-grade materials lead to gas loss and structural damage.\n\nFeedstock management is critical — inadequate preprocessing systems reduce gas yield and increase maintenance. Purification and upgrading systems must be high-quality, as low-quality purification affects methane concentration and offtake compliance. Automation and controls are essential, because without reliable monitoring, small inefficiencies become large failures.\n\nO&M planning is crucial — plants fail not because of concept, but because of poor long-term operations planning. A robust CBG plant is engineered not just to start — but to survive, perform, and scale.",
-        "image": "/images/cbg-quality.jpg"
+        "image": "/images/blogdata5.jpg"
       },
       {
         "subheading": "CBG Economics: Where Real Profit Comes From",
         "content": "Smart investors understand one simple truth: Profit in CBG is made in operations, not just installation. Key drivers of long-term profitability include consistent gas output, lower downtime, predictable maintenance costs, efficient feedstock conversion, stable digestate (FOM/LFOM) recovery, and compliance with offtake agreements.\n\nAll of these depend on technology quality and EPC capability, not on who quoted the lowest price. A well-designed plant can deliver 40–45% ROI year-on-year, but only when operational efficiency is protected.",
-        "image": "/images/cbg-economics.jpg"
+        "image": "/images/blogdata6.jpg"
       },
       {
         "subheading": "Why Timing Matters: Locking Your Plant Before 31st December",
         "content": "Another critical factor investors must consider right now is pricing timelines. Across the industry, input costs have risen for steel and construction materials, specialized equipment, automation and safety systems, skilled manpower, and compliance and certification requirements.\n\nAs a result, CBG plant pricing is set to be revised from 1st January 2026. Projects locked before 31st December 2025 benefit from current pricing, while projects confirmed after that will face revised (higher) costs. Depending on plant capacity, early decision-making can save ₹50 lakh to ₹2 crore per project.\n\nThis is not a discount — it is a strategic cost advantage. Smart investors think ahead, not in hindsight.",
-        "image": "/images/cbg-timing.jpg"
+        "image": "/images/blogdata7.jpg"
       },
       {
         "subheading": "CBG Is Not Just Energy — It's an Ecosystem",
         "content": "A well-built CBG plant delivers more than gas. It provides clean fuel for transport, organic fertilizer for farms, income stability for farmers, waste management for regions, and carbon reduction for the nation. This ecosystem only works when the plant itself is future-ready.\n\nThat future cannot be built on compromises. The right question is not 'Kitna Sasta Hai?' The right questions are: Will this plant perform for 15 years? Is the technology proven at scale? Can the EPC partner support operations long-term? Are safety, compliance, and efficiency built-in? Will this plant protect my margins over time?\n\nWhen investors ask the right questions, the answer becomes clear: 'Sasta nahi — sabse achha hi sahi.' CBG is not a trend. It is infrastructure for India's clean energy future. Those who invest wisely today — in the right technology, the right partner, and the right time — will build assets that deliver returns, stability, and impact for decades.",
-        "image": "/images/cbg-ecosystem.jpg"
+        "image": "/images/turnkeythree.jpg"
       }
     ],
     "image": "/images/bannernew14.jpg",
@@ -57,22 +57,22 @@ export const blogData = [
       {
         "subheading": "Government-Backed Growth and Assured Returns",
         "content": "The Indian government's SATAT initiative has set an ambitious target to establish over 5,000 CBG plants producing 15 million tonnes annually by 2030. Oil Marketing Companies including IOCL, BPCL, HPCL, and GAIL have signed long-term purchase agreements ensuring 15 years of assured buyback with stable market demand.\n\nThe sector offers exceptional financial support with loans covering up to 70% of project costs and capital subsidies between 40-60% from central and state governments. Additional benefits include carbon credits and income tax rebates. Unlike volatile markets, CBG offers policy-backed, low-risk investment with potential ROI of 40-45% year-on-year and a break-even period of just 3-4 years. The multi-stream revenue model includes CBG sales to OMCs, organic fertilizer sales, carbon credit monetization, and government incentives.\n\nFurthermore, the Ministry of Petroleum and Natural Gas has simplified approval procedures and introduced single-window clearances for project developers. The National Bioenergy Programme also supports R&D and technology upgradation to ensure long-term viability. With global corporations showing interest in India's renewable sector, early investors in CBG can expect significant valuation appreciation. As India moves toward its Net Zero target by 2070, this sector is poised to attract substantial foreign and domestic investments.",
-        "image": "/images/dhanteras-govt.jpg"
+        "image": "/images/blogdata.jpg"
       },
       {
         "subheading": "Empowering Farmers Through Renewable Energy",
         "content": "For decades, Indian farmers have battled low incomes and crop residue management challenges. CBG bridges this gap by purchasing crop residue that would otherwise be burnt, providing organic fertilizer back to farms, and creating local employment opportunities.\n\nFarmers transform from mere suppliers into stakeholders of the renewable economy — earning more from waste sales, spending less on fertilizers, and working within an ecosystem that values their contribution. This model creates growth at the top while empowering grassroots communities, offering energy independence and sustainable livelihoods across rural India.\n\nThe decentralized nature of CBG plants ensures that energy production happens close to the source of raw material, minimizing transportation costs and maximizing local benefit. Cooperatives and Farmer Producer Organizations (FPOs) are increasingly collaborating with CBG developers, enabling farmers to share profits rather than just supplying feedstock. In addition, bio-slurry from plants is proving to enhance soil carbon levels and crop productivity, making farming both eco-friendly and economically rewarding. This synergy of agriculture and clean energy has the power to revolutionize rural India's income dynamics forever.",
-        "image": "/images/dhanteras-farmers.jpg"
+        "image": "/images/blogdata2.jpg"
       },
       {
         "subheading": "KEC Agritech — Leading India's CBG Revolution",
         "content": "Founded in October 2020, KEC Agritech Pvt. Ltd. is driving innovation in India's CBG sector by merging agriculture, technology, and sustainability. The company established India's First CBG Park in Bulandshahr, Uttar Pradesh — a pioneering model allowing multiple investors to participate using shared infrastructure.\n\nKEC's impressive portfolio includes over 20 feasibility studies completed, 74+ ongoing projects under management across 42 districts in 14 states, and total project value exceeding INR 1000 crores. Through comprehensive EPC services and project management consultancy, KEC guides investors from concept to commissioning. The company's integrated CBG Parks provide land, infrastructure, feedstock logistics, workforce training, and technology transfer — making renewable investment accessible even for first-time investors and entrepreneurs.\n\nKEC's model ensures operational efficiency by standardizing technology, optimizing logistics, and maintaining consistent gas purity and output. Their strategic partnerships with government bodies, research institutes, and technology providers have helped build a robust CBG ecosystem in India. Moreover, KEC's emphasis on circular economy principles ensures that every stage — from feedstock sourcing to fertilizer sales — contributes to sustainable growth. With transparent investor policies and a strong commitment to environmental stewardship, KEC Agritech stands as a trusted name in India's green energy transformation.",
-        "image": "/images/dhanteras-kec.jpg"
+        "image": "/images/blogdata3.jpg"
       },
       {
         "subheading": "The Time to Invest in Green Gold Is Now",
         "content": "India's clean energy transition is happening right now, not in some distant future. With increasing policy support, growing market demand, and proven profitability, the next five years will define who leads this revolution. CBG represents India's golden opportunity where investments don't just multiply wealth — they multiply impact by lighting up villages, fueling industries, and empowering farmers.\n\nThis Dhanteras, as lamps illuminate homes across the nation, consider being part of a movement that lights up the path toward clean energy and sustainable prosperity. Those who invest today will not only earn returns but also shape India's energy destiny for generations to come.\n\nCBG's potential goes beyond returns — it drives self-reliance in energy, supports India's rural economy, and contributes to climate resilience. With land availability, feedstock abundance, and technological maturity converging, the time is ripe for investors to step forward. As India moves toward a carbon-neutral future, those investing in green energy today will be remembered as pioneers of the nation's renewable revolution. Invest not just in gold this Dhanteras — invest in the Green Gold that powers tomorrow.",
-        "image": "/images/dhanteras-future.jpg"
+        "image": "/images/blogdata4.jpg"
       }
     ],
     "image": "/images/blogdhanteras2.jpg",

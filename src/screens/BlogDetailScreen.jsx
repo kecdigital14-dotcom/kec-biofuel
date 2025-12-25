@@ -18,6 +18,7 @@ import {
   Bookmark
 } from 'lucide-react';
 import Navbar from '@/app/Components/Navbar';
+import BlogReviews from '@/app/Components/BlogReviews';
 
 export default function BlogDetailScreen({ blog, relatedBlogs }) {
   const [liked, setLiked] = useState(false);
@@ -222,7 +223,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                     <span>{likes} Likes</span>
                   </button>
                   
-                  <div className="relative z-50">
+                  <div className="relative ">
                     <button 
                       onClick={() => setShareOpen(!shareOpen)}
                       className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-full font-medium hover:shadow-lg transition-all"
@@ -288,7 +289,10 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                       </div>
                     )}
                   </div>
+
+                 
                 </div>
+                 <BlogReviews blogSlug={blog.slug} />
               </div>
             </div>
           </div>
