@@ -14,16 +14,19 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
 
   const isSignup = mode === 'signup';
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
 
-    const endpoint = isSignup 
-      ? 'http://localhost:5000/api/auth/register' 
-      : 'http://localhost:5000/api/auth/login';
 
-    const body = isSignup 
+    const endpoint = isSignup
+      ? `${API_URL}/api/auth/register`
+      : `${API_URL}/api/auth/login`;
+
+    const body = isSignup
       ? { name: formData.name, email: formData.email, password: formData.password }
       : { email: formData.email, password: formData.password };
 
@@ -230,38 +233,38 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             </div>
 
             {/* Google Button */}
-           {/* Google Button */}
-<button
-  onClick={handleGoogleLogin}
-  disabled={isLoading}
-  className="w-full py-3 border-2 border-gray-200 rounded-xl font-semibold text-gray-700 hover:bg-gray-50 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
->
-  <svg 
-    width="18" 
-    height="18" 
-    viewBox="0 0 18 18" 
-    xmlns="http://www.w3.org/2000/svg"
-    className="shrink-0"
-  >
-    <path 
-      fill="#4285F4" 
-      d="M17.64 9.205c0-.639-.057-1.252-.164-1.841H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.26h2.908c1.702-1.567 2.684-3.875 2.684-6.616z"
-    />
-    <path 
-      fill="#34A853" 
-      d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.26c-.805.54-1.837.86-3.048.86-2.344 0-4.326-1.584-5.034-3.72H.957v2.332A8.997 8.997 0 0 0 9 18z"
-    />
-    <path 
-      fill="#FBBC05" 
-      d="M3.966 10.68A5.42 5.42 0 0 1 3.68 9c0-.593.102-1.164.283-1.68H.957v-2.332A8.997 8.997 0 0 0 0 9c0 1.45.348 2.824.957 4.012l2.999-2.332z"
-    />
-    <path 
-      fill="#EA4335" 
-      d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.96 11.43 0 9 0 3.477 0 .16 4.02.957 9h3.009c.708-2.136 2.69-3.72 5.034-3.72z"
-    />
-  </svg>
-  Continue with Google
-</button>
+            {/* Google Button */}
+            <button
+              onClick={handleGoogleLogin}
+              disabled={isLoading}
+              className="w-full py-3 border-2 border-gray-200 rounded-xl font-semibold text-gray-700 hover:bg-gray-50 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                xmlns="http://www.w3.org/2000/svg"
+                className="shrink-0"
+              >
+                <path
+                  fill="#4285F4"
+                  d="M17.64 9.205c0-.639-.057-1.252-.164-1.841H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.26h2.908c1.702-1.567 2.684-3.875 2.684-6.616z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.26c-.805.54-1.837.86-3.048.86-2.344 0-4.326-1.584-5.034-3.72H.957v2.332A8.997 8.997 0 0 0 9 18z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M3.966 10.68A5.42 5.42 0 0 1 3.68 9c0-.593.102-1.164.283-1.68H.957v-2.332A8.997 8.997 0 0 0 0 9c0 1.45.348 2.824.957 4.012l2.999-2.332z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.96 11.43 0 9 0 3.477 0 .16 4.02.957 9h3.009c.708-2.136 2.69-3.72 5.034-3.72z"
+                />
+              </svg>
+              Continue with Google
+            </button>
 
             {/* Toggle Login/Signup */}
             <p className="text-center text-sm text-gray-600 mt-6">
