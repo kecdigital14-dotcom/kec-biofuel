@@ -60,7 +60,8 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
     const top = window.innerHeight / 2 - height / 2;
 
     const popup = window.open(
-      'http://localhost:5000/api/auth/google',
+      // 'http://localhost:5000/api/auth/google',
+      `${API_URL}/auth/google`,
       'Google Sign In',
       `width=${width},height=${height},left=${left},top=${top}`
     );
