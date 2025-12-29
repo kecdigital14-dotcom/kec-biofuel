@@ -135,50 +135,49 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
     await submitCommentToAPI(newComment.trim());
   };
 
- const handleLike = async (commentId) => {
-  console.log('Liking comment:', commentId);
+  const handleLike = async (commentId) => {
+    console.log('Liking comment:', commentId);
 
-  if (!commentId) {
-    console.warn('Comment ID is missing');
-    return;
-  }
-
-  if (!user) {
-    setIsAuthModalOpen(true);
-    return;
-  }
-
-  try {
-    const response = await fetch(
-      `http://localhost:5000/api/comments/${commentId}/like`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error('Failed to like comment');
+    if (!commentId) {
+      console.warn('Comment ID is missing');
+      return;
     }
 
-    const data = await response.json();
+    if (!user) {
+      setIsAuthModalOpen(true);
+      return;
+    }
 
-    // ✅ CORRECT STATE UPDATE
-    setComments(prev =>
-      prev.map(c =>
-        c._id === commentId
-          ? { ...c, likes: data.likes, hasLiked: data.hasLiked }
-          : c
-      )
-    );
-  } catch (error) {
-    console.error('Error liking comment:', error);
-  }
-};
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/comments/${commentId}/like`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        }
+      );
 
+      if (!response.ok) {
+        throw new Error('Failed to like comment');
+      }
+
+      const data = await response.json();
+
+      // ✅ CORRECT STATE UPDATE
+      setComments(prev =>
+        prev.map(c =>
+          c._id === commentId
+            ? { ...c, likes: data.likes, hasLiked: data.hasLiked }
+            : c
+        )
+      );
+    } catch (error) {
+      console.error('Error liking comment:', error);
+    }
+  };
 
   const handleDelete = async (commentId) => {
     if (!confirm('Are you sure you want to delete this comment?')) return;
@@ -226,7 +225,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-16">
+    <div className="max-w-4xl mx-auto mt-16 relative z-10">
       {/* Header */}
       <div className="flex items-center gap-3 mb-8">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-green-600 flex items-center justify-center">
@@ -250,14 +249,14 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
       )}
 
       {/* Comment Form */}
-      <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 mb-8">
+      <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 mb-8 relative z-10">
         {user ? (
           <>
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-gray-900">Leave a Comment</h3>
               <button
                 onClick={handleLogout}
-                className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed "
+                className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed relative z-10"
               >
                 Logout
               </button>
@@ -282,14 +281,14 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
               placeholder={user ? 'Share your thoughts about this article...' : 'Write your comment... (You\'ll be asked to sign in)'}
               rows="4"
               disabled={isSubmitting}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors resize-none disabled:bg-gray-50 disabled:text-gray-500"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors resize-none disabled:bg-gray-50 disabled:text-gray-500 relative z-10"
             />
           </div>
 
           <button
             onClick={handleSubmitComment}
             disabled={isSubmitting || !newComment.trim()}
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed relative z-10"
           >
             {isSubmitting ? (
               <>
@@ -307,7 +306,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
       </div>
 
       {/* Comments List */}
-      <div className="space-y-4">
+      <div className="space-y-4 relative z-10">
         {isLoading ? (
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 text-center">
             <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
