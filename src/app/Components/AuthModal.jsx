@@ -14,7 +14,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
 
   const isSignup = mode === 'signup';
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
