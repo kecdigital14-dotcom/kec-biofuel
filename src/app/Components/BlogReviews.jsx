@@ -2,109 +2,210 @@
 
 import { useState, useEffect } from 'react';
 import { MessageCircle, Send, User, ThumbsUp, Trash2 } from 'lucide-react';
+import { AuthModal } from '@/app/Components/AuthModal';
 
-export default function BlogReviews({ blogSlug }) {
-  const [reviews, setReviews] = useState([]);
-  const [newReview, setNewReview] = useState({ name: '', comment: '' });
+export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
+  // Comments state
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Load reviews on component mount
+  // Auth state
+  const [user, setUser] = useState(null);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [pendingComment, setPendingComment] = useState(null);
+
+  // Use blogId from props or blogSlug as fallback
+  const blogId = propBlogId || blogSlug;
+
+  // Load user and comments on mount
   useEffect(() => {
-    loadReviews();
+    checkAuthStatus();
+    loadComments();
   }, [blogSlug]);
 
-  const loadReviews = () => {
+  // Auto-submit comment after successful login
+  useEffect(() => {
+    if (user && pendingComment) {
+      submitCommentToAPI(pendingComment);
+      setPendingComment(null);
+    }
+  }, [user, pendingComment]);
+
+  const checkAuthStatus = () => {
+    try {
+      const token = localStorage.getItem('token');
+      const userData = localStorage.getItem('user');
+      if (token && userData) {
+        setUser(JSON.parse(userData));
+      }
+    } catch (error) {
+      console.error('Error checking auth status:', error);
+    }
+  };
+
+  const loadComments = async () => {
     try {
       setIsLoading(true);
       setError(null);
-      
-      if (typeof window !== 'undefined') {
-        const storedReviews = localStorage.getItem(`reviews:${blogSlug}`);
-        if (storedReviews) {
-          setReviews(JSON.parse(storedReviews));
+
+      if (blogSlug) {
+        const response = await fetch(`http://localhost:5000/api/comments/blog/${blogSlug}`);
+        if (response.ok) {
+          const data = await response.json();
+          setComments(data.comments || []);
         } else {
-          setReviews([]);
+          setComments([]);
         }
       }
     } catch (error) {
-      console.error('Error loading reviews:', error);
-      setReviews([]);
+      console.error('Error loading comments:', error);
+      setComments([]);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleSubmit = (e) => {
-    if (e) e.preventDefault();
-    
-    if (!newReview.name.trim() || !newReview.comment.trim()) {
-      setError('Please fill in all fields');
-      setTimeout(() => setError(null), 3000);
-      return;
-    }
+  const handleLoginSuccess = (userData) => {
+    setUser(userData);
+    // Store user data in localStorage
+    localStorage.setItem('user', JSON.stringify(userData));
+    setIsAuthModalOpen(false);
+  };
 
+  const submitCommentToAPI = async (commentText) => {
     setIsSubmitting(true);
     setError(null);
 
-    const review = {
-      id: Date.now(),
-      name: newReview.name.trim(),
-      comment: newReview.comment.trim(),
-      date: new Date().toISOString(),
-      likes: 0
-    };
-
-    const updatedReviews = [review, ...reviews];
-
     try {
-      if (typeof window !== 'undefined') {
-        localStorage.setItem(`reviews:${blogSlug}`, JSON.stringify(updatedReviews));
-        setReviews(updatedReviews);
-        setNewReview({ name: '', comment: '' });
+      const token = localStorage.getItem('token');
+      const response = await fetch('http://localhost:5000/api/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          blogId: blogId,  // Using blogId (either from props or blogSlug)
+          content: commentText.trim(),
+          userId: user.id,
+          userName: user.name || user.email,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to post comment');
       }
-    } catch (error) {
-      console.error('Error saving review:', error);
-      setError('Failed to post review. Please try again.');
+
+      // Add new comment to list
+      setComments([data.comment, ...comments]);
+      setNewComment('');
+      
+      // Show success message (optional)
+      setError(null);
+    } catch (err) {
+      setError(err.message || 'Failed to post comment. Please try again.');
       setTimeout(() => setError(null), 5000);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleLike = (reviewId) => {
-    const updatedReviews = reviews.map(review =>
-      review.id === reviewId
-        ? { ...review, likes: review.likes + 1 }
-        : review
+  const handleSubmitComment = async () => {
+    // Validate comment content first
+    if (!newComment.trim()) {
+      setError('Please write a comment');
+      setTimeout(() => setError(null), 3000);
+      return;
+    }
+
+    // Check if user is logged in
+    if (!user) {
+      // Store the comment to post after login
+      setPendingComment(newComment.trim());
+      setIsAuthModalOpen(true);
+      return;
+    }
+
+    // User is logged in, submit directly
+    await submitCommentToAPI(newComment.trim());
+  };
+
+ const handleLike = async (commentId) => {
+  console.log('Liking comment:', commentId);
+
+  if (!commentId) {
+    console.warn('Comment ID is missing');
+    return;
+  }
+
+  if (!user) {
+    setIsAuthModalOpen(true);
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      `http://localhost:5000/api/comments/${commentId}/like`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      }
     );
 
+    if (!response.ok) {
+      throw new Error('Failed to like comment');
+    }
+
+    const data = await response.json();
+
+    // ✅ CORRECT STATE UPDATE
+    setComments(prev =>
+      prev.map(c =>
+        c._id === commentId
+          ? { ...c, likes: data.likes, hasLiked: data.hasLiked }
+          : c
+      )
+    );
+  } catch (error) {
+    console.error('Error liking comment:', error);
+  }
+};
+
+
+  const handleDelete = async (commentId) => {
+    if (!confirm('Are you sure you want to delete this comment?')) return;
+
     try {
-      if (typeof window !== 'undefined') {
-        localStorage.setItem(`reviews:${blogSlug}`, JSON.stringify(updatedReviews));
-        setReviews(updatedReviews);
+      const response = await fetch(`http://localhost:5000/api/comments/${commentId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+
+      if (response.ok) {
+        setComments(comments.filter(c => c.id !== commentId));
       }
     } catch (error) {
-      console.error('Error updating like:', error);
+      console.error('Error deleting comment:', error);
+      setError('Failed to delete comment');
+      setTimeout(() => setError(null), 3000);
     }
   };
 
-  const handleDelete = (reviewId) => {
-    if (!confirm('Are you sure you want to delete this review?')) return;
-
-    const updatedReviews = reviews.filter(review => review.id !== reviewId);
-
-    try {
-      if (typeof window !== 'undefined') {
-        localStorage.setItem(`reviews:${blogSlug}`, JSON.stringify(updatedReviews));
-        setReviews(updatedReviews);
-      }
-    } catch (error) {
-      console.error('Error deleting review:', error);
-      setError('Failed to delete review. Please try again.');
-      setTimeout(() => setError(null), 3000);
-    }
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setUser(null);
+    setNewComment('');
   };
 
   const formatDate = (dateString) => {
@@ -116,11 +217,11 @@ export default function BlogReviews({ blogSlug }) {
     if (diffInSeconds < 3600) return `${Math.floor(diffInSeconds / 60)}m ago`;
     if (diffInSeconds < 86400) return `${Math.floor(diffInSeconds / 3600)}h ago`;
     if (diffInSeconds < 604800) return `${Math.floor(diffInSeconds / 86400)}d ago`;
-    
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric' 
+
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
     });
   };
 
@@ -136,7 +237,7 @@ export default function BlogReviews({ blogSlug }) {
             Reviews & Comments
           </h2>
           <p className="text-gray-600 text-sm">
-            {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
+            {comments.length} {comments.length === 1 ? 'review' : 'reviews'}
           </p>
         </div>
       </div>
@@ -148,41 +249,46 @@ export default function BlogReviews({ blogSlug }) {
         </div>
       )}
 
-      {/* Review Form */}
+      {/* Comment Form */}
       <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 mb-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">Leave a Comment</h3>
+        {user ? (
+          <>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-gray-900">Leave a Comment</h3>
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed "
+              >
+                Logout
+              </button>
+            </div>
+            <div className="flex items-center gap-2 mb-4 p-3 bg-orange-50 rounded-lg">
+              <User size={16} className="text-orange-600" />
+              <span className="text-sm text-orange-900">
+                Logged in as <strong>{user.email}</strong>
+              </span>
+            </div>
+          </>
+        ) : (
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Leave a Comment</h3>
+        )}
+
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Your Name
-            </label>
-            <input
-              type="text"
-              value={newReview.name}
-              onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
-              placeholder="Enter your name"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
-              disabled={isSubmitting}
-            />
-          </div>
-          
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Your Comment
-            </label>
             <textarea
-              value={newReview.comment}
-              onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-              placeholder="Share your thoughts about this article..."
+              id="comment-textarea"
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+              placeholder={user ? 'Share your thoughts about this article...' : 'Write your comment... (You\'ll be asked to sign in)'}
               rows="4"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors resize-none"
               disabled={isSubmitting}
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors resize-none disabled:bg-gray-50 disabled:text-gray-500"
             />
           </div>
 
           <button
-            onClick={handleSubmit}
-            disabled={isSubmitting}
+            onClick={handleSubmitComment}
+            disabled={isSubmitting || !newComment.trim()}
             className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
@@ -193,69 +299,68 @@ export default function BlogReviews({ blogSlug }) {
             ) : (
               <>
                 <Send size={20} />
-                <span>Post Review</span>
+                <span>{user ? 'Post Comment' : 'Sign In & Post'}</span>
               </>
             )}
           </button>
         </div>
       </div>
 
-      {/* Reviews List */}
+      {/* Comments List */}
       <div className="space-y-4">
         {isLoading ? (
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 text-center">
             <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading reviews...</p>
+            <p className="text-gray-600">Loading comments...</p>
           </div>
-        ) : reviews.length === 0 ? (
+        ) : comments.length === 0 ? (
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 text-center">
             <MessageCircle size={48} className="text-gray-300 mx-auto mb-4" />
             <p className="text-gray-600 text-lg font-medium">No comments yet</p>
             <p className="text-gray-500 text-sm mt-2">Be the first to share your thoughts!</p>
           </div>
         ) : (
-          reviews.map((review) => (
+          comments.map((comment) => (
             <div
-              key={review.id}
+              key={comment.id}
               className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow"
             >
               <div className="flex items-start gap-4">
-                {/* Avatar */}
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-green-500 flex items-center justify-center flex-shrink-0">
                   <User size={24} className="text-white" />
                 </div>
 
-                {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div>
                       <h4 className="font-bold text-gray-900 text-lg">
-                        {review.name}
+                        {comment.userName}
                       </h4>
                       <p className="text-sm text-gray-500">
-                        {formatDate(review.date)}
+                        {formatDate(comment.createdAt)}
                       </p>
                     </div>
-                    <button
-                      onClick={() => handleDelete(review.id)}
-                      className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                      title="Delete review"
-                    >
-                      <Trash2 size={18} />
-                    </button>
+                    {user && user.id === comment.userId && (
+                      <button
+                        onClick={() => handleDelete(comment.id)}
+                        className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                        title="Delete comment"
+                      >
+                        <Trash2 size={18} />
+                      </button>
+                    )}
                   </div>
 
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    {review.comment}
+                    {comment.content}
                   </p>
 
-                  {/* Like Button */}
                   <button
-                    onClick={() => handleLike(review.id)}
+                    onClick={() => handleLike(comment._id)}
                     className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-orange-100 text-gray-700 hover:text-orange-600 rounded-lg transition-colors font-medium text-sm"
                   >
                     <ThumbsUp size={16} />
-                    <span>{review.likes}</span>
+                    <span>{comment.likes || 0}</span>
                   </button>
                 </div>
               </div>
@@ -263,6 +368,16 @@ export default function BlogReviews({ blogSlug }) {
           ))
         )}
       </div>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => {
+          setIsAuthModalOpen(false);
+          setPendingComment(null);
+        }}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </div>
   );
 }

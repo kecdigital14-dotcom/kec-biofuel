@@ -1,104 +1,165 @@
 'use client';
 
-import { useState } from 'react';
-import { 
-  Calendar, 
-  Clock, 
-  User, 
-  Eye, 
-  Heart, 
-  Share2, 
+import { useState, useEffect } from 'react';
+import {
+  Calendar,
+  Clock,
+  User,
+  Eye,
+  Heart,
+  Share2,
   ArrowLeft,
   Facebook,
   Twitter,
   Linkedin,
   Link2,
   Check,
-  Bookmark
+  Bookmark,
+  Share2Icon
 } from 'lucide-react';
+import Navbar from '@/app/Components/Navbar';
+import BlogReviews from '@/app/Components/BlogReviews';
+import Footer from '@/app/Components/Footer';
 
 export default function BlogDetailScreen({ blog, relatedBlogs }) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(blog?.likes || 0);
+  const [isLoadingLike, setIsLoadingLike] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
 
-  const handleLike = () => {
-    if (!liked) {
-      setLikes(prev => prev + 1);
-      setLiked(true);
-    } else {
-      setLikes(prev => prev - 1);
-      setLiked(false);
+  // Fetch initial like status from server
+  useEffect(() => {
+    const fetchLikeStatus = async () => {
+      if (!blog?._id && !blog?.id) return;
+
+      const blogId = blog._id || blog.id;
+
+      try {
+        const res = await fetch(`/api/blogs/${blogId}`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && data.blog) {
+            setLikes(data.blog.likes || 0);
+            setLiked(data.blog.hasLiked || false);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to fetch blog like status:', err);
+      }
+    };
+
+    fetchLikeStatus();
+  }, [blog?._id, blog?.id]);
+
+  const handleLike = async () => {
+    if (isLoadingLike) return;
+
+    const blogId = blog?._id || blog?.id;
+
+    if (!blogId) {
+      console.warn('No blog ID available for like action');
+      return;
+    }
+
+    // Optimistic update
+    const previouslyLiked = liked;
+    const previousLikes = likes;
+
+    setLiked(!liked);
+    setLikes(prev => previouslyLiked ? Math.max(0, prev - 1) : prev + 1);
+    setIsLoadingLike(true);
+
+    try {
+      const response = await fetch(`/api/blogs/${blogId}/like`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        // Rollback on failure
+        setLiked(previouslyLiked);
+        setLikes(previousLikes);
+        console.error('Like toggle failed:', data.message || 'Unknown error');
+        return;
+      }
+
+      // Update with real values from server
+      setLikes(data.likes);
+      setLiked(data.hasLiked);
+
+    } catch (error) {
+      // Rollback on network error
+      setLiked(previouslyLiked);
+      setLikes(previousLikes);
+      console.error('Error toggling like:', error);
+    } finally {
+      setIsLoadingLike(false);
     }
   };
 
   const handleCopyLink = () => {
-    const url = `${window.location.origin}/blogs/${blog.slug}`;
+    const url = typeof window !== 'undefined' ? window.location.href : '';
     navigator.clipboard.writeText(url);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // Construct proper share URLs - MUST be the full absolute URL
   const getShareUrl = () => {
-    if (typeof window !== 'undefined') {
-      return window.location.href; // Use current page URL instead of constructing it
-    }
-    return '';
+    return typeof window !== 'undefined' ? window.location.href : '';
   };
 
   const shareUrl = getShareUrl();
   const encodedUrl = encodeURIComponent(shareUrl);
-  const encodedTitle = encodeURIComponent(blog?.title || '');
+  const encodedTitle = encodeURIComponent(blog?.title || 'Interesting article');
 
-  // Social share handlers - UPDATED URLS
   const handleFacebookShare = () => {
-    const facebookUrl = `https://www.facebook.com/sharer.php?u=${encodedUrl}`;
-    window.open(facebookUrl, '_blank', 'width=600,height=400,scrollbars=yes');
+    window.open(`https://www.facebook.com/sharer.php?u=${encodedUrl}`, '_blank', 'width=600,height=400');
     setShareOpen(false);
   };
 
   const handleTwitterShare = () => {
-    const twitterUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
-    window.open(twitterUrl, '_blank', 'width=600,height=400,scrollbars=yes');
+    window.open(`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`, '_blank', 'width=600,height=400');
     setShareOpen(false);
   };
 
   const handleLinkedInShare = () => {
-    // Check if running on localhost
     if (shareUrl.includes('localhost') || shareUrl.includes('127.0.0.1')) {
-      alert('LinkedIn sharing works only on deployed sites. Your link has been copied to clipboard! Deploy your site to enable LinkedIn preview.');
+      alert('LinkedIn sharing works best on deployed sites. Link copied instead.');
       handleCopyLink();
       setShareOpen(false);
       return;
     }
-    
-    // LinkedIn now uses this format - it will scrape the URL for Open Graph tags
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
-    window.open(linkedInUrl, '_blank', 'width=600,height=600,scrollbars=yes');
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, '_blank', 'width=600,height=600');
     setShareOpen(false);
   };
 
-  // Alternative: Use Web Share API if available (works better on mobile)
   const handleNativeShare = async () => {
     if (navigator.share) {
       try {
         await navigator.share({
           title: blog?.title || '',
-          text: blog?.excerpt || blog?.content?.substring(0, 100) || '',
+          text: blog?.excerpt || blog?.content?.substring(0, 150) || '',
           url: shareUrl,
         });
         setShareOpen(false);
-      } catch (error) {
-        console.log('Share cancelled or failed', error);
+      } catch (err) {
+        console.log('Native share failed or cancelled', err);
       }
     }
   };
 
-  // Mock blog data for demo
-  const mockBlog = blog || {
+  // Fallback mock data if blog prop is missing
+  const displayBlog = blog || {
     slug: 'sample-blog',
     title: 'Sample Blog Post About Renewable Energy',
     category: 'Renewable Energy',
@@ -106,34 +167,33 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
     date: '2024-12-20',
     readTime: '5 min read',
     views: 1250,
-    likes: 45,
+    likes: likes,
     image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800',
     excerpt: 'Discover the future of clean energy',
-    content: 'This is a sample blog post about renewable energy and sustainable practices. The future of energy lies in clean, renewable sources that can power our world without harming the environment.',
+    content: 'This is a sample blog post about renewable energy and sustainable practices...',
     sections: [
       {
         subheading: 'Introduction to Solar Power',
-        content: 'Solar power has become one of the most promising renewable energy sources. It harnesses the sun\'s energy to generate electricity and heat.',
+        content: 'Solar power has become one of the most promising renewable energy sources...',
         image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600'
       }
     ]
   };
 
-  const displayBlog = blog || mockBlog;
   const displayRelatedBlogs = relatedBlogs || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-orange-50 to-green-50">
-      {/* Modern Hero Banner */}
+      <Navbar />
+
+      {/* Hero Banner */}
       <div className="relative h-[600px] overflow-hidden">
-        {/* Animated Background Gradient Orbs */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 -left-40 w-80 h-80 bg-orange-500/30 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute top-40 -right-40 w-96 h-96 bg-green-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        {/* Image with Overlay */}
         <div className="absolute inset-0">
           <img
             src={displayBlog.image}
@@ -143,12 +203,10 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-transparent to-green-600/20"></div>
         </div>
-        
-        {/* Content Container */}
+
         <div className="absolute inset-0 flex items-end">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full">
-            {/* Back Button */}
-            <a 
+            <a
               href="/blog"
               className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all group"
             >
@@ -157,7 +215,6 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
             </a>
 
             <div className="max-w-4xl">
-              {/* Category Badge with Glassmorphism */}
               <div className="inline-flex items-center gap-2 mb-6">
                 <span className="px-5 py-2.5 bg-white/15 backdrop-blur-xl border border-white/20 text-white rounded-full text-sm font-semibold shadow-lg hover:bg-white/25 transition-all">
                   {displayBlog.category}
@@ -166,20 +223,18 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                   onClick={() => setBookmarked(!bookmarked)}
                   className="p-2.5 bg-white/15 backdrop-blur-xl border border-white/20 rounded-full hover:bg-white/25 transition-all"
                 >
-                  <Bookmark 
-                    size={18} 
-                    className="text-white" 
+                  <Bookmark
+                    size={18}
+                    className="text-white"
                     fill={bookmarked ? 'white' : 'none'}
                   />
                 </button>
               </div>
-              
-              {/* Title with Animation */}
+
               <h1 className="text-5xl md:text-6xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight mb-8">
                 {displayBlog.title}
               </h1>
-              
-              {/* Metadata Pills */}
+
               <div className="flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
@@ -187,49 +242,29 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                   </div>
                   <span className="text-white font-semibold text-sm">{displayBlog.author}</span>
                 </div>
-                
+
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/90 text-sm">
                   <Calendar size={16} />
-                  <span>{new Date(displayBlog.date).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'short', 
-                    day: 'numeric' 
-                  })}</span>
+                  <span>{new Date(displayBlog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
                 </div>
-                
+
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/90 text-sm">
                   <Clock size={16} />
                   <span>{displayBlog.readTime}</span>
                 </div>
-                
+
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white/90 text-sm">
                   <Eye size={16} />
                   <span>{displayBlog.views.toLocaleString()} views</span>
-                </div>
-
-                {/* Quick Actions */}
-                <div className="flex items-center gap-2 ml-auto">
-                  <button
-                    onClick={handleLike}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-semibold text-sm transition-all ${
-                      liked
-                        ? 'bg-red-500 text-white shadow-lg shadow-red-500/50'
-                        : 'bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20'
-                    }`}
-                  >
-                    <Heart size={16} fill={liked ? 'white' : 'none'} />
-                    <span>{likes}</span>
-                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Decorative Bottom Wave */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-24">
-            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="url(#wave-gradient)"/>
+            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="url(#wave-gradient)" />
             <defs>
               <linearGradient id="wave-gradient" x1="0" y1="0" x2="1440" y2="0">
                 <stop offset="0%" stopColor="rgb(251 246 242)" />
@@ -241,26 +276,22 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
         </div>
       </div>
 
-      {/* Article Content */}
+      {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-3">
             <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
-              {/* Introduction */}
               <div className="prose prose-lg max-w-none mb-8">
-                <p className="text-xl text-gray-700 leading-relaxed">
+                <p className="text-lg text-gray-700 leading-relaxed text-justify">
                   {displayBlog.content}
                 </p>
               </div>
 
-              {/* Sections */}
               {displayBlog.sections?.map((section, index) => (
                 <div key={index} className="mb-12">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6 pb-3 border-b-4 border-gradient-to-r from-orange-500 to-green-600">
                     {section.subheading}
                   </h2>
-                  
                   {section.image && (
                     <div className="mb-6 rounded-2xl overflow-hidden shadow-lg">
                       <img
@@ -270,10 +301,9 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                       />
                     </div>
                   )}
-                  
                   <div className="prose prose-lg max-w-none">
                     {section.content.split('\n\n').map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-gray-700 leading-relaxed mb-4">
+                      <p key={pIndex} className="text-gray-700 leading-relaxed mb-4 text-justify">
                         {paragraph}
                       </p>
                     ))}
@@ -284,104 +314,100 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
               {/* Engagement Section */}
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <div className="flex items-center justify-between flex-wrap gap-4">
-                  <button
-                    onClick={handleLike}
-                    className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
-                      liked
-                        ? 'bg-red-500 text-white shadow-lg'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                  >
-                    <Heart size={20} fill={liked ? 'white' : 'none'} />
-                    <span>{likes} Likes</span>
-                  </button>
-                  
+
                   <div className="relative">
-                    <button 
+                    {/* <button
                       onClick={() => setShareOpen(!shareOpen)}
                       className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-full font-medium hover:shadow-lg transition-all"
                     >
                       <Share2 size={20} />
                       <span>Share Article</span>
                     </button>
-                    
-                    {shareOpen && (
-                      <>
-                        {/* Backdrop */}
-                        <div 
-                          className="fixed inset-0 z-40"
-                          onClick={() => setShareOpen(false)}
-                        ></div>
-                        
-                        {/* Share Menu */}
-                        <div className="absolute right-0 bottom-full mb-3 bg-white backdrop-blur-xl rounded-2xl shadow-2xl p-3 z-50 min-w-[220px] border border-gray-100">
-                          <div className="flex flex-col gap-1">
+
+                    {shareOpen && ( */}
+                    <>
+
+                      <div className="flex items-center justify-center gap-8">
+                        <div className=''>
+                          <h1 className='bg-gradient-to-r from-orange-500 to-green-600 text-white py-2 rounded-lg px-3'>
+                            <Share2Icon size={15} className="inline-block mr-2" />
+                            Share Article</h1>
+                        </div>
+                        <div
+                          className="fixed inset-0"
+                        // onClick={() => setShareOpen(false)}
+                        />
+                        <div className=" mb-3 bg-transparent backdrop-blur-3xl rounded-2xl shadow-2xl px-4 py-2 border border-gray-100">
+                          <div className="flex items-center gap-4">
                             <button
                               onClick={handleFacebookShare}
-                              className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 rounded-xl transition-all group w-full text-left"
+                              className="group flex flex-col items-center gap-1.5 p-2 hover:bg-blue-50 rounded-xl transition-all"
+                              title="Facebook"
                             >
-                              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Facebook size={16} className="text-white" />
+                              <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <Facebook size={18} className="text-white" />
                               </div>
-                              <span className="text-gray-700 font-medium text-sm">Facebook</span>
+                              <span className="text-gray-700 font-medium text-xs whitespace-nowrap">Facebook</span>
                             </button>
-                            
+
                             <button
                               onClick={handleTwitterShare}
-                              className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 rounded-xl transition-all group w-full text-left"
+                              className="group flex flex-col items-center gap-1.5 p-2 hover:bg-blue-50 rounded-xl transition-all"
+                              title="Twitter"
                             >
-                              <div className="w-8 h-8 rounded-lg bg-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Twitter size={16} className="text-white" />
+                              <div className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <Twitter size={18} className="text-white" />
                               </div>
-                              <span className="text-gray-700 font-medium text-sm">Twitter</span>
+                              <span className="text-gray-700 font-medium text-xs whitespace-nowrap">Twitter</span>
                             </button>
-                            
+
                             <button
                               onClick={handleLinkedInShare}
-                              className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 rounded-xl transition-all group w-full text-left"
+                              className="group flex flex-col items-center gap-1.5 p-2 hover:bg-blue-50 rounded-xl transition-all"
+                              title="LinkedIn"
                             >
-                              <div className="w-8 h-8 rounded-lg bg-blue-700 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Linkedin size={16} className="text-white" />
+                              <div className="w-10 h-10 rounded-lg bg-blue-700 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <Linkedin size={18} className="text-white" />
                               </div>
-                              <span className="text-gray-700 font-medium text-sm">LinkedIn</span>
+                              <span className="text-gray-700 font-medium text-xs whitespace-nowrap">LinkedIn</span>
                             </button>
-                            
+
                             <button
                               onClick={handleCopyLink}
-                              className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-xl transition-all group w-full text-left"
+                              className="group flex flex-col items-center gap-1.5 p-2 hover:bg-gray-50 rounded-xl transition-all"
+                              title="Copy Link"
                             >
-                              <div className={`w-8 h-8 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform ${
-                                copied ? 'bg-green-600' : 'bg-gray-600'
-                              }`}>
-                                {copied ? (
-                                  <Check size={16} className="text-white" />
-                                ) : (
-                                  <Link2 size={16} className="text-white" />
-                                )}
+                              <div className={`w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform ${copied ? 'bg-green-600' : 'bg-gray-600'
+                                }`}>
+                                {copied ? <Check size={18} className="text-white" /> : <Link2 size={18} className="text-white" />}
                               </div>
-                              <span className="text-gray-700 font-medium text-sm">
+                              <span className="text-gray-700 font-medium text-xs whitespace-nowrap">
                                 {copied ? 'Copied!' : 'Copy Link'}
                               </span>
                             </button>
 
-                            {/* Native Share (if available) */}
                             {typeof navigator !== 'undefined' && navigator.share && (
                               <button
                                 onClick={handleNativeShare}
-                                className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-xl transition-all group w-full text-left border-t border-gray-100 mt-1 pt-3"
+                                className="group flex flex-col items-center gap-1.5 p-2 hover:bg-orange-50 rounded-xl transition-all border-l border-gray-200 pl-3 ml-1"
+                                title="More Options"
                               >
-                                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-green-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                  <Share2 size={16} className="text-white" />
+                                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-green-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                  <Share2 size={18} className="text-white" />
                                 </div>
-                                <span className="text-gray-700 font-medium text-sm">More Options</span>
+                                <span className="text-gray-700 font-medium text-xs whitespace-nowrap">More</span>
                               </button>
                             )}
                           </div>
                         </div>
-                      </>
-                    )}
+                      </div>
+
+                    </>
+
                   </div>
                 </div>
+
+                <BlogReviews blogSlug={displayBlog.slug} />
               </div>
             </div>
           </div>
@@ -389,7 +415,6 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-8 space-y-6">
-              {/* Author Card */}
               <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-green-500 flex items-center justify-center">
@@ -405,7 +430,6 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                 </p>
               </div>
 
-              {/* Quick Stats */}
               <div className="bg-gradient-to-br from-orange-500 via-orange-400 to-green-500 rounded-2xl shadow-lg p-6 text-white">
                 <h3 className="font-bold mb-4 text-lg">Article Stats</h3>
                 <div className="space-y-4">
@@ -433,11 +457,10 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
             <h2 className="text-4xl font-bold text-gray-900 mb-8">
               Related Articles
             </h2>
-            
             <div className="grid md:grid-cols-3 gap-6">
-              {displayRelatedBlogs.map(relatedBlog => (
+              {displayRelatedBlogs.map((relatedBlog) => (
                 <a
-                  key={relatedBlog.id}
+                  key={relatedBlog.id || relatedBlog.slug}
                   href={`/blogs/${relatedBlog.slug}`}
                   className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all border border-gray-100"
                 >
@@ -471,6 +494,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 }
