@@ -136,7 +136,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
           style={{ zIndex: 10001 }}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-orange-500 to-green-600 px-6 py-8 text-white flex items-start justify-between">
+          <div className="bg-gradient-to-r from-orange-500 to-green-600 px-6 pt-4 py-2 text-white flex items-start justify-between">
             <div>
               <h2 className="text-2xl font-bold">
                 {isSignup ? 'Create Account' : 'Sign In'}
@@ -157,7 +157,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
           </div>
 
           {/* Content */}
-          <div className="p-6 md:p-8">
+          <div className="p-6 md:pt-8 md:pb-6">
             {error && (
               <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded">
                 <p className="text-red-700 text-sm font-medium">{error}</p>
@@ -165,7 +165,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             )}
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4 mb-6">
+            <form onSubmit={handleSubmit} className="space-y-3 mb-4">
               {isSignup && (
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -181,8 +181,8 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Priyanshu Gupta"
-                      className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
+                      placeholder="Enter Your Full Name"
+                      className="w-full pl-10 pr-4 py-2 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
                       disabled={isLoading}
                       required={isSignup}
                       autoComplete="name"
@@ -205,8 +205,8 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="you@example.com"
-                    className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
+                    placeholder="Enter Your Email Address"
+                    className="w-full pl-10 pr-4 py-2 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
                     disabled={isLoading}
                     required
                     autoComplete="email"
@@ -229,7 +229,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
                     value={formData.password}
                     onChange={handleInputChange}
                     placeholder="••••••••"
-                    className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
+                    className="w-full pl-10 pr-4 py-2 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
                     disabled={isLoading}
                     required
                     autoComplete={isSignup ? "new-password" : "current-password"}
@@ -240,7 +240,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-2.5 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
               >
                 {isLoading ? (
                   <>
@@ -254,7 +254,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             </form>
 
             {/* Divider */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-3">
               <div className="flex-1 h-px bg-gray-200" />
               <span className="text-xs text-gray-500 font-medium">OR</span>
               <div className="flex-1 h-px bg-gray-200" />
@@ -265,7 +265,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
               onClick={handleGoogleLogin}
               disabled={isLoading}
               type="button"
-              className="w-full py-3 border-2 border-gray-200 rounded-xl font-semibold text-gray-700 hover:bg-gray-50 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              className="w-full py-2.5 border-2 border-gray-200 rounded-xl font-semibold text-gray-700 hover:bg-gray-50 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               <svg
                 width="18"
@@ -295,7 +295,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             </button>
 
             {/* Toggle Login/Signup */}
-            <p className="text-center text-sm text-gray-600 mt-6">
+            <p className="text-center text-sm text-gray-600 mt-4">
               {isSignup ? 'Already have an account?' : "Don't have an account?"}{' '}
               <button
                 type="button"
