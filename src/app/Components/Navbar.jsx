@@ -67,7 +67,7 @@ const Navbar = () => {
       <ScrollingTopBanner isVisible={showTopBanner} />
 
       {/* Your Original Navbar with dynamic positioning */}
-      <nav className={`fixed left-0 z-20 right-0 bg-gray-100 shadow-md transition-all duration-300 ${showTopBanner ? 'top-10' : 'top-0'}`}>
+      <nav className={`fixed left-0 z-10 right-0 bg-gray-100 shadow-md transition-all duration-300 ${showTopBanner ? 'top-10' : 'top-0'}`}>
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             {/* Logo */}

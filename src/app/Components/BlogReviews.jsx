@@ -228,7 +228,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-16 relative z-10">
+    <div className="max-w-4xl mx-auto mt-16 relative">
       {/* Header */}
       <div className="flex items-center gap-3 mb-8">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-green-600 flex items-center justify-center">
@@ -252,7 +252,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
       )}
 
       {/* Comment Form */}
-      <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 mb-8 relative z-10">
+      <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 mb-8 relative">
         {user ? (
           <>
             <div className="flex items-center justify-between mb-4">
@@ -291,7 +291,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
           <button
             onClick={handleSubmitComment}
             disabled={isSubmitting || !newComment.trim()}
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed relative z-10"
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed relative"
           >
             {isSubmitting ? (
               <>
@@ -309,7 +309,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
       </div>
 
       {/* Comments List */}
-      <div className="space-y-4 relative z-10">
+      <div className="space-y-4 relative">
         {isLoading ? (
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 text-center">
             <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>

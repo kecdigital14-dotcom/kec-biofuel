@@ -117,7 +117,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] overflow-y-auto">
+    <div className="fixed inset-0 z-50 overflow-y-auto">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/50 backdrop-blur-sm"
@@ -127,16 +127,16 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
 
       {/* Modal Container */}
       <div 
-        className="fixed inset-0 flex items-center justify-center p-4"
+        className="fixed inset-0 flex items-center justify-center p-4 z-50"
         style={{ zIndex: 10000 }}
       >
         <div 
-          className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden relative"
+          className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden relative z-50"
           onClick={(e) => e.stopPropagation()}
           style={{ zIndex: 10001 }}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-orange-500 to-green-600 px-6 pt-4 py-2 text-white flex items-start justify-between">
+          <div className="bg-gradient-to-r from-orange-500 to-green-600 px-6 pt-4 py-2 text-white flex items-start justify-between z-50">
             <div>
               <h2 className="text-2xl font-bold">
                 {isSignup ? 'Create Account' : 'Sign In'}
