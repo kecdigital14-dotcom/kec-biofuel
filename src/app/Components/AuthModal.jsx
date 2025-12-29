@@ -21,7 +21,6 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
     setIsLoading(true);
     setError(null);
 
-
     const endpoint = isSignup
       ? `${API_URL}/api/auth/register`
       : `${API_URL}/api/auth/login`;
@@ -49,6 +48,9 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
 
       onLoginSuccess(data.user);
       onClose();
+      
+      // Reset form after successful submission
+      setFormData({ name: '', email: '', password: '' });
     } catch (err) {
       setError(err.message);
     } finally {
@@ -63,14 +65,15 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
     const top = window.innerHeight / 2 - height / 2;
 
     const popup = window.open(
-      // 'http://localhost:5000/api/auth/google',
-      `${API_URL}/auth/google`,
+      `${API_URL}/api/auth/google`,
       'Google Sign In',
       `width=${width},height=${height},left=${left},top=${top}`
     );
 
     const handleMessage = (event) => {
-      if (event.origin !== 'http://localhost:5000') return;
+      // Use API_URL origin for production
+      const allowedOrigin = API_URL || 'http://localhost:5000';
+      if (event.origin !== allowedOrigin) return;
 
       if (event.data.error) {
         setError(event.data.error);
@@ -106,27 +109,39 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
 
   const toggleMode = () => {
     setMode((prev) => (prev === 'login' ? 'signup' : 'login'));
-    setError(null); // clear error when switching
+    setError(null);
+    // Reset form when toggling
+    setFormData({ name: '', email: '', password: '' });
   };
 
   if (!isOpen) return null;
 
   return (
-    <>
+    <div className="fixed inset-0 z-[9999] overflow-y-auto">
+      {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
+        style={{ zIndex: 9999 }}
       />
 
-      <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden">
+      {/* Modal Container */}
+      <div 
+        className="fixed inset-0 flex items-center justify-center p-4"
+        style={{ zIndex: 10000 }}
+      >
+        <div 
+          className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden relative"
+          onClick={(e) => e.stopPropagation()}
+          style={{ zIndex: 10001 }}
+        >
           {/* Header */}
           <div className="bg-gradient-to-r from-orange-500 to-green-600 px-6 py-8 text-white flex items-start justify-between">
             <div>
               <h2 className="text-2xl font-bold">
                 {isSignup ? 'Create Account' : 'Sign In'}
               </h2>
-              <p className="text-white/80 text-sm font-sans">
+              <p className="text-white/80 text-sm font-sans mt-1">
                 {isSignup
                   ? 'Join to post reviews & comments'
                   : 'Login to post your comments'}
@@ -134,7 +149,8 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             </div>
             <button
               onClick={onClose}
-              className="p-1 hover:bg-white/20 rounded-lg transition-colors"
+              className="p-1 hover:bg-white/20 rounded-lg transition-colors cursor-pointer"
+              type="button"
             >
               <X size={24} />
             </button>
@@ -152,59 +168,71 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             <form onSubmit={handleSubmit} className="space-y-4 mb-6">
               {isSignup && (
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                     Full Name
                   </label>
                   <div className="relative">
-                    <User size={18} className="absolute left-3 top-3.5 text-gray-400" />
+                    <div className="absolute left-3 top-3.5 pointer-events-none">
+                      <User size={18} className="text-gray-400" />
+                    </div>
                     <input
+                      id="name"
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Priyanshu Gupta"
-                      className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                      className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
                       disabled={isLoading}
                       required={isSignup}
+                      autoComplete="name"
                     />
                   </div>
                 </div>
               )}
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                   Email Address
                 </label>
                 <div className="relative">
-                  <Mail size={18} className="absolute left-3 top-3.5 text-gray-400" />
+                  <div className="absolute left-3 top-3.5 pointer-events-none">
+                    <Mail size={18} className="text-gray-400" />
+                  </div>
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="you@example.com"
-                    className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                    className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
                     disabled={isLoading}
                     required
+                    autoComplete="email"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
                   Password
                 </label>
                 <div className="relative">
-                  <Lock size={18} className="absolute left-3 top-3.5 text-gray-400" />
+                  <div className="absolute left-3 top-3.5 pointer-events-none">
+                    <Lock size={18} className="text-gray-400" />
+                  </div>
                   <input
+                    id="password"
                     type="password"
                     name="password"
                     value={formData.password}
                     onChange={handleInputChange}
                     placeholder="••••••••"
-                    className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                    className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors cursor-text"
                     disabled={isLoading}
                     required
+                    autoComplete={isSignup ? "new-password" : "current-password"}
                   />
                 </div>
               </div>
@@ -212,7 +240,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full py-3 bg-gradient-to-r from-orange-500 to-green-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
               >
                 {isLoading ? (
                   <>
@@ -233,11 +261,11 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             </div>
 
             {/* Google Button */}
-            {/* Google Button */}
             <button
               onClick={handleGoogleLogin}
               disabled={isLoading}
-              className="w-full py-3 border-2 border-gray-200 rounded-xl font-semibold text-gray-700 hover:bg-gray-50 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              type="button"
+              className="w-full py-3 border-2 border-gray-200 rounded-xl font-semibold text-gray-700 hover:bg-gray-50 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               <svg
                 width="18"
@@ -272,7 +300,7 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
               <button
                 type="button"
                 onClick={toggleMode}
-                className="text-orange-600 font-semibold hover:text-orange-700 underline"
+                className="text-orange-600 font-semibold hover:text-orange-700 underline cursor-pointer"
               >
                 {isSignup ? 'Sign in' : 'Sign up here'}
               </button>
@@ -280,6 +308,6 @@ export function AuthModal({ isOpen, onClose, onLoginSuccess }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

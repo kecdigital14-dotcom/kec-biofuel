@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import { MessageCircle, Send, User, ThumbsUp, Trash2 } from 'lucide-react';
 import { AuthModal } from '@/app/Components/AuthModal';
 
+// Get API URL from environment variable and remove trailing slash
+const API_URL = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '');
+
 export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
   // Comments state
   const [comments, setComments] = useState([]);
@@ -52,7 +55,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
       setError(null);
 
       if (blogSlug) {
-        const response = await fetch(`http://localhost:5000/api/comments/blog/${blogSlug}`);
+        const response = await fetch(`${API_URL}/api/comments/blog/${blogSlug}`);
         if (response.ok) {
           const data = await response.json();
           setComments(data.comments || []);
@@ -81,7 +84,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/comments', {
+      const response = await fetch(`${API_URL}/api/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -150,7 +153,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/comments/${commentId}/like`,
+        `${API_URL}/api/comments/${commentId}/like`,
         {
           method: 'PUT',
           headers: {
@@ -183,7 +186,7 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
     if (!confirm('Are you sure you want to delete this comment?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/comments/${commentId}`, {
+      const response = await fetch(`${API_URL}/api/comments/${commentId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
