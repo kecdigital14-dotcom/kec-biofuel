@@ -88,6 +88,25 @@ const CbgDownloadScreen = () => {
         moreInfoButtonLink="/cbg"
       />
 
+   <CbgDownloadComp
+  title="Biogas Magazine – Edition 34"
+  description="Featured in Biogas Magazine (Edition 34), showcasing KEC Agritech’s leadership in CBG Parks and clean energy."
+  brochurePdfUrl="/images/Biogas-Magazine.pdf"
+  fileName="Biogas-Magazine-Edition-34.pdf"
+  whatsInside={[
+    "Exclusive interview with Mr. Jitendra Narayan, Founder & CEO, KEC Agritech Pvt. Ltd.",
+    "KEC’s vision for CBG Parks and bio-CNG ecosystem in India",
+    "Cluster-based models empowering farmers and rural communities",
+    "Role of biogas in circular agriculture and renewable energy transition",
+    "Insights on challenges, scalability, and future of the biogas sector"
+  ]}
+  moreInfoTitle="Why This Feature Matters?"
+  moreInfoDesc="This magazine feature showcases KEC Agritech’s real-world impact in building sustainable biofuel infrastructure, strengthening farmer income, and driving India’s clean energy mission through CBG and bio-CNG solutions."
+  moreInfoButtonText="Explore Our CBG & Biofuel Initiatives"
+  moreInfoButtonLink="/cbg"
+/>
+
+
       <Footer />
     </div>
   )
