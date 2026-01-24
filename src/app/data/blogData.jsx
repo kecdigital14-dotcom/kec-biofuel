@@ -85,6 +85,75 @@ export const blogData = [
     "likes": 103,
     "featured": true
   },
+ {
+  "id": 3,
+  "title": "2026: The Defining Year for Compressed Bio Gas (CBG) in India",
+  "excerpt": "Why the future of fuel, farming, and clean energy begins now. 2026 marks the inflection point where Compressed Bio Gas (CBG) moves from early adoption to national-scale execution, backed by policy, infrastructure, and rising demand.",
+  "slug": "2026-the-defining-year-for-compressed-bio-gas-in-india",
+  "content": "India is standing at a decisive point in its energy journey. Rising fuel imports, environmental pressure, stubble burning, waste mismanagement, and the urgent need for rural income diversification have led to one unavoidable conclusion: clean, decentralized, and indigenous energy is no longer optional.\n\nAmong all renewable energy options, Compressed Bio Gas (CBG) has emerged as the most practical, scalable, and inclusive solution. The year 2026 will mark the transition of CBG from early adoption to mass execution — driven by strong policy alignment, infrastructure readiness, rising fuel demand, and a widening supply gap. This is not speculation. It is India's next phase of energy infrastructure.",
+  "sections": [
+    {
+      "subheading": "What Is CBG and Why It Matters to India",
+      "content": "Compressed Bio Gas is produced from agricultural residue, cattle dung, pressmud, food waste, and other organic biomass. After purification, it becomes a direct substitute for CNG and LPG.\n\nCBG uniquely delivers three outcomes in one ecosystem — clean fuel for transport and industry, organic fertilizer (FOM/LFOM) for agriculture, and stable income for farmers and rural entrepreneurs.",
+      "image": "/images/blog3.1.jpg"
+    },
+    {
+      "subheading": "India's Energy Reality: The Problem CBG Solves",
+      "content": "India imports over 85% of its crude oil, burns millions of tonnes of crop residue every year, and faces rising pollution and rural income stress.\n\nCBG directly addresses energy security, waste management, climate commitments, rural employment, and circular economy goals.",
+      "image": "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce"
+    },
+    {
+      "subheading": "Government Push: Why CBG Is Policy-Backed",
+      "content": "CBG enjoys one of the strongest policy frameworks in India's energy sector through SATAT, National Bio-Energy Mission, and long-term OMC buyback agreements.\n\nCapital subsidies, loan assistance, assured offtake, and carbon credits make CBG a low-policy-risk infrastructure opportunity.",
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85"
+    },
+    {
+      "subheading": "CBG in 2026: Why Timing Is Everything",
+      "content": "CBG today mirrors the early stages of solar and EV adoption. Early entrants are creating assets while late entrants will face higher costs.\n\nBy 2026, feedstock competition, EPC costs, and land scarcity will redefine entry economics.",
+      "image": "/images/blog3.5.jpg"
+    },
+    {
+      "subheading": "CBG Plants: A 15-Year Infrastructure Business",
+      "content": "CBG plants are long-term infrastructure assets with 40–45% ROI, 3–4 year break-even, and diversified revenue streams from gas, fertilizer, carbon credits, and waste processing.",
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c"
+    },
+    {
+      "subheading": "CBG Parks: The Next Evolution of Scale",
+      "content": "CBG Parks enable shared infrastructure, faster execution, lower capex, and better compliance through centralized models.\n\nThis approach reduces entry barriers by 30–40% and improves long-term scalability.",
+      "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837"
+    },
+    {
+      "subheading": "Why Execution Matters More Than Price",
+      "content": "Low-cost plants often fail due to weak engineering and poor O&M planning.\n\nCBG success depends on digester design, microbial stability, purification efficiency, and feedstock logistics — making EPC and PMC selection critical.",
+      "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789"
+    },
+    {
+      "subheading": "Why KEC Agritech Fits the 2026 CBG Vision",
+      "content": "KEC Agritech delivers end-to-end CBG solutions including PMC, EPC, CBG Parks, feedstock planning, regulatory approvals, and OMC offtake support.\n\nThe focus is on building future-ready energy assets, not just plants.",
+      "image": "/images/blog3.8.avif"
+    },
+    {
+      "subheading": "Farmers at the Center of the CBG Economy",
+      "content": "Farmers earn from biomass supply, Napier grass contracts, organic fertilizer access, and long-term price assurance.\n\nCBG Parks create regional farmer ecosystems supporting clean energy and stable rural incomes.",
+      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449"
+    },
+    {
+      "subheading": "Environmental Impact and Investor Momentum",
+      "content": "Each CBG plant cuts emissions, prevents stubble burning, improves soil health, and supports India's net-zero goals.\n\nEarly investors benefit from strong policy tailwinds, limited supply, and higher long-term margins.",
+      "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e"
+    }
+  ],
+  "image": "/images/blog3.7.jpg",
+  "thumbnail": "/images/blog3.1.jpg",
+  "author": "KEC Bio-Fuel Team",
+  "date": "2026-01-10",
+  "readTime": "7 min read",
+  "category": "CBG Industry Outlook",
+  "views": 0,
+  "likes": 0,
+  "featured": true
+}
+
  
 ];
 
