@@ -110,12 +110,12 @@ export const blogData = [
     {
       "subheading": "CBG in 2026: Why Timing Is Everything",
       "content": "CBG today mirrors the early stages of solar and EV adoption. Early entrants are creating assets while late entrants will face higher costs.\n\nBy 2026, feedstock competition, EPC costs, and land scarcity will redefine entry economics.",
-      "image": "/images/blog3.5.jpg"
+      "image": "/images/blog3.12.jpg"
     },
     {
       "subheading": "CBG Plants: A 15-Year Infrastructure Business",
       "content": "CBG plants are long-term infrastructure assets with 40–45% ROI, 3–4 year break-even, and diversified revenue streams from gas, fertilizer, carbon credits, and waste processing.",
-      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c"
+      "image": "/images/blog3.11.jpg"
     },
     {
       "subheading": "CBG Parks: The Next Evolution of Scale",
@@ -125,12 +125,12 @@ export const blogData = [
     {
       "subheading": "Why Execution Matters More Than Price",
       "content": "Low-cost plants often fail due to weak engineering and poor O&M planning.\n\nCBG success depends on digester design, microbial stability, purification efficiency, and feedstock logistics — making EPC and PMC selection critical.",
-      "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789"
+      "image": "/images/blog3.10.jpg"
     },
     {
       "subheading": "Why KEC Agritech Fits the 2026 CBG Vision",
       "content": "KEC Agritech delivers end-to-end CBG solutions including PMC, EPC, CBG Parks, feedstock planning, regulatory approvals, and OMC offtake support.\n\nThe focus is on building future-ready energy assets, not just plants.",
-      "image": "/images/blog3.8.avif"
+      "image": "/images/blog3.9.webp"
     },
     {
       "subheading": "Farmers at the Center of the CBG Economy",
