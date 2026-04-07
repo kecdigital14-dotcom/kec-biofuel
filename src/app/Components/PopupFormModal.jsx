@@ -129,7 +129,7 @@ export default function PopupFormModal({
                         {showCloseButton && !isSubmitted && (
                             <button
                                 onClick={handleClose}
-                                className="absolute top-16 right-6 z-10 p-2 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-300 hover:rotate-90 backdrop-blur-sm border border-slate-700/50"
+                                className="absolute sm:top-12 top:4 right-6 z-10 p-2 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-300 hover:rotate-90 backdrop-blur-sm border border-slate-700/50"
                                 aria-label="Close"
                             >
                                 <X size={16} />
