@@ -129,10 +129,10 @@ export default function PopupFormModal({
                         {showCloseButton && !isSubmitted && (
                             <button
                                 onClick={handleClose}
-                                className="absolute top-6 right-6 z-10 p-2 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-300 hover:rotate-90 backdrop-blur-sm border border-slate-700/50"
+                                className="absolute top-16 right-6 z-10 p-2 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-300 hover:rotate-90 backdrop-blur-sm border border-slate-700/50"
                                 aria-label="Close"
                             >
-                                <X size={20} />
+                                <X size={16} />
                             </button>
                         )}
 
@@ -166,22 +166,25 @@ export default function PopupFormModal({
                             ) : (
                                 <>
                                     <div className="text-ce mb-4 ">
-                                        <div className="flex flex-col items-center gap-2 mx-auto mb-2">
-                                            {/* First Row: Logo and BIOFUEL */}
+                                        <div className="flex flex-col items-start gap-1.5 mx-auto mb-2">
+                                            {/* Row 1: Logo + "Build Scalable." on same line */}
                                             <div className="flex items-center gap-3">
                                                 <img
                                                     src="/images/logo.png"
                                                     alt="KEC Logo"
                                                     className="w-28 h-auto flex-shrink-0"
                                                 />
-                                                <h2 className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight whitespace-nowrap">
-                                                    BIOFUEL &
+                                                <h2 className="text-3xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight whitespace-nowrap">
+                                                    Build Scalable.
                                                 </h2>
                                             </div>
 
-                                            {/* Second Row: ENERGY EXPO 2025 */}
-                                            <h2 className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight">
-                                                ENERGY EXPO 2025
+                                            {/* Rows 2 & 3: Left-aligned */}
+                                            <h2 className="text-3xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight whitespace-nowrap">
+                                                Build Sustainable.
+                                            </h2>
+                                            <h2 className="text-3xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight whitespace-nowrap">
+                                                Build CBG With KEC
                                             </h2>
                                         </div>
 
