@@ -129,7 +129,7 @@ export default function PopupFormModal({
                         {showCloseButton && !isSubmitted && (
                             <button
                                 onClick={handleClose}
-                                className="absolute sm:top-12 top:4 right-6 z-10 p-2 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-300 hover:rotate-90 backdrop-blur-sm border border-slate-700/50"
+                                className="absolute sm:top-12 top:2 right-6 z-10 p-2 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-300 hover:rotate-90 backdrop-blur-sm border border-slate-700/50"
                                 aria-label="Close"
                             >
                                 <X size={16} />
@@ -172,7 +172,7 @@ export default function PopupFormModal({
                                                 <img
                                                     src="/images/logo.png"
                                                     alt="KEC Logo"
-                                                    className="w-28 h-auto flex-shrink-0"
+                                                    className="w-20 h-auto flex-shrink-0"
                                                 />
                                                 <h2 className="text-3xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight whitespace-nowrap">
                                                     Build Scalable.
