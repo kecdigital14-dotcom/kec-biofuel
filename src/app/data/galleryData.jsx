@@ -67,6 +67,36 @@ export const reaData = [
 ];
 
 
+export const bigImpactData = [
+  {
+    id: 1,
+    image: "/images/malayasia1.jpeg", // Replace with actual image URL
+    title: "Big Impact Award 2026, Malaysia",
+    subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
+    date: "2026",
+    description:
+      "A proud moment as Founder & CEO - KEC Agritech, Mr. Jitendra Narayan, receives the Big Impact Award 2026, Malaysia. Driving India's CBG revolution forward. Every plant we build is a step towards clean energy, farmer prosperity, and a circular economy."
+  },
+  {
+    id: 2,
+    image: "/images/malayasia2.jpeg", // Replace with actual image URL
+    title: "Big Impact Award 2026, Malaysia",
+    subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
+    date: "2026",
+    description:
+      "A proud moment as Founder & CEO - KEC Agritech, Mr. Jitendra Narayan, receives the Big Impact Award 2026, Malaysia. Driving India's CBG revolution forward. Every plant we build is a step towards clean energy, farmer prosperity, and a circular economy."
+  },
+  {
+    id: 3,
+    image: "/images/malayasia3.jpeg", // Replace with actual image URL
+    title: "Big Impact Award 2026, Malaysia",
+    subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
+    date: "2026",
+    description:
+      "A proud moment as Founder & CEO - KEC Agritech, Mr. Jitendra Narayan, receives the Big Impact Award 2026, Malaysia. Driving India's CBG revolution forward. Every plant we build is a step towards clean energy, farmer prosperity, and a circular economy."
+  }
+];
+
 
 // You can add more sections like this:
 export const achievementsData = [
@@ -126,7 +156,7 @@ export const projectsData = [
 export const bioCngData = [
   {
     id: 1,
-    image: "/images/gallery43.jpeg", // first image
+    image: "/images/gallery43.jpeg",
     title: "🌱✨ BIO-CNG Plant",
     subtitle: "Groundbreaking Ceremony of Bio-CNG Plant at Palwal, Haryana",
     date: "September 29, 2025",
@@ -134,7 +164,7 @@ export const bioCngData = [
   },
   {
     id: 2,
-    image: "/images/gallery46.jpeg", // second image
+    image: "/images/gallery46.jpeg",
     title: "🌱✨ BIO-CNG Plant",
     subtitle: "Groundbreaking Ceremony of Bio-CNG Plant at Palwal, Haryana",
     date: "September 29, 2025",
@@ -142,7 +172,7 @@ export const bioCngData = [
   },
   {
     id: 3,
-    image: "/images/gallery45.jpeg", // third image
+    image: "/images/gallery45.jpeg",
     title: "🌱✨ BIO-CNG Plant",
     subtitle: "Groundbreaking Ceremony of Bio-CNG Plant at Palwal, Haryana",
     date: "September 29, 2025",

@@ -6,9 +6,8 @@ import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
 import GalleryScroll from '../app/Components/GalleryScroll'
 import Footer from '../app/Components/Footer';
-// import { galleryData } from '../app/data/GalleryContent'
 import GalleryScrollContent from '../app/Components/GalleryScrollContent';
-import { galleryData, achievementsData, projectsData, reaData, bioCngData } from '../app/data/galleryData';
+import { galleryData, achievementsData, projectsData, reaData, bioCngData, bigImpactData } from '../app/data/galleryData';
 import GalleryGlimpse from '@/app/Components/GalleryGlimpse';
 
 
@@ -40,11 +39,15 @@ const Home = () => {
         </div>
       </HeroBanner>
 
+      {/* ✅ UPDATED: Now uses `awards` prop to show toggle buttons */}
       <GalleryScrollContent
-        data={reaData}
         sectionTitle="AWARDS"
         sectionSubtitle="RECOGNITION"
-        sectionIcon="🌱"
+        sectionIcon="🏆"
+        awards={[
+           { label: "Big Impact Award 2026, Malaysia", data: bigImpactData },
+          { label: "R.E.A.L Excellence Award 2025", data: reaData },
+        ]}
       />
 
       <GalleryScrollContent
@@ -74,7 +77,6 @@ const Home = () => {
         sectionSubtitle="Pioneering Sustainable Future"
         sectionIcon="🌍"
       />
-
 
       <GalleryGlimpse />
 
