@@ -16,8 +16,13 @@ export default function BlogScreen() {
     ? blogData
     : blogData.filter(blog => blog.category === selectedCategory);
 
-  const featuredBlogs = blogData.filter(blog => blog.featured);
-  const regularBlogs = filteredBlogs.filter(blog => !blog.featured);
+  const featuredBlogs = [...blogData]
+  .filter(blog => blog.featured)
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const regularBlogs = [...filteredBlogs]
+  .filter(blog => !blog.featured)
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className=" bg-gradient-to-b from-gray-50 to-white">
@@ -129,7 +134,6 @@ export default function BlogScreen() {
               <span className="text-green-600">Articles</span>
             </h2>
           </div>
-
           <div className="grid md:grid-cols-2 gap-8">
             {featuredBlogs.map(blog => (
               <Link
