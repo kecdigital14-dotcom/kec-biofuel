@@ -6,6 +6,7 @@ export const blogData = [
   "excerpt": "Recurring LPG shortages, rising prices, and import dependency are pushing India toward decentralized energy solutions. Compressed Biogas (CBG) is emerging as the most practical and scalable path to energy independence.",
   "slug": "from-lpg-crisis-to-energy-independence-why-cbg-is-indias-most-practical-solution",
   "content": "India’s energy landscape is at a critical turning point. With recurring LPG supply challenges, rising prices, and increasing dependency on imports, the question is no longer whether India needs an alternative — but how quickly it can scale one.\n\nA small village in Uttar Pradesh has already demonstrated a working solution through a decentralized biogas system supplying clean cooking fuel directly to households. This model eliminates dependency on external supply chains and ensures reliable energy access.",
+  "introImage": "/images/lpgtobiocng.jpeg",
   "sections": [
     {
       "subheading": "A Real-World Example of Energy Independence",

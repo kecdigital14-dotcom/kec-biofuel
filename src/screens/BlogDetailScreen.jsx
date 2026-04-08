@@ -102,12 +102,12 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
     sections: [
       {
         subheading: 'The Rise of Bio-CBG in India',
-        content: "India's commitment to renewable energy has catalyzed the growth of Bio-CBG infrastructure across the nation. Government policies and private sector investments are converging to create a robust ecosystem for sustainable fuel production.\n\nThe technology offers multiple benefits: reducing greenhouse gas emissions, providing farmers with additional income streams, and decreasing dependence on fossil fuels.",
+        content: "India's commitment to renewable energy has catalyzed the growth of Bio-CBG infrastructure across the nation.\n\nThe technology offers multiple benefits: reducing greenhouse gas emissions, providing farmers with additional income streams, and decreasing dependence on fossil fuels.",
         image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=600&fit=crop'
       },
       {
         subheading: 'Economic and Environmental Impact',
-        content: 'The economic implications of CBG adoption extend beyond energy production. Rural communities benefit from new employment opportunities, while urban areas enjoy cleaner air quality.\n\nEnvironmental benefits include significant reductions in methane emissions from organic waste, improved soil health through the use of bio-slurry as organic fertilizer.',
+        content: 'The economic implications of CBG adoption extend beyond energy production. Rural communities benefit from new employment opportunities.\n\nEnvironmental benefits include significant reductions in methane emissions from organic waste.',
         image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&h=600&fit=crop'
       }
     ]
@@ -147,7 +147,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-orange-50 to-green-50">
       <Navbar />
 
-      {/* Hero Banner - FIXED RESPONSIVENESS */}
+      {/* Hero Banner */}
       <div className="relative h-[500px] sm:h-[550px] md:h-[600px] lg:h-[550px] overflow-hidden mt-16">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 -left-20 sm:-left-40 w-48 sm:w-80 h-48 sm:h-80 bg-orange-500/30 rounded-full blur-3xl animate-pulse"></div>
@@ -242,12 +242,26 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
         <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 border border-gray-100">
+
+              {/* Main intro content */}
               <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none mb-6 sm:mb-8">
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
                   {displayBlog.content}
                 </p>
               </div>
 
+              {/* ✅ Intro Image — renders only when introImage field exists on this blog */}
+              {displayBlog.introImage && (
+                <div className="mb-8 sm:mb-10 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={displayBlog.introImage}
+                    alt={displayBlog.title}
+                    className="w-full h-[220px] sm:h-[320px] lg:h-[420px] object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              )}
+
+              {/* Sections */}
               {displayBlog.sections?.map((section, index) => (
                 <div key={index} className="mb-8 sm:mb-12">
                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-4 border-gradient-to-r from-orange-500 to-green-600">
@@ -272,7 +286,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                 </div>
               ))}
 
-              {/* Engagement Section */}
+              {/* Engagement / Share Section */}
               <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="w-full">
@@ -283,7 +297,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                           Share Article
                         </h1>
                       </div>
-                      
+
                       <div className="w-full overflow-x-auto">
                         <div className="bg-white/60 backdrop-blur-3xl rounded-xl sm:rounded-2xl shadow-lg px-3 sm:px-4 py-2 sm:py-3 border border-gray-100 min-w-max">
                           <div className="flex items-center gap-2 sm:gap-4">
@@ -325,8 +339,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                               className="group flex flex-col items-center gap-1 sm:gap-1.5 p-1.5 sm:p-2 hover:bg-gray-50 rounded-lg sm:rounded-xl transition-all"
                               title="Copy Link"
                             >
-                              <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform ${copied ? 'bg-green-600' : 'bg-gray-600'
-                                }`}>
+                              <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform ${copied ? 'bg-green-600' : 'bg-gray-600'}`}>
                                 {copied ? <Check size={16} className="sm:w-[18px] sm:h-[18px] text-white" /> : <Link2 size={16} className="sm:w-[18px] sm:h-[18px] text-white" />}
                               </div>
                               <span className="text-gray-700 font-medium text-[10px] sm:text-xs whitespace-nowrap">
@@ -440,7 +453,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
           </div>
         )}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
