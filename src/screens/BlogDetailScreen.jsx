@@ -21,10 +21,6 @@ import Navbar from '@/app/Components/Navbar';
 import BlogReviews from '@/app/Components/BlogReviews';
 import Footer from '@/app/Components/Footer';
 
-
-
-
-
 export default function BlogDetailScreen({ blog, relatedBlogs }) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(156);

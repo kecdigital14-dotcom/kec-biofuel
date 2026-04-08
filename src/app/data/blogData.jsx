@@ -265,8 +265,61 @@ export const blogData = [
   "views": 0,
   "likes": 0,
   "featured": false
-}
+},
 
+{
+  "id": 6,
+  "title": "From LPG Crisis to Energy Independence — Why CBG is India’s Most Practical Solution",
+  "excerpt": "Recurring LPG shortages, rising prices, and import dependency are pushing India toward decentralized energy solutions. Compressed Biogas (CBG) is emerging as the most practical and scalable path to energy independence.",
+  "slug": "from-lpg-crisis-to-energy-independence-why-cbg-is-indias-most-practical-solution",
+  "content": "India’s energy landscape is at a critical turning point. With recurring LPG supply challenges, rising prices, and increasing dependency on imports, the question is no longer whether India needs an alternative — but how quickly it can scale one.\n\nA small village in Uttar Pradesh has already demonstrated a working solution through a decentralized biogas system supplying clean cooking fuel directly to households. This model eliminates dependency on external supply chains and ensures reliable energy access.",
+  "sections": [
+    {
+      "subheading": "A Real-World Example of Energy Independence",
+      "content": "A village in Uttar Pradesh with around 500 residents operates a decentralized biogas system supplying cooking fuel twice daily via pipelines. This system removes the need for LPG cylinders, avoids price volatility, and ensures uninterrupted energy supply.\n\nThis is not a pilot experiment — it is a fully functional, scalable model for rural India.",
+      // "image": "/images/lpgtobiocng.jpeg"
+    },
+    {
+      "subheading": "Understanding the Waste-to-Energy Model",
+      "content": "The success of this system is based on converting agricultural and livestock waste into methane-rich biogas through anaerobic digestion. The gas is purified and distributed, while the by-product serves as high-quality organic manure.\n\nThis model supports sustainable waste management, reduces carbon emissions, and creates additional income for farmers.",
+      "image": "/images/blog6,2.jpeg"
+    },
+    {
+      "subheading": "The Challenge of Scaling Across India",
+      "content": "While such decentralized systems are promising, scaling them across thousands of villages requires structured infrastructure, robust plant design, efficient feedstock management, and reliable distribution networks.\n\nWithout proper execution frameworks, replication becomes difficult.",
+      // "image": "/images/blog6.3.jpg"
+    },
+    {
+      "subheading": "KEC Agritech: Turning Models into Nationwide Infrastructure",
+      "content": "KEC Agritech is working to transform isolated biogas success stories into scalable infrastructure through cluster-based CBG development. This approach ensures economies of scale, consistent feedstock supply, and improved operational efficiency.\n\nTheir integrated model covers everything from waste collection to gas distribution and organic manure production.",
+     "image": "/images/blog6.3.jpg"
+    },
+    {
+      "subheading": "The Advantage of Cluster-Based CBG Development",
+      "content": "KEC’s approach combines advanced engineering with cluster-based execution. This enables higher methane yield, optimized processing capacity, and long-term operational reliability.\n\nSuch systems can power rural communities, reduce LPG dependency, generate employment, and provide stable returns for investors.",
+      // "image": "/images/cbg-cluster.jpg"
+    },
+    {
+      "subheading": "Why FY 2026–27 is a Turning Point",
+      "content": "With strong government support through initiatives like SATAT, increasing clean energy awareness, and rising urgency due to fossil fuel challenges, the coming financial year is expected to accelerate CBG adoption significantly.\n\nIndia already has the raw materials and demand — now it needs execution at scale.",
+      // "image": "/images/future-energy.jpg"
+    },
+    {
+      "subheading": "Conclusion: From Crisis to Opportunity",
+      "content": "The LPG crisis is not just a challenge but a signal for transformation. India must move toward decentralized, sustainable, and self-reliant energy systems.\n\nCBG is no longer an alternative — it is a necessity. With structured players like KEC Agritech, India is actively building a future powered by renewable energy.\n\nThe real question is not whether this transition will happen, but how fast it can scale across the country.",
+      "image": "/images/blog6.4.png"
+    }
+  ],
+  "image": "/images/lpgtobiocng.jpeg",
+  "thumbnail": "/images/lpgtobiocng.jpeg",
+  "author": "KEC Bio-Fuel Team",
+  "date": "2026-04-08",
+  "readTime": "6 min read",
+  "category": "Energy",
+  "views": 0,
+  "likes": 0,
+  "featured": false
+}
  
 ];
 
