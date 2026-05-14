@@ -552,13 +552,12 @@ export default function CbgRoiCalculator() {
                         <Sparkles className="w-3.5 h-3.5 xl:w-4 xl:h-4" /> ✦ AI-Powered Tool
                     </motion.div>
 
-                    {/* Headline */}
                     <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-                        className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-[1.12] mb-5 w-[600px] justify-center mx-auto">
-                        Smart ROI  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-200 to-emerald-300">
+                        className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-[1.12] mb-5 max-w-2xl mx-auto w-full">
+                        Smart ROI{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-200 to-emerald-300">
                             Analyzer
                         </span>
-
                         {' '}for Clean Energy
                     </motion.h1>
 
@@ -569,7 +568,7 @@ export default function CbgRoiCalculator() {
 
                     {/* Stats row */}
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
-                        className="flex flex-wrap justify-center gap-8 xl:gap-16">
+                        className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-6 xl:gap-16 max-w-sm sm:max-w-none mx-auto">
                         {[['100+', 'Plants Built'], ['₹500Cr+', 'Investments Facilitated'], ['30%', 'NABARD Subsidy'], ['95%', 'Plant Uptime']].map(([n, l]) => (
                             <div key={l} className="text-center">
                                 <div className="text-2xl xl:text-3xl 2xl:text-4xl font-bold text-orange-400">{n}</div>
