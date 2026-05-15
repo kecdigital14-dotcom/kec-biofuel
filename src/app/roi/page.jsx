@@ -1,8 +1,13 @@
-import React from 'react'
-import RoiScreen from '../../screens/RoiScreen'
+'use client';
 
-const page = () => {
-  return <RoiScreen />
+import { useState } from 'react';
+import RoiForm from '../../app/Components/RoiForm';
+import KecBioPulseAI from '../Components/CbgRoiCalculator';
+// import KecBioPulseAI from '../../app/Components/KecBioPulseAI';
+
+export default function RoiPage() {
+    const [showRoi, setShowRoi] = useState(false);
+    return showRoi
+        ? <KecBioPulseAI />
+        : <RoiForm onSuccess={() => setShowRoi(true)} />;
 }
-
-export default page
