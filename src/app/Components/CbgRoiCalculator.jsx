@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 
 // ── Gemini components (all LLM logic lives here) ─────────────
-import { SuggestAllButton, SuggestOneButton } from './GeminiSuggest';
+import { SuggestAllButton } from './GeminiSuggest';
 
 // ── Contact config from env ───────────────────────────────────
 const PHONE          = process.env.NEXT_PUBLIC_PHONE_NUMBER       || '+918527626868';
@@ -240,7 +240,7 @@ function OptionCard({ label, selected, onClick, multi, accent }) {
       </div>
       <span style={{
         fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 15, fontWeight: 500,
-        color: selected ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.70)', transition: 'color 0.18s', flex: 1
+        color: '#ffffff', transition: 'color 0.18s', flex: 1
       }}>
         {label}
       </span>
@@ -475,8 +475,8 @@ function ResultsScreen({ answers, onRestart }) {
             style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, background: 'white', borderRadius: 13, padding: '13px 14px', textDecoration: 'none', boxShadow: '0 6px 24px rgba(0,0,0,0.25)' }}>
             <span style={{ fontSize: 18, flexShrink: 0 }}>📞</span>
             <div style={{ textAlign: 'left', minWidth: 0 }}>
-              <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 12, color: '#3d3d3d', fontWeight: 600 }}>Call us now</div>
-              <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 16, fontWeight: 700, color: '#111111e1', whiteSpace: 'nowrap' }}>{PHONE}</div>
+              <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 10, color: '#9ca3af', fontWeight: 500 }}>Call us now</div>
+              <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 16, fontWeight: 800, color: '#111', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>{PHONE}</div>
             </div>
           </motion.a>
 
@@ -486,7 +486,7 @@ function ResultsScreen({ answers, onRestart }) {
             style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, background: '#25D366', borderRadius: 13, padding: '13px 14px', textDecoration: 'none', boxShadow: '0 6px 24px rgba(37,211,102,0.2)' }}>
             <svg viewBox="0 0 32 32" fill="white" width="20" height="20" style={{ flexShrink: 0 }}><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.7.7 5.3 2 7.6L.4 31.6l8.2-2c2.2 1.2 4.7 1.8 7.4 1.8 8.6 0 15.6-7 15.6-15.6C31.6 7.4 24.6.4 16 .4zm0 28.6c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.9 1.2 1.3-4.7-.3-.5C3.7 20.8 3 18.5 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13-5.8 13-13 13zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.5-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2 0-.5-.1-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.6h-.7c-.3 0-.7.1-1 .4-.4.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.4 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.4.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z" /></svg>
             <div style={{ textAlign: 'left', minWidth: 0 }}>
-              <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 10, color: 'rgba(255, 255, 255, 0.99)', fontWeight: 500 }}>Chat instantly</div>
+              <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 10, color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}>Chat instantly</div>
               <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 16, fontWeight: 800, color: 'white' }}>WhatsApp Us</div>
             </div>
           </motion.a>
@@ -494,8 +494,8 @@ function ResultsScreen({ answers, onRestart }) {
         <motion.button onClick={onRestart} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 7, padding: '9px 18px', borderRadius: 10,
-            background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255,255,255,0.15)',
-            color: 'rgb(255, 255, 255)', fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 12, fontWeight: 600, cursor: 'pointer'
+            background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
+            color: 'rgba(255,255,255,0.6)', fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 12, fontWeight: 600, cursor: 'pointer'
           }}>
           <RotateCcw size={12} /> Re-analyse
         </motion.button>
@@ -679,19 +679,12 @@ export default function KecBioPulseAI() {
                       {currentStep.questions.map((q, qi) => (
                         <motion.div key={q.id} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: qi * 0.07 }}>
 
-                          {/* Label row with per-question suggest button */}
-                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 9 }}>
-                            <label style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 13.5, fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>
+                          {/* Label row */}
+                          <div style={{ marginBottom: 9 }}>
+                            <label style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 18, fontWeight: 700, color: '#ffffff' }}>
                               <span style={{ marginRight: 5 }}>{q.icon}</span>{q.label}
                               <span style={{ color: '#f59e0b', marginLeft: 3 }}>*</span>
                             </label>
-                            {/* ── GEMINI SUGGEST ONE — per question ── */}
-                            <SuggestOneButton
-                              question={q}
-                              answers={answers}
-                              onSuggest={handleChange}
-                              accent={accent}
-                            />
                           </div>
 
                           {q.hint && (

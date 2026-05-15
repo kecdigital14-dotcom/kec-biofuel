@@ -21,7 +21,7 @@
 
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, AlertCircle, CheckCircle2, Loader2, Info } from 'lucide-react';
+import { Sparkles, AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import { suggestStepAnswers, suggestAnswer } from '../services/geminiService';
 
 // ── Theme helpers ─────────────────────────────────────────────
@@ -235,47 +235,16 @@ export function SuggestAllButton({ questions, answers, onSuggest, accent }) {
               >
                 <Sparkles size={14} color={t.primary} />
               </motion.div>
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 13, fontWeight: 700, color: t.primary }}>
-                  ✨ Auto-fill with AI
-                </div>
-                <div style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 10, color: 'rgba(255,255,255,0.4)', marginTop: 1 }}>
-                  Gemini suggests best answers based on your profile
-                </div>
-              </div>
+              <span style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 13, fontWeight: 700, color: t.primary }}>
+                ✨ Auto-fill with AI
+              </span>
             </>
           )}
         </div>
       </motion.button>
-
-      {/* ── Disclaimer ── */}
-      <AnimatePresence>
-        {status === STATUS.IDLE && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 7, paddingLeft: 4 }}
-          >
-            <Info size={10} color="rgba(255,255,255,0.3)" />
-            <span style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 10, color: 'rgba(255,255,255,0.3)' }}>
-              AI suggestions are a starting point — you can edit any answer after.
-            </span>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* ── Divider ── */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 14 }}>
-        <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.08)' }} />
-        <span style={{ fontFamily: "'Poppins', system-ui, sans-serif", fontSize: 10, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.06em' }}>
-          OR FILL MANUALLY
-        </span>
-        <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.08)' }} />
-      </div>
     </div>
   );
 }
 
-// ── Default export: both buttons as a bundle (convenience) ────
-export default { SuggestAllButton, SuggestOneButton };
+// ── Default export ────────────────────────────────────────────
+export default { SuggestAllButton };
