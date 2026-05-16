@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+const FALLBACK_SHEET_URL = "https://script.google.com/macros/s/AKfycbzOTHdSzGzjsVv688vTlCDBFvr9HXps1bESRzdOEeRCVMbj-ZcXfb1YPw72zpnp9oathg/exec";
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -9,12 +11,8 @@ export async function POST(request) {
       return NextResponse.json({ error: "Name, phone and state are required." }, { status: 400 });
     }
 
-    const sheetUrl = process.env.GOOGLE_SHEET_URL;
+    const sheetUrl = process.env.GOOGLE_SHEET_URL || FALLBACK_SHEET_URL;
 
-    if (!sheetUrl) {
-      console.error("❌ GOOGLE_SHEET_URL not set");
-      return NextResponse.json({ success: true, note: "Sheet URL not configured" });
-    }
     if (!sheetUrl.startsWith("https://script.google.com/macros/s/")) {
       console.error("❌ Wrong URL format:", sheetUrl);
       return NextResponse.json({ success: true, note: "Invalid sheet URL format" });
