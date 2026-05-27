@@ -1,14 +1,25 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import React from 'react'
 import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
-import GalleryScroll from '../app/Components/GalleryScroll'
-import Footer from '../app/Components/Footer';
-import GalleryScrollContent from '../app/Components/GalleryScrollContent';
+
+
+
 import { galleryData, achievementsData, projectsData, reaData, bioCngData, bigImpactData } from '../app/data/galleryData';
-import GalleryGlimpse from '@/app/Components/GalleryGlimpse';
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const GalleryScroll = dynamic(() => import('../app/Components/GalleryScroll'), { ssr: false, loading: () => <LazyLoader /> });
+const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const GalleryScrollContent = dynamic(() => import('../app/Components/GalleryScrollContent'), { ssr: false, loading: () => <LazyLoader /> });
+const GalleryGlimpse = dynamic(() => import('@/app/Components/GalleryGlimpse'), { ssr: false, loading: () => <LazyLoader /> });
 
 
 const Home = () => {

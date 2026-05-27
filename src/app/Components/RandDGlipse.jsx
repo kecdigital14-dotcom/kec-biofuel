@@ -11,42 +11,42 @@ const RandDGlimpse = () => {
   const photos = [
     {
       id: 1,
-      src: "images/glimpse9.jpeg",
+      src: "/images/glimpse9.jpeg",
       title: "Campus Architecture"
     },
     {
       id: 2,
-      src: "images/glimpse10.jpeg",
+      src: "/images/glimpse10.jpeg",
       title: "Modern Library"
     },
     {
       id: 3,
-      src: "images/glimpse11.jpeg",
+      src: "/images/glimpse11.jpeg",
       title: "Conference Hall"
     },
     {
       id: 4,
-      src: "images/glimpse12.jpeg",
+      src: "/images/glimpse12.jpeg",
       title: "Student Life"
     },
     {
       id: 5,
-      src: "images/glimpse17.jpeg",
+      src: "/images/glimpse17.jpeg",
       title: "Tech Innovation"
     },
     {
       id: 6,
-      src: "images/glimpse14.jpeg",
+      src: "/images/glimpse14.jpeg",
       title: "Sports Excellence"
     },
     {
       id: 7,
-      src: "images/glimpse15.jpeg",
+      src: "/images/glimpse15.jpeg",
       title: "Green Campus"
     },
     {
       id: 8,
-      src: "images/glimpse16.jpeg",
+      src: "/images/glimpse16.jpeg",
       title: "Research Labs"
     }
   ];

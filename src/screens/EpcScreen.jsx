@@ -1,15 +1,29 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import React from 'react'
 import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
-import Footer from '../app/Components/Footer';
-import ContactSection from '../app/Components/ContactSection';
-import EpcSectionOne from '@/app/Components/EpcSectionOne';
-import PmcSectionTwo from '@/app/Components/PmcSectiontwo';
-import PmcSectionThree from '@/app/Components/PmcSectionthree';
-import PmcSectionFour from '@/app/Components/PmcSectionfour';
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const ContactSection = dynamic(() => import('../app/Components/ContactSection'), { ssr: false, loading: () => <LazyLoader /> });
+const EpcSectionOne = dynamic(() => import('@/app/Components/EpcSectionOne'), { ssr: false, loading: () => <LazyLoader /> });
+const PmcSectionTwo = dynamic(() => import('@/app/Components/PmcSectiontwo'), { ssr: false, loading: () => <LazyLoader /> });
+const PmcSectionThree = dynamic(() => import('@/app/Components/PmcSectionthree'), { ssr: false, loading: () => <LazyLoader /> });
+const PmcSectionFour = dynamic(() => import('@/app/Components/PmcSectionfour'), { ssr: false, loading: () => <LazyLoader /> });
+
+
+
+
+
+
 
 const ContactScreen = () => {
   return (

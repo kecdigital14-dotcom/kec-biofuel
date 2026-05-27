@@ -533,11 +533,11 @@ const QrScreen = () => {
               width={800}
               height={600}
               className="qr-logo-img"
-            /> {
-                e.target.style.display = 'none';
+                onError={(e) => {
+                  e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'flex';
-              }}
-            />
+                }}
+              />
             <div className="qr-logo-fallback" style={{ display: 'none' }}>🌿</div>
             <div className="qr-logo-text">
               <span className="qr-logo-name">KEC</span>

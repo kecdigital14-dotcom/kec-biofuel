@@ -1,16 +1,31 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import React from 'react';
 import Navbar from '../app/Components/Navbar';
 import HeroBanner from '../app/Components/HeroBanner';
-import CbgSection from '../app/Components/CbgSection';
-import About2ndsection from '../app/Components/About2ndsection';
-import Footer from '../app/Components/Footer';
-import About3rdsection from '../app/Components/About3rdsection';
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const CbgSection = dynamic(() => import('../app/Components/CbgSection'), { ssr: false, loading: () => <LazyLoader /> });
+const About2ndsection = dynamic(() => import('../app/Components/About2ndsection'), { ssr: false, loading: () => <LazyLoader /> });
+const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const About3rdsection = dynamic(() => import('../app/Components/About3rdsection'), { ssr: false, loading: () => <LazyLoader /> });
+const AboutUsCEO = dynamic(() => import('@/app/Components/AboutUsCEO'), { ssr: false, loading: () => <LazyLoader /> });
+const BiogasSection = dynamic(() => import('@/app/Components/BiogasSection'), { ssr: false, loading: () => <LazyLoader /> });
+const TechnologySection = dynamic(() => import('@/app/Components/TechnologySection'), { ssr: false, loading: () => <LazyLoader /> });
+
+
+
+
+
 // import BlogsPage from '../app/Components/BlogsPage';
-import AboutUsCEO from '@/app/Components/AboutUsCEO';
-import BiogasSection from '@/app/Components/BiogasSection';
-import TechnologySection from '@/app/Components/TechnologySection';
+
+
 
 const TechnologyScreen = () => {
   return (

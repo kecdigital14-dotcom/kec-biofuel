@@ -69,7 +69,7 @@ const QrVisCards = () => {
                 width={800}
                 height={600}
                 className="w-full h-full object-cover"
-              /> {
+                onError={(e) => {
                   e.target.style.display = 'none';
                   e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
                   const fallback = document.createElement('div');
@@ -121,8 +121,8 @@ const QrVisCards = () => {
               width={800}
               height={600}
               className="w-full h-[470px] object-cover object-center"
-            /> {
-                e.target.style.display = 'none';
+                onError={(e) => {
+                  e.target.style.display = 'none';
                 e.target.parentElement.classList.add('flex', 'items-center', 'justify-center', 'bg-slate-600');
                 const fallback = document.createElement('div');
                 fallback.className = 'text-center p-8';
@@ -135,8 +135,8 @@ const QrVisCards = () => {
                   <p class="text-white font-bold text-lg">CEO Photo</p>
                 `;
                 e.target.parentElement.appendChild(fallback);
-              }}
-            />
+                }}
+              />
           </div>
         </div>
 
@@ -162,8 +162,8 @@ const QrVisCards = () => {
             width={800}
             height={600}
             className="w-full h-full object-cover"
-          /> {
-              e.target.style.display = 'none';
+                onError={(e) => {
+                  e.target.style.display = 'none';
               e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
               const fallback = document.createElement('div');
               fallback.className = 'text-center p-8';
@@ -177,8 +177,8 @@ const QrVisCards = () => {
                 <p class="text-slate-300 text-sm">${card.position}</p>
               `;
               e.target.parentElement.appendChild(fallback);
-            }}
-          />
+                }}
+              />
         </div>
 
         {/* Card Info */}

@@ -575,8 +575,11 @@ export default function KecBioPulseAI() {
                   alt="KEC"
                   width={800}
                   height={600}
-                  style={{ height: 30, width: 'auto', objectFit: 'contain' }
-                /> { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }} />
+                  style={{ height: 30, width: 'auto', objectFit: 'contain' }}
+                onError={(e) => {
+                  e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex';
+                }}
+              />
                 <div style={{ display: 'none', width: 30, height: 30, borderRadius: 8, background: 'rgba(16,185,129,0.22)', alignItems: 'center', justifyContent: 'center' }}>
                   <Leaf size={15} color="#10b981" />
                 </div>

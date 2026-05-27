@@ -176,10 +176,10 @@ const ProjectGallery = () => {
                   width={800}
                   height={600}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                /> {
-                    e.target.src = 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500';
-                  }}
-                />
+                onError={(e) => {
+                  e.target.src = 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500';
+                }}
+              />
               </div>
 
               {/* Content */}

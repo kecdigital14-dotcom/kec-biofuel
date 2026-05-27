@@ -1,12 +1,21 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Eye, Heart, Clock, Calendar, User, ArrowRight } from 'lucide-react';
 import { blogData } from '@/app/data/blogData';
 import Navbar from '@/app/Components/Navbar';
-import Footer from '@/app/Components/Footer';
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const Footer = dynamic(() => import('@/app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+
 
 export default function BlogScreen() {
   const [selectedCategory, setSelectedCategory] = useState('All');

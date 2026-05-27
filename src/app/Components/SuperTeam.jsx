@@ -328,7 +328,7 @@ const OrgChartComponent = () => {
                     {/* Image Section */}
                     <div className="flex-1 flex items-center justify-center ">
                         <Image
-                          src="images/ceo.jpg"
+                          src="/images/ceo.jpg"
                           alt="CEO"
                           width={800}
                           height={600}

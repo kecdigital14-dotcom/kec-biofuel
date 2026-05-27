@@ -1,16 +1,33 @@
-import Footer from '@/app/Components/Footer'
+
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import HeroBanner from '@/app/Components/HeroBanner'
 import Navbar from '@/app/Components/Navbar'
-import QrCompOne from '@/app/Components/QrCompOne'
-import QrComp from '@/app/Components/QrCompOne'
-import QrcompThree from '@/app/Components/QrCompThree'
-import QrCompFour from '@/app/Components/QrCompFour'
-import QrCompTwo from '@/app/Components/QrCompTwo'
-import QrServices from '@/app/Components/QrServices'
+
+
+
+
+
+
 import React from 'react'
-import QrCta from '@/app/Components/QtCta'
-import QrVisCards from '@/app/Components/QrVisCards'
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const Footer = dynamic(() => import('@/app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const QrCompOne = dynamic(() => import('@/app/Components/QrCompOne'), { ssr: false, loading: () => <LazyLoader /> });
+const QrComp = dynamic(() => import('@/app/Components/QrCompOne'), { ssr: false, loading: () => <LazyLoader /> });
+const QrcompThree = dynamic(() => import('@/app/Components/QrCompThree'), { ssr: false, loading: () => <LazyLoader /> });
+const QrCompFour = dynamic(() => import('@/app/Components/QrCompFour'), { ssr: false, loading: () => <LazyLoader /> });
+const QrCompTwo = dynamic(() => import('@/app/Components/QrCompTwo'), { ssr: false, loading: () => <LazyLoader /> });
+const QrServices = dynamic(() => import('@/app/Components/QrServices'), { ssr: false, loading: () => <LazyLoader /> });
+const QrCta = dynamic(() => import('@/app/Components/QtCta'), { ssr: false, loading: () => <LazyLoader /> });
+const QrVisCards = dynamic(() => import('@/app/Components/QrVisCards'), { ssr: false, loading: () => <LazyLoader /> });
+
+
 
 const QrScreens = () => {
   return (

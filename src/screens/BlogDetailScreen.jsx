@@ -1,5 +1,6 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
@@ -19,8 +20,17 @@ import {
   Share2Icon
 } from 'lucide-react';
 import Navbar from '@/app/Components/Navbar';
-import BlogReviews from '@/app/Components/BlogReviews';
-import Footer from '@/app/Components/Footer';
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const BlogReviews = dynamic(() => import('@/app/Components/BlogReviews'), { ssr: false, loading: () => <LazyLoader /> });
+const Footer = dynamic(() => import('@/app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+
+
 
 export default function BlogDetailScreen({ blog, relatedBlogs }) {
   const [liked, setLiked] = useState(false);

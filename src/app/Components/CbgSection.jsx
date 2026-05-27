@@ -228,7 +228,7 @@ const CbgSection = () => {
                       height={600}
                       className={`w-full object-cover group-hover:scale-110 transition-transform duration-1000 ${
                         index === 0 || index === 3 ? 'h-56' : 'h-48'
-                      }
+                      }`}
                     />
                     
                     {/* Gradient Overlay */}

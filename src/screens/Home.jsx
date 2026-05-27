@@ -1,20 +1,37 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import React from 'react'
 
 import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
-import Home2ndsection from '../app/Components/Home2ndsection';
-import Home3rdsection from '../app/Components/Home3rdsection';
-import Home4thsection from '../app/Components/Home4thsection';
-import Home5thsection from '../app/Components/Home5thsection';
-import Homeservices from '../app/Components/Homeservices';
-import Home6thsection from '../app/Components/Home6thsection';
-import Footer from '../app/Components/Footer';
-import BlogSection from '../app/Components/BlogSectionhome';
+
+
+
+
+
+
+
+
 import HomeBannerSlider from '@/app/Components/HomeBannerSlider';
-import CbgGlimpse from '@/app/Components/CbgGlimpse';
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const Home2ndsection = dynamic(() => import('../app/Components/Home2ndsection'), { ssr: false, loading: () => <LazyLoader /> });
+const Home3rdsection = dynamic(() => import('../app/Components/Home3rdsection'), { ssr: false, loading: () => <LazyLoader /> });
+const Home4thsection = dynamic(() => import('../app/Components/Home4thsection'), { ssr: false, loading: () => <LazyLoader /> });
+const Home5thsection = dynamic(() => import('../app/Components/Home5thsection'), { ssr: false, loading: () => <LazyLoader /> });
+const Homeservices = dynamic(() => import('../app/Components/Homeservices'), { ssr: false, loading: () => <LazyLoader /> });
+const Home6thsection = dynamic(() => import('../app/Components/Home6thsection'), { ssr: false, loading: () => <LazyLoader /> });
+const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const BlogSection = dynamic(() => import('../app/Components/BlogSectionhome'), { ssr: false, loading: () => <LazyLoader /> });
+const CbgGlimpse = dynamic(() => import('@/app/Components/CbgGlimpse'), { ssr: false, loading: () => <LazyLoader /> });
+
 
 const Home = () => {
   return (

@@ -1,17 +1,31 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import React from 'react'
 
 import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
 
-import Footer from '../app/Components/Footer';
-import PMCServicesSection from '../app/Components/PMCServicesSection';
-import CoreServicesGrid from '../app/Components/CoreServicesGrid';
-import StatisticsSection from '../app/Components/StatisticsSection';
-import ContactSection from '../app/Components/ContactSection';
-import TermsandConditionsection from '@/app/Components/TermsandConditionsection.jsx';
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const PMCServicesSection = dynamic(() => import('../app/Components/PMCServicesSection'), { ssr: false, loading: () => <LazyLoader /> });
+const CoreServicesGrid = dynamic(() => import('../app/Components/CoreServicesGrid'), { ssr: false, loading: () => <LazyLoader /> });
+const StatisticsSection = dynamic(() => import('../app/Components/StatisticsSection'), { ssr: false, loading: () => <LazyLoader /> });
+const ContactSection = dynamic(() => import('../app/Components/ContactSection'), { ssr: false, loading: () => <LazyLoader /> });
+const TermsandConditionsection = dynamic(() => import('@/app/Components/TermsandConditionsection.jsx'), { ssr: false, loading: () => <LazyLoader /> });
+
+
+
+
+
+
+
 
 const TermsandConditionsectionScreeen = () => {
   return (

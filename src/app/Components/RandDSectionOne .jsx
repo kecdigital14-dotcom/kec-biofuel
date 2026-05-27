@@ -121,7 +121,7 @@ const RandDSectionOne = () => {
               <div className="group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="relative overflow-hidden">
                   <Image
-                    src="images/randnew3.jpg"
+                    src="/images/randnew3.jpg"
                     alt="Advanced Research Laboratory"
                     width={800}
                     height={600}
@@ -142,7 +142,7 @@ const RandDSectionOne = () => {
               <div className="group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="relative overflow-hidden">
                   <Image
-                    src="images/randnew2.jpg"
+                    src="/images/randnew2.jpg"
                     alt="Circular Economy and Sustainability"
                     width={800}
                     height={600}
@@ -163,7 +163,7 @@ const RandDSectionOne = () => {
               <div className="group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="relative overflow-hidden">
                   <Image
-                    src="images/randnew1.jpg"
+                    src="/images/randnew1.jpg"
                     alt="Renewable Energy and Solar Power"
                     width={800}
                     height={600}

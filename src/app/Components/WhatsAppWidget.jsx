@@ -25,7 +25,7 @@ const WhatsAppWidget = () => {
                 width={800}
                 height={600}
                 className="w-full h-full object-contain rounded-full"
-              /> {
+                onError={(e) => {
                   // Fallback to text if image fails to load
                   e.target.style.display = 'none';
                   e.target.parentElement.innerHTML = '<span class="text-white font-bold text-sm">KEC</span>';
@@ -67,7 +67,7 @@ const WhatsAppWidget = () => {
             width={800}
             height={600}
             className="w-full h-full object-contain rounded-full"
-          /> {
+            onError={(e) => {
               // Fallback to text if image fails to load
               e.target.style.display = 'none';
               e.target.parentElement.innerHTML = '<span class="text-green-600 font-bold text-xs flex items-center justify-center h-full">K</span>';

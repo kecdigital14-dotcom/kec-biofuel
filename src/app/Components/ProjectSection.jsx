@@ -312,7 +312,7 @@ export default function ProjectSection() {
                     // Video iframe
                     <div className="absolute inset-0">
                       <iframe
-                        src="images/videoproject.mp4"
+                        src="/images/videoproject.mp4"
                         title="Bio Fuel Project Demo"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

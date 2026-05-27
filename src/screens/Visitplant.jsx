@@ -1,10 +1,23 @@
-import Footer from '@/app/Components/Footer'
+
+import dynamic from 'next/dynamic';
 import HeroBanner from '@/app/Components/HeroBanner'
 import Navbar from '@/app/Components/Navbar'
-import VisitPlantComp from '@/app/Components/VisitPlantComp'
-import VisitPlantCompOne from '@/app/Components/VisitPlantCompOne'
-import VisitPlantCompTwo from '@/app/Components/VisitPlantCompTwo'
+
+
+
 import React from 'react'
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const Footer = dynamic(() => import('@/app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const VisitPlantComp = dynamic(() => import('@/app/Components/VisitPlantComp'), { ssr: false, loading: () => <LazyLoader /> });
+const VisitPlantCompOne = dynamic(() => import('@/app/Components/VisitPlantCompOne'), { ssr: false, loading: () => <LazyLoader /> });
+const VisitPlantCompTwo = dynamic(() => import('@/app/Components/VisitPlantCompTwo'), { ssr: false, loading: () => <LazyLoader /> });
+
 
 const Visitplant = () => {
   return (

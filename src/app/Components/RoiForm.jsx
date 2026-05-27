@@ -255,9 +255,11 @@ export default function RoiForm({ onSuccess }) {
                                       alt="KEC"
                                       width={800}
                                       height={600}
-                                      style={{ height: 36, width: 'auto', objectFit: 'contain' }
-                                    /> { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
-                                    />
+                                      style={{ height: 36, width: 'auto', objectFit: 'contain' }}
+                onError={(e) => {
+                  e.target.style.display='none'; e.target.nextSibling.style.display='flex';
+                }}
+              />
                                     <div style={{ display: 'none', width: 26, height: 26, borderRadius: 6,
                                         background: 'rgba(16,185,129,0.22)', alignItems: 'center', justifyContent: 'center' }}>
                                         <Leaf size={13} color="#10b981" />

@@ -67,7 +67,7 @@ const HomeBannerSlider = () => {
               height={600}
               className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
                 index === currentIndex ? 'scale-110' : 'scale-100'
-              }
+              }`}
             />
             {/* Shimmer effect on active slide */}
             {index === currentIndex && (

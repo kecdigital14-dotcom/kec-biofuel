@@ -147,7 +147,8 @@ const ModernGallery = ({
                     height={600}
                     className="w-full h-96 lg:h-[600px] object-cover transition-all duration-1000"
                     style={{
-                      transform: `translate(${(mousePosition.x - 50) * 0.01}
+                      transform: `translate(${(mousePosition.x - 50) * 0.01}px, ${(mousePosition.y - 50) * 0.01}px)`
+                    }}
                   />
 
                   {/* Navigation */}

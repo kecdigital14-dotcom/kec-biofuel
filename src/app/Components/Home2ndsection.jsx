@@ -79,7 +79,7 @@ const Home2ndsection = () => {
                         height={600}
                         className={`w-full h-[450px] object-cover transition-transform duration-[6000ms] ease-out ${
                           index === currentSlide ? 'scale-110' : 'scale-100'
-                        }
+                        }`}
                       />
                       {/* Shimmer effect on active slide */}
                       {index === currentSlide && (

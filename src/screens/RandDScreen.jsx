@@ -1,15 +1,29 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react'
 import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
-import Footer from '../app/Components/Footer';
-import RandDSectionOne from '@/app/Components/RandDSectionOne ';
-import RandDSectionTwo from '@/app/Components/RandDSectionTwo';
-import RandDSectionThree from '@/app/Components/RandDSectionThree';
-import RandDSectionFour from '@/app/Components/RandDSectionFour';
-import RandDGlimpse from '@/app/Components/RandDGlipse';
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const RandDSectionOne = dynamic(() => import('@/app/Components/RandDSectionOne '), { ssr: false, loading: () => <LazyLoader /> });
+const RandDSectionTwo = dynamic(() => import('@/app/Components/RandDSectionTwo'), { ssr: false, loading: () => <LazyLoader /> });
+const RandDSectionThree = dynamic(() => import('@/app/Components/RandDSectionThree'), { ssr: false, loading: () => <LazyLoader /> });
+const RandDSectionFour = dynamic(() => import('@/app/Components/RandDSectionFour'), { ssr: false, loading: () => <LazyLoader /> });
+const RandDGlimpse = dynamic(() => import('@/app/Components/RandDGlipse'), { ssr: false, loading: () => <LazyLoader /> });
+
+
+
+
+
+
 
 const RandDScreen = () => {
     return (

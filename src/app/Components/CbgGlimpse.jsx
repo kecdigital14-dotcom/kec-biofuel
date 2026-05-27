@@ -12,42 +12,42 @@ const CbgGlimpse = () => {
   const photos = [
     {
       id: 1,
-      src: "images/glimpse1.jpeg",
+      src: "/images/glimpse1.jpeg",
       title: "Campus Architecture"
     },
     {
       id: 2,
-      src: "images/glimpse2.jpeg",
+      src: "/images/glimpse2.jpeg",
       title: "Modern Library"
     },
     {
       id: 3,
-      src: "images/glimpse3.jpeg",
+      src: "/images/glimpse3.jpeg",
       title: "Conference Hall"
     },
     {
       id: 4,
-      src: "images/glimpse4.jpeg",
+      src: "/images/glimpse4.jpeg",
       title: "Student Life"
     },
     {
       id: 5,
-      src: "images/glimpse5.jpeg",
+      src: "/images/glimpse5.jpeg",
       title: "Tech Innovation"
     },
     {
       id: 6,
-      src: "images/glimpse6.jpeg",
+      src: "/images/glimpse6.jpeg",
       title: "Sports Excellence"
     },
     {
       id: 7,
-      src: "images/glimpse7.jpeg",
+      src: "/images/glimpse7.jpeg",
       title: "Green Campus"
     },
     {
       id: 8,
-      src: "images/glimpse8.jpeg",
+      src: "/images/glimpse8.jpeg",
       title: "Research Labs"
     }
   ];

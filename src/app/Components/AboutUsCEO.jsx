@@ -546,11 +546,11 @@ const AboutUsCEO = () => {
                         width={800}
                         height={600}
                         className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-2 transition-all duration-500"
-                      /> {
-                          e.target.style.display = 'none';
+                onError={(e) => {
+                  e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
-                        }}
-                      />
+                }}
+              />
                       {/* Fallback gradient background */}
                       <div
                         className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-500 to-green-500 flex items-center justify-center"

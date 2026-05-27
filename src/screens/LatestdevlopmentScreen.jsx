@@ -1,14 +1,27 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import React from 'react';
 import Navbar from '../app/Components/Navbar';
 import HeroBanner from '../app/Components/HeroBanner';
-import About1stsection from '../app/Components/About1stsection';
-import About2ndsection from '../app/Components/About2ndsection';
-import Footer from '../app/Components/Footer';
-import About3rdsection from '../app/Components/About3rdsection';
+
+const LazyLoader = () => (
+  <div className="w-full flex justify-center items-center py-16">
+    <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+const About1stsection = dynamic(() => import('../app/Components/About1stsection'), { ssr: false, loading: () => <LazyLoader /> });
+const About2ndsection = dynamic(() => import('../app/Components/About2ndsection'), { ssr: false, loading: () => <LazyLoader /> });
+const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
+const About3rdsection = dynamic(() => import('../app/Components/About3rdsection'), { ssr: false, loading: () => <LazyLoader /> });
+const LatestDevelopments = dynamic(() => import('@/app/Components/LatestDevelopments'), { ssr: false, loading: () => <LazyLoader /> });
+
+
+
+
+
 // import BlogsPage from '../app/Components/BlogsPage';
-import LatestDevelopments from '@/app/Components/LatestDevelopments';
 
 const LatestdevlopmentScreen = () => {
   return (
