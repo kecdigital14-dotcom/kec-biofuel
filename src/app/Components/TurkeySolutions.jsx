@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import { CheckCircle } from 'lucide-react';
 
 const TurkeySolutions = () => {
@@ -79,10 +80,12 @@ const TurkeySolutions = () => {
               {/* Image below content */}
               <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '600ms' }}>
                 <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 relative group">
-                  <img 
-                    src="/images/turnkeythree.jpg" 
-                    alt="Solutions Overview" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  <Image
+                    src="/images/turnkeythree.jpg"
+                    alt="Solutions Overview"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 transform transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
@@ -101,10 +104,12 @@ const TurkeySolutions = () => {
                   }`}
                   style={{ transitionDelay: '300ms' }}
                 >
-                  <img 
-                    src="/images/turnkeyone.jpeg" 
-                    alt="Main Facility" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  <Image
+                    src="/images/turnkeyone.jpeg"
+                    alt="Main Facility"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 transform transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
@@ -117,10 +122,12 @@ const TurkeySolutions = () => {
                   }`}
                   style={{ transitionDelay: '500ms' }}
                 >
-                  <img 
-                    src="/images/turnkeytwo.jpeg" 
-                    alt="Control Systems" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  <Image
+                    src="/images/turnkeytwo.jpeg"
+                    alt="Control Systems"
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 transform transition-all duration-300 group-hover:scale-110 group-hover:bg-white">

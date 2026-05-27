@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 
 const PmcSectionThree = () => {
@@ -159,9 +160,11 @@ const PmcSectionThree = () => {
                   >
                     {/* Image Container */}
                     <div className="relative overflow-hidden">
-                      <img
+                      <Image
                         src={image.src}
                         alt={image.alt}
+                        width={800}
+                        height={600}
                         className="w-full h-48 sm:h-56 object-cover group-hover:scale-125 transition-transform duration-1000"
                       />
                       

@@ -1,4 +1,5 @@
 import Footer from '@/app/Components/Footer'
+import Image from 'next/image';
 import HeroBanner from '@/app/Components/HeroBanner'
 import Navbar from '@/app/Components/Navbar'
 import QrCompOne from '@/app/Components/QrCompOne'
@@ -19,9 +20,11 @@ const QrScreens = () => {
         <HeroBanner backgroundImage="/images/bannernew2.png">
           <div className="flex items-center justify-center min-h-[500px] sm:min-h-[550px] md:min-h-[550px] sm:px-4 px-10 py-8 sm:mt-[-40px] mt-[-40px]">
             <div className="bg-black/5 backdrop-blur-md rounded-xl px-4 sm:px-8 sm:py-6 py-3 w-[90%] sm:max-w-sm text-center shadow-sm sm:space-y-2 space-y-1">
-              <img
+              <Image
                 src="/images/logo.png"
                 alt="Company Logo"
+                width={800}
+                height={600}
                 className='w-[70%] sm:w-[80%] h-auto mx-auto my-2 sm:my-3'
               />
 

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from 'next/image';
 import React, { useState, useEffect } from "react";
 
 const Home2ndsection = () => {
@@ -71,12 +72,14 @@ const Home2ndsection = () => {
                 >
                   {sliderImages.map((image, index) => (
                     <div key={index} className="w-full flex-shrink-0">
-                      <img
+                      <Image
                         src={image.src}
                         alt={image.alt}
+                        width={800}
+                        height={600}
                         className={`w-full h-[450px] object-cover transition-transform duration-[6000ms] ease-out ${
                           index === currentSlide ? 'scale-110' : 'scale-100'
-                        }`}
+                        }
                       />
                       {/* Shimmer effect on active slide */}
                       {index === currentSlide && (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronRight, ChevronLeft, Leaf, Zap, Recycle, Award, Github, ExternalLink, Play, Pause, BarChart3, Users, Calendar, Target } from 'lucide-react';
 import Link from 'next/link';
 
@@ -426,9 +427,11 @@ export default function ProjectSection() {
                   >
                     {projectImages.map((image, index) => (
                       <div key={index} className="w-full h-full flex-shrink-0 relative">
-                        <img 
-                          src={image.src} 
+                        <Image
+                          src={image.src}
                           alt={image.title}
+                          width={800}
+                          height={600}
                           className='h-full w-full object-cover rounded-lg transition-transform duration-500 hover:scale-105'
                         />
                         {/* Image overlay with info */}

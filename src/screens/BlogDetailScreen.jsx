@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   Calendar,
   Clock,
@@ -156,9 +157,11 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
         </div>
 
         <div className="absolute inset-0">
-          <img
+          <Image
             src={displayBlog.image}
             alt={displayBlog.title}
+            width={800}
+            height={600}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
@@ -253,9 +256,11 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
               {/* ✅ Intro Image — renders only when introImage field exists on this blog */}
               {displayBlog.introImage && (
                 <div className="mb-8 sm:mb-10 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                  <img
+                  <Image
                     src={displayBlog.introImage}
                     alt={displayBlog.title}
+                    width={800}
+                    height={600}
                     className="w-full h-[220px] sm:h-[320px] lg:h-[420px] object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -269,9 +274,11 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                   </h2>
                   {section.image && (
                     <div className="mb-4 sm:mb-6 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                      <img
+                      <Image
                         src={section.image}
                         alt={section.subheading}
+                        width={800}
+                        height={600}
                         className="w-full h-48 sm:h-64 lg:h-80 object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
@@ -424,9 +431,11 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                   className="group bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all border border-gray-100"
                 >
                   <div className="h-40 sm:h-48 overflow-hidden relative">
-                    <img
+                    <Image
                       src={relatedBlog.thumbnail || relatedBlog.image}
                       alt={relatedBlog.title}
+                      width={800}
+                      height={600}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute top-3 sm:top-4 left-3 sm:left-4">

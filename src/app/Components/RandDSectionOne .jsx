@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   ChevronDown,
   ChevronRight,
@@ -119,9 +120,11 @@ const RandDSectionOne = () => {
               {/* Advanced Research Card */}
               <div className="group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src="images/randnew3.jpg"
                     alt="Advanced Research Laboratory"
+                    width={800}
+                    height={600}
                     className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
@@ -138,9 +141,11 @@ const RandDSectionOne = () => {
               {/* Circular Economy Card */}
               <div className="group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src="images/randnew2.jpg"
                     alt="Circular Economy and Sustainability"
+                    width={800}
+                    height={600}
                     className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
@@ -157,9 +162,11 @@ const RandDSectionOne = () => {
               {/* Energy Self-Reliance Card */}
               <div className="group relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src="images/randnew1.jpg"
                     alt="Renewable Energy and Solar Power"
+                    width={800}
+                    height={600}
                     className="w-full h-48 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>

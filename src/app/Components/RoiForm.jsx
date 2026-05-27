@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Leaf, Sparkles, ArrowRight, CheckCircle2, AlertCircle, Loader2, Brain, ChevronDown } from 'lucide-react';
 
@@ -249,9 +250,13 @@ export default function RoiForm({ onSuccess }) {
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginBottom: 2 }}>
                                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '10px 12px',
                                     borderRadius: 99, background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.13)', flexShrink: 0 }}>
-                                    <img src="/images/kec-logo.png" alt="KEC"
-                                        style={{ height: 36, width: 'auto', objectFit: 'contain' }}
-                                        onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
+                                    <Image
+                                      src="/images/kec-logo.png"
+                                      alt="KEC"
+                                      width={800}
+                                      height={600}
+                                      style={{ height: 36, width: 'auto', objectFit: 'contain' }
+                                    /> { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
                                     />
                                     <div style={{ display: 'none', width: 26, height: 26, borderRadius: 6,
                                         background: 'rgba(16,185,129,0.22)', alignItems: 'center', justifyContent: 'center' }}>

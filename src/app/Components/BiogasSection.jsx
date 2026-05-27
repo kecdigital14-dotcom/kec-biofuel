@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Leaf, Zap, Recycle, TrendingUp, Shield, MapPin, Phone, Mail, ArrowRight, CheckCircle, Factory, Truck, Home, Building, FlaskConical, Gauge } from 'lucide-react';
 
 const BiogasSection = () => {
@@ -279,7 +280,13 @@ const BiogasSection = () => {
                         <div className="lg:sticky lg:top-8">
                             <div className="bg-gradient-to-br from-purple-100 to-indigo-100 p-8 rounded-3xl shadow-2xl border border-purple-200 h-full">
                                 <div className="relative mb-6">
-                                    <img src="/images/biogaspurification.jpg" alt="Industrial Purification Plant" className="w-full h-64 object-cover rounded-2xl shadow-lg" />
+                                    <Image
+                                      src="/images/biogaspurification.jpg"
+                                      alt="Industrial Purification Plant"
+                                      width={800}
+                                      height={600}
+                                      className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                                    />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl"></div>
                                     <div className="absolute bottom-4 left-4 text-white">
                                         <h3 className="text-xl font-bold mb-1">Industrial Purification Plant</h3>
@@ -325,7 +332,13 @@ const BiogasSection = () => {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="relative">
                             <div className="bg-gradient-to-br from-orange-100 to-red-100 p-8 rounded-3xl shadow-2xl">
-                                <img src="/images/compression.jpg" alt="Compression System" className="w-full h-64 object-cover rounded-2xl mb-6" />
+                                <Image
+                                  src="/images/compression.jpg"
+                                  alt="Compression System"
+                                  width={800}
+                                  height={600}
+                                  className="w-full h-64 object-cover rounded-2xl mb-6"
+                                />
                                 <div className="bg-white p-6 rounded-2xl shadow-lg">
                                     <h3 className="text-2xl font-bold text-gray-800 mb-4">Cascade Storage & Transportation</h3>
                                     <p className="text-gray-500 leading-relaxed font-sans">

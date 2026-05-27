@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Lightbulb, Building, Wrench, TrendingUp, Map, IndianRupee, CheckCircle2, Sparkles } from 'lucide-react';
 
 const QrServices = () => {
@@ -103,9 +104,11 @@ const QrServices = () => {
                   {/* Image Section - Takes 2 columns - Order changes based on index */}
                   <div className={`lg:col-span-2 relative overflow-hidden ${idx === 1 ? 'lg:order-2' : ''}`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 mix-blend-overlay z-10"></div>
-                    <img 
-                      src={service.image} 
+                    <Image
+                      src={service.image}
                       alt={service.title}
+                      width={800}
+                      height={600}
                       className="w-full max-h-[400px] object-cover min-h-[300px] lg:min-h-full transition-transform duration-700 group-hover:scale-110"
                     />
                     
@@ -185,9 +188,10 @@ const QrServices = () => {
               {/* Image Section */}
               <div className="relative overflow-hidden lg:order-2 h-[500px]">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-teal-500/30 mix-blend-overlay z-10 h-[200px]"></div>
-                <img 
-                  src= "/images/qr2.jpg"
+                <Image
                   alt="Sustainable Energy Future"
+                  width={800}
+                  height={600}
                   className="w-full object-cover h-full"
                 />
              

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useEffect, useState, useRef } from 'react';
 
 const CbgSection = () => {
@@ -220,12 +221,14 @@ const CbgSection = () => {
                 >
                   {/* Main Image */}
                   <div className="relative overflow-hidden">
-                    <img
+                    <Image
                       src={image.src}
                       alt={image.alt}
+                      width={800}
+                      height={600}
                       className={`w-full object-cover group-hover:scale-110 transition-transform duration-1000 ${
                         index === 0 || index === 3 ? 'h-56' : 'h-48'
-                      }`}
+                      }
                     />
                     
                     {/* Gradient Overlay */}

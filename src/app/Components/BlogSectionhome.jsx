@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
 import Link from 'next/link';
 import { blogData  } from "../data/blogData";
@@ -45,9 +46,11 @@ const BlogSection = () => {
             >
               {/* Image */}
               <div className="relative overflow-hidden h-56">
-                <img 
-                  src={post.image} 
+                <Image
+                  src={post.image}
                   alt={post.title}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-2 transition-all duration-500"
                 />
                 <div className="absolute top-4 left-4 animate-fade-in">

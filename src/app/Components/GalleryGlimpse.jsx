@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { X, ZoomIn, Calendar, Tag } from 'lucide-react';
 
 const GalleryGlimpse = () => {
@@ -124,9 +125,11 @@ const GalleryGlimpse = () => {
             >
               <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2 hover:scale-105 border border-white/20">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
+                    width={800}
+                    height={600}
                     className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -154,9 +157,11 @@ const GalleryGlimpse = () => {
                 >
                   <X className="w-6 h-6" />
                 </button>
-                <img
+                <Image
                   src={selectedItem.image}
                   alt={selectedItem.title}
+                  width={800}
+                  height={600}
                   className="w-full max-h-[60vh] object-contain bg-gray-100"
                 />
               </div>

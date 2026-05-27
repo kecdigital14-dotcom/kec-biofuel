@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image';
 
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,11 +19,13 @@ const WhatsAppWidget = () => {
         <div className="mb-4 bg-white rounded-lg shadow-xl px-4 py-2 w-64 animate-fadeIn border border-green-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-16 h-16 bg-green-100/50 rounded-full flex items-center justify-center p-1">
-              <img 
-                src="/images/kec-logo.png" 
-                alt="KEC Logo" 
+              <Image
+                src="/images/kec-logo.png"
+                alt="KEC Logo"
+                width={800}
+                height={600}
                 className="w-full h-full object-contain rounded-full"
-                onError={(e) => {
+              /> {
                   // Fallback to text if image fails to load
                   e.target.style.display = 'none';
                   e.target.parentElement.innerHTML = '<span class="text-white font-bold text-sm">KEC</span>';
@@ -58,11 +61,13 @@ const WhatsAppWidget = () => {
         
         {/* Small KEC logo overlay on WhatsApp button */}
         <div className="absolute -top-1 -left-1 w-6 h-6 bg-white rounded-full border-2 border-green-500 p-0.5">
-          <img 
-            src="/images/Kecicon.jpeg" 
-            alt="KEC Logo" 
+          <Image
+            src="/images/Kecicon.jpeg"
+            alt="KEC Logo"
+            width={800}
+            height={600}
             className="w-full h-full object-contain rounded-full"
-            onError={(e) => {
+          /> {
               // Fallback to text if image fails to load
               e.target.style.display = 'none';
               e.target.parentElement.innerHTML = '<span class="text-green-600 font-bold text-xs flex items-center justify-center h-full">K</span>';

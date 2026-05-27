@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 
 const PmcSectionOne = () => {
@@ -41,9 +42,11 @@ const PmcSectionOne = () => {
                     }`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
+                    width={800}
+                    height={600}
                     className="w-full h-48 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/20 transition-all duration-300 z-20"></div>

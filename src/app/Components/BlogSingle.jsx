@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useRouter } from "next/router";
 import {
   Heart, Share2, Clock, Calendar, User, MessageCircle,
@@ -167,9 +168,11 @@ const BlogSingle = () => {
 
             <div className="hidden lg:block">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src={blogData.featuredImage}
                   alt={blogData.title}
+                  width={800}
+                  height={600}
                   className="w-full h-[400px] object-cover"
                 />
               </div>
@@ -228,9 +231,11 @@ const BlogSingle = () => {
 
             {section.image && (
               <div className="mb-8 rounded-xl overflow-hidden">
-                <img
+                <Image
                   src={section.image}
                   alt={section.heading}
+                  width={800}
+                  height={600}
                   className="w-full h-[400px] object-cover"
                 />
               </div>
@@ -323,9 +328,11 @@ const BlogSingle = () => {
             {relatedPosts.map((post, index) => (
               <article key={index} className="group cursor-pointer">
                 <div className="relative overflow-hidden rounded-xl mb-4 h-56">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

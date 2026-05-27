@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Eye, Heart, Clock, Calendar, User, ArrowRight } from 'lucide-react';
 import { blogData } from '@/app/data/blogData';
@@ -32,9 +33,11 @@ const regularBlogs = [...filteredBlogs]
       <div className="relative lg:mt-4 mt-8 lg:h-[500px] h-[500px] overflow-hidden bg-white">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/blogbanner.jpg"
             alt="Blog Banner"
+            width={800}
+            height={600}
             className="w-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
@@ -143,9 +146,11 @@ const regularBlogs = [...filteredBlogs]
                 className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <Image
                     src={blog.image}
                     alt={blog.title}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4 flex gap-2">
@@ -227,9 +232,11 @@ const regularBlogs = [...filteredBlogs]
               className="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-56 overflow-hidden">
-                <img
+                <Image
                   src={blog.image}
                   alt={blog.title}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-900 text-sm font-medium rounded-full">

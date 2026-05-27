@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Eye, X, Play, Pause } from 'lucide-react';
 
@@ -361,9 +362,11 @@ const CbgGlimpse = () => {
                 onClick={() => position === 0 ? openModal(photo) : goToSlide((currentSlide + position + photos.length) % photos.length)}
               >
                 <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
-                  <img
+                  <Image
                     src={photo.src}
                     alt={photo.title}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
 
@@ -443,9 +446,11 @@ const CbgGlimpse = () => {
                   : 'opacity-50 hover:opacity-80'
                   }`}
               >
-                <img
+                <Image
                   src={photo.src}
                   alt={photo.title}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover"
                 />
               </button>
@@ -465,9 +470,11 @@ const CbgGlimpse = () => {
           </button>
 
           <div className="relative max-w-5xl max-h-[90vh] modal-content">
-            <img
+            <Image
               src={selectedImage.src}
               alt={selectedImage.title}
+              width={800}
+              height={600}
               className="w-full h-full object-contain rounded-lg"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 rounded-b-lg">

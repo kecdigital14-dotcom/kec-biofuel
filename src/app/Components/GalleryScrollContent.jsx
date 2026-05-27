@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Award, Trophy, Star } from 'lucide-react';
 
@@ -248,10 +249,12 @@ const GalleryScrollContent = ({
                       className={`w-[750px] h-full object-cover transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}`}
                     />
                   ) : (
-                    <img
+                    <Image
                       src={currentItem.image}
                       alt={currentItem.title}
-                      className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}`}
+                      width={800}
+                      height={600}
+                      className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}
                     />
                   )}
 

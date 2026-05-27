@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function VisitCompTwo() {
   const [isHovered, setIsHovered] = useState(false);
@@ -60,7 +61,13 @@ Branch: ${bankDetails.branch}
                     <div className="w-48 h-48 rounded-lg flex items-center justify-center">
                       <div className="text-center">
                         <div className="text-6xl mb-2">
-                          <img src="/images/qrbank.png" alt="" className='w-48 h-48'/>
+                          <Image
+                            src="/images/qrbank.png"
+                            alt=""
+                            width={800}
+                            height={600}
+                            className='w-48 h-48'
+                          />
                         </div>
                       </div>
                     </div>

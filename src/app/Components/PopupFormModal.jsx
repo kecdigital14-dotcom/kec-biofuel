@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { X, Sparkles, Leaf, Send, Phone } from 'lucide-react';
 
 export default function PopupFormModal({
@@ -169,10 +170,12 @@ export default function PopupFormModal({
                                         <div className="flex flex-col items-start gap-1.5 mx-auto mb-2">
                                             {/* Row 1: Logo + "Build Scalable." on same line */}
                                             <div className="flex items-center gap-3">
-                                                <img
-                                                    src="/images/logo.png"
-                                                    alt="KEC Logo"
-                                                    className="w-20 h-auto flex-shrink-0"
+                                                <Image
+                                                  src="/images/logo.png"
+                                                  alt="KEC Logo"
+                                                  width={800}
+                                                  height={600}
+                                                  className="w-20 h-auto flex-shrink-0"
                                                 />
                                                 <h2 className="text-3xl font-black text-transparent bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text leading-tight whitespace-nowrap">
                                                     Build Scalable.

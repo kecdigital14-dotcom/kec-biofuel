@@ -13,6 +13,7 @@
  */
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import {
   Leaf, ChevronRight, ChevronLeft, CheckCircle2,
@@ -569,8 +570,13 @@ export default function KecBioPulseAI() {
 
             <motion.div initial={{ opacity: 0, y: -18 }} animate={{ opacity: 1, y: 0 }} style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 20px', borderRadius: 99, background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.13)' }}>
-                <img src="/images/kec-logo.png" alt="KEC" style={{ height: 30, width: 'auto', objectFit: 'contain' }}
-                  onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }} />
+                <Image
+                  src="/images/kec-logo.png"
+                  alt="KEC"
+                  width={800}
+                  height={600}
+                  style={{ height: 30, width: 'auto', objectFit: 'contain' }
+                /> { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }} />
                 <div style={{ display: 'none', width: 30, height: 30, borderRadius: 8, background: 'rgba(16,185,129,0.22)', alignItems: 'center', justifyContent: 'center' }}>
                   <Leaf size={15} color="#10b981" />
                 </div>

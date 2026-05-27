@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Play, Pause, Award, Star, Calendar, ArrowRight } from 'lucide-react';
 
 const ModernGallery = ({ 
@@ -139,13 +140,14 @@ const ModernGallery = ({
               {/* Image */}
               <div className="relative group">
                 <div className="relative overflow-hidden rounded-3xl shadow-2xl transition-all duration-700">
-                  <img
+                  <Image
                     src={currentItem.image}
                     alt={currentItem.title}
+                    width={800}
+                    height={600}
                     className="w-full h-96 lg:h-[600px] object-cover transition-all duration-1000"
                     style={{
-                      transform: `translate(${(mousePosition.x - 50) * 0.01}px, ${(mousePosition.y - 50) * 0.01}px)`
-                    }}
+                      transform: `translate(${(mousePosition.x - 50) * 0.01}
                   />
 
                   {/* Navigation */}

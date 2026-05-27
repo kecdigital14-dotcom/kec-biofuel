@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 const OrgChartComponent = () => {
     const treeRef = useRef(null);
@@ -326,10 +327,12 @@ const OrgChartComponent = () => {
 
                     {/* Image Section */}
                     <div className="flex-1 flex items-center justify-center ">
-                        <img
-                            src="images/ceo.jpg"
-                            alt="CEO"
-                            className="px-2 rounded rounded-md md:h-auto object-contain"
+                        <Image
+                          src="images/ceo.jpg"
+                          alt="CEO"
+                          width={800}
+                          height={600}
+                          className="px-2 rounded rounded-md md:h-auto object-contain"
                         />
                     </div>
                 </div>

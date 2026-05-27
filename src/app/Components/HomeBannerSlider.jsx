@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const HomeBannerSlider = () => {
@@ -59,12 +60,14 @@ const HomeBannerSlider = () => {
             key={slide.id}
             className="w-full flex-shrink-0 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px]"
           >
-            <img
+            <Image
               src={slide.image}
               alt={slide.title}
+              width={800}
+              height={600}
               className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
                 index === currentIndex ? 'scale-110' : 'scale-100'
-              }`}
+              }
             />
             {/* Shimmer effect on active slide */}
             {index === currentIndex && (

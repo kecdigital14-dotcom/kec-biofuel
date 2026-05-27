@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 // Scrolling Top Banner Component with Gap Between Scrolls
@@ -72,9 +73,11 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img
+              <Image
                 src="/images/kec-logo.png"
                 alt="Energox Logo"
+                width={800}
+                height={600}
                 className="h-12 w-auto object-contain"
               />
             </div>

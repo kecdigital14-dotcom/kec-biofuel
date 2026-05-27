@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { Award } from 'lucide-react';
 
@@ -169,11 +170,13 @@ const ProjectGallery = () => {
 
               {/* Project Image */}
               <div className="relative h-64 overflow-hidden bg-gray-200">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  onError={(e) => {
+                /> {
                     e.target.src = 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500';
                   }}
                 />

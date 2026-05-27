@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ArrowDown, Leaf, Users, TrendingUp, Factory } from 'lucide-react';
 
 export default function VisitPlantCompOne() {
@@ -96,7 +97,13 @@ export default function VisitPlantCompOne() {
                   {/* Author Section */}
                   <div className="flex items-center gap-4 pt-6 border-t-2 border-emerald-100">
                     <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center shadow-md overflow-hidden">
-                      <img src="/images/ceo - Copy.jpg" alt="CEO" className='rounded-full h-16 w-16 object-cover'/>
+                      <Image
+                        src="/images/ceo - Copy.jpg"
+                        alt="CEO"
+                        width={800}
+                        height={600}
+                        className='rounded-full h-16 w-16 object-cover'
+                      />
                     </div>
                     <div>
                       <p className="text-slate-800 font-bold text-lg">Jitendra Narayan</p>

@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   Heart, Share2, Clock, Calendar, User, MessageCircle,
   Eye, ChevronUp, Bookmark, ArrowRight
@@ -111,9 +112,11 @@ const BlogDetailClient = ({ blog, relatedBlogs = [] }) => {
             {/* Hero Image */}
             <div className="order-1 lg:order-2">
               <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
+                  width={800}
+                  height={600}
                   className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] object-cover"
                 />
               </div>
@@ -142,9 +145,11 @@ const BlogDetailClient = ({ blog, relatedBlogs = [] }) => {
         {/* ✅ Intro Image — shown right after main content if introImage exists */}
         {post.introImage && (
           <div className="my-8 sm:my-10 rounded-xl overflow-hidden shadow-md">
-            <img
+            <Image
               src={post.introImage}
               alt={post.title}
+              width={800}
+              height={600}
               className="w-full h-[220px] sm:h-[320px] lg:h-[420px] object-cover"
             />
           </div>
@@ -159,9 +164,11 @@ const BlogDetailClient = ({ blog, relatedBlogs = [] }) => {
 
             {section.image && (
               <div className="mb-6 sm:mb-8 rounded-lg sm:rounded-xl overflow-hidden">
-                <img
+                <Image
                   src={section.image}
                   alt={section.subheading}
+                  width={800}
+                  height={600}
                   className="w-full h-[200px] sm:h-[300px] lg:h-[400px] object-cover"
                 />
               </div>
@@ -236,9 +243,11 @@ const BlogDetailClient = ({ blog, relatedBlogs = [] }) => {
                   href={`/blogs/${relatedPost.slug}`}
                   className="group block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
                 >
-                  <img
+                  <Image
                     src={relatedPost.thumbnail}
                     alt={relatedPost.title}
+                    width={800}
+                    height={600}
                     className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="p-4 sm:p-6">

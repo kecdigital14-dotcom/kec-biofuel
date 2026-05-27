@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   Award,
   Users,
@@ -198,9 +199,11 @@ const AboutUsCEO = () => {
               {/* Profile Image */}
               <div className="flex justify-center">
                 <div className="relative group">
-                  <img
+                  <Image
                     src={ceoData.profileImage}
                     alt={ceoData.name}
+                    width={800}
+                    height={600}
                     className="w-72 h-96 rounded-2xl object-cover shadow-2xl border-4 border-white/20 transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-1"
                   />
                   <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg animate-bounce">
@@ -537,11 +540,13 @@ const AboutUsCEO = () => {
                   >
                     {/* Achievement Image */}
                     <div className="relative h-96 overflow-hidden">
-                      <img
+                      <Image
                         src={exposure.image}
                         alt={exposure.title}
+                        width={800}
+                        height={600}
                         className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-2 transition-all duration-500"
-                        onError={(e) => {
+                      /> {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
                         }}

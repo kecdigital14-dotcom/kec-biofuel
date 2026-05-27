@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import Image from 'next/image';
 import { TrendingUp, Shield, Sprout, DollarSign, FileCheck, Gift, CheckCircle2, Sparkles } from 'lucide-react';
 
 const QrCompFour = () => {
@@ -79,9 +80,11 @@ const QrCompFour = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
 
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 h-full">
-                  <img
+                  <Image
                     src="/images/bannernew2.png"
                     alt="CBG Investment"
+                    width={800}
+                    height={600}
                     className="w-full h-full min-h-[400px] object-cover transition-all duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-transparent to-transparent"></div>

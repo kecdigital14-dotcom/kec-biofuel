@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 
 const ROI_URL = process.env.NEXT_PUBLIC_BASE_URL
   ? `${process.env.NEXT_PUBLIC_BASE_URL}/roi`
@@ -526,11 +527,13 @@ const QrScreen = () => {
 
           {/* KEC logo pill */}
           <div className="qr-logo-pill">
-            <img
+            <Image
               src="/images/kec-logo.png"
               alt="KEC"
+              width={800}
+              height={600}
               className="qr-logo-img"
-              onError={e => {
+            /> {
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'flex';
               }}
@@ -598,7 +601,12 @@ const QrScreen = () => {
               <div className="qr-corner bl" />
               <div className="qr-corner br" />
               <div className="qr-img-box">
-                <img src={qrSrc} alt="QR Code — KEC BioPulse AI" />
+                <Image
+                  src={qrSrc}
+                  alt="QR Code — KEC BioPulse AI"
+                  width={800}
+                  height={600}
+                />
               </div>
             </div>
 

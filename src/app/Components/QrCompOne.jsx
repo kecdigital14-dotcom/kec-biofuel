@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
+import Image from 'next/image';
 import { Sparkles, CheckCircle2, TrendingUp, Lightbulb, ArrowRight, Phone, Users, Leaf } from 'lucide-react';
 
 const QrCompOne = () => {
@@ -125,9 +126,11 @@ const QrCompOne = () => {
                 <div className="absolute top-4 left-4 z-10 bg-slate-900/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-emerald-500/30 shadow-lg">
                   <span className="text-emerald-400 text-xs font-semibold">{projectImages[0].label}</span>
                 </div>
-                <img
+                <Image
                   src={projectImages[0].url}
                   alt="Project 1"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
@@ -137,9 +140,11 @@ const QrCompOne = () => {
                 <div className="absolute top-4 right-4 z-10 bg-slate-900/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-emerald-500/30 shadow-lg">
                   <span className="text-emerald-400 text-xs font-semibold">{projectImages[1].label}</span>
                 </div>
-                <img
+                <Image
                   src={projectImages[1].url}
                   alt="Project 2"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
@@ -149,9 +154,11 @@ const QrCompOne = () => {
                 <div className="absolute top-4 left-4 z-10 bg-slate-900/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-emerald-500/30 shadow-lg">
                   <span className="text-emerald-400 text-xs font-semibold">{projectImages[2].label}</span>
                 </div>
-                <img
+                <Image
                   src={projectImages[2].url}
                   alt="Project 3"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
@@ -162,18 +169,22 @@ const QrCompOne = () => {
                 <div className="absolute top-4 right-4 z-10 bg-slate-900/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-emerald-500/30 shadow-lg">
                   <span className="text-emerald-400 text-xs font-semibold">{projectImages[3].label}</span>
                 </div>
-                <img
+                <Image
                   src={projectImages[3].url}
                   alt="Project 4"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
               {/* Bottom Right - Medium Image */}
               {/* <div className="relative rounded-2xl overflow-hidden h-48 group shadow-2xl border border-slate-700/30">
-                <img
+                <Image
                   src={projectImages[2].url}
                   alt="Project 5"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>

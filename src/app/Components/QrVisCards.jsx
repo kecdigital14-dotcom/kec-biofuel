@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import Image from 'next/image';
 import { Download, Award, Sparkles } from 'lucide-react';
 
 const QrVisCards = () => {
@@ -62,11 +63,13 @@ const QrVisCards = () => {
           <div className="md:w-1/2 flex flex-col">
             {/* Visiting Card Image */}
             <div className="relative overflow-hidden bg-slate-700 aspect-[1.75/1] group-hover/card:scale-105 transition-transform duration-500">
-              <img 
+              <Image
                 src={card.image}
-                alt={`${card.name} - ${card.position} Visiting Card`}
+                alt={`${card.name}
+                width={800}
+                height={600}
                 className="w-full h-full object-cover"
-                onError={(e) => {
+              /> {
                   e.target.style.display = 'none';
                   e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
                   const fallback = document.createElement('div');
@@ -112,11 +115,13 @@ const QrVisCards = () => {
 
           {/* Right Side - CEO Full Photo */}
           <div className="relative overflow-hidden bg-slate-700 md:w-1/2 h-[450px] md:min-h-0">
-            <img 
+            <Image
               src="/images/ceo.jpg"
-              alt={`${card.name} - CEO Photo`}
+              alt={`${card.name}
+              width={800}
+              height={600}
               className="w-full h-[470px] object-cover object-center"
-              onError={(e) => {
+            /> {
                 e.target.style.display = 'none';
                 e.target.parentElement.classList.add('flex', 'items-center', 'justify-center', 'bg-slate-600');
                 const fallback = document.createElement('div');
@@ -151,11 +156,13 @@ const QrVisCards = () => {
       <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 backdrop-blur-xl rounded-2xl shadow-2xl border border-emerald-300/30 overflow-hidden">
         {/* Card Image */}
         <div className="relative overflow-hidden bg-slate-700 aspect-[1.75/1] group-hover/card:scale-105 transition-transform duration-500">
-          <img 
+          <Image
             src={card.image}
-            alt={`${card.name} - ${card.position}`}
+            alt={`${card.name}
+            width={800}
+            height={600}
             className="w-full h-full object-cover"
-            onError={(e) => {
+          /> {
               e.target.style.display = 'none';
               e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
               const fallback = document.createElement('div');
