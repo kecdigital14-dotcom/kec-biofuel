@@ -2,6 +2,35 @@ import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const mobileStyles = `
+  @media (max-width: 639px) {
+    .banner-wrapper {
+      width: 100%;
+      height: 190px;        /* ← change mobile banner height here */
+      margin-top: 64px;
+    }
+    .banner-slide {
+      height: 220px;        /* ← must match banner-wrapper height */
+      width: 100vw;         /* ← full viewport width */
+    }
+    .banner-btn-prev { left: 8px; }
+    .banner-btn-next { right: 8px; }
+    .banner-btn-icon {
+      width: 28px;
+      height: 28px;
+    }
+    .banner-chevron {
+      width: 16px;
+      height: 16px;
+    }
+    .banner-dots { bottom: 8px; gap: 6px; }
+    .banner-dot {
+      width: 8px;
+      height: 8px;
+    }
+  }
+`;
+
 const HomeBannerSlider = () => {
   const slides = [
     {
@@ -32,7 +61,6 @@ const HomeBannerSlider = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-play functionality
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -40,105 +68,71 @@ const HomeBannerSlider = () => {
     return () => clearInterval(timer);
   }, [currentIndex]);
 
-  const prevSlide = () => {
+  const prevSlide = () =>
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
 
-  const nextSlide = () => {
+  const nextSlide = () =>
     setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
 
   return (
-    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[510px] overflow-hidden mt-16">
-      {/* Slides */}
-      <div
-        className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className="w-full flex-shrink-0 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px]"
-          >
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              width={800}
-              height={600}
-              className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
-                index === currentIndex ? 'scale-110' : 'scale-100'
+    <>
+      <style>{mobileStyles}</style>
+      {/* Desktop height controlled by Tailwind only — mobile height by CSS only */}
+      <div className="banner-wrapper relative w-full md:h-[400px] lg:h-[480px] overflow-hidden mt-24">
+        <div
+          className="flex h-full transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {slides.map((slide) => (
+            // Desktop: h-full. Mobile: .banner-slide CSS overrides height & width
+            <div key={slide.id} className="banner-slide w-full flex-shrink-0 relative h-full">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                className="object-cover object-center"
+                priority
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Prev Button */}
+        <button
+          onClick={prevSlide}
+          className="banner-btn-prev absolute left-5 top-1/2 -translate-y-1/2 z-20"
+        >
+          <div className="banner-btn-icon sm:w-10 sm:h-10 w-1 h-1 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-md flex items-center justify-center border border-white/20">
+            <ChevronLeft className="banner-chevron w-5 h-5 text-white" />
+          </div>
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={nextSlide}
+          className="banner-btn-next absolute right-5 top-1/2 -translate-y-1/2 z-20"
+        >
+          <div className="banner-btn-icon w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-md flex items-center justify-center border border-white/20">
+            <ChevronRight className="banner-chevron w-5 h-5 text-white" />
+          </div>
+        </button>
+
+        {/* Dots */}
+        <div className="banner-dots absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`banner-dot rounded-full transition-all duration-300 ${
+                currentIndex === index
+                  ? "w-3 h-3 bg-white scale-125"
+                  : "w-3 h-3 bg-gray-400 hover:bg-gray-300"
               }`}
             />
-            {/* Shimmer effect on active slide */}
-            {index === currentIndex && (
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Prev Button */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 group"
-      >
-        <div className="relative">
-          <div className="relative w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center backdrop-blur-sm border border-white/20">
-            <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 text-white transition-transform duration-300 group-hover:-translate-x-0.5" />
-          </div>
-          <div className="absolute inset-0 rounded-full border-2 border-green-300 opacity-0 group-hover:opacity-100 animate-ping" />
-          <div className="absolute inset-0 rounded-full bg-green-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
+          ))}
         </div>
-      </button>
-
-      {/* Next Button */}
-      <button
-        onClick={nextSlide}
-        className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 group"
-      >
-        <div className="relative">
-          <div className="relative w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center backdrop-blur-sm border border-white/20">
-            <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
-          </div>
-          <div className="absolute inset-0 rounded-full border-2 border-green-300 opacity-0 group-hover:opacity-100 animate-ping" />
-          <div className="absolute inset-0 rounded-full bg-green-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
-        </div>
-      </button>
-
-      {/* Dots */}
-      <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`transition-all duration-300 ${
-              currentIndex === index 
-                ? "w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full scale-125" 
-                : "w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full hover:bg-gray-300 hover:scale-110"
-            }`}
-          >
-            {currentIndex === index && (
-              <span className="absolute inset-0 rounded-full border-2 border-white animate-pulse" />
-            )}
-          </button>
-        ))}
       </div>
-
-      <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-
-        .animate-shimmer {
-          animation: shimmer 3s ease-in-out infinite;
-        }
-      `}</style>
-    </div>
+    </>
   );
 };
 
