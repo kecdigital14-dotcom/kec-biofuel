@@ -17,7 +17,7 @@ const QrVisCards = () => {
       id: 2,
       name: 'Ashok Kumar Jaswal',
       position: 'Product & Promotion Manager',
-      image: '/images/vis5.jpeg', 
+      image: '/images/vis5.jpeg',
       gradient: 'from-teal-400 to-cyan-500'
     },
     {
@@ -55,17 +55,16 @@ const QrVisCards = () => {
   const renderCEOCard = (card) => (
     <div key={card.id} className="relative group/card">
       <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-2xl blur-xl opacity-30 group-hover/card:opacity-50 transition-opacity duration-500"></div>
-      
+
       <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 backdrop-blur-xl rounded-2xl shadow-2xl border border-emerald-300/30 overflow-hidden">
-        {/* Card Content - Two Column Layout */}
         <div className="flex flex-col md:flex-row">
+
           {/* Left Side - Visiting Card Image & Info & Download */}
           <div className="md:w-1/2 flex flex-col">
-            {/* Visiting Card Image */}
             <div className="relative overflow-hidden bg-slate-700 aspect-[1.75/1] group-hover/card:scale-105 transition-transform duration-500">
               <Image
                 src={card.image}
-                alt={`${card.name}
+                alt={`${card.name}`}
                 width={800}
                 height={600}
                 className="w-full h-full object-cover"
@@ -74,21 +73,19 @@ const QrVisCards = () => {
                   e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
                   const fallback = document.createElement('div');
                   fallback.className = 'text-center p-8';
-                  fallback.innerHTML = `
-                    <div class="w-20 h-20 bg-gradient-to-r ${card.gradient} rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                      </svg>
-                    </div>
-                    <p class="text-white font-bold text-lg">${card.name}</p>
-                    <p class="text-slate-300 text-sm">${card.position}</p>
-                  `;
+                  fallback.innerHTML =
+                    '<div class="w-20 h-20 bg-gradient-to-r ' + card.gradient + ' rounded-full flex items-center justify-center mx-auto mb-4">' +
+                      '<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>' +
+                      '</svg>' +
+                    '</div>' +
+                    '<p class="text-white font-bold text-lg">' + card.name + '</p>' +
+                    '<p class="text-slate-300 text-sm">' + card.position + '</p>';
                   e.target.parentElement.appendChild(fallback);
                 }}
               />
             </div>
 
-            {/* Card Info & Download Button */}
             <div className="p-6 flex flex-col justify-between flex-grow">
               <div className="mb-4">
                 <h3 className="text-white font-bold text-3xl mb-1">
@@ -99,7 +96,6 @@ const QrVisCards = () => {
                 </p>
               </div>
 
-              {/* Download Button for Visiting Card */}
               <button
                 onClick={() => handleDownload(card.name, card.image)}
                 className="w-full relative group/btn overflow-hidden rounded-xl p-4 bg-emerald-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -117,26 +113,25 @@ const QrVisCards = () => {
           <div className="relative overflow-hidden bg-slate-700 md:w-1/2 h-[450px] md:min-h-0">
             <Image
               src="/images/ceo.jpg"
-              alt={`${card.name}
+              alt={`${card.name}`}
               width={800}
               height={600}
               className="w-full h-[470px] object-cover object-center"
-                onError={(e) => {
-                  e.target.style.display = 'none';
+              onError={(e) => {
+                e.target.style.display = 'none';
                 e.target.parentElement.classList.add('flex', 'items-center', 'justify-center', 'bg-slate-600');
                 const fallback = document.createElement('div');
                 fallback.className = 'text-center p-8';
-                fallback.innerHTML = `
-                  <div class="w-32 h-32 bg-gradient-to-r ${card.gradient} rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                    </svg>
-                  </div>
-                  <p class="text-white font-bold text-lg">CEO Photo</p>
-                `;
+                fallback.innerHTML =
+                  '<div class="w-32 h-32 bg-gradient-to-r ' + card.gradient + ' rounded-full flex items-center justify-center mx-auto mb-4">' +
+                    '<svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                      '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>' +
+                    '</svg>' +
+                  '</div>' +
+                  '<p class="text-white font-bold text-lg">CEO Photo</p>';
                 e.target.parentElement.appendChild(fallback);
-                }}
-              />
+              }}
+            />
           </div>
         </div>
 
@@ -152,33 +147,32 @@ const QrVisCards = () => {
   const renderCard = (card) => (
     <div key={card.id} className="relative group/card max-w-lg mx-auto">
       <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-2xl blur-xl opacity-30 group-hover/card:opacity-50 transition-opacity duration-500"></div>
-      
+
       <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 backdrop-blur-xl rounded-2xl shadow-2xl border border-emerald-300/30 overflow-hidden">
         {/* Card Image */}
         <div className="relative overflow-hidden bg-slate-700 aspect-[1.75/1] group-hover/card:scale-105 transition-transform duration-500">
           <Image
             src={card.image}
-            alt={`${card.name}
+            alt={`${card.name}`}
             width={800}
             height={600}
             className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.style.display = 'none';
+            onError={(e) => {
+              e.target.style.display = 'none';
               e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
               const fallback = document.createElement('div');
               fallback.className = 'text-center p-8';
-              fallback.innerHTML = `
-                <div class="w-20 h-20 bg-gradient-to-r ${card.gradient} rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                  </svg>
-                </div>
-                <p class="text-white font-bold text-lg">${card.name}</p>
-                <p class="text-slate-300 text-sm">${card.position}</p>
-              `;
+              fallback.innerHTML =
+                '<div class="w-20 h-20 bg-gradient-to-r ' + card.gradient + ' rounded-full flex items-center justify-center mx-auto mb-4">' +
+                  '<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>' +
+                  '</svg>' +
+                '</div>' +
+                '<p class="text-white font-bold text-lg">' + card.name + '</p>' +
+                '<p class="text-slate-300 text-sm">' + card.position + '</p>';
               e.target.parentElement.appendChild(fallback);
-                }}
-              />
+            }}
+          />
         </div>
 
         {/* Card Info */}
@@ -192,7 +186,6 @@ const QrVisCards = () => {
             </p>
           </div>
 
-          {/* Download Button */}
           <button
             onClick={() => handleDownload(card.name, card.image)}
             className="w-full relative group/btn overflow-hidden rounded-xl p-4 bg-emerald-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -219,7 +212,7 @@ const QrVisCards = () => {
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(16, 185, 129, 0.15) 1px, transparent 0)',
@@ -242,7 +235,7 @@ const QrVisCards = () => {
                 </span>
               </div>
             </div>
-            
+
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
               <span className="text-slate-900/70">Visiting </span>
               <span className="text-emerald-600">Cards</span>
@@ -252,14 +245,14 @@ const QrVisCards = () => {
             </p>
           </div>
 
-          {/* CEO Card - Full Width Row with Split Layout */}
+          {/* CEO Card */}
           <div className="flex justify-center mb-8">
             <div className="max-w-4xl w-full">
               {renderCEOCard(visitingCards[0])}
             </div>
           </div>
 
-          {/* Other Cards - 2 Columns Grid */}
+          {/* Other Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {visitingCards.slice(1).map((card) => renderCard(card))}
           </div>

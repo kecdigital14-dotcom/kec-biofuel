@@ -5,14 +5,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, Award, Trophy, Star } from 'lucide-react';
 
 const GalleryScrollContent = ({
-  // NEW: Pass an array of award categories like:
-  // awards={[
-  //   { label: "R.E.A.L Excellence Award 2025", data: reaData },
-  //   { label: "Big Impact Award 2026, Malaysia", data: bigImpactData },
-  // ]}
-  // If awards is provided, it overrides the `data` prop.
   awards = null,
-
   data = [
     {
       id: 1,
@@ -46,15 +39,12 @@ const GalleryScrollContent = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isChanging, setIsChanging] = useState(false);
-
-  // NEW: active award category tab (index into `awards` array)
   const [activeAward, setActiveAward] = useState(0);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  // Resolve the active dataset
   const activeData = awards ? awards[activeAward].data : data;
   const currentItem = activeData[currentIndex];
 
@@ -88,7 +78,6 @@ const GalleryScrollContent = ({
     }
   };
 
-  // NEW: switch award category tab
   const handleAwardTabChange = (index) => {
     if (index !== activeAward) {
       setIsChanging(true);
@@ -159,7 +148,6 @@ const GalleryScrollContent = ({
         .image-fade-out { opacity: 0; transform: scale(1.1); transition: all 0.3s ease-out; }
         .image-fade-in { opacity: 1; transform: scale(1); transition: all 0.5s ease-out; }
 
-        /* NEW: Award tab button styles */
         .award-tab-active {
           background: linear-gradient(135deg, #16a34a, #059669);
           color: #ffffff;
@@ -194,7 +182,7 @@ const GalleryScrollContent = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Modern Section Header */}
+        {/* Section Header */}
         <div className={`text-center mb-8 ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
           <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 mb-3 border border-white/20 shadow-lg animate-float">
             <div className="text-green-600 animate-pulse-custom">
@@ -213,7 +201,7 @@ const GalleryScrollContent = ({
             Celebrating milestones and recognitions that define our journey of excellence
           </p>
 
-          {/* ── NEW: Award Category Toggle Buttons ── */}
+          {/* Award Category Toggle Buttons */}
           {awards && awards.length > 1 && (
             <div className={`flex flex-wrap justify-center gap-4 mt-2 mb-6 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
               {awards.map((award, index) => (
@@ -254,7 +242,7 @@ const GalleryScrollContent = ({
                       alt={currentItem.title}
                       width={800}
                       height={600}
-                      className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}
+                      className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}`}
                     />
                   )}
 
@@ -282,10 +270,7 @@ const GalleryScrollContent = ({
                       <button
                         key={index}
                         onClick={() => setCurrentIndex(index)}
-                        className={`transition-all duration-300 rounded-full ${index === currentIndex
-                          ? 'w-8 h-3 bg-white shadow-lg'
-                          : 'w-3 h-3 bg-white/60 hover:bg-white/90 hover:scale-110'
-                          }`}
+                        className={`transition-all duration-300 rounded-full ${index === currentIndex ? 'w-8 h-3 bg-white shadow-lg' : 'w-3 h-3 bg-white/60 hover:bg-white/90 hover:scale-110'}`}
                       />
                     ))}
                   </div>
@@ -331,7 +316,7 @@ const GalleryScrollContent = ({
             </div>
           </div>
 
-          {/* Bottom Tab Selector (slides within active award) */}
+          {/* Bottom Tab Selector */}
           {activeData.length > 1 && (
             <div className={`mt-8 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
               <div className="bg-white/60 backdrop-blur-xl rounded-2xl border border-white/20 shadow-lg p-2">
@@ -340,10 +325,7 @@ const GalleryScrollContent = ({
                     <button
                       key={item.id}
                       onClick={() => handleItemChange(index)}
-                      className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 relative overflow-hidden ${index === currentIndex
-                        ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg shadow-green-500/30 scale-105'
-                        : 'text-slate-600 hover:text-slate-800 hover:bg-white/70 border border-transparent hover:border-white/40 hover:scale-105'
-                        }`}
+                      className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 relative overflow-hidden ${index === currentIndex ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg shadow-green-500/30 scale-105' : 'text-slate-600 hover:text-slate-800 hover:bg-white/70 border border-transparent hover:border-white/40 hover:scale-105'}`}
                     >
                       <span className="relative z-10 truncate max-w-48 block">
                         {item.title}
