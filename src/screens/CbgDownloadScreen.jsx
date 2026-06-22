@@ -70,6 +70,26 @@ const CbgDownloadScreen = () => {
         moreInfoButtonLink="/contact"
       />
       <CbgDownloadComp
+        title="CBG-CGD SYNCHRONISATION 
+KEC CBG -CGD STUDY"
+        description="KEC Agritech's technical study on integrating Compressed Biogas into City Gas Distribution networks under the MOP&NG Synchro Scheme."
+        brochurePdfUrl="/images/KECCBGCGDSTUDY.pdf"
+        fileName="KEC-CBG-CGD-Synchronisation-Study.pdf"
+        whatsInside={[
+          "What is the CBG-CGD Synchronisation Scheme (Synchro Scheme)",
+          "How to supply Biogas/CBG to CGD entities via GAIL",
+          "Quantity accounting via GAIL's online joint-ticketing portal",
+          "Fortnightly invoicing process under the Synchro Scheme",
+          "Quality specifications per BIS IS 16087:2016 (Methane ≥90%)",
+          "3 delivery options: Cascade, pipeline injection, DCU injection",
+          "No LoI required — direct GAIL Tripartite Agreement process"
+        ]}
+        moreInfoTitle="Connect CBG Output to CGD Networks"
+        moreInfoDesc="KEC helps CBG producers navigate GAIL agreements, quality compliance, and pipeline integration under the Synchro Scheme."
+        moreInfoButtonText="Contact KEC"
+        moreInfoButtonLink="mailto:info@kisanexperience.com"
+      />
+      <CbgDownloadComp
         title="KEC ISO 9001:2015 Certificate"
         description="View our ISO 9001:2015 Certification, showcasing our commitment to quality management standards."
         brochurePdfUrl="/images/KEC_ ISO CERTIFICATE_9001(2).pdf"
@@ -103,23 +123,23 @@ const CbgDownloadScreen = () => {
         moreInfoButtonLink="/cbg"
       />
 
-   <CbgDownloadComp
-  title="Biogas Magazine – Edition 34"
-  description="Featured in Biogas Magazine (Edition 34), showcasing KEC Agritech’s leadership in CBG Parks and clean energy."
-  brochurePdfUrl="/images/Biogas-Magazine.pdf"
-  fileName="Biogas-Magazine-Edition-34.pdf"
-  whatsInside={[
-    "Exclusive interview with Mr. Jitendra Narayan, Founder & CEO, KEC Agritech Pvt. Ltd.",
-    "KEC’s vision for CBG Parks and bio-CNG ecosystem in India",
-    "Cluster-based models empowering farmers and rural communities",
-    "Role of biogas in circular agriculture and renewable energy transition",
-    "Insights on challenges, scalability, and future of the biogas sector"
-  ]}
-  moreInfoTitle="Why This Feature Matters?"
-  moreInfoDesc="This magazine feature showcases KEC Agritech’s real-world impact in building sustainable biofuel infrastructure, strengthening farmer income, and driving India’s clean energy mission through CBG and bio-CNG solutions."
-  moreInfoButtonText="Explore Our CBG & Biofuel Initiatives"
-  moreInfoButtonLink="/cbg"
-/>
+      <CbgDownloadComp
+        title="Biogas Magazine – Edition 34"
+        description="Featured in Biogas Magazine (Edition 34), showcasing KEC Agritech’s leadership in CBG Parks and clean energy."
+        brochurePdfUrl="/images/Biogas-Magazine.pdf"
+        fileName="Biogas-Magazine-Edition-34.pdf"
+        whatsInside={[
+          "Exclusive interview with Mr. Jitendra Narayan, Founder & CEO, KEC Agritech Pvt. Ltd.",
+          "KEC’s vision for CBG Parks and bio-CNG ecosystem in India",
+          "Cluster-based models empowering farmers and rural communities",
+          "Role of biogas in circular agriculture and renewable energy transition",
+          "Insights on challenges, scalability, and future of the biogas sector"
+        ]}
+        moreInfoTitle="Why This Feature Matters?"
+        moreInfoDesc="This magazine feature showcases KEC Agritech’s real-world impact in building sustainable biofuel infrastructure, strengthening farmer income, and driving India’s clean energy mission through CBG and bio-CNG solutions."
+        moreInfoButtonText="Explore Our CBG & Biofuel Initiatives"
+        moreInfoButtonLink="/cbg"
+      />
 
 
       <Footer />

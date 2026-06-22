@@ -103,7 +103,7 @@ const Footer = () => {
                                 { name: "Purification Technology", path: "/technology" },
                             ]} />
                         </div>
-                                                <div>
+                        <div>
                             <SectionHeading icon={HelpCircle} title="FAQs" path="/contact" />
                             <NavLinks items={[{ name: "Read FAQs", path: "/contact" }]} />
                         </div>
@@ -163,7 +163,7 @@ const Footer = () => {
                                 <h3 className="text-xs font-bold text-gray-800 uppercase tracking-wide">Stay Updated</h3>
                             </div>
                             <p className="text-gray-600 text-xs leading-relaxed mb-4 font-semibold">
-                                Follow us on LinkedIn for the latest biofuel insights and updates.
+                                Subscribe "The BioEnergy Brief" Newsletter By KEC
                             </p>
                             <a
                                 href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7464982100782411778"
