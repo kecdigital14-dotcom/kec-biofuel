@@ -54,22 +54,6 @@ const CbgDownloadScreen = () => {
         </div>
       </HeroBanner>
       <CbgDownloadComp
-        title="CBG Park Brochure"
-        description="Explore our CBG Park with cutting-edge biofuel solutions."
-        brochurePdfUrl="/images/KECProfileJune25.pdf"
-        fileName="CBG-Park.pdf"
-        whatsInside={[
-          "Overview of CBG Park",
-          "Technology and Process Flow",
-          "Benefits and Use Cases",
-          "Contact Information"
-        ]}
-        moreInfoTitle="Want to Partner with Us?"
-        moreInfoDesc="Learn how our CBG solutions can help you achieve sustainable growth."
-        moreInfoButtonText="Contact Us"
-        moreInfoButtonLink="/contact"
-      />
-      <CbgDownloadComp
         title="KEC Agritech Company Profile 2026"
         description="Updated 2026 profile — 74+ EPC contracts, ₹1200 Cr+ orderbook, AI-enabled CBG plants, CBG Parks across India. Farm to Fuel."
         brochurePdfUrl="/images/KECProfile2026.pdf"
