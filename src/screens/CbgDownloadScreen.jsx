@@ -70,6 +70,28 @@ const CbgDownloadScreen = () => {
         moreInfoButtonLink="/contact"
       />
       <CbgDownloadComp
+        title="KEC Agritech Company Profile 2026"
+        description="Updated 2026 profile — 74+ EPC contracts, ₹1200 Cr+ orderbook, AI-enabled CBG plants, CBG Parks across India. Farm to Fuel."
+        brochurePdfUrl="/images/KECProfile2026.pdf"
+        fileName="KEC-Agritech-Profile-2026.pdf"
+        whatsInside={[
+          "About KEC — company structure, 5 subsidiaries, CIN & financial snapshot",
+          "Awards & Recognitions — BIA Malaysia 2026, German Energy Solutions Initiative & more",
+          "74+ EPC projects, ₹1200 Cr+ orderbook across 42 districts in 14 states",
+          "KEC & CBG Industry Roadmap 2020–2026 (ongoing)",
+          "AI-Enabled Biogas Plant — smart feedstock, predictive performance, SCADA monitoring",
+          "CBG Park overview — Plug & Play model, Bulandshahr Phase 1 launched",
+          "CBG Park locations: Khurja, Koil (Aligarh), Gabhana & 8 states Pan India",
+          "Investment table: 2.4–20 TPD plants, ROI 40–50%, payback <3 yrs, 15yr buyback",
+          "Bio-Manure products: Carbon Enhancer & PROM (Phosphate Rich Organic Manure)",
+          "Investor Interest Form — Individual CBG Plant or CBG Park entry options"
+        ]}
+        moreInfoTitle="Build Your CBG Plant with KEC Agritech"
+        moreInfoDesc="74+ projects executed. AI-enabled plants. Government support. 35–50% ROI. The right partner for India's CBG revolution."
+        moreInfoButtonText="Contact KEC"
+        moreInfoButtonLink="mailto:info@kisanexperience.com"
+      />
+      <CbgDownloadComp
         title="CBG-CGD SYNCHRONISATION 
 KEC CBG -CGD STUDY"
         description="KEC Agritech's technical study on integrating Compressed Biogas into City Gas Distribution networks under the MOP&NG Synchro Scheme."
