@@ -6,9 +6,23 @@ import { blogData  } from "../data/blogData";
 
 const BlogSection = () => {
   const [isVisible, setIsVisible] = React.useState(false);
+  const sectionRef = React.useRef(null);
 
   React.useEffect(() => {
-    setIsVisible(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   const getCategoryColor = (category) => {
@@ -21,7 +35,7 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section ref={sectionRef} className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center mb-12 space-y-3 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>

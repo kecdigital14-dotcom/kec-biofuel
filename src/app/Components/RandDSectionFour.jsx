@@ -1,8 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, ChevronRight, Beaker, Leaf, Factory, Zap, BarChart3, Settings, Wrench, Building } from 'lucide-react';
 
 const RandDSectionFour = () => {
   const [activeProcess, setActiveProcess] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   const processes = [
     {
@@ -79,7 +98,14 @@ const RandDSectionFour = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-green-200 via-yellow-50 to-green-200">
+    <div
+      ref={sectionRef}
+      className="min-h-screen bg-gradient-to-r from-green-200 via-yellow-50 to-green-200 transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Method Section */}
         <div className="text-center mb-8">

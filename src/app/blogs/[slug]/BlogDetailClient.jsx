@@ -11,6 +11,11 @@ const BlogDetailClient = ({ blog, relatedBlogs = [] }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const post = blog;
 
@@ -55,7 +60,13 @@ const BlogDetailClient = ({ blog, relatedBlogs = [] }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div
+      className="min-h-screen bg-white transition-all duration-700 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
+      }}
+    >
       {/* Progress bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-100 z-50">
         <div

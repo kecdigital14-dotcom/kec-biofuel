@@ -1,7 +1,27 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const Home4thsection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   /* ─────────────────────────────────────────
      BIO‑FUEL–FOCUSED PROJECT CATEGORIES
   ───────────────────────────────────────────*/
@@ -33,8 +53,16 @@ const Home4thsection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section ref={sectionRef} className={`py-16 bg-gray-50 ${isVisible ? 'in-view' : ''}`}>
       <style>{`
+        .animate-fadeInUp,
+        .animate-fadeInLeft,
+        .animate-fadeInRight,
+        .animate-scaleIn,
+        .animate-slideInRotate {
+          opacity: 0;
+        }
+
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -90,23 +118,23 @@ const Home4thsection = () => {
           }
         }
 
-        .animate-fadeInUp {
+        .in-view .animate-fadeInUp {
           animation: fadeInUp 0.8s ease-out forwards;
         }
 
-        .animate-fadeInLeft {
+        .in-view .animate-fadeInLeft {
           animation: fadeInLeft 0.8s ease-out forwards;
         }
 
-        .animate-fadeInRight {
+        .in-view .animate-fadeInRight {
           animation: fadeInRight 0.8s ease-out forwards;
         }
 
-        .animate-scaleIn {
+        .in-view .animate-scaleIn {
           animation: scaleIn 0.6s ease-out forwards;
         }
 
-        .animate-slideInRotate {
+        .in-view .animate-slideInRotate {
           animation: slideInRotate 0.7s ease-out forwards;
         }
 
@@ -114,19 +142,19 @@ const Home4thsection = () => {
           opacity: 0;
         }
 
-        .card-item:nth-child(1) {
+        .in-view .card-item:nth-child(1) {
           animation: fadeInRight 0.8s ease-out 0.2s forwards;
         }
 
-        .card-item:nth-child(2) {
+        .in-view .card-item:nth-child(2) {
           animation: fadeInRight 0.8s ease-out 0.4s forwards;
         }
 
-        .card-item:nth-child(3) {
+        .in-view .card-item:nth-child(3) {
           animation: fadeInRight 0.8s ease-out 0.6s forwards;
         }
 
-        .card-item:nth-child(4) {
+        .in-view .card-item:nth-child(4) {
           animation: fadeInRight 0.8s ease-out 0.8s forwards;
         }
 

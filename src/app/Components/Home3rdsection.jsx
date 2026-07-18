@@ -1,16 +1,32 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Home3rdsection = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    setIsVisible(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
     const interval = setInterval(() => {
       setActiveFeature((prev) => (prev + 1) % 4);
     }, 3000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      observer.disconnect();
+    };
   }, []);
 
   const features = [
@@ -45,7 +61,7 @@ const Home3rdsection = () => {
   ];
 
   return (
-    <section className="relative py-6 sm:py-10 bg-gradient-to-br from-green-50 via-green-100 to-green-400 overflow-hidden font-sans">
+    <section ref={sectionRef} className="relative py-6 sm:py-10 bg-gradient-to-br from-green-50 via-green-100 to-green-400 overflow-hidden font-sans">
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }

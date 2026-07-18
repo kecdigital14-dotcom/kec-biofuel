@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import {
   Award,
@@ -23,9 +23,23 @@ const AboutUsCEO = () => {
   const [activeTab, setActiveTab] = useState('journey');
   const [isVisible, setIsVisible] = useState(false);
   const [visibleCards, setVisibleCards] = useState([]);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    setIsVisible(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -171,7 +185,7 @@ const AboutUsCEO = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-green-50 py-16">
+    <div ref={sectionRef} className="bg-gradient-to-br from-slate-50 to-green-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header Section */}

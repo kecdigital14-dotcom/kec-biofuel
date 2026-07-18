@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import {
   ChevronDown,
@@ -11,6 +11,25 @@ import {
 
 const RandDSectionOne = () => {
   const [expandedRow, setExpandedRow] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   const feedstocks = [
     {
@@ -62,7 +81,14 @@ const RandDSectionOne = () => {
   const isRowExpanded = (row) => expandedRow === row;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100">
+    <div
+      ref={sectionRef}
+      className="min-h-screen bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100 transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-green-800 via-emerald-700 to-teal-800">
         <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 to-teal-900/30"></div>

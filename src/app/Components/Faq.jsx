@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FiChevronDown, FiArrowRight } from 'react-icons/fi';
 
 /* ─────────────────────────────────────────
@@ -46,6 +46,25 @@ const faqs = [
 
 const Faq = () => {
   const [openRow, setOpenRow] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   // toggle function now works per row (2 items per row)
   const toggleRow = (rowIndex) => {
@@ -53,7 +72,14 @@ const Faq = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-gray-100">
+    <section
+      ref={sectionRef}
+      className="py-16 px-4 bg-gray-100 transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       <div className="max-w-5xl mx-auto text-center">
         <p className="text-green-500 font-bold text-lg mb-2">Bio-Fuel FAQs</p>
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-green-800">Frequently Asked Questions</h2>

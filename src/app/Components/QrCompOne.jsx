@@ -1,11 +1,30 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from 'next/image';
 import { Sparkles, CheckCircle2, TrendingUp, Lightbulb, ArrowRight, Phone, Users, Leaf } from 'lucide-react';
 
 const QrCompOne = () => {
   const [activeSection, setActiveSection] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   const services = [
     { icon: Sparkles, label: "CBG Park Development" },
@@ -42,7 +61,14 @@ const QrCompOne = () => {
   ];
 
   return (
-    <section className="relative min-h-screen py-12 sm:py-20 bg-gradient-to-br from-green-50 via-green-100 to-green-400 text-gray-900 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen py-12 sm:py-20 bg-gradient-to-br from-green-50 via-green-100 to-green-400 text-gray-900 overflow-hidden transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       {/* Background pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>

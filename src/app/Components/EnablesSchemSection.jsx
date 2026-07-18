@@ -1,8 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Building, Leaf, TrendingUp, Users, CheckCircle, ArrowRight, Star, Zap, Target, Shield } from 'lucide-react';
 
 const EnablesSchemSection = () => {
   const [activeTab, setActiveTab] = useState('pricing');
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   const pricingData = [
     { sl: 1, lowerRetail: "50.01", higherRetail: "55.00", average: "52.51" },
@@ -56,7 +75,14 @@ const EnablesSchemSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-yellow-50 to-green-50">
+    <div
+      ref={sectionRef}
+      className="min-h-screen bg-gradient-to-br from-green-50 via-yellow-50 to-green-50 transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-green-100 via-yellow-50 to-green-100">
         <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>

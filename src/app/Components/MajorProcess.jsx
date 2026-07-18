@@ -1,8 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FileText, Users, Shield, Handshake, ShoppingCart, ArrowRight, CheckCircle, Clock, MapPin, DollarSign, Building, Zap } from 'lucide-react';
 
 const MajorProcess = () => {
     const [activeStep, setActiveStep] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+
+        return () => observer.disconnect();
+    }, []);
 
     const processSteps = [
         {
@@ -207,7 +226,14 @@ const MajorProcess = () => {
     );
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 mt-10">
+        <div
+            ref={sectionRef}
+            className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 mt-10 transition-all duration-1000 ease-out"
+            style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+            }}
+        >
             <div className="max-w-7xl mx-auto p-6">
                 {/* Header */}
                 <div className="text-center mb-8">

@@ -5,9 +5,28 @@ const OrgChartComponent = () => {
     const treeRef = useRef(null);
     const pseudoIframeContainerRef = useRef(null);
     const chartRef = useRef(null);
+    const sectionRef = useRef(null);
 
     const [currentPseudoIframeScale, setCurrentPseudoIframeScale] = useState(1);
     const [zoomControlsVisible, setZoomControlsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+
+        return () => observer.disconnect();
+    }, []);
     const [statusMessage, setStatusMessage] = useState("Loading...");
 
     const scaleStep = 0.1;
@@ -289,7 +308,11 @@ const OrgChartComponent = () => {
     };
 
     return (
-        <div className="h-screen flex flex-col" style={{ background: 'linear-gradient(135deg, #ffffffff 0%, #a6d8bdff 100%)' }}>
+        <div
+            ref={sectionRef}
+            className="h-screen flex flex-col transition-opacity duration-1000 ease-out"
+            style={{ background: 'linear-gradient(135deg, #ffffffff 0%, #a6d8bdff 100%)', opacity: isVisible ? 1 : 0 }}
+        >
             {/* Header Section */}
             <div className="mb-24">
                 <div className="bg-white shadow-lg">

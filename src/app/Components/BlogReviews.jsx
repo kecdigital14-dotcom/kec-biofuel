@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, Send, User, ThumbsUp, Trash2 } from 'lucide-react';
 import { AuthModal } from '@/app/Components/AuthModal';
 
@@ -8,6 +8,26 @@ import { AuthModal } from '@/app/Components/AuthModal';
 const API_URL = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '');
 
 export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   // Comments state
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
@@ -228,7 +248,14 @@ export default function BlogReviews({ blogSlug, blogId: propBlogId }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-16 relative">
+    <div
+      ref={sectionRef}
+      className="max-w-4xl mx-auto mt-16 relative transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       {/* Header */}
       <div className="flex items-center gap-3 mb-8">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-green-600 flex items-center justify-center">

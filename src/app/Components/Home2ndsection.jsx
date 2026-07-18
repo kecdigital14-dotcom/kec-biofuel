@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
 import Image from 'next/image';
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const Home2ndsection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   // Array of images for the slider
   const sliderImages = [
@@ -23,9 +24,22 @@ const Home2ndsection = () => {
     }
   ];
 
-  // Trigger animations on mount
+  // Trigger animations when section scrolls into view
   useEffect(() => {
-    setIsVisible(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   // Auto-slide functionality
@@ -50,7 +64,7 @@ const Home2ndsection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>

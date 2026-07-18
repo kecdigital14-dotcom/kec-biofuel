@@ -65,11 +65,25 @@ const services = [
 
 const Homeservices = () => {
   const scrollRef = useRef(null);
+  const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState(null);
 
   useEffect(() => {
-    setIsVisible(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollLeft = () => {
@@ -83,7 +97,7 @@ const Homeservices = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-orange-100 via-yellow-50 to-green-100 text-white py-16 px-4 sm:px-6 md:px-8 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-gradient-to-br from-orange-100 via-yellow-50 to-green-100 text-white py-16 px-4 sm:px-6 md:px-8 overflow-hidden">
       <style>{`
         @keyframes slideInDown {
           from { opacity: 0; transform: translateY(-30px); }

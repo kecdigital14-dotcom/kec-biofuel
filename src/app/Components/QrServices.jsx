@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Lightbulb, Building, Wrench, TrendingUp, Map, IndianRupee, CheckCircle2, Sparkles } from 'lucide-react';
 
 const QrServices = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   const services = [
     {
       icon: Lightbulb,
@@ -54,7 +74,14 @@ const QrServices = () => {
   ];
 
   return (
-    <section className="relative py-20 sm:py-16 bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative py-20 sm:py-16 bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 overflow-hidden transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl animate-pulse"></div>

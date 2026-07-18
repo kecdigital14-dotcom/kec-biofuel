@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Eye, X, Play, Pause } from 'lucide-react';
@@ -7,6 +7,26 @@ const CbgGlimpse = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Reveal section when it scrolls into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   // Sample photos - replace with your actual photos
   const photos = [
@@ -93,7 +113,14 @@ const CbgGlimpse = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-green-900 overflow-hidden">
+    <div
+      ref={sectionRef}
+      className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-green-900 overflow-hidden transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       <style>{`
         @keyframes fadeInDown {
           from {

@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Leaf, Zap, Recycle, TrendingUp, Shield, MapPin, Phone, Mail, ArrowRight, CheckCircle, Factory, Truck, Home, Building, FlaskConical, Gauge } from 'lucide-react';
 
 const BiogasSection = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
     const processSteps = [
         {
             title: "Feedstock",
@@ -120,7 +140,14 @@ const BiogasSection = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-blue-50">
+        <div
+            ref={sectionRef}
+            className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-blue-50 transition-all duration-1000 ease-out"
+            style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+            }}
+        >
             {/* Hero Section */}
             <div className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10"></div>

@@ -1,12 +1,39 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Lightbulb, Sprout, Sparkles, Leaf } from 'lucide-react';
 
 const QcompThree = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative min-h-screen py-20 sm:py-28 bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen py-20 sm:py-28 bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 overflow-hidden transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       {/* Enhanced animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 right-10 w-[600px] h-[600px] bg-gradient-to-br from-emerald-400/20 to-green-500/20 rounded-full blur-3xl animate-pulse"></div>

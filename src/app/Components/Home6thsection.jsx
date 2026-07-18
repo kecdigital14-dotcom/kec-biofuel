@@ -2,13 +2,46 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect, useRef } from 'react';
 
 import { FiPlay, FiCheckCircle, FiDollarSign } from 'react-icons/fi';
 
 const Home6thsection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="bg-[#f6fcf6] py-16 px-4 lg:mb-1 mb-24">
+    <section ref={sectionRef} className={`bg-[#f6fcf6] py-16 px-4 lg:mb-1 mb-24 ${isVisible ? 'in-view' : ''}`}>
       <style>{`
+        .animate-tag,
+        .animate-heading,
+        .animate-description,
+        .animate-feature-1,
+        .animate-feature-2,
+        .animate-feature-3,
+        .animate-buttons,
+        .animate-top-image,
+        .animate-bottom-image {
+          opacity: 0;
+        }
+
         @keyframes fadeInLeft {
           from {
             opacity: 0;
@@ -89,49 +122,49 @@ const Home6thsection = () => {
           }
         }
 
-        .animate-tag {
+        .in-view .animate-tag {
           animation: fadeInLeft 0.8s ease-out forwards;
           opacity: 0;
         }
 
-        .animate-heading {
+        .in-view .animate-heading {
           animation: fadeInLeft 0.8s ease-out 0.2s forwards;
           opacity: 0;
           background-size: 200% auto;
           animation: fadeInLeft 0.8s ease-out 0.2s forwards, shimmer 3s linear infinite;
         }
 
-        .animate-description {
+        .in-view .animate-description {
           animation: fadeInLeft 0.8s ease-out 0.3s forwards;
           opacity: 0;
         }
 
-        .animate-feature-1 {
+        .in-view .animate-feature-1 {
           animation: fadeInLeft 0.6s ease-out 0.5s forwards;
           opacity: 0;
         }
 
-        .animate-feature-2 {
+        .in-view .animate-feature-2 {
           animation: fadeInLeft 0.6s ease-out 0.7s forwards;
           opacity: 0;
         }
 
-        .animate-feature-3 {
+        .in-view .animate-feature-3 {
           animation: fadeInLeft 0.6s ease-out 0.9s forwards;
           opacity: 0;
         }
 
-        .animate-buttons {
+        .in-view .animate-buttons {
           animation: fadeInUp 0.8s ease-out 1.1s forwards;
           opacity: 0;
         }
 
-        .animate-top-image {
+        .in-view .animate-top-image {
           animation: fadeInRight 0.8s ease-out 0.4s forwards, floatImage 4s ease-in-out 1.2s infinite;
           opacity: 0;
         }
 
-        .animate-bottom-image {
+        .in-view .animate-bottom-image {
           animation: slideInRotate 0.9s ease-out 0.6s forwards, pulse 3s ease-in-out 1.5s infinite, borderGlow 3s ease-in-out 1.5s infinite;
           opacity: 0;
         }

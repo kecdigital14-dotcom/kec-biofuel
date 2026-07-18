@@ -1,18 +1,32 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Play } from 'lucide-react';
 import Link from 'next/link';
 
 const Home5thsection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    setIsVisible(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="relative w-full h-[400px] overflow-hidden">
+    <div ref={sectionRef} className="relative w-full h-[400px] overflow-hidden">
       <style>{`
         @keyframes kenburns {
           0% { transform: scale(1); }

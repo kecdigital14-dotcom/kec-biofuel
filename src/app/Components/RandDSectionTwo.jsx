@@ -1,8 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, ChevronRight, Beaker, Leaf, Factory, Zap, BarChart3, Settings, Wrench, Building } from 'lucide-react';
 
 const RandDSectionTwo = () => {
   const [activeTab, setActiveTab] = useState('equipment');
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   const equipment = [
     {
@@ -39,7 +58,14 @@ const RandDSectionTwo = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+    <div
+      ref={sectionRef}
+      className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Section Header */}
         <div className="text-center mb-8">

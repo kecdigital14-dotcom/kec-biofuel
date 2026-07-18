@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Leaf, Factory, CreditCard, Building, FileText, Zap, CheckCircle, TrendingUp, Calendar } from 'lucide-react';
 
 const LatestDevelopments = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   const developments = [
     {
       icon: <Leaf className="w-8 h-8" />,
@@ -67,7 +87,14 @@ const LatestDevelopments = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div
+      ref={sectionRef}
+      className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 transition-all duration-1000 ease-out"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="bg-white rounded-3xl shadow-xl p-12 mb-12 relative overflow-hidden">
