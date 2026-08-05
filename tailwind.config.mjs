@@ -9,6 +9,7 @@ export default {
     extend: {
       fontFamily: {
         sans: [
+          'var(--font-inter)',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
@@ -16,9 +17,6 @@ export default {
           'Helvetica',
           'Arial',
           'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
         ],
       },
     },
