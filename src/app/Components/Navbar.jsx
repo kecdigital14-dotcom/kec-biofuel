@@ -7,7 +7,7 @@ import Link from 'next/link';
 // Scrolling Top Banner Component with Gap Between Scrolls
 const ScrollingTopBanner = ({ isVisible }) => {
   const scrollText = "🏆Jitendra Narayan, CEO & Founder of KEC Agritech, Honoured with R.E.A.L Excellence Award 2025. Recognition celebrates KEC's leadership in agri-innovation, Bio-CNG and the Kisan Experience Centre model that empowers farmers and agri-entrepreneurs.🥇";
-  
+
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 bg-green-600 text-white py-2 overflow-hidden transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="animate-scroll-with-gap whitespace-nowrap">
@@ -95,7 +95,7 @@ const Navbar = () => {
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-[15px] md:ml-12 ">
               <div className="relative group">
-                <Link href="/" className="text-green-700 text-lg hover:text-green-400 transition-colors font-bold">
+                <Link href="/" className="font-serif text-green-700 text-[16px] hover:text-green-400 transition-colors font-bold">
                   Home
                 </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
@@ -103,7 +103,7 @@ const Navbar = () => {
 
               <div className="relative">
                 <button
-                  className="flex items-center text-green-700 text-lg font-bold space-x-1 hover:text-green-400 transition-colors duration-200 group"
+                  className="font-serif flex items-center text-green-700 text-[16px] font-bold space-x-1 hover:text-green-400 transition-colors duration-200 group"
                   onClick={() => setIsAboutOpen(!isAboutOpen)}
                 >
                   <span>About Us</span>
@@ -114,10 +114,10 @@ const Navbar = () => {
                 </button>
                 {isAboutOpen && (
                   <div className="absolute top-full left-[-5px] mt-2 bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
-                    <Link href="/ceo" className="block px-3 py-2 text-lg font-bold text-green-700 hover:text-green-400 hover:bg-gray-50 transition-colors duration-200">
+                    <Link href="/ceo" className="font-serif block px-3 py-2 text-[16px] font-bold text-green-700 hover:text-green-400 hover:bg-gray-50 transition-colors duration-200">
                       Our CEO
                     </Link>
-                    <Link href="/about" className="block leading-tight px-3 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors duration-200">
+                    <Link href="/about" className="font-serif block leading-tight px-3 py-2 text-green-700 hover:bg-gray-50 text-[16px] font-bold hover:text-green-400 transition-colors duration-200">
                       KEC-BioFuel
                     </Link>
                   </div>
@@ -125,21 +125,21 @@ const Navbar = () => {
               </div>
 
               <div className="relative group">
-                <Link href="/superteam" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/superteam" className="font-serif text-green-700 text-[16px] font-bold hover:text-green-400 transition-colors">
                   Our Super Team
                 </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
               </div>
 
               <div className="relative group">
-                <Link href="/cbg" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/cbg" className="font-serif text-green-700 text-[16px] font-bold hover:text-green-400 transition-colors">
                   CBG Park
                 </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
               </div>
 
               <div className="relative group">
-                <Link href="/r&d" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/r&d" className="font-serif text-green-700 text-[16px] font-bold hover:text-green-400 transition-colors">
                   R&D
                 </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
@@ -148,7 +148,7 @@ const Navbar = () => {
               {/* Services Dropdown */}
               <div className="relative">
                 <button
-                  className="flex items-center text-green-700 text-lg font-bold space-x-1 hover:text-green-400 transition-colors group"
+                  className="font-serif flex items-center text-green-700 text-[16px] font-bold space-x-1 hover:text-green-400 transition-colors group"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                 >
                   <span>Services</span>
@@ -159,15 +159,15 @@ const Navbar = () => {
                 </button>
                 {isServicesOpen && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
-                    <Link href="/pmc" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">PMC</Link>
-                    <Link href="/epc" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">EPC</Link>
-                    <Link href="/latestdevlopment" className="block px-4 py-2 text-green-700 hover:bg-gray-50 text-lg font-bold hover:text-green-400 transition-colors">Advisory</Link>
+                    <Link href="/pmc" className="font-serif block px-4 py-2 text-[16px] font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">PMC</Link>
+                    <Link href="/epc" className="font-serif block px-4 py-2 text-[16px] font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">EPC</Link>
+                    <Link href="/latestdevlopment" className="font-serif block px-4 py-2 text-[16px] font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Advisory</Link>
                   </div>
                 )}
               </div>
 
               <div className="relative group">
-                <Link href="/project" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/project" className="font-serif text-green-700 text-[16px] font-bold hover:text-green-400 transition-colors">
                   Projects
                 </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
@@ -176,7 +176,7 @@ const Navbar = () => {
               {/* Library Dropdown */}
               <div className="relative">
                 <button
-                  className="flex items-center text-green-700 text-lg font-bold space-x-1 hover:text-green-400 transition-colors group"
+                  className="font-serif flex items-center text-green-700 text-[16px] font-bold space-x-1 hover:text-green-400 transition-colors group"
                   onClick={() => setIsGalleryOpen(!isGalleryOpen)}
                 >
                   <span>Library</span>
@@ -187,14 +187,14 @@ const Navbar = () => {
                 </button>
                 {isGalleryOpen && (
                   <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg py-2 min-w-[180px]">
-                    <Link href="/gallery" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Gallery</Link>
-                    <Link href="/cbgdownload" className="block px-4 py-2 text-lg font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Download</Link>
+                    <Link href="/gallery" className="font-serif block px-4 py-2 text-[16px] font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Gallery</Link>
+                    <Link href="/cbgdownload" className="font-serif block px-4 py-2 text-[16px] font-bold text-green-700 hover:text-green-400 transition-colors hover:bg-gray-50">Download</Link>
                   </div>
                 )}
               </div>
 
               <div className="relative group">
-                <Link href="/blog" className="text-green-700 text-lg font-bold hover:text-green-400 transition-colors">
+                <Link href="/blog" className="font-serif text-green-700 text-[16px] font-bold hover:text-green-400 transition-colors">
                   Blog
                 </Link>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
@@ -211,13 +211,13 @@ const Navbar = () => {
                 Contact Us<br />+91-8527626868
               </Link>
             </div>
-             <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               <div className="hidden lg:flex items-center space-x-2"></div>
               <Link
                 href="/cbgplantvisit"
                 className="inline-block bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-lg transition-colors font-sans text-sm font-semibold whitespace-nowrap"
               >
-               ♻️CBG <br />Plant Visit
+                ♻️CBG <br />Plant Visit
               </Link>
             </div>
           </div>
@@ -225,7 +225,7 @@ const Navbar = () => {
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 bg-gray-200">
-              <div className="mt-4 flex flex-col space-y-3 bg-gray-100 rounded-xl px-6 py-4 shadow font-bold text-green-700 text-base">
+              <div className="font-serif mt-4 flex flex-col space-y-3 bg-gray-100 rounded-xl px-6 py-4 shadow font-bold text-green-700 text-base">
                 <Link href="/" className="hover:text-green-400 transition-colors">Home</Link>
 
                 {/* Mobile About Us Submenu */}

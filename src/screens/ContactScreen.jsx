@@ -5,6 +5,7 @@ import React from 'react'
 import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
+import ZohoLeadForm from '@/app/Components/ZohoLeadForm';
 
 const LazyLoader = () => (
   <div className="w-full flex justify-center items-center py-16">
@@ -15,9 +16,6 @@ const LazyLoader = () => (
 const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
 const ContactSection = dynamic(() => import('../app/Components/ContactSection'), { ssr: false, loading: () => <LazyLoader /> });
 const Faq = dynamic(() => import('@/app/Components/Faq'), { ssr: false, loading: () => <LazyLoader /> });
-
-
-
 
 const ContactScreen = () => {
   return (
@@ -47,6 +45,7 @@ const ContactScreen = () => {
         </div>
       </HeroBanner>
       <ContactSection />
+      <ZohoLeadForm />
       <Faq />
       <Footer />
     </div>
