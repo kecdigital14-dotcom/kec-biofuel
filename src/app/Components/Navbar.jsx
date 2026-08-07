@@ -103,13 +103,15 @@ const Navbar = () => {
 
               <div className="relative">
                 <button
-                  className="font-sans flex items-center text-green-700 text-[16px] font-bold space-x-1 hover:text-green-400 transition-colors duration-200 group"
+                  className="font-sans relative inline-flex items-center text-green-700 text-[16px] font-bold hover:text-green-400 transition-colors duration-200 group"
                   onClick={() => setIsAboutOpen(!isAboutOpen)}
                 >
-                  <span>About Us</span>
-                  <svg className={`w-4 h-4 transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <span className="flex items-center gap-1">
+                    <span>About Us</span>
+                    <svg className={`w-4 h-4 shrink-0 transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
                 </button>
                 {isAboutOpen && (
@@ -148,13 +150,15 @@ const Navbar = () => {
               {/* Services Dropdown */}
               <div className="relative">
                 <button
-                  className="font-sans flex items-center text-green-700 text-[16px] font-bold space-x-1 hover:text-green-400 transition-colors group"
+                  className="font-sans relative inline-flex items-center text-green-700 text-[16px] font-bold hover:text-green-400 transition-colors group"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                 >
-                  <span>Services</span>
-                  <svg className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <span className="flex items-center gap-1">
+                    <span>Services</span>
+                    <svg className={`w-4 h-4 shrink-0 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
                 </button>
                 {isServicesOpen && (
@@ -176,13 +180,15 @@ const Navbar = () => {
               {/* Library Dropdown */}
               <div className="relative">
                 <button
-                  className="font-sans flex items-center text-green-700 text-[16px] font-bold space-x-1 hover:text-green-400 transition-colors group"
+                  className="font-sans relative inline-flex items-center text-green-700 text-[16px] font-bold hover:text-green-400 transition-colors group"
                   onClick={() => setIsGalleryOpen(!isGalleryOpen)}
                 >
-                  <span>Library</span>
-                  <svg className={`w-4 h-4 transition-transform duration-200 ${isGalleryOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <span className="flex items-center gap-1">
+                    <span>Library</span>
+                    <svg className={`w-4 h-4 shrink-0 transition-transform duration-200 ${isGalleryOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-3/4"></span>
                 </button>
                 {isGalleryOpen && (

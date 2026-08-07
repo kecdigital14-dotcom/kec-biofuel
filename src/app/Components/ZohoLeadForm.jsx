@@ -22,17 +22,18 @@ const FORM_HTML = `
     <input type='text' style='display:none;' name='actionType' value='TGVhZHM='/>
     <input type='text' style='display:none;' name='returnURL' value='null'/>
 
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Last_Name'>Name <span class='req'>*</span></label></div>
-      <div class='zcwf_col_fld'>
-        <input type='text' id='Last_Name' aria-required='true' aria-label='Last Name' name='Last Name' maxlength='80'/>
+    <div class='zcwf_two_col'>
+      <div class='zcwf_row zcwf_half'>
+        <div class='zcwf_col_lab'><label for='Last_Name'>Name <span class='req'>*</span></label></div>
+        <div class='zcwf_col_fld'>
+          <input type='text' id='Last_Name' aria-required='true' aria-label='Last Name' name='Last Name' maxlength='80'/>
+        </div>
       </div>
-    </div>
-
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Phone'>Phone Number <span class='req'>*</span></label></div>
-      <div class='zcwf_col_fld'>
-        <input type='text' id='Phone' aria-required='true' aria-label='Phone' name='Phone' maxlength='30'/>
+      <div class='zcwf_row zcwf_half'>
+        <div class='zcwf_col_lab'><label for='Phone'>Phone Number <span class='req'>*</span></label></div>
+        <div class='zcwf_col_fld'>
+          <input type='text' id='Phone' aria-required='true' aria-label='Phone' name='Phone' maxlength='30'/>
+        </div>
       </div>
     </div>
 
@@ -51,31 +52,32 @@ const FORM_HTML = `
       </div>
     </div>
 
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Email'>Email Address</label></div>
-      <div class='zcwf_col_fld'>
-        <input type='text' ftype='email' autocomplete='false' id='Email' aria-label='Email' name='Email' maxlength='100'/>
+    <div class='zcwf_two_col'>
+      <div class='zcwf_row zcwf_half'>
+        <div class='zcwf_col_lab'><label for='Email'>Email Address</label></div>
+        <div class='zcwf_col_fld'>
+          <input type='text' ftype='email' autocomplete='false' id='Email' aria-label='Email' name='Email' maxlength='100'/>
+        </div>
       </div>
-    </div>
-
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='LEADCF5'>Interested In</label></div>
-      <div class='zcwf_col_fld'>
-        <select class='zcwf_col_fld_slt' id='LEADCF5' onChange='addAriaSelected867962000000417175()' aria-label='LEADCF5' name='LEADCF5'>
-          <option value='-None-'>-None-</option>
-          <option value='Elite Franchise'>Elite Franchise</option>
-          <option value='Master Franchise'>Master Franchise</option>
-          <option value='Fertilizer Enquiry'>Fertilizer Enquiry</option>
-          <option selected value='Plant Setup'>Plant Setup</option>
-          <option value='EPC'>EPC</option>
-          <option value='EPTP'>EPTP</option>
-          <option value='PMC'>PMC</option>
-          <option value='O&amp;M'>O&amp;M</option>
-          <option value='Association'>Association</option>
-          <option value='Become Distributor(Trader)'>Become Distributor(Trader)</option>
-          <option value='Cluster Model'>Cluster Model</option>
-          <option value='General Trading'>General Trading</option>
-        </select>
+      <div class='zcwf_row zcwf_half'>
+        <div class='zcwf_col_lab'><label for='LEADCF5'>Interested In</label></div>
+        <div class='zcwf_col_fld'>
+          <select class='zcwf_col_fld_slt' id='LEADCF5' onChange='addAriaSelected867962000000417175()' aria-label='LEADCF5' name='LEADCF5'>
+            <option value='-None-'>-None-</option>
+            <option value='Elite Franchise'>Elite Franchise</option>
+            <option value='Master Franchise'>Master Franchise</option>
+            <option value='Fertilizer Enquiry'>Fertilizer Enquiry</option>
+            <option selected value='Plant Setup'>Plant Setup</option>
+            <option value='EPC'>EPC</option>
+            <option value='EPTP'>EPTP</option>
+            <option value='PMC'>PMC</option>
+            <option value='O&amp;M'>O&amp;M</option>
+            <option value='Association'>Association</option>
+            <option value='Become Distributor(Trader)'>Become Distributor(Trader)</option>
+            <option value='Cluster Model'>Cluster Model</option>
+            <option value='General Trading'>General Trading</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -172,35 +174,35 @@ window.validateEmail867962000000417175 = validateEmail867962000000417175;
 
 // Replace with your own hosted photo (plant / field / franchise site).
 const IMAGE_URL =
-    "/images/contactzoholead.png";
+  "/images/contactzoholead.png";
 
 const ContactSplit = () => {
-    const injectedRef = useRef(false);
+  const injectedRef = useRef(false);
 
-    useEffect(() => {
-        if (injectedRef.current) return;
-        injectedRef.current = true;
+  useEffect(() => {
+    if (injectedRef.current) return;
+    injectedRef.current = true;
 
-        const inlineScript = document.createElement("script");
-        inlineScript.type = "text/javascript";
-        inlineScript.text = ZOHO_INLINE_JS;
-        document.body.appendChild(inlineScript);
+    const inlineScript = document.createElement("script");
+    inlineScript.type = "text/javascript";
+    inlineScript.text = ZOHO_INLINE_JS;
+    document.body.appendChild(inlineScript);
 
-        const analyticsScript = document.createElement("script");
-        analyticsScript.id = "wf_anal";
-        analyticsScript.src =
-            "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=1b80443e99c9e5c0236be31a34a7b607a2f7ea709dba509b559cdba721dbf7b945c8322da1cc9e69ed23eded778fbe99gid907cd5f50546b1db4560fbc2832c49dc42fa4903541b0137f2f2c10187b6f061gidc3320cc193950b27bf2fcd395d779dd5d73ca1a62d42dc0d4f0eadd8a11a9ac8gid98670ed7ddb1de1b20f5950b763d3c69ed08d78aea501e652893435d46da86b7&tw=0751dcf7364f28626b35c5830d1abb85a55b1c482aded6c1fc901115b4b34251&version=v2";
-        document.body.appendChild(analyticsScript);
+    const analyticsScript = document.createElement("script");
+    analyticsScript.id = "wf_anal";
+    analyticsScript.src =
+      "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=1b80443e99c9e5c0236be31a34a7b607a2f7ea709dba509b559cdba721dbf7b945c8322da1cc9e69ed23eded778fbe99gid907cd5f50546b1db4560fbc2832c49dc42fa4903541b0137f2f2c10187b6f061gidc3320cc193950b27bf2fcd395d779dd5d73ca1a62d42dc0d4f0eadd8a11a9ac8gid98670ed7ddb1de1b20f5950b763d3c69ed08d78aea501e652893435d46da86b7&tw=0751dcf7364f28626b35c5830d1abb85a55b1c482aded6c1fc901115b4b34251&version=v2";
+    document.body.appendChild(analyticsScript);
 
-        return () => {
-            inlineScript.remove();
-            analyticsScript.remove();
-        };
-    }, []);
+    return () => {
+      inlineScript.remove();
+      analyticsScript.remove();
+    };
+  }, []);
 
-    return (
-        <section className="relative bg-[#fff] py-20 px-4">
-            <style>{`
+  return (
+    <section className="relative bg-[#fff] py-20 px-4">
+      <style>{`
         #crmWebToEntityForm.zcwf_lblLeft { width: 100%; }
         #crmWebToEntityForm.zcwf_lblLeft * { box-sizing: border-box; }
         #crmWebToEntityForm .zcwf_row { margin: 0 0 20px 0; }
@@ -261,64 +263,64 @@ const ContactSplit = () => {
         }
       `}</style>
 
-            <div className="max-w-6xl mx-auto">
-                <div className="grid md:grid-cols-2 rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
 
-                    {/* LEFT — image with seed-packet label strip */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
-                        className="relative min-h-[320px] md:min-h-[640px]"
-                    >
-                        <img
-                            src={IMAGE_URL}
-                            alt="KEC Biofuel plant and fields"
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0b1710] via-[#0b1710]/30 to-transparent" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1710]/20 to-transparent" />
+          {/* LEFT — image with seed-packet label strip */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative min-h-[320px] md:min-h-[640px]"
+          >
+            <img
+              src={IMAGE_URL}
+              alt="KEC Biofuel plant and fields"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0b1710] via-[#0b1710]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0b1710]/20 to-transparent" />
 
-                        <div className="absolute bottom-0 left-0 right-0 p-8">
-                            <p className="text-[#d4a373] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-                                Kisan Experience &middot; Biofuel
-                            </p>
-                            <h3 className="font-serif text-3xl md:text-4xl text-[#f3f1ea] leading-tight tracking-tight">
-                                Powering farms into
-                                <br /> energy plants.
-                            </h3>
-                        </div>
-                    </motion.div>
-
-                    {/* RIGHT — form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: 0.1 }}
-                        className="bg-gradient-to-br from-green-50 via-green-100 to-green-400 p-8 md:p-12 border-t md:border-t-0 md:border-l border-green-600/20 relative"
-                    >
-                        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-green-500 to-green-600" />
-
-                        <p className="text-green-700 text-xs font-semibold tracking-[0.25em] uppercase mb-2">
-                            Get In Touch
-                        </p>
-                        <h2 className="font-serif text-3xl text-gray-800 tracking-tight mb-2">
-                            Start your project
-                        </h2>
-                        <p className="text-gray-600 text-sm mb-8 font-semibold">
-                            Tell us what you're building — franchise, plant setup, EPC — and
-                            our team gets back within one business day.
-                        </p>
-
-                        <div dangerouslySetInnerHTML={{ __html: FORM_HTML }} />
-                    </motion.div>
-
-                </div>
+            <div className="absolute bottom-0 left-0 right-0 p-8">
+              <p className="text-[#d4a373] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
+                Kisan Experience &middot; Biofuel
+              </p>
+              <h3 className="font-serif text-3xl md:text-4xl text-[#f3f1ea] leading-tight tracking-tight">
+                Powering farms into
+                <br /> energy plants.
+              </h3>
             </div>
-        </section>
-    );
+          </motion.div>
+
+          {/* RIGHT — form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="bg-gradient-to-br from-green-50 via-green-100 to-green-400 p-8 md:p-12 border-t md:border-t-0 md:border-l border-green-600/20 relative"
+          >
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-green-500 to-green-600" />
+
+            <p className="text-green-700 text-xs font-semibold tracking-[0.25em] uppercase mb-2">
+              Get In Touch
+            </p>
+            <h2 className="font-serif text-3xl text-gray-800 tracking-tight mb-2">
+              Start your project
+            </h2>
+            <p className="text-gray-600 text-sm mb-8 font-semibold">
+              Tell us what you're building — franchise, plant setup, EPC — and
+              our team gets back within one business day.
+            </p>
+
+            <div dangerouslySetInnerHTML={{ __html: FORM_HTML }} />
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default ContactSplit;

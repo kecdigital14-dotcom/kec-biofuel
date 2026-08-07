@@ -238,9 +238,9 @@ const Home4thsection = () => {
       `}</style>
 
       <div className="container mx-auto px-4 w-[90%] lg:w-[80%]">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* ─────────── Left Side ─────────── */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col h-full">
             {/* Header */}
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm border border-green-100 mb-4 sm:mb-6 animate-fadeInLeft">
@@ -283,11 +283,23 @@ const Home4thsection = () => {
           </div>
 
           {/* ─────────── Right Side ─────────── */}
-          <div className="space-y-2">
+          <div className="flex flex-col justify-between gap-4 h-full">
+            {/* Image */}
+            <div
+              className="animate-scaleIn overflow-hidden rounded-2xl shadow-xl mb-4 flex-1 min-h-[250px]"
+              style={{ animationDelay: '0.1s', opacity: 0 }}
+            >
+              <img
+                src="/images/cbgservicesbanner.png"
+                alt="KEC Bio-Fuel process"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             {categories.map((cat) => (
               <div
                 key={cat.number}
-                className="bg-white p-4 rounded-2xl shadow-2xl border border-gray-100 hover-lift card-item"
+                className="bg-white p-5 rounded-2xl shadow-2xl border border-gray-100 hover-lift card-item"
               >
                 <div className="flex items-start space-x-4">
                   {/* Number badge */}

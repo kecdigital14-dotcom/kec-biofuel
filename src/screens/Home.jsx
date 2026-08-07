@@ -6,14 +6,6 @@ import React from 'react'
 import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
-
-
-
-
-
-
-
-
 import HomeBannerSlider from '@/app/Components/HomeBannerSlider';
 
 const LazyLoader = () => (
@@ -37,14 +29,14 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-        <HomeBannerSlider />
+      <HomeBannerSlider />
       <Home2ndsection />
       <Home3rdsection />
       <Home4thsection />
       <Homeservices />
       <Home6thsection />
       <Home5thsection />
-     <CbgGlimpse/>
+      <CbgGlimpse />
       <BlogSection />
       <Footer />
     </div>
