@@ -76,9 +76,9 @@ const Navbar = () => {
               <Image
                 src="/images/kec-logo.png"
                 alt="Energox Logo"
-                width={800}
-                height={600}
-                className="h-12 w-auto object-contain"
+                width={750}
+                height={550}
+                className="h-10 w-auto object-contain"
               />
             </div>
 
@@ -205,13 +205,13 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-2">
               <Link
                 href="/contact"
-                className="inline-block bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-lg transition-colors font-sans text-[13px] font-bold whitespace-nowrap"
+                className="inline-block bg-green-500 hover:bg-green-600 text-white px-2 py-[2px] rounded-lg transition-colors font-sans text-[13px] font-bold whitespace-nowrap"
               >
                 Contact Us<br />+91-8527626868
               </Link>
               <Link
                 href="/cbgplantvisit"
-                className="inline-block bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-lg transition-colors font-sans text-sm font-bold whitespace-nowrap"
+                className="inline-block bg-green-500 hover:bg-green-600 text-white px-2 py-[2px] rounded-lg transition-colors font-sans text-sm font-bold whitespace-nowrap"
               >
                 ♻️CBG <br />Plant Visit
               </Link>
