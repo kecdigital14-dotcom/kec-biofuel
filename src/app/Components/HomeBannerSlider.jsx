@@ -6,12 +6,13 @@ const mobileStyles = `
   @media (max-width: 639px) {
     .banner-wrapper {
       width: 100%;
-      height: 190px;        /* ← change mobile banner height here */
+      height: 240px;        /* ← change mobile banner height here */
       margin-top: 64px;
     }
     .banner-slide {
-      height: 220px;        /* ← must match banner-wrapper height */
+      height: 250px;        /* ← must match banner-wrapper height */
       width: 100vw;         /* ← full viewport width */
+      marginTop: 10;              
     }
     .banner-btn-prev { left: 8px; }
     .banner-btn-next { right: 8px; }
@@ -35,25 +36,29 @@ const HomeBannerSlider = () => {
   const slides = [
     {
       id: 1,
-      image: "/images/Herobanner11.png",
+      desktopImage: "/home/Herobanner11.png",
+      mobileImage: "/home/homebanner11mobile.png",
       title: "Sustainable Future with Bio CBG",
       description: "Innovating green energy solutions for a cleaner tomorrow.",
     },
     {
       id: 2,
-      image: "/images/biofuelbanner3.png",
+      desktopImage: "/images/biofuelbanner3.png",
+      mobileImage: "/images/biofuelbanner3.png",
       title: "Renewable Energy Revolution",
       description: "Empowering communities with renewable biofuels.",
     },
     {
       id: 3,
-      image: "/images/biofuelbanner4.png",
+      desktopImage: "/images/biofuelbanner4.png",
+      mobileImage: "/images/biofuelbanner4.png",
       title: "Clean Energy, Bright Future",
       description: "Reducing carbon footprint with innovative technology.",
     },
     {
       id: 4,
-      image: "/images/biofuelbanner2.png",
+      desktopImage: "/images/biofuelbanner2.png",
+      mobileImage: "/images/biofuelbanner2.png",
       title: "Clean Energy, Bright Future",
       description: "Reducing carbon footprint with innovative technology.",
     },
@@ -86,11 +91,20 @@ const HomeBannerSlider = () => {
           {slides.map((slide) => (
             // Desktop: h-full. Mobile: .banner-slide CSS overrides height & width
             <div key={slide.id} className="banner-slide w-full flex-shrink-0 relative h-full">
+              {/* Desktop / tablet image */}
               <Image
-                src={slide.image}
+                src={slide.desktopImage}
                 alt={slide.title}
                 fill
-                className="object-cover object-center"
+                className="object-cover object-center hidden md:block"
+                priority
+              />
+              {/* Mobile-only image */}
+              <Image
+                src={slide.mobileImage}
+                alt={slide.title}
+                fill
+                className="object-cover object-center block md:hidden"
                 priority
               />
             </div>
@@ -102,7 +116,7 @@ const HomeBannerSlider = () => {
           onClick={prevSlide}
           className="banner-btn-prev absolute left-5 top-1/2 -translate-y-1/2 z-20"
         >
-          <div className="banner-btn-icon sm:w-10 sm:h-10 w-1 h-1 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-md flex items-center justify-center border border-white/20">
+          <div className="banner-btn-icon w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-md flex items-center justify-center border border-white/20">
             <ChevronLeft className="banner-chevron w-5 h-5 text-white" />
           </div>
         </button>
@@ -124,8 +138,8 @@ const HomeBannerSlider = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`banner-dot rounded-full transition-all duration-300 ${currentIndex === index
-                  ? "w-3 h-3 bg-white scale-125"
-                  : "w-3 h-3 bg-gray-400 hover:bg-gray-300"
+                ? "w-3 h-3 bg-white scale-125"
+                : "w-3 h-3 bg-gray-400 hover:bg-gray-300"
                 }`}
             />
           ))}
