@@ -35,7 +35,7 @@ const HomeBannerSlider = () => {
   const slides = [
     {
       id: 1,
-      image: "/images/homebannernew1.png",
+      image: "/images/Herobanner11.png",
       title: "Sustainable Future with Bio CBG",
       description: "Innovating green energy solutions for a cleaner tomorrow.",
     },
@@ -123,11 +123,10 @@ const HomeBannerSlider = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`banner-dot rounded-full transition-all duration-300 ${
-                currentIndex === index
+              className={`banner-dot rounded-full transition-all duration-300 ${currentIndex === index
                   ? "w-3 h-3 bg-white scale-125"
                   : "w-3 h-3 bg-gray-400 hover:bg-gray-300"
-              }`}
+                }`}
             />
           ))}
         </div>

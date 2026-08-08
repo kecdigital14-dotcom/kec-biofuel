@@ -8,56 +8,56 @@ const services = [
   {
     title: 'PMC Services',
     description:
-      'Comprehensive Project Management Consultancy for biofuel infrastructure – from feasibility to commissioning.',
+      'Comprehensive Project Management Consultancy for biofuel infrastructure – from feasibility to commissioning. We ensure timely execution and quality at every stage.',
     icon: '📝',
     link: '/services/pmc',
   },
   {
     title: 'EPC Solutions',
     description:
-      'Turnkey Engineering, Procurement & Construction for Bio-CNG, Bio-Diesel, and Ethanol plants across India.',
+      'Turnkey Engineering, Procurement & Construction for Bio-CNG, Bio-Diesel, and Ethanol plants across India. From design to commissioning, we deliver end-to-end solutions.',
     icon: '🏗️',
     link: '/services/epc',
   },
   {
     title: 'PPP Projects',
     description:
-      'Working with state governments under PPP mode, including ₹500 Cr MoU with Uttarakhand for bio-energy parks.',
+      'Working with state governments under PPP mode, including ₹500 Cr MoU with Uttarakhand for bio-energy parks. We create sustainable public-private partnerships for clean energy.',
     icon: '🤝',
     link: '/services/ppp',
   },
   {
     title: 'Project Developer – CAPEX / OPEX',
     description:
-      'Build, own, and operate biofuel projects under flexible models like CAPEX, OPEX, and RESCO partnerships.',
+      'Build, own, and operate biofuel projects under flexible models like CAPEX, OPEX, and RESCO partnerships. We offer complete project development and operational support.',
     icon: '⚙️',
     link: '/services/development',
   },
   {
     title: 'O&M Services',
     description:
-      'Operation & Maintenance of biofuel, ETP/STP, and gas purification systems with efficiency-driven SLAs.',
+      'Operation & Maintenance of biofuel, ETP/STP, and gas purification systems with efficiency-driven SLAs. We maximize plant performance, reliability, and uptime.',
     icon: '🔧',
     link: '/services/maintenance',
   },
   {
     title: 'Revamp & Upgrade',
     description:
-      'Modernize outdated biogas, STP, or ETP plants with new tech, automation, and performance optimization.',
+      'Modernize outdated biogas, STP, or ETP plants with new tech, automation, and performance optimization. We improve efficiency while extending plant life.',
     icon: '🔄',
     link: '/services/upgradation',
   },
   {
     title: 'Hydrogen & Renewables',
     description:
-      'Emerging solutions in hydrogen production, solar integration, and next-gen renewables for clean energy.',
+      'Emerging solutions in hydrogen production, solar integration, and next-gen renewables for clean energy. We help businesses transition toward a cleaner energy future.',
     icon: '⚡',
     link: '/services/hydrogen',
   },
   {
     title: 'Tech Advisory & DPR',
     description:
-      'Detailed Project Reports (DPR), techno-economic feasibility, and advisory for scalable green energy rollouts.',
+      'Detailed Project Reports (DPR), techno-economic feasibility, and advisory for scalable green energy rollouts. We turn concepts into practical and investment-ready projects.',
     icon: '📊',
     link: '/services/advisory',
   },
@@ -190,7 +190,7 @@ const Homeservices = () => {
         <div className={`flex justify-end mb-4 gap-2 ${isVisible ? 'animate-slide-in-right delay-200' : 'opacity-0'}`}>
           <button
             onClick={scrollLeft}
-            className="text-white bg-orange-500 border-2 px-4 py-2 font-bold rounded-lg hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 hover:shadow-lg active:scale-95"
+            className="text-orange-500 border-2 border-orange-500 px-4 py-2 font-bold rounded-lg hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 hover:shadow-lg active:scale-95"
             aria-label="Scroll left"
             type="button"
           >
@@ -236,7 +236,7 @@ const Homeservices = () => {
               {hoveredCard === index && (
                 <div className="absolute inset-0 shimmer-effect pointer-events-none"></div>
               )}
-              
+
               {/* Card content */}
               <div>
                 <div className={`text-4xl mb-4 inline-block ${hoveredCard === index ? 'animate-bounce-subtle' : ''} transition-transform duration-300`}>
@@ -245,21 +245,20 @@ const Homeservices = () => {
                 <h3 className="font-semibold text-lg mb-2 text-gray-700 transition-colors duration-300 hover:text-green-600">
                   {service.title}
                 </h3>
-                <p className="font-sans text-sm mb-6 text-justify text-gray-600">
+                <p className="font-sans text-sm mb-2 text-justify text-gray-600">
                   {service.description}
                 </p>
               </div>
-               <Link href="/about">
+              <Link href="/about">
 
-              <button className=" bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold cta-button animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 0 }}>
-                LEARN MORE
-              </button>
-            </Link>
+                <button className=" bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold cta-button animate-fadeInUp" style={{ animationDelay: '0.6s', opacity: 100 }}>
+                  LEARN MORE
+                </button>
+              </Link>
 
               {/* Hover gradient border effect */}
-              <div className={`absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300 ${
-                hoveredCard === index ? 'border-green-400 shadow-lg shadow-green-200' : ''
-              }`}></div>
+              <div className={`absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300 ${hoveredCard === index ? 'border-green-400 shadow-lg shadow-green-200' : ''
+                }`}></div>
             </div>
           ))}
         </div>
