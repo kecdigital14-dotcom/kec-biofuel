@@ -70,7 +70,7 @@ export const reaData = [
 export const bigImpactData = [
   {
     id: 1,
-    image: "/images/malayasia1.jpeg", // Replace with actual image URL
+    image: "/images/malayasia1.jpeg",
     title: "Big Impact Award 2026, Malaysia",
     subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
     date: "2026",
@@ -79,7 +79,7 @@ export const bigImpactData = [
   },
   {
     id: 2,
-    image: "/images/malayasia2.jpeg", // Replace with actual image URL
+    image: "/images/malayasia2.jpeg",
     title: "Big Impact Award 2026, Malaysia",
     subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
     date: "2026",
@@ -88,7 +88,7 @@ export const bigImpactData = [
   },
   {
     id: 3,
-    image: "/images/malayasia3.jpeg", // Replace with actual image URL
+    image: "/images/malayasia3.jpeg",
     title: "Big Impact Award 2026, Malaysia",
     subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
     date: "2026",
@@ -98,7 +98,6 @@ export const bigImpactData = [
 ];
 
 
-// You can add more sections like this:
 export const achievementsData = [
   {
     id: 1,
@@ -177,5 +176,32 @@ export const bioCngData = [
     subtitle: "Groundbreaking Ceremony of Bio-CNG Plant at Palwal, Haryana",
     date: "September 29, 2025",
     description: "On 29th September 2025, the Bio-CNG Plant groundbreaking ceremony was held at Palwal, Haryana, in collaboration with M/s Acheja KSK Filling Station & KEC Agritech. The event was graced by Shri Puran Yadav Lohchab Ji and guided by the Founder & CEO. The plant aims to empower farmers, support gaushalas, reduce waste, and promote a cleaner, greener future."
+  }
+];
+
+export const panipatCbgData = [
+  {
+    id: 1,
+    image: "/gallery/Puja1.png",
+    title: "Ground Breaking Ceremony",
+    subtitle: "8 TPD CBG Project, Panipat, Haryana",
+    date: "August 21, 2026",
+    description: "On 21 August 2026, KEC Biofuel marked an important milestone with the Ground Breaking Ceremony of its upcoming 8 TPD Compressed Biogas (CBG) project in Panipat, Haryana. The ceremony marked the transition of the project from planning and development towards its next phase of on-ground execution — reflecting KEC Biofuel's continued commitment to developing professionally engineered projects in the bioenergy and renewable energy sector."
+  },
+  {
+    id: 2,
+    image: "/gallery/Puja2.png",
+    title: "Stakeholders Gather",
+    subtitle: "8 TPD CBG Project, Panipat, Haryana",
+    date: "August 21, 2026",
+    description: "The Panipat project is envisioned as an important addition to KEC Biofuel's growing CBG project portfolio. With ground breaking now completed, focus moves to structured engineering, execution, construction and plant infrastructure — bringing together feedstock considerations, process planning, infrastructure, engineering and execution, guided by integrated planning and engineering discipline."
+  },
+  {
+    id: 3,
+    image: "/gallery/Puja3.png",
+    title: "The Journey Begins",
+    subtitle: "8 TPD CBG Project, Panipat, Haryana",
+    date: "August 21, 2026",
+    description: "The ground breaking ceremony brought together the team and stakeholders to mark this significant beginning — a moment that stays part of the Panipat project's journey ahead. As the project progresses, KEC Biofuel stays focused on sound planning, responsible engineering and disciplined execution, moving from vision to reality within India's growing CBG ecosystem. The ground has been broken. The journey has begun."
   }
 ];

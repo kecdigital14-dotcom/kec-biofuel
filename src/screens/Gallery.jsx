@@ -8,7 +8,7 @@ import Navbar from '../app/Components/Navbar'
 
 
 
-import { galleryData, achievementsData, projectsData, reaData, bioCngData, bigImpactData } from '../app/data/galleryData';
+import { galleryData, achievementsData, projectsData, reaData, bioCngData, bigImpactData, panipatCbgData } from '../app/data/galleryData';
 
 const LazyLoader = () => (
   <div className="w-full flex justify-center items-center py-16">
@@ -56,7 +56,7 @@ const Home = () => {
         sectionSubtitle="RECOGNITION"
         sectionIcon="🏆"
         awards={[
-           { label: "Big Impact Award 2026, Malaysia", data: bigImpactData },
+          { label: "Big Impact Award 2026, Malaysia", data: bigImpactData },
           { label: "R.E.A.L Excellence Award 2025", data: reaData },
         ]}
       />
@@ -87,6 +87,13 @@ const Home = () => {
         sectionTitle="Bio-CNG Launch"
         sectionSubtitle="Pioneering Sustainable Future"
         sectionIcon="🌍"
+      />
+
+      <GalleryScrollContent
+        data={panipatCbgData}
+        sectionTitle="Panipat CBG Project"
+        sectionSubtitle="Ground Breaking Ceremony"
+        sectionIcon="🚧"
       />
 
       <GalleryGlimpse />
