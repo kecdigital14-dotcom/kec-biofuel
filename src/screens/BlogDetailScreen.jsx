@@ -205,7 +205,7 @@ export default function BlogDetailScreen({ blog, relatedBlogs }) {
                 </button>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight sm:leading-[1.1] tracking-tight mb-4 sm:mb-6 lg:mb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight sm:leading-[1.1] tracking-tight mb-4 sm:mb-6 lg:mb-8 lg:max-w-[800px]">
                 {displayBlog.title}
               </h1>
 

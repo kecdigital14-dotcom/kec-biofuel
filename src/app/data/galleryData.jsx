@@ -182,26 +182,34 @@ export const bioCngData = [
 export const panipatCbgData = [
   {
     id: 1,
-    image: "/gallery/Puja1.png",
+    image: "/gallery/panipat3.jpeg",
     title: "Ground Breaking Ceremony",
     subtitle: "8 TPD CBG Project, Panipat, Haryana",
     date: "August 21, 2026",
-    description: "On 21 August 2026, KEC Biofuel marked an important milestone with the Ground Breaking Ceremony of its upcoming 8 TPD Compressed Biogas (CBG) project in Panipat, Haryana. The ceremony marked the transition of the project from planning and development towards its next phase of on-ground execution — reflecting KEC Biofuel's continued commitment to developing professionally engineered projects in the bioenergy and renewable energy sector."
+    description: "KEC Biofuel marked an important milestone on 21 August 2026 with the Ground Breaking Ceremony of its upcoming 8 TPD CBG project in Panipat, Haryana, marking the transition from planning to on-ground execution and reinforcing its commitment to bioenergy and renewable energy development."
   },
   {
     id: 2,
-    image: "/gallery/Puja2.png",
-    title: "Stakeholders Gather",
+    image: "/gallery/panipat10.jpeg",
+    title: "Portfolio Expansion",
     subtitle: "8 TPD CBG Project, Panipat, Haryana",
     date: "August 21, 2026",
-    description: "The Panipat project is envisioned as an important addition to KEC Biofuel's growing CBG project portfolio. With ground breaking now completed, focus moves to structured engineering, execution, construction and plant infrastructure — bringing together feedstock considerations, process planning, infrastructure, engineering and execution, guided by integrated planning and engineering discipline."
+    description: "The Panipat project is envisioned as an important addition to KEC Biofuel's growing CBG project portfolio. With the ground breaking now completed, the focus moves towards structured engineering, project execution, construction and the development of the plant infrastructure."
   },
   {
     id: 3,
-    image: "/gallery/Puja3.png",
-    title: "The Journey Begins",
+    image: "/gallery/panipat6.jpeg",
+    title: "Engineering Discipline",
     subtitle: "8 TPD CBG Project, Panipat, Haryana",
     date: "August 21, 2026",
-    description: "The ground breaking ceremony brought together the team and stakeholders to mark this significant beginning — a moment that stays part of the Panipat project's journey ahead. As the project progresses, KEC Biofuel stays focused on sound planning, responsible engineering and disciplined execution, moving from vision to reality within India's growing CBG ecosystem. The ground has been broken. The journey has begun."
+    description: "A CBG project brings together multiple aspects of development, including feedstock considerations, process planning, infrastructure, engineering and execution. At KEC Biofuel, these requirements are approached with an emphasis on integrated project planning, engineering discipline and systematic execution."
+  },
+  {
+    id: 4,
+    image: "/gallery/panipat12.jpeg",
+    title: "Vision to Reality",
+    subtitle: "8 TPD CBG Project, Panipat, Haryana",
+    date: "August 21, 2026",
+    description: "The ground breaking ceremony brought together the team and stakeholders to mark this significant beginning. As the project progresses, KEC Biofuel stays focused on sound planning, responsible engineering and disciplined execution — moving from vision to reality within India's growing CBG ecosystem. The ground has been broken. The journey has begun."
   }
 ];

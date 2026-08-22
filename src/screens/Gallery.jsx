@@ -50,6 +50,13 @@ const Home = () => {
         </div>
       </HeroBanner>
 
+      <GalleryScrollContent
+        data={panipatCbgData}
+        sectionTitle="Panipat CBG Project"
+        sectionSubtitle="Ground Breaking Ceremony"
+        sectionIcon="🚧"
+      />
+
       {/* ✅ UPDATED: Now uses `awards` prop to show toggle buttons */}
       <GalleryScrollContent
         sectionTitle="AWARDS"
@@ -87,13 +94,6 @@ const Home = () => {
         sectionTitle="Bio-CNG Launch"
         sectionSubtitle="Pioneering Sustainable Future"
         sectionIcon="🌍"
-      />
-
-      <GalleryScrollContent
-        data={panipatCbgData}
-        sectionTitle="Panipat CBG Project"
-        sectionSubtitle="Ground Breaking Ceremony"
-        sectionIcon="🚧"
       />
 
       <GalleryGlimpse />
