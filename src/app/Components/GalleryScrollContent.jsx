@@ -193,7 +193,7 @@ const GalleryScrollContent = ({
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[50px] font-bold text-gray-900 leading-tight mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
+          <h2 className="text-3xl sm:text-4xl lg:px-[150px] lg:text-[50px] font-bold text-gray-900 leading-tight mb-2 text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text">
             {sectionTitle} <span className='text-green-600'> & {sectionSubtitle}</span>
           </h2>
 
@@ -283,7 +283,7 @@ const GalleryScrollContent = ({
               </div>
 
               {/* Right Side – Content */}
-              <div className="xl:w-2/5 p-8 xl:p-12 flex flex-col justify-center">
+              <div className="xl:w-2/5 px-8 py-4 flex flex-col justify-center">
                 <div className={`space-y-6 ${isChanging ? 'content-fade-out' : 'content-fade-in'}`}>
                   {/* Date Badge */}
                   <div className="inline-flex items-center font-sans font-semibold gap-2 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-full px-4 py-2 text-sm font-medium text-green-500 w-fit">
