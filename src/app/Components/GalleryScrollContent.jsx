@@ -252,16 +252,16 @@ const GalleryScrollContent = ({
                   {/* Navigation Arrows */}
                   <button
                     onClick={handlePrev}
-                    className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:-translate-x-1 border border-white/20"
+                    className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full p-2 shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:-translate-x-1 border border-white/20"
                   >
-                    <ChevronLeft className="w-5 h-5 text-slate-700" />
+                    <ChevronLeft className="w-4 h-4 text-slate-700" />
                   </button>
 
                   <button
                     onClick={handleNext}
-                    className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:translate-x-1 border border-white/20"
+                    className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full p-2 shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:translate-x-1 border border-white/20"
                   >
-                    <ChevronRight className="w-5 h-5 text-slate-700" />
+                    <ChevronRight className="w-4 h-4 text-slate-700" />
                   </button>
 
                   {/* Progress Dots */}

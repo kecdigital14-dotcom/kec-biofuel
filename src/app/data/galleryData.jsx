@@ -26,52 +26,32 @@ export const galleryData = [
   }
 ];
 
-
-export const reaData = [
+export const ceoAwardData = [
   {
     id: 1,
-    image: "/images/rea2.jpeg",
-    title: "R.E.A.L Excellence Award 2025",
-    subtitle: "Jitendra Narayan Honoured with R.E.A.L Excellence Award 2025",
-    date: "Sep 15, 2025",
+    image: "/gallery/coy1.jpeg",
+    title: "CEO of the Year – Certificate of Recognition",
+    subtitle: "Jitendra Narayan Honoured by CEO Insights",
+    date: "2026",
     description:
-      "Jitender, Founder of KEC Agritech, has been recognised for driving innovative agri-solutions that blend renewable energy, Bio-CNG projects, and the Kisan Experience Centre. His vision focuses on empowering farmers, improving rural livelihoods, and building a sustainable future for Indian agriculture."
+      "Founder & CEO of KEC Biofuel, Mr. Jitendra Narayan, has been recognised by CEO Insights as Chief Executive Officer of the Year in Renewable Energy – 2026, honouring his leadership in engineering excellence, sustainable growth and building a greener tomorrow through clean energy."
   },
   {
     id: 2,
-    image: "/images/rea10.mp4",
-    title: "R.E.A.L Excellence Award 2025",
-    subtitle: "Jitendra Narayan Honoured with R.E.A.L Excellence Award 2025",
-    date: "Sep 15, 2025",
+    image: "/gallery/coy2.jpeg",
+    title: "CEO of the Year – Feature Announcement",
+    subtitle: "Jitendra Narayan Honoured by CEO Insights",
+    date: "2026",
     description:
-      "Jitender, Founder of KEC Agritech, has been recognised for driving innovative agri-solutions that blend renewable energy, Bio-CNG projects, and the Kisan Experience Centre. His vision focuses on empowering farmers, improving rural livelihoods, and building a sustainable future for Indian agriculture."
-  },
-  {
-    id: 3,
-    image: "/images/rea3.jpeg",
-    title: "R.E.A.L Excellence Award 2025",
-    subtitle: "Jitendra Narayan Honoured with R.E.A.L Excellence Award 2025",
-    date: "Sep 15, 2025",
-    description:
-      "Jitender, Founder of KEC Agritech, has been recognised for driving innovative agri-solutions that blend renewable energy, Bio-CNG projects, and the Kisan Experience Centre. His vision focuses on empowering farmers, improving rural livelihoods, and building a sustainable future for Indian agriculture."
-  },
-  {
-    id: 4,
-    image: "/images/rea6.jpeg",
-    title: "R.E.A.L Excellence Award 2025",
-    subtitle: "Jitendra Narayan Honoured with R.E.A.L Excellence Award 2025",
-    date: "Sep 15, 2025",
-    description:
-      "Jitender, Founder of KEC Agritech, has been recognised for driving innovative agri-solutions that blend renewable energy, Bio-CNG projects, and the Kisan Experience Centre. His vision focuses on empowering farmers, improving rural livelihoods, and building a sustainable future for Indian agriculture."
+      "This annual recognition by CEO Insights highlights exceptional Indian business leaders shaping the future of their organisations — celebrating Jitendra Narayan's vision in bridging engineering and sustainability across KEC Biofuel's renewable energy and biofuel projects."
   }
 ];
-
 
 export const bigImpactData = [
   {
     id: 1,
     image: "/images/malayasia1.jpeg",
-    title: "Big Impact Award 2026, Malaysia",
+    title: "On Stage – Big Impact Award 2026",
     subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
     date: "2026",
     description:
@@ -80,7 +60,7 @@ export const bigImpactData = [
   {
     id: 2,
     image: "/images/malayasia2.jpeg",
-    title: "Big Impact Award 2026, Malaysia",
+    title: "Award Presentation – Big Impact Award 2026",
     subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
     date: "2026",
     description:
@@ -89,11 +69,50 @@ export const bigImpactData = [
   {
     id: 3,
     image: "/images/malayasia3.jpeg",
-    title: "Big Impact Award 2026, Malaysia",
+    title: "Recognition Moment – Big Impact Award 2026",
     subtitle: "Founder & CEO KEC Agritech Receives Big Impact Award 2026",
     date: "2026",
     description:
       "A proud moment as Founder & CEO - KEC Agritech, Mr. Jitendra Narayan, receives the Big Impact Award 2026, Malaysia. Driving India's CBG revolution forward. Every plant we build is a step towards clean energy, farmer prosperity, and a circular economy."
+  }
+];
+
+export const reaData = [
+  {
+    id: 1,
+    image: "/images/rea2.jpeg",
+    title: "Trophy Moment – R.E.A.L Excellence Award 2025",
+    subtitle: "Jitendra Narayan Honoured with R.E.A.L Excellence Award 2025",
+    date: "Sep 15, 2025",
+    description:
+      "Jitender, Founder of KEC Agritech, has been recognised for driving innovative agri-solutions that blend renewable energy, Bio-CNG projects, and the Kisan Experience Centre. His vision focuses on empowering farmers, improving rural livelihoods, and building a sustainable future for Indian agriculture."
+  },
+  {
+    id: 2,
+    image: "/images/rea10.mp4",
+    title: "Event Highlight – R.E.A.L Excellence Award 2025",
+    subtitle: "Jitendra Narayan Honoured with R.E.A.L Excellence Award 2025",
+    date: "Sep 15, 2025",
+    description:
+      "Jitender, Founder of KEC Agritech, has been recognised for driving innovative agri-solutions that blend renewable energy, Bio-CNG projects, and the Kisan Experience Centre. His vision focuses on empowering farmers, improving rural livelihoods, and building a sustainable future for Indian agriculture."
+  },
+  {
+    id: 3,
+    image: "/images/rea3.jpeg",
+    title: "Ceremony Moment – R.E.A.L Excellence Award 2025",
+    subtitle: "Jitendra Narayan Honoured with R.E.A.L Excellence Award 2025",
+    date: "Sep 15, 2025",
+    description:
+      "Jitender, Founder of KEC Agritech, has been recognised for driving innovative agri-solutions that blend renewable energy, Bio-CNG projects, and the Kisan Experience Centre. His vision focuses on empowering farmers, improving rural livelihoods, and building a sustainable future for Indian agriculture."
+  },
+  {
+    id: 4,
+    image: "/images/rea6.jpeg",
+    title: "Recognition Moment – R.E.A.L Excellence Award 2025",
+    subtitle: "Jitendra Narayan Honoured with R.E.A.L Excellence Award 2025",
+    date: "Sep 15, 2025",
+    description:
+      "Jitender, Founder of KEC Agritech, has been recognised for driving innovative agri-solutions that blend renewable energy, Bio-CNG projects, and the Kisan Experience Centre. His vision focuses on empowering farmers, improving rural livelihoods, and building a sustainable future for Indian agriculture."
   }
 ];
 

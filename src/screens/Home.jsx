@@ -7,6 +7,7 @@ import HeroBanner from '../app/Components/HeroBanner'
 import BannerContent from '../app/Components/BannerContent'
 import Navbar from '../app/Components/Navbar'
 import HomeBannerSlider from '@/app/Components/HomeBannerSlider';
+import InstagramSlider from '@/app/Components/InstagramSlider';
 
 const LazyLoader = () => (
   <div className="w-full flex justify-center items-center py-16">
@@ -23,6 +24,7 @@ const Home6thsection = dynamic(() => import('../app/Components/Home6thsection'),
 const Footer = dynamic(() => import('../app/Components/Footer'), { ssr: false, loading: () => <LazyLoader /> });
 const BlogSection = dynamic(() => import('../app/Components/BlogSectionhome'), { ssr: false, loading: () => <LazyLoader /> });
 const CbgGlimpse = dynamic(() => import('@/app/Components/CbgGlimpse'), { ssr: false, loading: () => <LazyLoader /> });
+const CtaSection = dynamic(() => import('@/app/Components/CtaSection'), { ssr: false, loading: () => <LazyLoader /> });
 
 
 const Home = () => {
@@ -37,7 +39,9 @@ const Home = () => {
       <Home6thsection />
       <Home5thsection />
       <CbgGlimpse />
+      {/* <InstagramSlider /> */}
       <BlogSection />
+      <CtaSection/>
       <Footer />
     </div>
   )
