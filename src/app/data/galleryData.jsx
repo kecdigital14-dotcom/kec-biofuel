@@ -29,7 +29,7 @@ export const galleryData = [
 export const ceoAwardData = [
   {
     id: 1,
-    image: "/gallery/coy1.jpeg",
+    image: "/gallery/coy1.png",
     title: "CEO of the Year – Certificate of Recognition",
     subtitle: "Jitendra Narayan Honoured by CEO Insights",
     date: "2026",
@@ -38,7 +38,7 @@ export const ceoAwardData = [
   },
   {
     id: 2,
-    image: "/gallery/coy2.jpeg",
+    image: "/gallery/coy2.png",
     title: "CEO of the Year – Feature Announcement",
     subtitle: "Jitendra Narayan Honoured by CEO Insights",
     date: "2026",

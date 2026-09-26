@@ -227,14 +227,14 @@ const GalleryScrollContent = ({
 
               {/* Left Side – Image */}
               <div className="xl:w-3/5 relative group">
-                <div className="relative h-96 xl:h-[500px] overflow-hidden">
+                <div className="relative w-full h-auto overflow-hidden">
                   {currentItem.image?.endsWith(".mp4") ? (
                     <video
                       src={currentItem.image}
                       controls
                       autoPlay
                       loop
-                      className={`w-[750px] h-full object-cover transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}`}
+                      className={`w-full h-auto block transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}`}
                     />
                   ) : (
                     <Image
@@ -242,7 +242,7 @@ const GalleryScrollContent = ({
                       alt={currentItem.title}
                       width={800}
                       height={600}
-                      className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}`}
+                      className={`w-full h-auto block transition-all duration-700 group-hover:scale-105 ${isChanging ? 'image-fade-out' : 'image-fade-in'}`}
                     />
                   )}
 
