@@ -93,7 +93,7 @@ const Navbar = () => {
             </button>
 
             {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-[15px] md:ml-12 ">
+            <div className="hidden md:flex items-center space-x-[17px] md:ml-12 ">
               <div className="relative group">
                 <Link href="/" className="font-sans text-green-700 text-[16px] hover:text-green-400 transition-colors font-bold">
                   Home
