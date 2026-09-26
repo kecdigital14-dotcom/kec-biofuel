@@ -186,7 +186,7 @@ const CbgDownloadComp = ({
 
       {/* Banner */}
       <div className={`bg-gradient-to-r from-green-600 to-gray-600 text-white py-10  ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 ">{title}</h1>
           <p className="text-lg md:text-lg text-indigo-100 mx-auto">{description}</p>
         </div>

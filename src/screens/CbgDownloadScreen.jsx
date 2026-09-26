@@ -21,12 +21,6 @@ const PmcSectionFour = dynamic(() => import('@/app/Components/PmcSectionfour'), 
 const CbgDownloadComp = dynamic(() => import('@/app/Components/CbgdownloadComp'), { ssr: false, loading: () => <LazyLoader /> });
 
 
-
-
-
-
-
-
 const CbgDownloadScreen = () => {
   return (
     <div className="min-h-screen">
@@ -59,22 +53,34 @@ const CbgDownloadScreen = () => {
         brochurePdfUrl="/images/KECProfile2026.pdf"
         fileName="KEC-Agritech-Profile-2026.pdf"
         whatsInside={[
-          "About KEC — company structure, 5 subsidiaries, CIN & financial snapshot",
-          "Awards & Recognitions — BIA Malaysia 2026, German Energy Solutions Initiative & more",
-          "74+ EPC projects, ₹1200 Cr+ orderbook across 42 districts in 14 states",
-          "KEC & CBG Industry Roadmap 2020–2026 (ongoing)",
-          "AI-Enabled Biogas Plant — smart feedstock, predictive performance, SCADA monitoring",
-          "CBG Park overview — Plug & Play model, Bulandshahr Phase 1 launched",
-          "CBG Park locations: Khurja, Koil (Aligarh), Gabhana & 8 states Pan India",
-          "Investment table: 2.4–20 TPD plants, ROI 40–50%, payback <3 yrs, 15yr buyback",
-          "Bio-Manure products: Carbon Enhancer & PROM (Phosphate Rich Organic Manure)",
-          "Investor Interest Form — Individual CBG Plant or CBG Park entry options"
+          "About KEC — Structure, subsidiaries & financials",
+          "74+ EPC Projects — ₹1200 Cr+ orderbook across 14 states",
+          "CBG Industry Roadmap 2020–2026",
+          "AI-Enabled Biogas Plant — Smart & predictive operations",
         ]}
         moreInfoTitle="Build Your CBG Plant with KEC Agritech"
         moreInfoDesc="74+ projects executed. AI-enabled plants. Government support. 35–50% ROI. The right partner for India's CBG revolution."
         moreInfoButtonText="Contact KEC"
         moreInfoButtonLink="mailto:info@kisanexperience.com"
       />
+
+      <CbgDownloadComp
+        title="CEO Insights – CEO of the Year in Renewable Energy 2026"
+        description="Jitendra Narayan, CEO of KEC Biofuel, named Chief Executive Officer of the Year in Renewable Energy 2026 by CEO Insights India, part of their Indian Business Leaders 2026 list."
+        brochurePdfUrl="/downld/ceoaward.pdf"
+        fileName="CEO-Insights-Jitendra-Narayan-CEO-of-the-Year-2026.pdf"
+        whatsInside={[
+          "Certificate of Recognition — CEO of the Year in Renewable Energy 2026",
+          // "Full profile: Jitendra Narayan's path from merchant banking to solar to biofuels",
+          "KEC Biofuel's evolution — PMC company to integrated EPC & technology-transfer provider",
+          "Long-term target: 500+ projects, ~30 CBG Parks by 2030"
+        ]}
+        moreInfoTitle="Recognized Leadership in Renewable Energy"
+        moreInfoDesc="See why CEO Insights named KEC Biofuel's Jitendra Narayan CEO of the Year — and what's next for India's CBG push."
+        moreInfoButtonText="Contact KEC"
+        moreInfoButtonLink="mailto:info@kisanexperience.com"
+      />
+
       <CbgDownloadComp
         title="CBG-CGD SYNCHRONISATION 
 KEC CBG -CGD STUDY"
@@ -87,8 +93,6 @@ KEC CBG -CGD STUDY"
           "Quantity accounting via GAIL's online joint-ticketing portal",
           "Fortnightly invoicing process under the Synchro Scheme",
           "Quality specifications per BIS IS 16087:2016 (Methane ≥90%)",
-          "3 delivery options: Cascade, pipeline injection, DCU injection",
-          "No LoI required — direct GAIL Tripartite Agreement process"
         ]}
         moreInfoTitle="Connect CBG Output to CGD Networks"
         moreInfoDesc="KEC helps CBG producers navigate GAIL agreements, quality compliance, and pipeline integration under the Synchro Scheme."
